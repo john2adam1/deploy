@@ -350,6 +350,7 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/avtotest/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/avtotest/node_modules/next/dist/client/app-dir/link.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/avtotest/node_modules/next/navigation.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/avtotest/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/avtotest/components/ui/button.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$book$2d$open$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__BookOpen$3e$__ = __turbopack_context__.i("[project]/Desktop/avtotest/node_modules/lucide-react/dist/esm/icons/book-open.js [app-ssr] (ecmascript) <export default as BookOpen>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$log$2d$out$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__LogOut$3e$__ = __turbopack_context__.i("[project]/Desktop/avtotest/node_modules/lucide-react/dist/esm/icons/log-out.js [app-ssr] (ecmascript) <export default as LogOut>");
@@ -367,9 +368,14 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$compo
 ;
 ;
 ;
+;
 function Navbar({ userEmail, isAdmin }) {
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
     const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getSupabaseBrowserClient"])();
+    const [mounted, setMounted] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        setMounted(true);
+    }, []);
     const handleLogout = async ()=>{
         await supabase.auth.signOut();
         router.push("/login");
@@ -387,7 +393,7 @@ function Navbar({ userEmail, isAdmin }) {
                             className: "h-6 w-6 text-primary"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                            lineNumber: 35,
+                            lineNumber: 41,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -395,13 +401,13 @@ function Navbar({ userEmail, isAdmin }) {
                             children: "TestMaster"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                            lineNumber: 36,
+                            lineNumber: 42,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                    lineNumber: 34,
+                    lineNumber: 40,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -417,22 +423,22 @@ function Navbar({ userEmail, isAdmin }) {
                                         className: "mr-2 h-4 w-4"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                        lineNumber: 43,
+                                        lineNumber: 49,
                                         columnNumber: 17
                                     }, this),
                                     "Admin Panel"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                lineNumber: 42,
+                                lineNumber: 48,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                            lineNumber: 41,
+                            lineNumber: 47,
                             columnNumber: 13
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenu"], {
+                        mounted ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenu"], {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuTrigger"], {
                                     asChild: true,
@@ -446,23 +452,23 @@ function Navbar({ userEmail, isAdmin }) {
                                                 children: userEmail?.charAt(0).toUpperCase() || "U"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                                lineNumber: 53,
-                                                columnNumber: 19
+                                                lineNumber: 60,
+                                                columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                            lineNumber: 52,
-                                            columnNumber: 17
+                                            lineNumber: 59,
+                                            columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                        lineNumber: 51,
-                                        columnNumber: 15
+                                        lineNumber: 58,
+                                        columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                    lineNumber: 50,
-                                    columnNumber: 13
+                                    lineNumber: 57,
+                                    columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuContent"], {
                                     align: "end",
@@ -476,27 +482,27 @@ function Navbar({ userEmail, isAdmin }) {
                                                     children: "Account"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                                    lineNumber: 59,
-                                                    columnNumber: 17
+                                                    lineNumber: 66,
+                                                    columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "text-xs text-muted-foreground",
                                                     children: userEmail
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                                    lineNumber: 60,
-                                                    columnNumber: 17
+                                                    lineNumber: 67,
+                                                    columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                            lineNumber: 58,
-                                            columnNumber: 15
+                                            lineNumber: 65,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuSeparator"], {}, void 0, false, {
                                             fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                            lineNumber: 62,
-                                            columnNumber: 15
+                                            lineNumber: 69,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuItem"], {
                                             asChild: true,
@@ -507,25 +513,25 @@ function Navbar({ userEmail, isAdmin }) {
                                                         className: "mr-2 h-4 w-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                                        lineNumber: 65,
-                                                        columnNumber: 19
+                                                        lineNumber: 72,
+                                                        columnNumber: 21
                                                     }, this),
                                                     "Dashboard"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                                lineNumber: 64,
-                                                columnNumber: 17
+                                                lineNumber: 71,
+                                                columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                            lineNumber: 63,
-                                            columnNumber: 15
+                                            lineNumber: 70,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuSeparator"], {}, void 0, false, {
                                             fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                            lineNumber: 69,
-                                            columnNumber: 15
+                                            lineNumber: 76,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuItem"], {
                                             onClick: handleLogout,
@@ -535,43 +541,65 @@ function Navbar({ userEmail, isAdmin }) {
                                                     className: "mr-2 h-4 w-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                                    lineNumber: 71,
-                                                    columnNumber: 17
+                                                    lineNumber: 78,
+                                                    columnNumber: 19
                                                 }, this),
                                                 "Logout"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                            lineNumber: 70,
-                                            columnNumber: 15
+                                            lineNumber: 77,
+                                            columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                    lineNumber: 57,
-                                    columnNumber: 13
+                                    lineNumber: 64,
+                                    columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                            lineNumber: 49,
-                            columnNumber: 11
+                            lineNumber: 56,
+                            columnNumber: 13
+                        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                            variant: "ghost",
+                            size: "icon",
+                            className: "rounded-full",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Avatar"], {
+                                className: "h-8 w-8",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AvatarFallback"], {
+                                    children: userEmail?.charAt(0).toUpperCase() || "U"
+                                }, void 0, false, {
+                                    fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
+                                    lineNumber: 86,
+                                    columnNumber: 17
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
+                                lineNumber: 85,
+                                columnNumber: 15
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
+                            lineNumber: 84,
+                            columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                    lineNumber: 39,
+                    lineNumber: 45,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-            lineNumber: 33,
+            lineNumber: 39,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-        lineNumber: 32,
+        lineNumber: 38,
         columnNumber: 5
     }, this);
 }
@@ -2027,18 +2055,10 @@ function FaqManager() {
     const [question, setQuestion] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
     const [answer, setAnswer] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
     const fetchFaqs = async ()=>{
-        try {
-            const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getSupabaseBrowserClient"])();
-            const { data, error } = await supabase.from("site_content").select("*").eq("type", "faq");
-            if (error) {
-                if (error.code && error.message) {
-                    console.error("Error fetching FAQs:", error.message, error.code);
-                }
-                return;
-            }
+        const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getSupabaseBrowserClient"])();
+        const { data, error } = await supabase.from("site_content").select("*").eq("type", "faq");
+        if (!error && data) {
             setFaqs(Array.isArray(data) ? data : []);
-        } catch (err) {
-            console.error("Unexpected error fetching FAQs:", err);
         }
     };
     const addFaq = async ()=>{
@@ -2046,24 +2066,18 @@ function FaqManager() {
             alert("Please fill in both question and answer");
             return;
         }
-        try {
-            const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getSupabaseBrowserClient"])();
-            const { error } = await supabase.from("site_content").insert({
-                type: "faq",
-                title: question,
-                content: answer
-            });
-            if (!error) {
-                setQuestion("");
-                setAnswer("");
-                fetchFaqs();
-            } else {
-                alert(`Error adding FAQ: ${error.message}`);
-                console.error(error);
-            }
-        } catch (err) {
-            alert("Unexpected error adding FAQ");
-            console.error(err);
+        const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getSupabaseBrowserClient"])();
+        const { error } = await supabase.from("site_content").insert({
+            type: "faq",
+            title: question,
+            content: answer
+        });
+        if (!error) {
+            setQuestion("");
+            setAnswer("");
+            fetchFaqs();
+        } else {
+            alert(`Error adding FAQ: ${error.message}`);
         }
     };
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
@@ -2077,7 +2091,7 @@ function FaqManager() {
                 children: "FAQ Manager"
             }, void 0, false, {
                 fileName: "[project]/Desktop/avtotest/components/admin/FaqManager.tsx",
-                lineNumber: 71,
+                lineNumber: 56,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -2086,7 +2100,7 @@ function FaqManager() {
                 onChange: (e)=>setQuestion(e.target.value)
             }, void 0, false, {
                 fileName: "[project]/Desktop/avtotest/components/admin/FaqManager.tsx",
-                lineNumber: 73,
+                lineNumber: 58,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$textarea$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Textarea"], {
@@ -2095,7 +2109,7 @@ function FaqManager() {
                 onChange: (e)=>setAnswer(e.target.value)
             }, void 0, false, {
                 fileName: "[project]/Desktop/avtotest/components/admin/FaqManager.tsx",
-                lineNumber: 78,
+                lineNumber: 63,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -2103,7 +2117,7 @@ function FaqManager() {
                 children: "Add FAQ"
             }, void 0, false, {
                 fileName: "[project]/Desktop/avtotest/components/admin/FaqManager.tsx",
-                lineNumber: 84,
+                lineNumber: 69,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2116,7 +2130,7 @@ function FaqManager() {
                                 children: faq.title
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/avtotest/components/admin/FaqManager.tsx",
-                                lineNumber: 89,
+                                lineNumber: 74,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2124,24 +2138,24 @@ function FaqManager() {
                                 children: faq.content
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/avtotest/components/admin/FaqManager.tsx",
-                                lineNumber: 90,
+                                lineNumber: 75,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, faq.id, true, {
                         fileName: "[project]/Desktop/avtotest/components/admin/FaqManager.tsx",
-                        lineNumber: 88,
+                        lineNumber: 73,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/Desktop/avtotest/components/admin/FaqManager.tsx",
-                lineNumber: 86,
+                lineNumber: 71,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Desktop/avtotest/components/admin/FaqManager.tsx",
-        lineNumber: 70,
+        lineNumber: 55,
         columnNumber: 5
     }, this);
 }
@@ -2167,139 +2181,76 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$compo
 ;
 ;
 function AboutManager() {
-    const [form, setForm] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
-        title: "",
-        description: "",
-        missionTitle: "",
-        missionText: "",
-        whyTitle: "",
-        whyText: ""
-    });
-    const fetchAbout = async ()=>{
-        try {
-            const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getSupabaseBrowserClient"])();
-            const { data, error } = await supabase.from("site_content").select("content").eq("type", "about").order("updated_at", {
-                ascending: false
-            }).limit(1).maybeSingle();
-            if (error) {
-                if (error.code && error.message) {
-                    console.error("Error fetching about:", error.message, error.code);
-                }
-                return;
-            }
-            if (data?.content) {
-                setForm(data.content);
-            }
-        } catch (err) {
-            console.error("Unexpected error fetching about:", err);
-        }
-    };
-    const saveAbout = async ()=>{
-        try {
-            const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getSupabaseBrowserClient"])();
-            // Delete all existing records with this type to avoid duplicates
-            await supabase.from("site_content").delete().eq("type", "about");
-            // Insert new record
-            const { error } = await supabase.from("site_content").insert({
-                type: "about",
-                content: form
-            });
-            if (!error) {
-                alert("About Us updated!");
-                fetchAbout(); // Refresh data
-            } else {
-                alert(`Error updating about: ${error.message}`);
-                console.error(error);
-            }
-        } catch (err) {
-            alert("Unexpected error updating about");
-            console.error(err);
-        }
-    };
+    const [title, setTitle] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
+    const [description, setDescription] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        async function fetchAbout() {
+            const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getSupabaseBrowserClient"])();
+            const { data } = await supabase.from("site_content").select("content").eq("type", "about").maybeSingle();
+            if (data?.content) {
+                setTitle(data.content.title || "");
+                setDescription(data.content.description || "");
+            }
+        }
         fetchAbout();
     }, []);
+    async function saveAbout() {
+        const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getSupabaseBrowserClient"])();
+        const content = {
+            title,
+            description
+        };
+        // Check if record exists
+        const { data: existing } = await supabase.from("site_content").select("id").eq("type", "about").maybeSingle();
+        let error;
+        if (existing) {
+            // Update existing record
+            const { error: updateError } = await supabase.from("site_content").update({
+                content
+            }).eq("type", "about");
+            error = updateError;
+        } else {
+            // Insert new record
+            const { error: insertError } = await supabase.from("site_content").insert({
+                type: "about",
+                content
+            });
+            error = insertError;
+        }
+        if (!error) {
+            alert("About section updated");
+        } else {
+            alert(`Error: ${error.message || "Failed to update"}`);
+            console.error("Error updating about section:", error);
+        }
+    }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "mt-10 space-y-4",
+        className: "mt-10 max-w-xl space-y-4",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                 className: "text-xl font-semibold",
-                children: "About Us"
+                children: "About Section"
             }, void 0, false, {
                 fileName: "[project]/Desktop/avtotest/components/admin/AboutManager.tsx",
-                lineNumber: 79,
+                lineNumber: 76,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
                 placeholder: "Title",
-                value: form.title,
-                onChange: (e)=>setForm({
-                        ...form,
-                        title: e.target.value
-                    })
+                value: title,
+                onChange: (e)=>setTitle(e.target.value)
             }, void 0, false, {
                 fileName: "[project]/Desktop/avtotest/components/admin/AboutManager.tsx",
-                lineNumber: 81,
+                lineNumber: 78,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$textarea$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Textarea"], {
                 placeholder: "Description",
-                value: form.description,
-                onChange: (e)=>setForm({
-                        ...form,
-                        description: e.target.value
-                    })
+                value: description,
+                onChange: (e)=>setDescription(e.target.value)
             }, void 0, false, {
                 fileName: "[project]/Desktop/avtotest/components/admin/AboutManager.tsx",
-                lineNumber: 87,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
-                placeholder: "Mission title",
-                value: form.missionTitle,
-                onChange: (e)=>setForm({
-                        ...form,
-                        missionTitle: e.target.value
-                    })
-            }, void 0, false, {
-                fileName: "[project]/Desktop/avtotest/components/admin/AboutManager.tsx",
-                lineNumber: 93,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$textarea$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Textarea"], {
-                placeholder: "Mission text",
-                value: form.missionText,
-                onChange: (e)=>setForm({
-                        ...form,
-                        missionText: e.target.value
-                    })
-            }, void 0, false, {
-                fileName: "[project]/Desktop/avtotest/components/admin/AboutManager.tsx",
-                lineNumber: 99,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
-                placeholder: "Why choose us title",
-                value: form.whyTitle,
-                onChange: (e)=>setForm({
-                        ...form,
-                        whyTitle: e.target.value
-                    })
-            }, void 0, false, {
-                fileName: "[project]/Desktop/avtotest/components/admin/AboutManager.tsx",
-                lineNumber: 105,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$textarea$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Textarea"], {
-                placeholder: "Why choose us text",
-                value: form.whyText,
-                onChange: (e)=>setForm({
-                        ...form,
-                        whyText: e.target.value
-                    })
-            }, void 0, false, {
-                fileName: "[project]/Desktop/avtotest/components/admin/AboutManager.tsx",
-                lineNumber: 111,
+                lineNumber: 84,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -2307,13 +2258,13 @@ function AboutManager() {
                 children: "Save"
             }, void 0, false, {
                 fileName: "[project]/Desktop/avtotest/components/admin/AboutManager.tsx",
-                lineNumber: 117,
+                lineNumber: 90,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Desktop/avtotest/components/admin/AboutManager.tsx",
-        lineNumber: 78,
+        lineNumber: 75,
         columnNumber: 5
     }, this);
 }
@@ -2343,9 +2294,7 @@ function ContactManager() {
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         async function fetchData() {
             const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getSupabaseBrowserClient"])();
-            const { data, error } = await supabase.from("site_content").select("content").eq("type", "contact").order("updated_at", {
-                ascending: false
-            }).limit(1).maybeSingle();
+            const { data, error } = await supabase.from("site_content").select("content").eq("type", "contact").maybeSingle();
             if (!error && data?.content) {
                 setTelegram(data.content.telegram || "");
                 setTelegramLink(data.content.telegram_link || "");
@@ -2361,18 +2310,28 @@ function ContactManager() {
             telegram_link: telegramLink,
             email
         };
-        // Delete all existing records with this type to avoid duplicates
-        await supabase.from("site_content").delete().eq("type", "contact");
-        // Insert new record
-        const { error } = await supabase.from("site_content").insert({
-            type: "contact",
-            content: newContent
-        });
+        // Check if record exists
+        const { data: existing } = await supabase.from("site_content").select("id").eq("type", "contact").maybeSingle();
+        let error;
+        if (existing) {
+            // Update existing record
+            const { error: updateError } = await supabase.from("site_content").update({
+                content: newContent
+            }).eq("type", "contact");
+            error = updateError;
+        } else {
+            // Insert new record
+            const { error: insertError } = await supabase.from("site_content").insert({
+                type: "contact",
+                content: newContent
+            });
+            error = insertError;
+        }
         if (!error) {
             alert("Contact info updated!");
         } else {
-            alert(`Error updating contact info: ${error.message}`);
-            console.error(error);
+            alert(`Error updating contact info: ${error.message || "Failed to update"}`);
+            console.error("Error updating contact info:", error);
         }
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2383,7 +2342,7 @@ function ContactManager() {
                 children: "Contact Settings"
             }, void 0, false, {
                 fileName: "[project]/Desktop/avtotest/components/admin/ContactManager.tsx",
-                lineNumber: 62,
+                lineNumber: 72,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -2392,7 +2351,7 @@ function ContactManager() {
                 onChange: (e)=>setTelegram(e.target.value)
             }, void 0, false, {
                 fileName: "[project]/Desktop/avtotest/components/admin/ContactManager.tsx",
-                lineNumber: 64,
+                lineNumber: 74,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -2401,7 +2360,7 @@ function ContactManager() {
                 onChange: (e)=>setTelegramLink(e.target.value)
             }, void 0, false, {
                 fileName: "[project]/Desktop/avtotest/components/admin/ContactManager.tsx",
-                lineNumber: 70,
+                lineNumber: 80,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -2410,7 +2369,7 @@ function ContactManager() {
                 onChange: (e)=>setEmail(e.target.value)
             }, void 0, false, {
                 fileName: "[project]/Desktop/avtotest/components/admin/ContactManager.tsx",
-                lineNumber: 76,
+                lineNumber: 86,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -2418,13 +2377,13 @@ function ContactManager() {
                 children: "Save"
             }, void 0, false, {
                 fileName: "[project]/Desktop/avtotest/components/admin/ContactManager.tsx",
-                lineNumber: 82,
+                lineNumber: 92,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Desktop/avtotest/components/admin/ContactManager.tsx",
-        lineNumber: 61,
+        lineNumber: 71,
         columnNumber: 5
     }, this);
 }
@@ -2451,64 +2410,47 @@ function MainSectionManager() {
     const [title, setTitle] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
     const [highlight, setHighlight] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
     const [description, setDescription] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
-    const [primaryText, setPrimaryText] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
-    const [secondaryText, setSecondaryText] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         async function fetchData() {
             const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getSupabaseBrowserClient"])();
-            const { data, error } = await supabase.from("site_content").select("content").eq("type", "main_section").order("updated_at", {
-                ascending: false
-            }).limit(1).maybeSingle();
-            if (!error && data?.content) {
-                const c = data.content;
-                setTitle(c.title || "");
-                setHighlight(c.highlight || "");
-                setDescription(c.description || "");
-                setPrimaryText(c.primary_button?.text || "");
-                setSecondaryText(c.secondary_button?.text || "");
+            const { data } = await supabase.from("site_content").select("content").eq("type", "main_section").maybeSingle();
+            if (data?.content) {
+                setTitle(data.content.title || "");
+                setHighlight(data.content.highlight || "");
+                setDescription(data.content.description || "");
             }
         }
         fetchData();
     }, []);
     async function handleSave() {
         const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getSupabaseBrowserClient"])();
-        const newContent = {
+        const content = {
             title,
             highlight,
-            description,
-            primary_button: {
-                text: primaryText,
-                link: "/register"
-            },
-            secondary_button: {
-                text: secondaryText,
-                link: "/login"
-            }
+            description
         };
-        // Delete all existing records with this type to avoid duplicates
-        await supabase.from("site_content").delete().eq("type", "main_section");
-        // Insert new record
-        const { error } = await supabase.from("site_content").insert({
-            type: "main_section",
-            content: newContent
-        });
-        if (!error) {
-            alert("Main section updated!");
-            // Refresh the data
-            const { data } = await supabase.from("site_content").select("content").eq("type", "main_section").order("updated_at", {
-                ascending: false
-            }).limit(1).maybeSingle();
-            if (data?.content) {
-                const c = data.content;
-                setTitle(c.title || "");
-                setHighlight(c.highlight || "");
-                setDescription(c.description || "");
-                setPrimaryText(c.primary_button?.text || "");
-                setSecondaryText(c.secondary_button?.text || "");
-            }
+        // Check if record exists
+        const { data: existing } = await supabase.from("site_content").select("id").eq("type", "main_section").maybeSingle();
+        let error;
+        if (existing) {
+            // Update existing record
+            const { error: updateError } = await supabase.from("site_content").update({
+                content
+            }).eq("type", "main_section");
+            error = updateError;
         } else {
-            alert(`Error updating main section: ${error.message}`);
-            console.error("Full error:", error);
+            // Insert new record
+            const { error: insertError } = await supabase.from("site_content").insert({
+                type: "main_section",
+                content
+            });
+            error = insertError;
+        }
+        if (!error) {
+            alert("Main section updated");
+        } else {
+            alert(`Error: ${error.message || "Failed to update"}`);
+            console.error("Error updating main section:", error);
         }
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2516,10 +2458,10 @@ function MainSectionManager() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                 className: "text-2xl font-bold",
-                children: "Main Section Settings"
+                children: "Main Section"
             }, void 0, false, {
                 fileName: "[project]/Desktop/avtotest/components/admin/MainSectionManager.tsx",
-                lineNumber: 85,
+                lineNumber: 78,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -2528,16 +2470,16 @@ function MainSectionManager() {
                 onChange: (e)=>setTitle(e.target.value)
             }, void 0, false, {
                 fileName: "[project]/Desktop/avtotest/components/admin/MainSectionManager.tsx",
-                lineNumber: 87,
+                lineNumber: 80,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
-                placeholder: "Highlight (span text)",
+                placeholder: "Highlight text",
                 value: highlight,
                 onChange: (e)=>setHighlight(e.target.value)
             }, void 0, false, {
                 fileName: "[project]/Desktop/avtotest/components/admin/MainSectionManager.tsx",
-                lineNumber: 93,
+                lineNumber: 86,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -2546,25 +2488,7 @@ function MainSectionManager() {
                 onChange: (e)=>setDescription(e.target.value)
             }, void 0, false, {
                 fileName: "[project]/Desktop/avtotest/components/admin/MainSectionManager.tsx",
-                lineNumber: 99,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
-                placeholder: "Primary button text (Sign Up)",
-                value: primaryText,
-                onChange: (e)=>setPrimaryText(e.target.value)
-            }, void 0, false, {
-                fileName: "[project]/Desktop/avtotest/components/admin/MainSectionManager.tsx",
-                lineNumber: 105,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
-                placeholder: "Secondary button text (Sign In)",
-                value: secondaryText,
-                onChange: (e)=>setSecondaryText(e.target.value)
-            }, void 0, false, {
-                fileName: "[project]/Desktop/avtotest/components/admin/MainSectionManager.tsx",
-                lineNumber: 111,
+                lineNumber: 92,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -2572,13 +2496,13 @@ function MainSectionManager() {
                 children: "Save"
             }, void 0, false, {
                 fileName: "[project]/Desktop/avtotest/components/admin/MainSectionManager.tsx",
-                lineNumber: 117,
+                lineNumber: 98,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Desktop/avtotest/components/admin/MainSectionManager.tsx",
-        lineNumber: 84,
+        lineNumber: 77,
         columnNumber: 5
     }, this);
 }
@@ -2595,7 +2519,10 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/avtotest/components/ui/button.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/avtotest/components/ui/input.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/avtotest/lib/supabase/client.ts [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$plus$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Plus$3e$__ = __turbopack_context__.i("[project]/Desktop/avtotest/node_modules/lucide-react/dist/esm/icons/plus.js [app-ssr] (ecmascript) <export default as Plus>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trash$2d$2$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Trash2$3e$__ = __turbopack_context__.i("[project]/Desktop/avtotest/node_modules/lucide-react/dist/esm/icons/trash-2.js [app-ssr] (ecmascript) <export default as Trash2>");
 "use client";
+;
 ;
 ;
 ;
@@ -2605,23 +2532,25 @@ function StatisticsManager() {
     const [stats, setStats] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         async function fetchData() {
-            try {
-                const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getSupabaseBrowserClient"])();
-                const { data, error } = await supabase.from("site_content").select("content").eq("type", "statistics").order("updated_at", {
-                    ascending: false
-                }).limit(1).maybeSingle();
-                if (error) {
-                    if (error.code && error.message) {
-                        console.error("Error fetching statistics:", error.message, error.code);
+            const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getSupabaseBrowserClient"])();
+            const { data, error } = await supabase.from("site_content").select("content").eq("type", "statistics").maybeSingle();
+            if (!error && data?.content) {
+                const content = Array.isArray(data.content) ? data.content : [];
+                setStats(content.length > 0 ? content : [
+                    {
+                        icon: "Clock",
+                        title: "",
+                        description: ""
                     }
-                    return;
-                }
-                if (data?.content) {
-                    const content = Array.isArray(data.content) ? data.content : [];
-                    setStats(content);
-                }
-            } catch (err) {
-                console.error("Unexpected error fetching statistics:", err);
+                ]);
+            } else {
+                setStats([
+                    {
+                        icon: "Clock",
+                        title: "",
+                        description: ""
+                    }
+                ]);
             }
         }
         fetchData();
@@ -2630,97 +2559,201 @@ function StatisticsManager() {
         const newStats = [
             ...stats
         ];
-        newStats[idx][field] = value;
+        newStats[idx] = {
+            ...newStats[idx],
+            [field]: value
+        };
         setStats(newStats);
     }
-    async function handleSave() {
-        try {
-            const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getSupabaseBrowserClient"])();
-            // Delete all existing records with this type to avoid duplicates
-            await supabase.from("site_content").delete().eq("type", "statistics");
-            // Insert new record
-            const { error } = await supabase.from("site_content").insert({
-                type: "statistics",
-                content: stats
-            });
-            if (!error) {
-                alert("Statistics updated!");
-                // Refresh data
-                const { data } = await supabase.from("site_content").select("content").eq("type", "statistics").order("updated_at", {
-                    ascending: false
-                }).limit(1).maybeSingle();
-                if (data?.content) {
-                    const content = Array.isArray(data.content) ? data.content : [];
-                    setStats(content);
-                }
-            } else {
-                alert(`Error updating statistics: ${error.message}`);
-                console.error(error);
+    function addStat() {
+        setStats([
+            ...stats,
+            {
+                icon: "Clock",
+                title: "",
+                description: ""
             }
-        } catch (err) {
-            alert("Unexpected error updating statistics");
-            console.error(err);
+        ]);
+    }
+    function removeStat(idx) {
+        if (stats.length > 1) {
+            setStats(stats.filter((_, i)=>i !== idx));
+        }
+    }
+    async function handleSave() {
+        const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getSupabaseBrowserClient"])();
+        const validStats = stats.filter((s)=>s.title.trim() || s.description.trim());
+        if (validStats.length === 0) {
+            alert("Please add at least one statistic");
+            return;
+        }
+        // Check if record exists
+        const { data: existing } = await supabase.from("site_content").select("id").eq("type", "statistics").maybeSingle();
+        let error;
+        if (existing) {
+            // Update existing record
+            const { error: updateError } = await supabase.from("site_content").update({
+                content: validStats
+            }).eq("type", "statistics");
+            error = updateError;
+        } else {
+            // Insert new record
+            const { error: insertError } = await supabase.from("site_content").insert({
+                type: "statistics",
+                content: validStats
+            });
+            error = insertError;
+        }
+        if (!error) {
+            alert("Statistics updated!");
+            const { data } = await supabase.from("site_content").select("content").eq("type", "statistics").maybeSingle();
+            if (data?.content) {
+                const content = Array.isArray(data.content) ? data.content : [];
+                setStats(content.length > 0 ? content : [
+                    {
+                        icon: "Clock",
+                        title: "",
+                        description: ""
+                    }
+                ]);
+            }
+        } else {
+            alert(`Error updating statistics: ${error.message || "Failed to update"}`);
+            console.error("Error updating statistics:", error);
         }
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "space-y-6 max-w-2xl mx-auto p-4",
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                className: "text-2xl font-bold",
-                children: "Statistics Settings"
-            }, void 0, false, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "flex items-center justify-between",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                        className: "text-2xl font-bold",
+                        children: "Statistics Settings"
+                    }, void 0, false, {
+                        fileName: "[project]/Desktop/avtotest/components/admin/StatisticsManager.tsx",
+                        lineNumber: 106,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                        onClick: addStat,
+                        size: "sm",
+                        variant: "outline",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$plus$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Plus$3e$__["Plus"], {
+                                className: "h-4 w-4 mr-2"
+                            }, void 0, false, {
+                                fileName: "[project]/Desktop/avtotest/components/admin/StatisticsManager.tsx",
+                                lineNumber: 108,
+                                columnNumber: 11
+                            }, this),
+                            "Add Stat"
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/Desktop/avtotest/components/admin/StatisticsManager.tsx",
+                        lineNumber: 107,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
                 fileName: "[project]/Desktop/avtotest/components/admin/StatisticsManager.tsx",
-                lineNumber: 88,
+                lineNumber: 105,
                 columnNumber: 7
             }, this),
-            stats.map((item, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "border p-4 rounded space-y-2",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
-                            placeholder: "Icon",
-                            value: item.icon,
-                            onChange: (e)=>handleChange(idx, "icon", e.target.value)
-                        }, void 0, false, {
-                            fileName: "[project]/Desktop/avtotest/components/admin/StatisticsManager.tsx",
-                            lineNumber: 92,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
-                            placeholder: "Title",
-                            value: item.title,
-                            onChange: (e)=>handleChange(idx, "title", e.target.value)
-                        }, void 0, false, {
-                            fileName: "[project]/Desktop/avtotest/components/admin/StatisticsManager.tsx",
-                            lineNumber: 97,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
-                            placeholder: "Description",
-                            value: item.description,
-                            onChange: (e)=>handleChange(idx, "description", e.target.value)
-                        }, void 0, false, {
-                            fileName: "[project]/Desktop/avtotest/components/admin/StatisticsManager.tsx",
-                            lineNumber: 102,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, idx, true, {
-                    fileName: "[project]/Desktop/avtotest/components/admin/StatisticsManager.tsx",
-                    lineNumber: 91,
-                    columnNumber: 9
-                }, this)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
-                onClick: handleSave,
-                children: "Save"
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "space-y-4",
+                children: stats.map((item, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "border p-4 rounded-lg space-y-3",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex items-center justify-between mb-2",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-sm font-medium",
+                                        children: [
+                                            "Statistic ",
+                                            idx + 1
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/Desktop/avtotest/components/admin/StatisticsManager.tsx",
+                                        lineNumber: 117,
+                                        columnNumber: 15
+                                    }, this),
+                                    stats.length > 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                                        onClick: ()=>removeStat(idx),
+                                        size: "sm",
+                                        variant: "ghost",
+                                        className: "text-destructive hover:text-destructive",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trash$2d$2$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Trash2$3e$__["Trash2"], {
+                                            className: "h-4 w-4"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Desktop/avtotest/components/admin/StatisticsManager.tsx",
+                                            lineNumber: 125,
+                                            columnNumber: 19
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/Desktop/avtotest/components/admin/StatisticsManager.tsx",
+                                        lineNumber: 119,
+                                        columnNumber: 17
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/Desktop/avtotest/components/admin/StatisticsManager.tsx",
+                                lineNumber: 116,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
+                                placeholder: "Icon (Clock, BookOpen, Trophy, Shield)",
+                                value: item.icon,
+                                onChange: (e)=>handleChange(idx, "icon", e.target.value)
+                            }, void 0, false, {
+                                fileName: "[project]/Desktop/avtotest/components/admin/StatisticsManager.tsx",
+                                lineNumber: 130,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
+                                placeholder: "Title",
+                                value: item.title,
+                                onChange: (e)=>handleChange(idx, "title", e.target.value)
+                            }, void 0, false, {
+                                fileName: "[project]/Desktop/avtotest/components/admin/StatisticsManager.tsx",
+                                lineNumber: 135,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
+                                placeholder: "Description",
+                                value: item.description,
+                                onChange: (e)=>handleChange(idx, "description", e.target.value)
+                            }, void 0, false, {
+                                fileName: "[project]/Desktop/avtotest/components/admin/StatisticsManager.tsx",
+                                lineNumber: 140,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, idx, true, {
+                        fileName: "[project]/Desktop/avtotest/components/admin/StatisticsManager.tsx",
+                        lineNumber: 115,
+                        columnNumber: 11
+                    }, this))
             }, void 0, false, {
                 fileName: "[project]/Desktop/avtotest/components/admin/StatisticsManager.tsx",
-                lineNumber: 110,
+                lineNumber: 113,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                onClick: handleSave,
+                className: "w-full",
+                children: "Save Statistics"
+            }, void 0, false, {
+                fileName: "[project]/Desktop/avtotest/components/admin/StatisticsManager.tsx",
+                lineNumber: 149,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Desktop/avtotest/components/admin/StatisticsManager.tsx",
-        lineNumber: 87,
+        lineNumber: 104,
         columnNumber: 5
     }, this);
 }

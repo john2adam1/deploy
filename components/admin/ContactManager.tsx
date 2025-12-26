@@ -17,8 +17,6 @@ export default function ContactManager() {
         .from("site_content")
         .select("content")
         .eq("type", "contact")
-        .order("updated_at", { ascending: false })
-        .limit(1)
         .maybeSingle()
 
       if (!error && data?.content) {
@@ -38,22 +36,34 @@ export default function ContactManager() {
       email
     }
 
-    // Delete all existing records with this type to avoid duplicates
-    await supabase
+    // Check if record exists
+    const { data: existing } = await supabase
       .from("site_content")
-      .delete()
+      .select("id")
       .eq("type", "contact")
+      .maybeSingle()
 
-    // Insert new record
-    const { error } = await supabase
-      .from("site_content")
-      .insert({ type: "contact", content: newContent })
+    let error
+    if (existing) {
+      // Update existing record
+      const { error: updateError } = await supabase
+        .from("site_content")
+        .update({ content: newContent })
+        .eq("type", "contact")
+      error = updateError
+    } else {
+      // Insert new record
+      const { error: insertError } = await supabase
+        .from("site_content")
+        .insert({ type: "contact", content: newContent })
+      error = insertError
+    }
 
     if (!error) {
       alert("Contact info updated!")
     } else {
-      alert(`Error updating contact info: ${error.message}`)
-      console.error(error)
+      alert(`Error updating contact info: ${error.message || "Failed to update"}`)
+      console.error("Error updating contact info:", error)
     }
   }
 

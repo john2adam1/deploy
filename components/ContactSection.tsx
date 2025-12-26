@@ -1,49 +1,24 @@
-"use client"
-
-import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { getSupabaseBrowserClient } from "@/lib/supabase/client"
+import { getSupabaseServerClient } from "@/lib/supabase/server"
 
-export function ContactSection() {
-  const [contact, setContact] = useState({
+export async function ContactSection() {
+  const supabase = await getSupabaseServerClient()
+  
+  const { data, error } = await supabase
+    .from("site_content")
+    .select("content")
+    .eq("type", "contact")
+    .maybeSingle()
+
+  if (error) {
+    console.error("Error fetching contact info:", error)
+  }
+
+  const contact = data?.content ?? {
     telegram: "",
     telegram_link: "",
     email: ""
-  })
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const supabase = getSupabaseBrowserClient()
-        const { data, error } = await supabase
-          .from("site_content")
-          .select("content")
-          .eq("type", "contact")
-          .order("updated_at", { ascending: false })
-          .limit(1)
-          .maybeSingle()
-
-        if (error) {
-          // Only log meaningful errors
-          if (error.code && error.message) {
-            console.error("Error fetching contact section:", error.message, error.code)
-          }
-          return
-        }
-
-        if (data?.content) {
-          setContact({
-            telegram: data.content.telegram || "",
-            telegram_link: data.content.telegram_link || "",
-            email: data.content.email || ""
-          })
-        }
-      } catch (err) {
-        console.error("Unexpected error in ContactSection:", err)
-      }
-    }
-    fetchData()
-  }, [])
+  }
 
   return (
     <section className="mt-32 mb-32">

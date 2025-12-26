@@ -115,27 +115,18 @@ function ContactSection() {
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "ContactSection.useEffect": ()=>{
             async function fetchData() {
-                try {
-                    const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getSupabaseBrowserClient"])();
-                    const { data, error } = await supabase.from("site_content").select("content").eq("type", "contact").order("updated_at", {
-                        ascending: false
-                    }).limit(1).maybeSingle();
-                    if (error) {
-                        // Only log meaningful errors
-                        if (error.code && error.message) {
-                            console.error("Error fetching contact section:", error.message, error.code);
-                        }
-                        return;
-                    }
-                    if (data?.content) {
-                        setContact({
-                            telegram: data.content.telegram || "",
-                            telegram_link: data.content.telegram_link || "",
-                            email: data.content.email || ""
-                        });
-                    }
-                } catch (err) {
-                    console.error("Unexpected error in ContactSection:", err);
+                const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getSupabaseBrowserClient"])();
+                const { data, error } = await supabase.from("site_content").select("content").eq("type", "contact").maybeSingle();
+                if (error) {
+                    console.error("Error fetching contact info:", error);
+                    return;
+                }
+                if (data?.content) {
+                    setContact({
+                        telegram: data.content.telegram || "",
+                        telegram_link: data.content.telegram_link || "",
+                        email: data.content.email || ""
+                    });
                 }
             }
             fetchData();
@@ -151,7 +142,7 @@ function ContactSection() {
                     children: "Contact Us"
                 }, void 0, false, {
                     fileName: "[project]/Desktop/avtotest/components/ContactSection.tsx",
-                    lineNumber: 51,
+                    lineNumber: 42,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -159,7 +150,7 @@ function ContactSection() {
                     children: "Have questions or want to purchase a subscription? Get in touch with us."
                 }, void 0, false, {
                     fileName: "[project]/Desktop/avtotest/components/ContactSection.tsx",
-                    lineNumber: 52,
+                    lineNumber: 43,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -174,13 +165,13 @@ function ContactSection() {
                                     children: contact.telegram
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/avtotest/components/ContactSection.tsx",
-                                    lineNumber: 58,
+                                    lineNumber: 49,
                                     columnNumber: 23
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/avtotest/components/ContactSection.tsx",
-                            lineNumber: 57,
+                            lineNumber: 48,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -193,12 +184,12 @@ function ContactSection() {
                                 children: "Contact via Telegram"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/avtotest/components/ContactSection.tsx",
-                                lineNumber: 62,
+                                lineNumber: 53,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Desktop/avtotest/components/ContactSection.tsx",
-                            lineNumber: 61,
+                            lineNumber: 52,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -210,30 +201,30 @@ function ContactSection() {
                                     children: contact.email
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/avtotest/components/ContactSection.tsx",
-                                    lineNumber: 72,
+                                    lineNumber: 63,
                                     columnNumber: 20
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/avtotest/components/ContactSection.tsx",
-                            lineNumber: 71,
+                            lineNumber: 62,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/avtotest/components/ContactSection.tsx",
-                    lineNumber: 56,
+                    lineNumber: 47,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Desktop/avtotest/components/ContactSection.tsx",
-            lineNumber: 50,
+            lineNumber: 41,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Desktop/avtotest/components/ContactSection.tsx",
-        lineNumber: 49,
+        lineNumber: 40,
         columnNumber: 5
     }, this);
 }
@@ -269,53 +260,33 @@ function MainSection() {
     const [content, setContent] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
         title: "",
         highlight: "",
-        description: "",
-        primary_button: {
-            text: "",
-            link: ""
-        },
-        secondary_button: {
-            text: "",
-            link: ""
-        }
+        description: ""
     });
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "MainSection.useEffect": ()=>{
             async function fetchData() {
-                try {
-                    const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getSupabaseBrowserClient"])();
-                    const { data, error } = await supabase.from("site_content").select("content").eq("type", "main_section").order("updated_at", {
-                        ascending: false
-                    }).limit(1).maybeSingle();
-                    if (error) {
-                        // Only log meaningful errors (not empty objects or "not found" errors)
-                        if (error.code && error.message) {
-                            console.error("Error fetching main section:", error.message, error.code);
-                        }
-                        return;
-                    }
-                    if (data?.content) {
-                        setContent(data.content);
-                    }
-                } catch (err) {
-                    // Handle unexpected errors
-                    console.error("Unexpected error in MainSection:", err);
+                const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getSupabaseBrowserClient"])();
+                const { data, error } = await supabase.from("site_content").select("content").eq("type", "main_section").maybeSingle();
+                if (error) {
+                    console.error("Error fetching main section:", error);
+                    return;
+                }
+                if (data?.content) {
+                    setContent(data.content);
                 }
             }
             fetchData();
         }
     }["MainSection.useEffect"], []);
-    // title ichidagi highlight span bilan ajratib beriladi
-    const title = content?.title || "";
-    const highlight = content?.highlight || "";
-    const parts = title && highlight ? title.split(highlight) : [
+    const { title, highlight, description } = content;
+    const parts = highlight ? title.split(highlight) : [
         title
     ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "mx-auto max-w-4xl text-center",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                className: "text-balance text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl",
+                className: "text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl",
                 children: [
                     parts[0],
                     highlight && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -323,74 +294,74 @@ function MainSection() {
                         children: highlight
                     }, void 0, false, {
                         fileName: "[project]/Desktop/avtotest/components/MainSection.tsx",
-                        lineNumber: 57,
+                        lineNumber: 51,
                         columnNumber: 23
                     }, this),
                     parts[1]
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/avtotest/components/MainSection.tsx",
-                lineNumber: 55,
+                lineNumber: 49,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                className: "mt-6 text-pretty text-lg text-muted-foreground sm:text-xl",
-                children: content?.description || ""
+                className: "mt-6 text-lg text-muted-foreground sm:text-xl",
+                children: description
             }, void 0, false, {
                 fileName: "[project]/Desktop/avtotest/components/MainSection.tsx",
-                lineNumber: 61,
+                lineNumber: 55,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "mt-10 flex justify-center gap-4",
                 children: [
-                    content?.primary_button?.text && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                         asChild: true,
                         size: "lg",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                             href: "/register",
-                            children: content.primary_button.text
+                            children: "Start Free Trial"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/avtotest/components/MainSection.tsx",
-                            lineNumber: 68,
-                            columnNumber: 13
+                            lineNumber: 61,
+                            columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Desktop/avtotest/components/MainSection.tsx",
-                        lineNumber: 67,
-                        columnNumber: 11
+                        lineNumber: 60,
+                        columnNumber: 9
                     }, this),
-                    content?.secondary_button?.text && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                         asChild: true,
                         variant: "outline",
                         size: "lg",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                             href: "/login",
-                            children: content.secondary_button.text
+                            children: "Sign In"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/avtotest/components/MainSection.tsx",
-                            lineNumber: 76,
-                            columnNumber: 13
+                            lineNumber: 65,
+                            columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Desktop/avtotest/components/MainSection.tsx",
-                        lineNumber: 75,
-                        columnNumber: 11
+                        lineNumber: 64,
+                        columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/avtotest/components/MainSection.tsx",
-                lineNumber: 65,
+                lineNumber: 59,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Desktop/avtotest/components/MainSection.tsx",
-        lineNumber: 54,
+        lineNumber: 48,
         columnNumber: 5
     }, this);
 }
-_s(MainSection, "JvcGoMBsCNwy7z2Fj6voYxP8BCo=");
+_s(MainSection, "KXstoE9hCuyQs8WvJg74Zp23FlA=");
 _c = MainSection;
 var _c;
 __turbopack_context__.k.register(_c, "MainSection");
@@ -430,29 +401,23 @@ function Statistics() {
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "Statistics.useEffect": ()=>{
             async function fetchData() {
-                try {
-                    const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getSupabaseBrowserClient"])();
-                    const { data, error } = await supabase.from("site_content").select("content").eq("type", "statistics").order("updated_at", {
-                        ascending: false
-                    }).limit(1).maybeSingle();
-                    if (error) {
-                        if (error.code && error.message) {
-                            console.error("Error fetching statistics:", error.message, error.code);
-                        }
-                        return;
-                    }
-                    if (data?.content) {
-                        // Ensure content is always an array
-                        const content = Array.isArray(data.content) ? data.content : [];
-                        setStats(content);
-                    }
-                } catch (err) {
-                    console.error("Unexpected error in Statistics:", err);
+                const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getSupabaseBrowserClient"])();
+                const { data, error } = await supabase.from("site_content").select("content").eq("type", "statistics").maybeSingle();
+                if (error) {
+                    console.error("Error fetching statistics:", error);
+                    return;
+                }
+                if (data?.content) {
+                    const content = Array.isArray(data.content) ? data.content : [];
+                    setStats(content);
                 }
             }
             fetchData();
         }
     }["Statistics.useEffect"], []);
+    if (stats.length === 0) {
+        return null;
+    }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "mt-24 grid gap-8 sm:grid-cols-2 lg:grid-cols-4",
         children: stats.map((item, idx)=>{
@@ -466,12 +431,12 @@ function Statistics() {
                             className: "h-6 w-6 text-primary"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/avtotest/components/Statistics.tsx",
-                            lineNumber: 50,
+                            lineNumber: 51,
                             columnNumber: 15
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Desktop/avtotest/components/Statistics.tsx",
-                        lineNumber: 49,
+                        lineNumber: 50,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -479,7 +444,7 @@ function Statistics() {
                         children: item.title
                     }, void 0, false, {
                         fileName: "[project]/Desktop/avtotest/components/Statistics.tsx",
-                        lineNumber: 52,
+                        lineNumber: 53,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -487,19 +452,19 @@ function Statistics() {
                         children: item.description
                     }, void 0, false, {
                         fileName: "[project]/Desktop/avtotest/components/Statistics.tsx",
-                        lineNumber: 53,
+                        lineNumber: 54,
                         columnNumber: 13
                     }, this)
                 ]
             }, idx, true, {
                 fileName: "[project]/Desktop/avtotest/components/Statistics.tsx",
-                lineNumber: 48,
+                lineNumber: 49,
                 columnNumber: 11
             }, this);
         })
     }, void 0, false, {
         fileName: "[project]/Desktop/avtotest/components/Statistics.tsx",
-        lineNumber: 44,
+        lineNumber: 45,
         columnNumber: 5
     }, this);
 }

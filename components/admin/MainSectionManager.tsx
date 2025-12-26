@@ -9,80 +9,73 @@ export default function MainSectionManager() {
   const [title, setTitle] = useState("")
   const [highlight, setHighlight] = useState("")
   const [description, setDescription] = useState("")
-  const [primaryText, setPrimaryText] = useState("")
-  const [secondaryText, setSecondaryText] = useState("")
 
   useEffect(() => {
     async function fetchData() {
       const supabase = getSupabaseBrowserClient()
-      const { data, error } = await supabase
+
+      const { data } = await supabase
         .from("site_content")
         .select("content")
         .eq("type", "main_section")
-        .order("updated_at", { ascending: false })
-        .limit(1)
         .maybeSingle()
 
-      if (!error && data?.content) {
-        const c = data.content
-        setTitle(c.title || "")
-        setHighlight(c.highlight || "")
-        setDescription(c.description || "")
-        setPrimaryText(c.primary_button?.text || "")
-        setSecondaryText(c.secondary_button?.text || "")
+      if (data?.content) {
+        setTitle(data.content.title || "")
+        setHighlight(data.content.highlight || "")
+        setDescription(data.content.description || "")
       }
     }
+
     fetchData()
   }, [])
 
   async function handleSave() {
     const supabase = getSupabaseBrowserClient()
-    const newContent = {
+
+    const content = {
       title,
       highlight,
-      description,
-      primary_button: { text: primaryText, link: "/register" },
-      secondary_button: { text: secondaryText, link: "/login" }
+      description
     }
 
-    // Delete all existing records with this type to avoid duplicates
-    await supabase
+    // Check if record exists
+    const { data: existing } = await supabase
       .from("site_content")
-      .delete()
+      .select("id")
       .eq("type", "main_section")
+      .maybeSingle()
 
-    // Insert new record
-    const { error } = await supabase
-      .from("site_content")
-      .insert({ type: "main_section", content: newContent })
+    let error
+    if (existing) {
+      // Update existing record
+      const { error: updateError } = await supabase
+        .from("site_content")
+        .update({ content })
+        .eq("type", "main_section")
+      error = updateError
+    } else {
+      // Insert new record
+      const { error: insertError } = await supabase
+        .from("site_content")
+        .insert({
+          type: "main_section",
+          content
+        })
+      error = insertError
+    }
 
     if (!error) {
-      alert("Main section updated!")
-      // Refresh the data
-      const { data } = await supabase
-        .from("site_content")
-        .select("content")
-        .eq("type", "main_section")
-        .order("updated_at", { ascending: false })
-        .limit(1)
-        .maybeSingle()
-      if (data?.content) {
-        const c = data.content
-        setTitle(c.title || "")
-        setHighlight(c.highlight || "")
-        setDescription(c.description || "")
-        setPrimaryText(c.primary_button?.text || "")
-        setSecondaryText(c.secondary_button?.text || "")
-      }
+      alert("Main section updated")
     } else {
-      alert(`Error updating main section: ${error.message}`)
-      console.error("Full error:", error)
+      alert(`Error: ${error.message || "Failed to update"}`)
+      console.error("Error updating main section:", error)
     }
   }
 
   return (
     <div className="space-y-4 max-w-md mx-auto p-4">
-      <h2 className="text-2xl font-bold">Main Section Settings</h2>
+      <h2 className="text-2xl font-bold">Main Section</h2>
 
       <Input
         placeholder="Title"
@@ -91,7 +84,7 @@ export default function MainSectionManager() {
       />
 
       <Input
-        placeholder="Highlight (span text)"
+        placeholder="Highlight text"
         value={highlight}
         onChange={e => setHighlight(e.target.value)}
       />
@@ -100,18 +93,6 @@ export default function MainSectionManager() {
         placeholder="Description"
         value={description}
         onChange={e => setDescription(e.target.value)}
-      />
-
-      <Input
-        placeholder="Primary button text (Sign Up)"
-        value={primaryText}
-        onChange={e => setPrimaryText(e.target.value)}
-      />
-
-      <Input
-        placeholder="Secondary button text (Sign In)"
-        value={secondaryText}
-        onChange={e => setSecondaryText(e.target.value)}
       />
 
       <Button onClick={handleSave}>Save</Button>

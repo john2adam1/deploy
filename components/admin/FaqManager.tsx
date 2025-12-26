@@ -12,23 +12,14 @@ export default function FaqManager() {
   const [answer, setAnswer] = useState("")
 
   const fetchFaqs = async () => {
-    try {
-      const supabase = getSupabaseBrowserClient()
-      const { data, error } = await supabase
-        .from("site_content")
-        .select("*")
-        .eq("type", "faq")
+    const supabase = getSupabaseBrowserClient()
+    const { data, error } = await supabase
+      .from("site_content")
+      .select("*")
+      .eq("type", "faq")
 
-      if (error) {
-        if (error.code && error.message) {
-          console.error("Error fetching FAQs:", error.message, error.code)
-        }
-        return
-      }
-
+    if (!error && data) {
       setFaqs(Array.isArray(data) ? data : [])
-    } catch (err) {
-      console.error("Unexpected error fetching FAQs:", err)
     }
   }
 
@@ -38,27 +29,21 @@ export default function FaqManager() {
       return
     }
 
-    try {
-      const supabase = getSupabaseBrowserClient()
-      const { error } = await supabase
-        .from("site_content")
-        .insert({
-          type: "faq",
-          title: question,
-          content: answer,
-        })
+    const supabase = getSupabaseBrowserClient()
+    const { error } = await supabase
+      .from("site_content")
+      .insert({
+        type: "faq",
+        title: question,
+        content: answer,
+      })
 
-      if (!error) {
-        setQuestion("")
-        setAnswer("")
-        fetchFaqs()
-      } else {
-        alert(`Error adding FAQ: ${error.message}`)
-        console.error(error)
-      }
-    } catch (err) {
-      alert("Unexpected error adding FAQ")
-      console.error(err)
+    if (!error) {
+      setQuestion("")
+      setAnswer("")
+      fetchFaqs()
+    } else {
+      alert(`Error adding FAQ: ${error.message}`)
     }
   }
 

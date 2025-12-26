@@ -1,139 +1,60 @@
-[00:00:04.110] Server  LOG      ✓ Ready in 3.5s
-[00:00:11.512] Server  LOG      ○ Compiling / ...
-[00:00:18.313] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:18.556] Browser WARN    GoTrueClient@sb-lgacbbewpuzeyxijzfii-auth-token:1 (2.89.0) 2025-12-25T10:52:27.469Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.
-[00:00:18.556] Browser WARN    GoTrueClient@sb-lgacbbewpuzeyxijzfii-auth-token:2 (2.89.0) 2025-12-25T10:52:27.475Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.
-[00:00:18.556] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:18.556] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:18.556] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766659947514}
-[00:00:19.441] Browser ERROR   uncaughtError: TypeError: stats.map is not a function
-[00:00:45.164] Server  LOG      ✓ Compiled in 244ms
-[00:00:45.217] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:00:46.694] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:48.188] Browser WARN    GoTrueClient@sb-lgacbbewpuzeyxijzfii-auth-token:1 (2.89.0) 2025-12-25T10:52:56.064Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.
-[00:00:48.189] Browser WARN    GoTrueClient@sb-lgacbbewpuzeyxijzfii-auth-token:2 (2.89.0) 2025-12-25T10:52:56.099Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.
-[00:00:48.189] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:48.189] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:48.189] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766659976167}
-[00:00:48.189] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'split')
-[00:00:58.293] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:58.455] Browser WARN    GoTrueClient@sb-lgacbbewpuzeyxijzfii-auth-token:1 (2.89.0) 2025-12-25T10:53:07.404Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.
-[00:00:58.455] Browser WARN    GoTrueClient@sb-lgacbbewpuzeyxijzfii-auth-token:2 (2.89.0) 2025-12-25T10:53:07.420Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.
-[00:00:58.455] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:58.455] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:58.455] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766659987425}
-[00:00:58.808] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'split')
-[00:01:48.837] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:01:48.846] Server  LOG      ✓ Compiled in 137ms
-[00:01:51.602] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:52.916] Server  LOG      ✓ Compiled in 149ms
-[00:01:53.182] Browser WARN    GoTrueClient@sb-lgacbbewpuzeyxijzfii-auth-token:1 (2.89.0) 2025-12-25T10:54:01.047Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.
-[00:01:53.182] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:01:53.182] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:01:53.182] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766660041171}
-[00:02:01.841] Server  LOG      ✓ Compiled in 143ms
-[00:03:22.764] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766660131717}
-[00:03:34.587] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766660143549}
-[00:03:35.845] Browser ERROR   A component is changing a controlled input to be uncontrolled. This is likely caused by the value changing from a defined to undefined, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://react.dev/link/controlled-components
-[00:04:14.153] Browser ERROR   A component is changing an uncontrolled input to be controlled. This is likely caused by the value changing from undefined to a defined value, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://react.dev/link/controlled-components
-[00:05:34.742] Server  LOG      ✓ Compiled in 132ms
-[00:05:36.704] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\[root-of-the-server]__ce704eac._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:05:36.714] Server  ERROR    ⨯ ReferenceError: StatisticsManager is not defined
-[00:05:37.197] Browser ERROR   uncaughtError: ReferenceError: StatisticsManager is not defined
-[00:05:50.027] Server  ERROR    ⨯ ./Desktop/avtotest/app/admin/page.tsx:12:1
-Module not found: Can't resolve '@/components/admin/StatisticsManager'
-  10 | import ContactManager from "@/components/admin/ContactManager"
-  11 | import MainSectionManager from "@/components/admin/MainSectionManager"
-> 12 | import StatisticsManager from "@/components/admin/StatisticsManager"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 |
-  15 |
-
-Import map: aliased to relative './components/admin/StatisticsManager' inside of [project]/Desktop/avtotest
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:05:50.030] Server  ERROR    ⨯ ./Desktop/avtotest/app/admin/page.tsx:12:1
-Module not found: Can't resolve '@/components/admin/StatisticsManager'
-  10 | import ContactManager from "@/components/admin/ContactManager"
-  11 | import MainSectionManager from "@/components/admin/MainSectionManager"
-> 12 | import StatisticsManager from "@/components/admin/StatisticsManager"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 |
-  15 |
-
-Import map: aliased to relative './components/admin/StatisticsManager' inside of [project]/Desktop/avtotest
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:05:50.035] Server  ERROR    ⨯ ./Desktop/avtotest/app/admin/page.tsx:12:1
-Module not found: Can't resolve '@/components/admin/StatisticsManager'
-  10 | import ContactManager from "@/components/admin/ContactManager"
-  11 | import MainSectionManager from "@/components/admin/MainSectionManager"
-> 12 | import StatisticsManager from "@/components/admin/StatisticsManager"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 |
-  15 |
-
-Import map: aliased to relative './components/admin/StatisticsManager' inside of [project]/Desktop/avtotest
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:05:50.037] Server  ERROR    ⨯ ./Desktop/avtotest/app/admin/page.tsx:12:1
-Module not found: Can't resolve '@/components/admin/StatisticsManager'
-  10 | import ContactManager from "@/components/admin/ContactManager"
-  11 | import MainSectionManager from "@/components/admin/MainSectionManager"
-> 12 | import StatisticsManager from "@/components/admin/StatisticsManager"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 |
-  15 |
-
-Import map: aliased to relative './components/admin/StatisticsManager' inside of [project]/Desktop/avtotest
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:05:50.182] Browser ERROR   ./Desktop/avtotest/app/admin/page.tsx:12:1
-Module not found: Can't resolve '@/components/admin/StatisticsManager'
-  10 | import ContactManager from "@/components/admin/ContactManager"
-  11 | import MainSectionManager from "@/components/admin/MainSectionManager"
-> 12 | import StatisticsManager from "@/components/admin/StatisticsManager"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 |
-  15 |
-
-Import map: aliased to relative './components/admin/StatisticsManager' inside of [project]/Desktop/avtotest
-
-https://nextjs.org/docs/messages/module-not-found
-[00:06:14.185] Browser ERROR   ./Desktop/avtotest/app/admin/page.tsx:12:1
-Module not found: Can't resolve '@/components/admin/StatisticsManager'
-  10 | import ContactManager from "@/components/admin/ContactManager"
-  11 | import MainSectionManager from "@/components/admin/MainSectionManager"
-> 12 | import StatisticsManager from "@/components/admin/StatisticsManager"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 |
-  15 |
-
-Import map: aliased to relative './components/admin/StatisticsManager' inside of [project]/Desktop/avtotest
-
-https://nextjs.org/docs/messages/module-not-found
-[00:06:24.714] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:06:24.739] Server  LOG      ✓ Compiled in 143ms
-[00:06:41.679] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:43.187] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[00:00:04.638] Server  LOG      ✓ Ready in 3.5s
+[00:00:25.883] Server  LOG      ○ Compiling / ...
+[00:00:36.108] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:36.461] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:36.461] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:36.461] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766750152204}
+[00:00:37.474] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
+[00:00:47.839] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:48.087] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:48.088] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/admin","route":"/admin"}
+[00:00:48.088] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766750163832}
+[00:02:22.875] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
+[00:02:23.141] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:23.352] Browser WARN    Image with src "/about.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:02:23.352] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:02:23.352] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:02:23.353] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766750259105}
+[00:02:40.901] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
+[00:02:41.212] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:41.727] Browser WARN    Image with src "/about.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:02:41.728] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:02:41.728] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:02:41.728] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766750277338}
+[00:02:54.173] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:54.174] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
+[00:02:54.438] Browser WARN    Image with src "/about.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:02:54.438] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:02:54.438] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:02:54.438] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766750290188}
+[00:05:29.445] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
+[00:05:29.914] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
+[00:15:45.699] Server  LOG      ✓ Compiled in 905ms
+[00:15:48.783] Server  LOG      ✓ Compiled in 167ms
+[00:15:52.418] Server  LOG      ✓ Compiled in 142ms
+[00:15:55.672] Server  LOG      ✓ Compiled in 145ms
+[00:16:02.785] Server  LOG      ✓ Compiled in 180ms
+[00:16:06.443] Server  LOG      ✓ Compiled in 92ms
+[00:16:09.087] Server  LOG      ✓ Compiled in 89ms
+[00:16:44.204] Server  LOG      ✓ Compiled in 369ms
+[00:17:02.604] Server  LOG      ✓ Compiled in 287ms
+[00:17:12.473] Server  LOG      ✓ Compiled in 104ms
+[00:17:46.639] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:46.678] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
+[00:17:47.114] Browser WARN    Image with src "/about.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:17:47.114] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:17:47.114] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:17:47.114] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766751182860}
+[00:18:20.208] Browser ERROR   Error updating main section: {"code":"42P10","details":null,"hint":null,"message":"there is no unique or exclusion constraint matching the ON CONFLICT specification"}
+[00:18:43.431] Browser ERROR   Error updating about section: {"code":"42P10","details":null,"hint":null,"message":"there is no unique or exclusion constraint matching the ON CONFLICT specification"}
+[00:19:06.811] Browser ERROR   Error updating statistics: {"code":"42P10","details":null,"hint":null,"message":"there is no unique or exclusion constraint matching the ON CONFLICT specification"}
+[00:19:35.276] Browser ERROR   Error updating contact info: {"code":"42P10","details":null,"hint":null,"message":"there is no unique or exclusion constraint matching the ON CONFLICT specification"}
+[00:20:15.948] Server  LOG      ✓ Compiled in 259ms
+[00:20:21.050] Server  LOG      ✓ Compiled in 111ms
+[00:20:33.677] Server  LOG      ✓ Compiled in 186ms
+[00:20:38.485] Server  LOG      ✓ Compiled in 96ms
+[00:21:18.888] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:19.217] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -163,7 +84,7 @@ It can also happen if the client has a browser extension installed which messes 
                               ref={function}
                               type="button"
 +                             id="radix-_R_l5esndlb_"
--                             id="radix-_R_535esndlb_"
+-                             id="radix-_R_2j5esndlb_"
                               aria-haspopup="menu"
                               aria-expanded={false}
                               aria-controls={undefined}
@@ -175,384 +96,70 @@ It can also happen if the client has a browser extension installed which messes 
                             >
         ...
 
-[00:06:44.179] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:06:44.179] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/admin","route":"/admin"}
-[00:06:44.179] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766660332545}
-[00:09:18.237] Server  LOG      ✓ Compiled in 111ms
-[00:09:19.192] Browser ERROR   uncaughtError: ReferenceError: primaryLink is not defined
-[00:09:20.460] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:09:20.481] Server  LOG      ✓ Compiled in 106ms
-[00:09:21.190] Browser ERROR   uncaughtError: ReferenceError: primaryLink is not defined
-[00:09:22.652] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:09:22.679] Server  LOG      ✓ Compiled in 99ms
-[00:09:23.255] Browser ERROR   uncaughtError: ReferenceError: primaryLink is not defined
-[00:09:23.294] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\Desktop_avtotest_6881921d._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:09:23.296] Server  ERROR    ⨯ ReferenceError: primaryLink is not defined
-[00:09:24.390] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:09:25.880] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:09:25.880] Browser ERROR   uncaughtError: ReferenceError: primaryLink is not defined
-[00:09:25.911] Server  LOG      ✓ Compiled in 92ms
-[00:09:28.620] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:09:29.179] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:09:29.179] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/admin","route":"/admin"}
-[00:09:29.179] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766660498095}
-[00:10:16.338] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:10:16.542] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:10:16.543] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:10:16.543] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766660545514}
-[00:11:48.954] Server  LOG      ✓ Compiled in 94ms
-[00:12:09.867] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:12:10.297] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:12:10.297] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:12:10.297] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766660659262}
-[00:12:11.096] Browser ERROR   Error fetching main section: {"code":"PGRST116","details":"The result contains 2 rows","hint":null,"message":"Cannot coerce the result to a single JSON object"}
-[00:12:59.397] Server  LOG      ✓ Compiled in 72ms
-[00:13:11.597] Server  LOG      ✓ Compiled in 68ms
-[00:14:44.642] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766660813603}
-[00:14:48.637] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766660817601}
-[00:15:04.888] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:15:05.141] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:15:05.141] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/admin","route":"/admin"}
-[00:15:05.141] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766660834103}
-[00:15:12.651] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:15:12.849] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:15:12.850] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:15:12.850] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766660841820}
-[00:15:13.233] Browser ERROR   Error fetching main section: {"code":"42703","details":null,"hint":"Perhaps you meant to reference the column \"site_content.created_at\".","message":"column site_content.updated_at does not exist"}
-[00:15:13.233] Browser ERROR   Error fetching contact section: {"code":"42703","details":null,"hint":"Perhaps you meant to reference the column \"site_content.created_at\".","message":"column site_content.updated_at does not exist"}
-[00:17:47.807] Server  LOG      ✓ Compiled in 124ms
-[00:17:50.592] Server  LOG      ✓ Compiled in 66ms
-[00:17:53.153] Server  LOG      ✓ Compiled in 87ms
-[00:17:55.349] Server  LOG      ✓ Compiled in 117ms
-[00:18:38.668] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:18:38.878] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:18:38.879] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/admin","route":"/admin"}
-[00:18:38.879] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766661047849}
-[00:18:39.555] Browser ERROR   Error fetching statistics: column site_content.updated_at does not exist 42703
-[00:18:39.972] Browser ERROR   Error fetching about: column site_content.updated_at does not exist 42703
-[00:20:16.633] Server  ERROR    ⨯ ./Desktop/avtotest/app/page.tsx:8:1
-Module not found: Can't resolve '@/components/Statistics'
-   6 | import { ContactSection } from "@/components/ContactSection"
-   7 | import { MainSection } from "@/components/MainSection"
->  8 | import { Statistics } from "@/components/Statistics"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 |
-  10 |
-  11 | export default function Home() {
-
-Import map: aliased to relative './components/Statistics' inside of [project]/Desktop/avtotest
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:20:16.641] Server  ERROR    ⨯ ./Desktop/avtotest/app/page.tsx:8:1
-Module not found: Can't resolve '@/components/Statistics'
-   6 | import { ContactSection } from "@/components/ContactSection"
-   7 | import { MainSection } from "@/components/MainSection"
->  8 | import { Statistics } from "@/components/Statistics"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 |
-  10 |
-  11 | export default function Home() {
-
-Import map: aliased to relative './components/Statistics' inside of [project]/Desktop/avtotest
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:20:16.978] Server  ERROR    ⨯ ./Desktop/avtotest/app/page.tsx:8:1
-Module not found: Can't resolve '@/components/Statistics'
-   6 | import { ContactSection } from "@/components/ContactSection"
-   7 | import { MainSection } from "@/components/MainSection"
->  8 | import { Statistics } from "@/components/Statistics"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 |
-  10 |
-  11 | export default function Home() {
-
-Import map: aliased to relative './components/Statistics' inside of [project]/Desktop/avtotest
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:20:16.981] Server  ERROR    ⨯ ./Desktop/avtotest/app/page.tsx:8:1
-Module not found: Can't resolve '@/components/Statistics'
-   6 | import { ContactSection } from "@/components/ContactSection"
-   7 | import { MainSection } from "@/components/MainSection"
->  8 | import { Statistics } from "@/components/Statistics"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 |
-  10 |
-  11 | export default function Home() {
-
-Import map: aliased to relative './components/Statistics' inside of [project]/Desktop/avtotest
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:20:16.999] Server  ERROR    ⨯ ./Desktop/avtotest/app/page.tsx:8:1
-Module not found: Can't resolve '@/components/Statistics'
-   6 | import { ContactSection } from "@/components/ContactSection"
-   7 | import { MainSection } from "@/components/MainSection"
->  8 | import { Statistics } from "@/components/Statistics"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 |
-  10 |
-  11 | export default function Home() {
-
-Import map: aliased to relative './components/Statistics' inside of [project]/Desktop/avtotest
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:20:17.004] Server  ERROR    ⨯ ./Desktop/avtotest/app/page.tsx:8:1
-Module not found: Can't resolve '@/components/Statistics'
-   6 | import { ContactSection } from "@/components/ContactSection"
-   7 | import { MainSection } from "@/components/MainSection"
->  8 | import { Statistics } from "@/components/Statistics"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 |
-  10 |
-  11 | export default function Home() {
-
-Import map: aliased to relative './components/Statistics' inside of [project]/Desktop/avtotest
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:20:17.031] Server  ERROR    ⨯ ./Desktop/avtotest/app/page.tsx:8:1
-Module not found: Can't resolve '@/components/Statistics'
-   6 | import { ContactSection } from "@/components/ContactSection"
-   7 | import { MainSection } from "@/components/MainSection"
->  8 | import { Statistics } from "@/components/Statistics"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 |
-  10 |
-  11 | export default function Home() {
-
-Import map: aliased to relative './components/Statistics' inside of [project]/Desktop/avtotest
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:20:17.037] Server  ERROR    ⨯ ./Desktop/avtotest/app/page.tsx:8:1
-Module not found: Can't resolve '@/components/Statistics'
-   6 | import { ContactSection } from "@/components/ContactSection"
-   7 | import { MainSection } from "@/components/MainSection"
->  8 | import { Statistics } from "@/components/Statistics"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 |
-  10 |
-  11 | export default function Home() {
-
-Import map: aliased to relative './components/Statistics' inside of [project]/Desktop/avtotest
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:20:17.048] Server  ERROR    ⨯ ./Desktop/avtotest/app/page.tsx:8:1
-Module not found: Can't resolve '@/components/Statistics'
-   6 | import { ContactSection } from "@/components/ContactSection"
-   7 | import { MainSection } from "@/components/MainSection"
->  8 | import { Statistics } from "@/components/Statistics"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 |
-  10 |
-  11 | export default function Home() {
-
-Import map: aliased to relative './components/Statistics' inside of [project]/Desktop/avtotest
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:20:17.062] Server  ERROR    ⨯ ./Desktop/avtotest/app/page.tsx:8:1
-Module not found: Can't resolve '@/components/Statistics'
-   6 | import { ContactSection } from "@/components/ContactSection"
-   7 | import { MainSection } from "@/components/MainSection"
->  8 | import { Statistics } from "@/components/Statistics"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 |
-  10 |
-  11 | export default function Home() {
-
-Import map: aliased to relative './components/Statistics' inside of [project]/Desktop/avtotest
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:20:18.182] Browser ERROR   ./Desktop/avtotest/app/page.tsx:8:1
-Module not found: Can't resolve '@/components/Statistics'
-   6 | import { ContactSection } from "@/components/ContactSection"
-   7 | import { MainSection } from "@/components/MainSection"
->  8 | import { Statistics } from "@/components/Statistics"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 |
-  10 |
-  11 | export default function Home() {
-
-Import map: aliased to relative './components/Statistics' inside of [project]/Desktop/avtotest
-
-https://nextjs.org/docs/messages/module-not-found
-[00:20:20.751] Server  ERROR    ⨯ ./Desktop/avtotest/app/admin/page.tsx:12:1
-Module not found: Can't resolve '@/components/admin/StatisticsManager'
-  10 | import ContactManager from "@/components/admin/ContactManager"
-  11 | import MainSectionManager from "@/components/admin/MainSectionManager"
-> 12 | import StatisticsManager from "@/components/admin/StatisticsManager"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 |
-  15 |
-
-Import map: aliased to relative './components/admin/StatisticsManager' inside of [project]/Desktop/avtotest
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:20:20.755] Server  ERROR    ⨯ ./Desktop/avtotest/app/admin/page.tsx:12:1
-Module not found: Can't resolve '@/components/admin/StatisticsManager'
-  10 | import ContactManager from "@/components/admin/ContactManager"
-  11 | import MainSectionManager from "@/components/admin/MainSectionManager"
-> 12 | import StatisticsManager from "@/components/admin/StatisticsManager"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 |
-  15 |
-
-Import map: aliased to relative './components/admin/StatisticsManager' inside of [project]/Desktop/avtotest
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:20:20.794] Server  ERROR    ⨯ ./Desktop/avtotest/app/admin/page.tsx:12:1
-Module not found: Can't resolve '@/components/admin/StatisticsManager'
-  10 | import ContactManager from "@/components/admin/ContactManager"
-  11 | import MainSectionManager from "@/components/admin/MainSectionManager"
-> 12 | import StatisticsManager from "@/components/admin/StatisticsManager"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 |
-  15 |
-
-Import map: aliased to relative './components/admin/StatisticsManager' inside of [project]/Desktop/avtotest
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:20:20.799] Server  ERROR    ⨯ ./Desktop/avtotest/app/admin/page.tsx:12:1
-Module not found: Can't resolve '@/components/admin/StatisticsManager'
-  10 | import ContactManager from "@/components/admin/ContactManager"
-  11 | import MainSectionManager from "@/components/admin/MainSectionManager"
-> 12 | import StatisticsManager from "@/components/admin/StatisticsManager"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 |
-  15 |
-
-Import map: aliased to relative './components/admin/StatisticsManager' inside of [project]/Desktop/avtotest
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:20:20.804] Server  ERROR    ⨯ ./Desktop/avtotest/app/admin/page.tsx:12:1
-Module not found: Can't resolve '@/components/admin/StatisticsManager'
-  10 | import ContactManager from "@/components/admin/ContactManager"
-  11 | import MainSectionManager from "@/components/admin/MainSectionManager"
-> 12 | import StatisticsManager from "@/components/admin/StatisticsManager"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 |
-  15 |
-
-Import map: aliased to relative './components/admin/StatisticsManager' inside of [project]/Desktop/avtotest
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:20:20.808] Server  ERROR    ⨯ ./Desktop/avtotest/app/admin/page.tsx:12:1
-Module not found: Can't resolve '@/components/admin/StatisticsManager'
-  10 | import ContactManager from "@/components/admin/ContactManager"
-  11 | import MainSectionManager from "@/components/admin/MainSectionManager"
-> 12 | import StatisticsManager from "@/components/admin/StatisticsManager"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 |
-  15 |
-
-Import map: aliased to relative './components/admin/StatisticsManager' inside of [project]/Desktop/avtotest
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:20:20.830] Server  LOG      ✓ Compiled in 179ms
-[00:20:21.181] Browser ERROR   ./Desktop/avtotest/app/page.tsx:8:1
-Module not found: Can't resolve '@/components/Statistics'
-   6 | import { ContactSection } from "@/components/ContactSection"
-   7 | import { MainSection } from "@/components/MainSection"
->  8 | import { Statistics } from "@/components/Statistics"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 |
-  10 |
-  11 | export default function Home() {
-
-Import map: aliased to relative './components/Statistics' inside of [project]/Desktop/avtotest
-
-https://nextjs.org/docs/messages/module-not-found
-[00:20:21.181] Browser ERROR   ./Desktop/avtotest/app/admin/page.tsx:12:1
-Module not found: Can't resolve '@/components/admin/StatisticsManager'
-  10 | import ContactManager from "@/components/admin/ContactManager"
-  11 | import MainSectionManager from "@/components/admin/MainSectionManager"
-> 12 | import StatisticsManager from "@/components/admin/StatisticsManager"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  13 |
-  14 |
-  15 |
-
-Import map: aliased to relative './components/admin/StatisticsManager' inside of [project]/Desktop/avtotest
-
-https://nextjs.org/docs/messages/module-not-found
-[00:20:36.738] Server  LOG      ✓ Compiled in 134ms
-[00:20:37.189] Browser ERROR   ./Desktop/avtotest/app/page.tsx:8:1
-Module not found: Can't resolve '@/components/Statistics'
-   6 | import { ContactSection } from "@/components/ContactSection"
-   7 | import { MainSection } from "@/components/MainSection"
->  8 | import { Statistics } from "@/components/Statistics"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   9 |
-  10 |
-  11 | export default function Home() {
-
-Import map: aliased to relative './components/Statistics' inside of [project]/Desktop/avtotest
-
-https://nextjs.org/docs/messages/module-not-found
-[00:20:49.402] Server  LOG      ✓ Compiled in 71ms
-[00:20:54.190] Browser ERROR   Error fetching about: column site_content.updated_at does not exist 42703
-[00:20:54.190] Browser ERROR   Error fetching about: column site_content.updated_at does not exist 42703
-[00:21:00.967] Server  LOG      ✓ Compiled in 73ms
-[00:23:18.403] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:23:18.623] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:23:18.623] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:23:18.623] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766661327594}
-[00:23:19.203] Browser ERROR   Error fetching main section: column site_content.updated_at does not exist 42703
-[00:23:19.572] Browser ERROR   Error fetching contact section: column site_content.updated_at does not exist 42703
-[00:23:29.829] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:23:30.023] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:23:30.024] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:23:30.024] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766661338994}
-[00:23:30.346] Browser ERROR   Error fetching contact section: column site_content.updated_at does not exist 42703
-[00:23:30.346] Browser ERROR   Error fetching main section: column site_content.updated_at does not exist 42703
+[00:21:19.218] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:21:19.218] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/admin","route":"/admin"}
+[00:21:19.218] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766751394949}
+[00:22:01.601] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:01.809] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <MenuProvider scope={{Menu:[...], ...}} open={false} onOpenChange={function useCallbackRef.useMemo} content={null} ...>
+      <MenuProvider scope={{Menu:[...], ...}} onClose={function Menu.useCallback} isUsingKeyboardRef={{current:false}} ...>
+        <DropdownMenuTrigger asChild={true}>
+          <MenuAnchor asChild={true} __scopeMenu={{Menu:[...], ...}}>
+            <PopperAnchor __scopePopper={{Menu:[...], ...}} asChild={true} ref={null}>
+              <Primitive.div asChild={true} ref={function}>
+                <Slot ref={function}>
+                  <SlotClone ref={function}>
+                    <Primitive.button type="button" id="radix-_R_l..." aria-haspopup="menu" aria-expanded={false} ...>
+                      <Slot type="button" id="radix-_R_l..." aria-haspopup="menu" aria-expanded={false} ...>
+                        <SlotClone type="button" id="radix-_R_l..." aria-haspopup="menu" aria-expanded={false} ...>
+                          <_c variant="ghost" size="icon" className="rounded-full" type="button" id="radix-_R_l..." ...>
+                            <button
+                              className={"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm fon..."}
+                              ref={function}
+                              type="button"
++                             id="radix-_R_l5esndlb_"
+-                             id="radix-_R_2j5esndlb_"
+                              aria-haspopup="menu"
+                              aria-expanded={false}
+                              aria-controls={undefined}
+                              data-state="closed"
+                              data-disabled={undefined}
+                              disabled={false}
+                              onPointerDown={function handleEvent}
+                              onKeyDown={function handleEvent}
+                            >
+        ...
+
+[00:22:01.809] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:22:01.809] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/admin","route":"/admin"}
+[00:22:01.809] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766751437561}
+[00:22:07.346] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:07.347] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
+[00:22:07.809] Browser WARN    Image with src "/about.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:22:07.809] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:22:07.809] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:22:07.809] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766751443536}
+[00:22:53.170] Server  LOG      ✓ Compiled in 134ms
+[00:23:27.177] Server  LOG      ✓ Compiled in 299ms
+[00:24:19.705] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:19.932] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:24:19.932] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/admin","route":"/admin"}
+[00:24:19.932] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766751575680}
+[00:24:27.226] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:27.233] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
+[00:24:27.687] Browser WARN    Image with src "/about.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:24:27.687] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:24:27.687] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:24:27.687] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766751583392}

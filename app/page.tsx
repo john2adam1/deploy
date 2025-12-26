@@ -5,9 +5,10 @@ import { AboutSection } from "@/components/AboutSection"
 import FAQSection from "@/components/FaqSection"
 import { ContactSection } from "@/components/ContactSection"
 import { MainSection } from "@/components/MainSection"
+import { Statistics } from "@/components/Statistics"
 
 
-export default function Home() {
+export default async function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
       <header className="border-b bg-card">
@@ -29,10 +30,10 @@ export default function Home() {
 
       <main className="container mx-auto px-4 py-16">
         <MainSection />
+        <Statistics />
         <AboutSection />
         <FAQSection />
         <ContactSection />
-
       </main>
     </div>
   )
