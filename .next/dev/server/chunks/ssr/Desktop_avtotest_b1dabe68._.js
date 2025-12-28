@@ -350,6 +350,7 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/avtotest/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/avtotest/node_modules/next/dist/client/app-dir/link.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/avtotest/node_modules/next/navigation.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/avtotest/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/avtotest/components/ui/button.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$book$2d$open$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__BookOpen$3e$__ = __turbopack_context__.i("[project]/Desktop/avtotest/node_modules/lucide-react/dist/esm/icons/book-open.js [app-ssr] (ecmascript) <export default as BookOpen>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$log$2d$out$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__LogOut$3e$__ = __turbopack_context__.i("[project]/Desktop/avtotest/node_modules/lucide-react/dist/esm/icons/log-out.js [app-ssr] (ecmascript) <export default as LogOut>");
@@ -367,9 +368,14 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$compo
 ;
 ;
 ;
+;
 function Navbar({ userEmail, isAdmin }) {
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
     const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getSupabaseBrowserClient"])();
+    const [mounted, setMounted] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        setMounted(true);
+    }, []);
     const handleLogout = async ()=>{
         await supabase.auth.signOut();
         router.push("/login");
@@ -387,7 +393,7 @@ function Navbar({ userEmail, isAdmin }) {
                             className: "h-6 w-6 text-primary"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                            lineNumber: 35,
+                            lineNumber: 41,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -395,13 +401,13 @@ function Navbar({ userEmail, isAdmin }) {
                             children: "TestMaster"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                            lineNumber: 36,
+                            lineNumber: 42,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                    lineNumber: 34,
+                    lineNumber: 40,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -417,22 +423,22 @@ function Navbar({ userEmail, isAdmin }) {
                                         className: "mr-2 h-4 w-4"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                        lineNumber: 43,
+                                        lineNumber: 49,
                                         columnNumber: 17
                                     }, this),
                                     "Admin Panel"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                lineNumber: 42,
+                                lineNumber: 48,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                            lineNumber: 41,
+                            lineNumber: 47,
                             columnNumber: 13
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenu"], {
+                        mounted ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenu"], {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuTrigger"], {
                                     asChild: true,
@@ -446,23 +452,23 @@ function Navbar({ userEmail, isAdmin }) {
                                                 children: userEmail?.charAt(0).toUpperCase() || "U"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                                lineNumber: 53,
-                                                columnNumber: 19
+                                                lineNumber: 60,
+                                                columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                            lineNumber: 52,
-                                            columnNumber: 17
+                                            lineNumber: 59,
+                                            columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                        lineNumber: 51,
-                                        columnNumber: 15
+                                        lineNumber: 58,
+                                        columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                    lineNumber: 50,
-                                    columnNumber: 13
+                                    lineNumber: 57,
+                                    columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuContent"], {
                                     align: "end",
@@ -476,27 +482,27 @@ function Navbar({ userEmail, isAdmin }) {
                                                     children: "Account"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                                    lineNumber: 59,
-                                                    columnNumber: 17
+                                                    lineNumber: 66,
+                                                    columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "text-xs text-muted-foreground",
                                                     children: userEmail
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                                    lineNumber: 60,
-                                                    columnNumber: 17
+                                                    lineNumber: 67,
+                                                    columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                            lineNumber: 58,
-                                            columnNumber: 15
+                                            lineNumber: 65,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuSeparator"], {}, void 0, false, {
                                             fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                            lineNumber: 62,
-                                            columnNumber: 15
+                                            lineNumber: 69,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuItem"], {
                                             asChild: true,
@@ -507,25 +513,25 @@ function Navbar({ userEmail, isAdmin }) {
                                                         className: "mr-2 h-4 w-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                                        lineNumber: 65,
-                                                        columnNumber: 19
+                                                        lineNumber: 72,
+                                                        columnNumber: 21
                                                     }, this),
                                                     "Dashboard"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                                lineNumber: 64,
-                                                columnNumber: 17
+                                                lineNumber: 71,
+                                                columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                            lineNumber: 63,
-                                            columnNumber: 15
+                                            lineNumber: 70,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuSeparator"], {}, void 0, false, {
                                             fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                            lineNumber: 69,
-                                            columnNumber: 15
+                                            lineNumber: 76,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuItem"], {
                                             onClick: handleLogout,
@@ -535,43 +541,65 @@ function Navbar({ userEmail, isAdmin }) {
                                                     className: "mr-2 h-4 w-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                                    lineNumber: 71,
-                                                    columnNumber: 17
+                                                    lineNumber: 78,
+                                                    columnNumber: 19
                                                 }, this),
                                                 "Logout"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                            lineNumber: 70,
-                                            columnNumber: 15
+                                            lineNumber: 77,
+                                            columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                                    lineNumber: 57,
-                                    columnNumber: 13
+                                    lineNumber: 64,
+                                    columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                            lineNumber: 49,
-                            columnNumber: 11
+                            lineNumber: 56,
+                            columnNumber: 13
+                        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                            variant: "ghost",
+                            size: "icon",
+                            className: "rounded-full",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Avatar"], {
+                                className: "h-8 w-8",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AvatarFallback"], {
+                                    children: userEmail?.charAt(0).toUpperCase() || "U"
+                                }, void 0, false, {
+                                    fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
+                                    lineNumber: 86,
+                                    columnNumber: 17
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
+                                lineNumber: 85,
+                                columnNumber: 15
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
+                            lineNumber: 84,
+                            columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-                    lineNumber: 39,
+                    lineNumber: 45,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-            lineNumber: 33,
+            lineNumber: 39,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Desktop/avtotest/components/navbar.tsx",
-        lineNumber: 32,
+        lineNumber: 38,
         columnNumber: 5
     }, this);
 }
@@ -770,6 +798,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$lib$2
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__ = __turbopack_context__.i("[project]/Desktop/avtotest/node_modules/lucide-react/dist/esm/icons/clock.js [app-ssr] (ecmascript) <export default as Clock>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle2$3e$__ = __turbopack_context__.i("[project]/Desktop/avtotest/node_modules/lucide-react/dist/esm/icons/circle-check.js [app-ssr] (ecmascript) <export default as CheckCircle2>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__XCircle$3e$__ = __turbopack_context__.i("[project]/Desktop/avtotest/node_modules/lucide-react/dist/esm/icons/circle-x.js [app-ssr] (ecmascript) <export default as XCircle>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$volume$2d$2$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Volume2$3e$__ = __turbopack_context__.i("[project]/Desktop/avtotest/node_modules/lucide-react/dist/esm/icons/volume-2.js [app-ssr] (ecmascript) <export default as Volume2>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/avtotest/node_modules/next/image.js [app-ssr] (ecmascript)");
 "use client";
 ;
@@ -854,12 +883,12 @@ function TestInterface({ categoryTitle, tests, userId }) {
                             children: "Test Complete!"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                            lineNumber: 98,
+                            lineNumber: 99,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                        lineNumber: 97,
+                        lineNumber: 98,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -876,7 +905,7 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                        lineNumber: 102,
+                                        lineNumber: 103,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -884,13 +913,13 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                         children: "Final Score"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                        lineNumber: 103,
+                                        lineNumber: 104,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                lineNumber: 101,
+                                lineNumber: 102,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -904,7 +933,7 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                                 children: tests.length
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                                lineNumber: 108,
+                                                lineNumber: 109,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -912,13 +941,13 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                                 children: "Total Questions"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                                lineNumber: 109,
+                                                lineNumber: 110,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                        lineNumber: 107,
+                                        lineNumber: 108,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -931,14 +960,14 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                                         className: "h-6 w-6"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                                        lineNumber: 113,
+                                                        lineNumber: 114,
                                                         columnNumber: 19
                                                     }, this),
                                                     results.correct
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                                lineNumber: 112,
+                                                lineNumber: 113,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -946,13 +975,13 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                                 children: "Correct"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                                lineNumber: 116,
+                                                lineNumber: 117,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                        lineNumber: 111,
+                                        lineNumber: 112,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -965,14 +994,14 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                                         className: "h-6 w-6"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                                        lineNumber: 120,
+                                                        lineNumber: 121,
                                                         columnNumber: 19
                                                     }, this),
                                                     results.wrong
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                                lineNumber: 119,
+                                                lineNumber: 120,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -980,19 +1009,19 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                                 children: "Wrong"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                                lineNumber: 123,
+                                                lineNumber: 124,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                        lineNumber: 118,
+                                        lineNumber: 119,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                lineNumber: 106,
+                                lineNumber: 107,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -1001,24 +1030,24 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                 children: "Back to Dashboard"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                lineNumber: 127,
+                                lineNumber: 128,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                        lineNumber: 100,
+                        lineNumber: 101,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                lineNumber: 96,
+                lineNumber: 97,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-            lineNumber: 95,
+            lineNumber: 96,
             columnNumber: 7
         }, this);
     }
@@ -1038,7 +1067,7 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                     children: categoryTitle
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                    lineNumber: 143,
+                                    lineNumber: 144,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1051,13 +1080,13 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                    lineNumber: 144,
+                                    lineNumber: 145,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                            lineNumber: 142,
+                            lineNumber: 143,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1067,7 +1096,7 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                     className: "h-5 w-5 text-primary"
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                    lineNumber: 149,
+                                    lineNumber: 150,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1075,44 +1104,97 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                     children: formatTime(timeLeft)
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                    lineNumber: 150,
+                                    lineNumber: 151,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                            lineNumber: 148,
+                            lineNumber: 149,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                    lineNumber: 141,
+                    lineNumber: 142,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardHeader"], {
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "relative aspect-video w-full overflow-hidden rounded-lg bg-muted",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                    src: currentTest.image_url || "/placeholder.svg",
-                                    alt: "Question image",
-                                    fill: true,
-                                    className: "object-cover"
+                            className: "space-y-4",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "relative aspect-video w-full overflow-hidden rounded-lg bg-muted",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                        src: currentTest.image_url || "/placeholder.svg",
+                                        alt: "Question image",
+                                        fill: true,
+                                        className: "object-cover"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
+                                        lineNumber: 158,
+                                        columnNumber: 15
+                                    }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
                                     lineNumber: 157,
+                                    columnNumber: 13
+                                }, this),
+                                currentTest.audio_url && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "rounded-lg border bg-card p-4",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex items-center gap-3",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$volume$2d$2$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Volume2$3e$__["Volume2"], {
+                                                className: "h-5 w-5 text-primary"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
+                                                lineNumber: 168,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex-1",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "text-sm font-medium mb-2",
+                                                        children: "Audio Question"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
+                                                        lineNumber: 170,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("audio", {
+                                                        controls: true,
+                                                        className: "w-full",
+                                                        src: currentTest.audio_url,
+                                                        children: "Your browser does not support the audio element."
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
+                                                        lineNumber: 171,
+                                                        columnNumber: 21
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
+                                                lineNumber: 169,
+                                                columnNumber: 19
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
+                                        lineNumber: 167,
+                                        columnNumber: 17
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
+                                    lineNumber: 166,
                                     columnNumber: 15
                                 }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                lineNumber: 156,
-                                columnNumber: 13
-                            }, this)
-                        }, void 0, false, {
+                            ]
+                        }, void 0, true, {
                             fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                            lineNumber: 155,
+                            lineNumber: 156,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -1125,7 +1207,7 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                             children: currentTest.question
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                            lineNumber: 167,
+                                            lineNumber: 181,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$radio$2d$group$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["RadioGroup"], {
@@ -1142,7 +1224,7 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                                             id: `answer-${index}`
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                                            lineNumber: 176,
+                                                            lineNumber: 190,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Label"], {
@@ -1151,24 +1233,24 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                                             children: answer
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                                            lineNumber: 177,
+                                                            lineNumber: 191,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, index, true, {
                                                     fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                                    lineNumber: 175,
+                                                    lineNumber: 189,
                                                     columnNumber: 19
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                            lineNumber: 168,
+                                            lineNumber: 182,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                    lineNumber: 166,
+                                    lineNumber: 180,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1181,7 +1263,7 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                             children: "Previous"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                            lineNumber: 187,
+                                            lineNumber: 201,
                                             columnNumber: 17
                                         }, this),
                                         currentIndex < tests.length - 1 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -1191,7 +1273,7 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                             children: "Next"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                            lineNumber: 192,
+                                            lineNumber: 206,
                                             columnNumber: 17
                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                             onClick: handleFinish,
@@ -1200,36 +1282,36 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                             children: "Finish Test"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                            lineNumber: 200,
+                                            lineNumber: 214,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                                    lineNumber: 185,
+                                    lineNumber: 199,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                            lineNumber: 165,
+                            lineNumber: 179,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-                    lineNumber: 154,
+                    lineNumber: 155,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-            lineNumber: 140,
+            lineNumber: 141,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
-        lineNumber: 139,
+        lineNumber: 140,
         columnNumber: 5
     }, this);
 }

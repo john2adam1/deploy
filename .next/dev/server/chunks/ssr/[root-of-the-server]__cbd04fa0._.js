@@ -82,8 +82,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$compo
 ;
 ;
 const metadata = {
-    title: "TestMaster - Online Testing Platform",
-    description: "Practice tests with real-time feedback and progress tracking",
+    title: "Sarvar Avtotest - Avtotestlar orqali bilimingizni oshirishga yordam beradi",
+    description: "Avtotestlar orqali bilimingizni oshirishga yordam beradi",
     generator: "v0.app",
     icons: {
         icon: [

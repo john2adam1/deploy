@@ -37,17 +37,17 @@ export function CountdownTimer({ endTime, label }: CountdownTimerProps) {
       <div className="flex gap-4">
         <div className="text-center">
           <div className="text-2xl font-bold tabular-nums">{String(time.hours).padStart(2, "0")}</div>
-          <div className="text-xs text-muted-foreground">Hours</div>
+          <div className="text-xs text-muted-foreground">Soat</div>
         </div>
         <div className="text-2xl font-bold">:</div>
         <div className="text-center">
           <div className="text-2xl font-bold tabular-nums">{String(time.minutes).padStart(2, "0")}</div>
-          <div className="text-xs text-muted-foreground">Minutes</div>
+          <div className="text-xs text-muted-foreground">Daqiqa</div>
         </div>
         <div className="text-2xl font-bold">:</div>
         <div className="text-center">
           <div className="text-2xl font-bold tabular-nums">{String(time.seconds).padStart(2, "0")}</div>
-          <div className="text-xs text-muted-foreground">Seconds</div>
+          <div className="text-xs text-muted-foreground">Sekund</div>
         </div>
       </div>
     </div>

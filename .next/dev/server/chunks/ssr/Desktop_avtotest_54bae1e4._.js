@@ -292,7 +292,7 @@ function LoginPage() {
                                 className: "h-8 w-8 text-primary"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/avtotest/app/login/page.tsx",
-                                lineNumber: 53,
+                                lineNumber: 52,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -300,18 +300,18 @@ function LoginPage() {
                                 children: "TestMaster"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/avtotest/app/login/page.tsx",
-                                lineNumber: 54,
+                                lineNumber: 53,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Desktop/avtotest/app/login/page.tsx",
-                        lineNumber: 52,
+                        lineNumber: 51,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/Desktop/avtotest/app/login/page.tsx",
-                    lineNumber: 51,
+                    lineNumber: 50,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -322,20 +322,20 @@ function LoginPage() {
                                     children: "Welcome back"
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/avtotest/app/login/page.tsx",
-                                    lineNumber: 60,
+                                    lineNumber: 59,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardDescription"], {
                                     children: "Sign in to continue your learning"
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/avtotest/app/login/page.tsx",
-                                    lineNumber: 61,
+                                    lineNumber: 60,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/avtotest/app/login/page.tsx",
-                            lineNumber: 59,
+                            lineNumber: 58,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -352,7 +352,7 @@ function LoginPage() {
                                                     children: "Email"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/avtotest/app/login/page.tsx",
-                                                    lineNumber: 66,
+                                                    lineNumber: 65,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -364,13 +364,13 @@ function LoginPage() {
                                                     required: true
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/avtotest/app/login/page.tsx",
-                                                    lineNumber: 67,
+                                                    lineNumber: 66,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/avtotest/app/login/page.tsx",
-                                            lineNumber: 65,
+                                            lineNumber: 64,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -381,7 +381,7 @@ function LoginPage() {
                                                     children: "Password"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/avtotest/app/login/page.tsx",
-                                                    lineNumber: 78,
+                                                    lineNumber: 77,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -393,13 +393,13 @@ function LoginPage() {
                                                     required: true
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/avtotest/app/login/page.tsx",
-                                                    lineNumber: 79,
+                                                    lineNumber: 78,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/avtotest/app/login/page.tsx",
-                                            lineNumber: 77,
+                                            lineNumber: 76,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -409,13 +409,13 @@ function LoginPage() {
                                             children: loading ? "Signing in..." : "Sign In"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/avtotest/app/login/page.tsx",
-                                            lineNumber: 89,
+                                            lineNumber: 88,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/avtotest/app/login/page.tsx",
-                                    lineNumber: 64,
+                                    lineNumber: 63,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -429,36 +429,36 @@ function LoginPage() {
                                             children: "Sign up"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/avtotest/app/login/page.tsx",
-                                            lineNumber: 96,
+                                            lineNumber: 95,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/avtotest/app/login/page.tsx",
-                                    lineNumber: 94,
+                                    lineNumber: 93,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/avtotest/app/login/page.tsx",
-                            lineNumber: 63,
+                            lineNumber: 62,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/avtotest/app/login/page.tsx",
-                    lineNumber: 58,
+                    lineNumber: 57,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Desktop/avtotest/app/login/page.tsx",
-            lineNumber: 50,
+            lineNumber: 49,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Desktop/avtotest/app/login/page.tsx",
-        lineNumber: 49,
+        lineNumber: 48,
         columnNumber: 5
     }, this);
 }

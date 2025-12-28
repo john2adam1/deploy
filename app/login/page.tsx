@@ -1,8 +1,7 @@
 "use client"
 
-import type React from "react"
-
 import { useState } from "react"
+import type { FormEvent } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -21,7 +20,7 @@ export default function LoginPage() {
   const { toast } = useToast()
   const supabase = getSupabaseBrowserClient()
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleLogin = async (e: FormEvent) => {
     e.preventDefault()
     setLoading(true)
 

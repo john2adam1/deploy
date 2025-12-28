@@ -7,13 +7,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Label } from "@/components/ui/label"
 import { getSupabaseBrowserClient } from "@/lib/supabase/client"
-import { Clock, CheckCircle2, XCircle } from "lucide-react"
+import { Clock, CheckCircle2, XCircle, Volume2 } from "lucide-react"
 import Image from "next/image"
 
 interface Test {
   id: string
   category_id: string
   image_url: string
+  audio_url: string | null
   question: string
   answers: string[]
   correct_answer: number
@@ -95,37 +96,37 @@ export function TestInterface({ categoryTitle, tests, userId }: TestInterfacePro
       <main className="container mx-auto px-4 py-8">
         <Card className="max-w-2xl mx-auto">
           <CardHeader>
-            <CardTitle className="text-center text-2xl">Test Complete!</CardTitle>
+            <CardTitle className="text-center text-2xl">Test yakunlandi!</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="text-center">
               <div className="text-6xl font-bold text-primary mb-2">{results.score}%</div>
-              <div className="text-muted-foreground">Final Score</div>
+              <div className="text-muted-foreground">Final ball</div>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-3">
               <div className="rounded-lg border bg-card p-4 text-center">
                 <div className="text-2xl font-bold">{tests.length}</div>
-                <div className="text-sm text-muted-foreground">Total Questions</div>
+                <div className="text-sm text-muted-foreground">Jami savollar</div>
               </div>
               <div className="rounded-lg border bg-success/10 p-4 text-center">
                 <div className="flex items-center justify-center gap-2 text-2xl font-bold text-success">
                   <CheckCircle2 className="h-6 w-6" />
                   {results.correct}
                 </div>
-                <div className="text-sm text-muted-foreground">Correct</div>
+                <div className="text-sm text-muted-foreground">To'g'ri javoblar</div>
               </div>
               <div className="rounded-lg border bg-destructive/10 p-4 text-center">
                 <div className="flex items-center justify-center gap-2 text-2xl font-bold text-destructive">
                   <XCircle className="h-6 w-6" />
                   {results.wrong}
                 </div>
-                <div className="text-sm text-muted-foreground">Wrong</div>
+                <div className="text-sm text-muted-foreground">Noto'g'ri javoblar</div>
               </div>
             </div>
 
             <Button onClick={() => router.push("/dashboard")} className="w-full">
-              Back to Dashboard
+              Dashboardga qaytish
             </Button>
           </CardContent>
         </Card>
@@ -142,7 +143,7 @@ export function TestInterface({ categoryTitle, tests, userId }: TestInterfacePro
           <div>
             <h1 className="text-2xl font-bold">{categoryTitle}</h1>
             <p className="text-muted-foreground">
-              Question {currentIndex + 1} of {tests.length}
+              Savol {currentIndex + 1} of {tests.length}
             </p>
           </div>
           <div className="flex items-center gap-2 rounded-lg border bg-card px-4 py-2">
@@ -152,7 +153,7 @@ export function TestInterface({ categoryTitle, tests, userId }: TestInterfacePro
         </div>
 
         <Card>
-          <CardHeader>
+          <CardHeader className="space-y-4">
             <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-muted">
               <Image
                 src={currentTest.image_url || "/placeholder.svg"}
@@ -161,6 +162,19 @@ export function TestInterface({ categoryTitle, tests, userId }: TestInterfacePro
                 className="object-cover"
               />
             </div>
+            {currentTest.audio_url && (
+              <div className="rounded-lg border bg-card p-4">
+                <div className="flex items-center gap-3">
+                  <Volume2 className="h-5 w-5 text-primary" />
+                  <div className="flex-1">
+                    <p className="text-sm font-medium mb-2">Audio savol</p>
+                    <audio controls className="w-full" src={currentTest.audio_url}>
+                      Sizning brauzeringiz audio elementini qo'llab-quvvatlamaydi.
+                    </audio>
+                  </div>
+                </div>
+              </div>
+            )}
           </CardHeader>
           <CardContent className="space-y-6">
             <div>
@@ -185,7 +199,7 @@ export function TestInterface({ categoryTitle, tests, userId }: TestInterfacePro
             <div className="flex gap-2">
               {currentIndex > 0 && (
                 <Button variant="outline" onClick={() => setCurrentIndex(currentIndex - 1)} className="flex-1">
-                  Previous
+                  Oldingi
                 </Button>
               )}
               {currentIndex < tests.length - 1 ? (
@@ -194,7 +208,7 @@ export function TestInterface({ categoryTitle, tests, userId }: TestInterfacePro
                   className="flex-1"
                   disabled={selectedAnswers[currentIndex] === undefined}
                 >
-                  Next
+                  Keyingi
                 </Button>
               ) : (
                 <Button
@@ -202,7 +216,7 @@ export function TestInterface({ categoryTitle, tests, userId }: TestInterfacePro
                   className="flex-1"
                   disabled={selectedAnswers[currentIndex] === undefined}
                 >
-                  Finish Test
+                  Testni yakunlash
                 </Button>
               )}
             </div>

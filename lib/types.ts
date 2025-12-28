@@ -17,6 +17,7 @@ export interface User {
     id: string
     category_id: string
     image_url: string
+    audio_url: string | null
     question: string
     answers: string[]
     correct_answer: number

@@ -12,8 +12,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "TestMaster - Online Testing Platform",
-  description: "Practice tests with real-time feedback and progress tracking",
+  title: "Sarvar Avtotest - Avtotestlar orqali bilimingizni oshirishga yordam beradi",
+  description: "Avtotestlar orqali bilimingizni oshirishga yordam beradi",
   generator: "v0.app",
   icons: {
     icon: [

@@ -1,20 +1,21 @@
 "use client"
 
-import type React from "react"
-
 import { useEffect, useState } from "react"
+import type { FormEvent } from "react"
 import { getSupabaseBrowserClient } from "@/lib/supabase/client"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { useToast } from "@/hooks/use-toast"
-import { Trash2 } from "lucide-react"
+import { Trash2, Edit2, X, Check } from "lucide-react"
 import type { Category } from "@/lib/types"
 
 export function CategoriesManagement() {
   const [categories, setCategories] = useState<Category[]>([])
   const [newCategory, setNewCategory] = useState("")
+  const [editingId, setEditingId] = useState<string | null>(null)
+  const [editingTitle, setEditingTitle] = useState("")
   const [loading, setLoading] = useState(true)
   const { toast } = useToast()
   const supabase = getSupabaseBrowserClient()
@@ -30,7 +31,7 @@ export function CategoriesManagement() {
     setLoading(false)
   }
 
-  const handleCreate = async (e: React.FormEvent) => {
+  const handleCreate = async (e: FormEvent) => {
     e.preventDefault()
 
     if (!newCategory.trim()) return
@@ -46,26 +47,72 @@ export function CategoriesManagement() {
     } else {
       toast({
         title: "Success",
-        description: "Category created successfully",
+        description: "Kategoriya muvaffaqiyatli yaratildi",
       })
       setNewCategory("")
       fetchCategories()
     }
   }
 
-  const handleDelete = async (id: string) => {
-    const { error } = await supabase.from("categories").delete().eq("id", id)
+  const handleEdit = (category: Category) => {
+    setEditingId(category.id)
+    setEditingTitle(category.title)
+  }
+
+  const handleSaveEdit = async (id: string) => {
+    if (!editingTitle.trim()) {
+      toast({
+        title: "Error",
+        description: "Kategoriya nomi bo'sh bo'lmasligi kerak",
+        variant: "destructive",
+      })
+      return
+    }
+
+    const { error } = await supabase
+      .from("categories")
+      .update({ title: editingTitle.trim() })
+      .eq("id", id)
 
     if (error) {
       toast({
         title: "Error",
-        description: "Failed to delete category",
+        description: "Kategoriya yangilashda xatolik yuz berdi",
         variant: "destructive",
       })
     } else {
       toast({
         title: "Success",
-        description: "Category deleted successfully",
+        description: "Kategoriya muvaffaqiyatli yangilandi",
+      })
+      setEditingId(null)
+      setEditingTitle("")
+      fetchCategories()
+    }
+  }
+
+  const handleCancelEdit = () => {
+    setEditingId(null)
+    setEditingTitle("")
+  }
+
+  const handleDelete = async (id: string) => {
+    if (!confirm("Bu kategoriyani o'chirishni xohlaysizmi? Bu kategoriyadagi barcha testlar ham o'chib ketadi.")) {
+      return
+    }
+
+    const { error } = await supabase.from("categories").delete().eq("id", id)
+
+    if (error) {
+      toast({
+        title: "Error",
+        description: "Kategoriya o'chirishda xatolik yuz berdi",
+        variant: "destructive",
+      })
+    } else {
+      toast({
+        title: "Success",
+        description: "Kategoriya muvaffaqiyatli o'chirildi",
       })
       fetchCategories()
     }
@@ -79,13 +126,13 @@ export function CategoriesManagement() {
     <div className="grid gap-6 lg:grid-cols-2">
       <Card>
         <CardHeader>
-          <CardTitle>Create Category</CardTitle>
-          <CardDescription>Add a new test category</CardDescription>
+          <CardTitle>Kategoriya yaratish</CardTitle>
+          <CardDescription>Yangi test kategoriyasini qo'shish</CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleCreate} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="title">Category Title</Label>
+              <Label htmlFor="title">Kategoriya nomi</Label>
               <Input
                 id="title"
                 placeholder="e.g., Mathematics"
@@ -103,20 +150,42 @@ export function CategoriesManagement() {
 
       <Card>
         <CardHeader>
-          <CardTitle>Existing Categories</CardTitle>
-          <CardDescription>Manage your test categories</CardDescription>
+          <CardTitle>Mavjud Kategoriyalar</CardTitle>
+          <CardDescription>Test kategoriyalarini boshqarish</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-2">
             {categories.map((category) => (
-              <div key={category.id} className="flex items-center justify-between rounded-lg border p-3">
-                <span className="font-medium">{category.title}</span>
-                <Button variant="ghost" size="icon" onClick={() => handleDelete(category.id)}>
-                  <Trash2 className="h-4 w-4 text-destructive" />
-                </Button>
+              <div key={category.id} className="flex items-center gap-2 rounded-lg border p-3">
+                {editingId === category.id ? (
+                  <>
+                    <Input
+                      value={editingTitle}
+                      onChange={(e) => setEditingTitle(e.target.value)}
+                      className="flex-1"
+                      autoFocus
+                    />
+                    <Button variant="ghost" size="icon" onClick={() => handleSaveEdit(category.id)}>
+                      <Check className="h-4 w-4 text-green-600" />
+                    </Button>
+                    <Button variant="ghost" size="icon" onClick={handleCancelEdit}>
+                      <X className="h-4 w-4 text-destructive" />
+                    </Button>
+                  </>
+                ) : (
+                  <>
+                    <span className="flex-1 font-medium">{category.title}</span>
+                    <Button variant="ghost" size="icon" onClick={() => handleEdit(category)}>
+                      <Edit2 className="h-4 w-4" />
+                    </Button>
+                    <Button variant="ghost" size="icon" onClick={() => handleDelete(category.id)}>
+                      <Trash2 className="h-4 w-4 text-destructive" />
+                    </Button>
+                  </>
+                )}
               </div>
             ))}
-            {categories.length === 0 && <p className="text-center text-muted-foreground py-8">No categories yet</p>}
+            {categories.length === 0 && <p className="text-center text-muted-foreground py-8">Hozircha kategoriya mavjud emas</p>}
           </div>
         </CardContent>
       </Card>

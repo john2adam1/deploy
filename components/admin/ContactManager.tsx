@@ -3,33 +3,40 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { getSupabaseBrowserClient } from "@/lib/supabase/client"
+import { useToast } from "@/hooks/use-toast"
 
 export default function ContactManager() {
   const [telegram, setTelegram] = useState("")
   const [telegramLink, setTelegramLink] = useState("")
   const [email, setEmail] = useState("")
+  const [loading, setLoading] = useState(true)
+  const { toast } = useToast()
+  const supabase = getSupabaseBrowserClient()
 
   useEffect(() => {
-    async function fetchData() {
-      const supabase = getSupabaseBrowserClient()
-      const { data, error } = await supabase
-        .from("site_content")
-        .select("content")
-        .eq("type", "contact")
-        .maybeSingle()
-
-      if (!error && data?.content) {
-        setTelegram(data.content.telegram || "")
-        setTelegramLink(data.content.telegram_link || "")
-        setEmail(data.content.email || "")
-      }
-    }
-    fetchData()
+    fetchContact()
   }, [])
 
-  async function handleSave() {
-    const supabase = getSupabaseBrowserClient()
+  const fetchContact = async () => {
+    setLoading(true)
+    const { data, error } = await supabase
+      .from("site_content")
+      .select("content")
+      .eq("type", "contact")
+      .maybeSingle()
+
+    if (!error && data?.content) {
+      setTelegram(data.content.telegram || "")
+      setTelegramLink(data.content.telegram_link || "")
+      setEmail(data.content.email || "")
+    }
+    setLoading(false)
+  }
+
+  const handleSave = async () => {
     const newContent = {
       telegram,
       telegram_link: telegramLink,
@@ -60,36 +67,66 @@ export default function ContactManager() {
     }
 
     if (!error) {
-      alert("Contact info updated!")
+      toast({
+        title: "Success",
+        description: "Bog'lanish ma'lumotlari muvaffaqiyatli yangilandi",
+      })
     } else {
-      alert(`Error updating contact info: ${error.message || "Failed to update"}`)
-      console.error("Error updating contact info:", error)
+      toast({
+        title: "Error",
+        description: error.message || "Bog'lanish ma'lumotlarini yangilashda xatolik yuz berdi",
+        variant: "destructive",
+      })
     }
   }
 
+  if (loading) {
+    return <div className="text-center py-8">Loading...</div>
+  }
+
   return (
-    <div className="space-y-4 max-w-md mx-auto p-4">
-      <h2 className="text-2xl font-bold">Contact Settings</h2>
+    <Card className="max-w-2xl mx-auto">
+      <CardHeader>
+        <CardTitle>Bog'lanish ma'lumotlari</CardTitle>
+        <CardDescription>Bog'lanish ma'lumotlarini boshqarish</CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        <div className="space-y-2">
+          <Label htmlFor="telegram">Telegram foydalanuvchi nomi</Label>
+          <Input
+            id="telegram"
+            placeholder="e.g., @yourusername"
+            value={telegram}
+            onChange={(e) => setTelegram(e.target.value)}
+          />
+        </div>
 
-      <Input
-        placeholder="Telegram username"
-        value={telegram}
-        onChange={e => setTelegram(e.target.value)}
-      />
+        <div className="space-y-2">
+          <Label htmlFor="telegram-link">Telegram Link</Label>
+          <Input
+            id="telegram-link"
+            placeholder="https://t.me/yourusername"
+            value={telegramLink}
+            onChange={(e) => setTelegramLink(e.target.value)}
+          />
+        </div>
 
-      <Input
-        placeholder="Telegram link"
-        value={telegramLink}
-        onChange={e => setTelegramLink(e.target.value)}
-      />
+        <div className="space-y-2">
+          <Label htmlFor="email">Email manzil</Label>
+          <Input
+            id="email"
+            type="email"
+            placeholder="support@example.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
 
-      <Input
-        placeholder="Support email"
-        value={email}
-        onChange={e => setEmail(e.target.value)}
-      />
-
-      <Button onClick={handleSave}>Save</Button>
-    </div>
+        <Button onClick={handleSave} className="w-full">
+          Bog'lanish ma'lumotlarini saqlash
+        </Button>
+      </CardContent>
+    </Card>
   )
 }
+

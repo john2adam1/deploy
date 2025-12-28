@@ -1,8 +1,7 @@
 "use client"
 
-import type React from "react"
-
 import { useEffect, useState } from "react"
+import type { FormEvent } from "react"
 import { getSupabaseBrowserClient } from "@/lib/supabase/client"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -10,37 +9,200 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { useToast } from "@/hooks/use-toast"
-import type { Category } from "@/lib/types"
+import { Trash2, Edit2, X, Check } from "lucide-react"
+import type { Category, Test } from "@/lib/types"
+
+interface TestWithCategory extends Test {
+  category_title?: string
+}
 
 export function TestsManagement() {
   const [categories, setCategories] = useState<Category[]>([])
+  const [tests, setTests] = useState<TestWithCategory[]>([])
   const [selectedCategory, setSelectedCategory] = useState("")
+  const [imageFile, setImageFile] = useState<File | null>(null)
+  const [audioFile, setAudioFile] = useState<File | null>(null)
   const [imageUrl, setImageUrl] = useState("")
+  const [audioUrl, setAudioUrl] = useState("")
+  const [imagePreview, setImagePreview] = useState<string | null>(null)
+  const [audioPreview, setAudioPreview] = useState<string | null>(null)
+  const [uploadingImage, setUploadingImage] = useState(false)
+  const [uploadingAudio, setUploadingAudio] = useState(false)
   const [question, setQuestion] = useState("")
   const [answers, setAnswers] = useState(["", "", "", ""])
   const [correctAnswer, setCorrectAnswer] = useState("0")
   const [timeLimit, setTimeLimit] = useState("300")
+  const [editingTest, setEditingTest] = useState<Test | null>(null)
+  const [loading, setLoading] = useState(true)
   const { toast } = useToast()
   const supabase = getSupabaseBrowserClient()
 
   useEffect(() => {
     fetchCategories()
+    fetchTests()
   }, [])
 
   const fetchCategories = async () => {
     const { data } = await supabase.from("categories").select("*").order("title")
-
     if (data) setCategories(data)
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+  const fetchTests = async () => {
+    setLoading(true)
+    const { data } = await supabase
+      .from("tests")
+      .select(`
+        *,
+        categories (
+          title
+        )
+      `)
+      .order("created_at", { ascending: false })
 
-    if (!selectedCategory || !imageUrl || !question) {
+    if (data) {
+      const testsWithCategory = data.map((test: any) => ({
+        ...test,
+        category_title: test.categories?.title || "Unknown",
+      }))
+      setTests(testsWithCategory)
+    }
+    setLoading(false)
+  }
+
+  const resetForm = () => {
+    setSelectedCategory("")
+    setImageFile(null)
+    setAudioFile(null)
+    setImageUrl("")
+    setAudioUrl("")
+    setImagePreview(null)
+    setAudioPreview(null)
+    setQuestion("")
+    setAnswers(["", "", "", ""])
+    setCorrectAnswer("0")
+    setTimeLimit("300")
+    setEditingTest(null)
+  }
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (file) {
+      // Validate image file
+      if (!file.type.startsWith("image/")) {
+        toast({
+          title: "Error",
+          description: "Rasm faylini tanlang",
+          variant: "destructive",
+        })
+        return
+      }
+      setImageFile(file)
+      // Create preview
+      const reader = new FileReader()
+      reader.onloadend = () => {
+        setImagePreview(reader.result as string)
+      }
+      reader.readAsDataURL(file)
+    }
+  }
+
+  const handleAudioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (file) {
+      // Validate audio file
+      if (!file.type.startsWith("audio/")) {
+        toast({
+          title: "Error",
+          description: "Audio faylini tanlang",
+          variant: "destructive",
+        })
+        return
+      }
+      setAudioFile(file)
+      // Create preview URL for audio
+      setAudioPreview(URL.createObjectURL(file))
+    }
+  }
+
+  const uploadImage = async (): Promise<string | null> => {
+    if (!imageFile) return imageUrl || null
+
+    setUploadingImage(true)
+    try {
+      const fileExt = imageFile.name.split(".").pop()
+      const fileName = `${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`
+      const filePath = `test-images/${fileName}`
+
+      const { error: uploadError } = await supabase.storage.from("test-images").upload(filePath, imageFile, {
+        cacheControl: "3600",
+        upsert: false,
+      })
+
+      if (uploadError) {
+        throw uploadError
+      }
+
+      const {
+        data: { publicUrl },
+      } = supabase.storage.from("test-images").getPublicUrl(filePath)
+
+      setUploadingImage(false)
+      return publicUrl
+    } catch (error: any) {
+      setUploadingImage(false)
       toast({
         title: "Error",
-        description: "Please fill in all required fields",
+        description: error.message || "Rasm faylini yuklashda xatolik yuz berdi",
+        variant: "destructive",
+      })
+      return null
+    }
+  }
+
+  const uploadAudio = async (): Promise<string | null> => {
+    if (!audioFile) return audioUrl || null
+
+    setUploadingAudio(true)
+    try {
+      const fileExt = audioFile.name.split(".").pop()
+      const fileName = `${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`
+      const filePath = `test-audio/${fileName}`
+
+      const { error: uploadError } = await supabase.storage.from("test-audio").upload(filePath, audioFile, {
+        cacheControl: "3600",
+        upsert: false,
+      })
+
+      if (uploadError) {
+        throw uploadError
+      }
+
+      const {
+        data: { publicUrl },
+      } = supabase.storage.from("test-audio").getPublicUrl(filePath)
+
+      setUploadingAudio(false)
+      return publicUrl
+    } catch (error: any) {
+      setUploadingAudio(false)
+      toast({
+        title: "Error",
+        description: error.message || "Audio faylini yuklashda xatolik yuz berdi",
+        variant: "destructive",
+      })
+      return null
+    }
+  }
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault()
+
+    if (!selectedCategory || (!imageUrl && !imageFile) || !question) {
+      toast({
+        title: "Error",
+        description: "Barcha majburiy maydonlarni to'ldiring va rasm faylini yuklang",
         variant: "destructive",
       })
       return
@@ -49,139 +211,339 @@ export function TestsManagement() {
     if (answers.some((a) => !a.trim())) {
       toast({
         title: "Error",
-        description: "Please provide all 4 answers",
+        description: "Barcha 4 javoblarni kiriting",
         variant: "destructive",
       })
       return
     }
 
-    const { error } = await supabase.from("tests").insert({
-      category_id: selectedCategory,
-      image_url: imageUrl,
-      question,
-      answers,
-      correct_answer: Number.parseInt(correctAnswer),
-      time_limit: Number.parseInt(timeLimit),
-    })
+    // Upload files if new files are selected
+    let finalImageUrl = imageUrl
+    let finalAudioUrl = audioUrl
+
+    if (imageFile) {
+      const uploadedImageUrl = await uploadImage()
+      if (!uploadedImageUrl) return // Error already shown in uploadImage
+      finalImageUrl = uploadedImageUrl
+    }
+
+    if (audioFile) {
+      const uploadedAudioUrl = await uploadAudio()
+      if (!uploadedAudioUrl) {
+        // Audio is optional, so we continue even if upload fails
+        finalAudioUrl = null
+      } else {
+        finalAudioUrl = uploadedAudioUrl
+      }
+    }
+
+    if (editingTest) {
+      // Update existing test
+      const { error } = await supabase
+        .from("tests")
+        .update({
+          category_id: selectedCategory,
+          image_url: finalImageUrl,
+          audio_url: finalAudioUrl || null,
+          question,
+          answers,
+          correct_answer: Number.parseInt(correctAnswer),
+          time_limit: Number.parseInt(timeLimit),
+        })
+        .eq("id", editingTest.id)
+
+      if (error) {
+        toast({
+          title: "Error",
+          description: "Testni yangilashda xatolik yuz berdi",
+          variant: "destructive",
+        })
+      } else {
+        toast({
+          title: "Success",
+          description: "Test muvaffaqiyatli yangilandi",
+        })
+        resetForm()
+        fetchTests()
+      }
+    } else {
+      // Create new test
+      const { error } = await supabase.from("tests").insert({
+        category_id: selectedCategory,
+        image_url: finalImageUrl,
+        audio_url: finalAudioUrl || null,
+        question,
+        answers,
+        correct_answer: Number.parseInt(correctAnswer),
+        time_limit: Number.parseInt(timeLimit),
+      })
+
+      if (error) {
+        toast({
+          title: "Error",
+          description: "Testni yaratishda xatolik yuz berdi",
+          variant: "destructive",
+        })
+      } else {
+        toast({
+          title: "Success",
+          description: "Test muvaffaqiyatli yaratildi",
+        })
+        resetForm()
+        fetchTests()
+      }
+    }
+  }
+
+  const handleEdit = (test: TestWithCategory) => {
+    setEditingTest(test)
+    setSelectedCategory(test.category_id)
+    setImageUrl(test.image_url)
+    setImagePreview(test.image_url)
+    setAudioUrl(test.audio_url || "")
+    setAudioPreview(test.audio_url || null)
+    setImageFile(null)
+    setAudioFile(null)
+    setQuestion(test.question)
+    setAnswers(test.answers)
+    setCorrectAnswer(test.correct_answer.toString())
+    setTimeLimit(test.time_limit.toString())
+  }
+
+  const handleDelete = async (id: string) => {
+    if (!confirm("Bu testni o'chirishni xohlaysizmi?")) {
+      return
+    }
+
+    const { error } = await supabase.from("tests").delete().eq("id", id)
 
     if (error) {
       toast({
         title: "Error",
-        description: "Failed to create test",
+        description: "Testni o'chirishda xatolik yuz berdi",
         variant: "destructive",
       })
     } else {
       toast({
         title: "Success",
-        description: "Test created successfully",
+        description: "Test muvaffaqiyatli o'chirildi",
       })
-
-      // Reset form
-      setImageUrl("")
-      setQuestion("")
-      setAnswers(["", "", "", ""])
-      setCorrectAnswer("0")
-      setTimeLimit("300")
+      fetchTests()
     }
   }
 
+  const testsByCategory = tests.reduce((acc, test) => {
+    const categoryTitle = test.category_title || "Unknown"
+    if (!acc[categoryTitle]) {
+      acc[categoryTitle] = []
+    }
+    acc[categoryTitle].push(test)
+    return acc
+  }, {} as Record<string, TestWithCategory[]>)
+
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Create Test</CardTitle>
-        <CardDescription>Add a new test to a category</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="space-y-2">
-            <Label htmlFor="category">Category</Label>
-            <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-              <SelectTrigger>
-                <SelectValue placeholder="Select a category" />
-              </SelectTrigger>
-              <SelectContent>
-                {categories.map((category) => (
-                  <SelectItem key={category.id} value={category.id}>
-                    {category.title}
-                  </SelectItem>
+    <Tabs defaultValue="create" className="space-y-6">
+      <TabsList className="grid w-full grid-cols-2">
+        <TabsTrigger value="create">{editingTest ? "Testni tahrirlash" : "Test yaratish"}</TabsTrigger>
+        <TabsTrigger value="view">Testlar ko'rish</TabsTrigger>
+      </TabsList>
+
+      <TabsContent value="create">
+        <Card>
+          <CardHeader>
+            <CardTitle>{editingTest ? "Testni tahrirlash" : "Test yaratish"}</CardTitle>
+            <CardDescription>
+              {editingTest ? "Test haqida ma'lumotlarni yangilash" : "Yangi testni kategoriyaga qo'shish"}
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="category">Category</Label>
+                <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Kategoriyani tanlang" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {categories.map((category) => (
+                      <SelectItem key={category.id} value={category.id}>
+                        {category.title}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="image">Rasm {editingTest && imageUrl ? "(Joriy rasm ko'rinsa, yangisini yuklang)" : ""}</Label>
+                <Input
+                  id="image"
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageChange}
+                  required={!editingTest || !imageUrl}
+                />
+                {imagePreview && (
+                  <div className="mt-2">
+                    <img src={imagePreview} alt="Preview" className="max-w-xs rounded-lg border" />
+                  </div>
+                )}
+                {uploadingImage && <p className="text-sm text-muted-foreground">Rasm yuklanmoqda...</p>}
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="audio">Audio (Optional) {editingTest && audioUrl ? "(Joriy audio ko'rinsa, yangisini yuklang)" : ""}</Label>
+                <Input
+                  id="audio"
+                  type="file"
+                  accept="audio/*"
+                  onChange={handleAudioChange}
+                />
+                {audioPreview && (
+                  <div className="mt-2">
+                    <audio controls src={audioPreview} className="w-full">
+                      Sizning brauzeringiz audio elementini qo'llab-quvvatlamaydi.
+                    </audio>
+                  </div>
+                )}
+                {uploadingAudio && <p className="text-sm text-muted-foreground">Audio yuklanmoqda...</p>}
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="question">Question</Label>
+                <Textarea
+                  id="question"
+                  placeholder="Savolni kiriting..."
+                  value={question}
+                  onChange={(e) => setQuestion(e.target.value)}
+                  required
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label>Javoblar</Label>
+                {answers.map((answer, index) => (
+                  <Input
+                    key={index}
+                    placeholder={`Javob ${index + 1}`}
+                    value={answer}
+                    onChange={(e) => {
+                      const newAnswers = [...answers]
+                      newAnswers[index] = e.target.value
+                      setAnswers(newAnswers)
+                    }}
+                    required
+                  />
                 ))}
-              </SelectContent>
-            </Select>
-          </div>
+              </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="image">Image URL</Label>
-            <Input
-              id="image"
-              placeholder="https://example.com/image.jpg"
-              value={imageUrl}
-              onChange={(e) => setImageUrl(e.target.value)}
-              required
-            />
-          </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="space-y-2">
+                  <Label htmlFor="correct">To'g'ri javob</Label>
+                  <Select value={correctAnswer} onValueChange={setCorrectAnswer}>
+                    <SelectTrigger>
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="0">Javob 1</SelectItem>
+                      <SelectItem value="1">Javob 2</SelectItem>
+                      <SelectItem value="2">Javob 3</SelectItem>
+                      <SelectItem value="3">Javob 4</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="question">Question</Label>
-            <Textarea
-              id="question"
-              placeholder="Enter your question here..."
-              value={question}
-              onChange={(e) => setQuestion(e.target.value)}
-              required
-            />
-          </div>
+                <div className="space-y-2">
+                    <Label htmlFor="time">Vaqt chegarasi (sekundlar)</Label>
+                  <Input
+                    id="time"
+                    type="number"
+                    value={timeLimit}
+                    onChange={(e) => setTimeLimit(e.target.value)}
+                    min="60"
+                    required
+                  />
+                </div>
+              </div>
 
-          <div className="space-y-2">
-            <Label>Answers</Label>
-            {answers.map((answer, index) => (
-              <Input
-                key={index}
-                placeholder={`Answer ${index + 1}`}
-                value={answer}
-                onChange={(e) => {
-                  const newAnswers = [...answers]
-                  newAnswers[index] = e.target.value
-                  setAnswers(newAnswers)
-                }}
-                required
-              />
+              <div className="flex gap-2">
+                <Button type="submit" className="flex-1" disabled={uploadingImage || uploadingAudio}>
+                  {uploadingImage || uploadingAudio
+                    ? "Rasm yuklanmoqda..."
+                    : editingTest
+                      ? "Testni tahrirlash"
+                      : "Test yaratish"}
+                </Button>
+                {editingTest && (
+                  <Button type="button" variant="outline" onClick={resetForm} disabled={uploadingImage || uploadingAudio}>
+                    Bekor qilish
+                  </Button>
+                )}
+              </div>
+            </form>
+          </CardContent>
+        </Card>
+      </TabsContent>
+
+      <TabsContent value="view">
+        {loading ? (
+          <div className="text-center py-8">Testlar yuklanmoqda...</div>
+        ) : Object.keys(testsByCategory).length === 0 ? (
+          <Card>
+            <CardContent className="py-8">
+              <p className="text-center text-muted-foreground">Hozircha testlar mavjud emas. Birinchi testni yarating!</p>
+            </CardContent>
+          </Card>
+        ) : (
+          <div className="space-y-6">
+            {Object.entries(testsByCategory).map(([categoryTitle, categoryTests]) => (
+              <Card key={categoryTitle}>
+                <CardHeader>
+                  <CardTitle>{categoryTitle}</CardTitle>
+                  <CardDescription>{categoryTests.length} test(lar) bu kategoriyada</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    {categoryTests.map((test) => (
+                      <div key={test.id} className="rounded-lg border p-4 space-y-3">
+                        <div className="flex items-start justify-between">
+                          <div className="flex-1 space-y-2">
+                            <p className="font-medium">{test.question}</p>
+                            <div className="text-sm text-muted-foreground space-y-1">
+                              <p>Rasm: {test.image_url}</p>
+                              {test.audio_url && <p>Audio: {test.audio_url}</p>}
+                              <p>Vaqt chegarasi: {test.time_limit}s</p>
+                              <p>To'g'ri javob: Javob {test.correct_answer + 1}</p>
+                            </div>
+                            <div className="text-sm">
+                              <p className="font-medium mb-1">Javoblar:</p>
+                              <ul className="list-disc list-inside space-y-1">
+                                {test.answers.map((answer, idx) => (
+                                  <li key={idx} className={idx === test.correct_answer ? "text-green-600 font-medium" : ""}>
+                                    {answer}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="flex gap-2 ml-4">
+                            <Button variant="ghost" size="icon" onClick={() => handleEdit(test)}>
+                              <Edit2 className="h-4 w-4" />
+                            </Button>
+                            <Button variant="ghost" size="icon" onClick={() => handleDelete(test.id)}>
+                              <Trash2 className="h-4 w-4 text-destructive" />
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
-
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="space-y-2">
-              <Label htmlFor="correct">Correct Answer</Label>
-              <Select value={correctAnswer} onValueChange={setCorrectAnswer}>
-                <SelectTrigger>
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="0">Answer 1</SelectItem>
-                  <SelectItem value="1">Answer 2</SelectItem>
-                  <SelectItem value="2">Answer 3</SelectItem>
-                  <SelectItem value="3">Answer 4</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="time">Time Limit (seconds)</Label>
-              <Input
-                id="time"
-                type="number"
-                value={timeLimit}
-                onChange={(e) => setTimeLimit(e.target.value)}
-                min="60"
-                required
-              />
-            </div>
-          </div>
-
-          <Button type="submit" className="w-full">
-            Create Test
-          </Button>
-        </form>
-      </CardContent>
-    </Card>
+        )}
+      </TabsContent>
+    </Tabs>
   )
 }

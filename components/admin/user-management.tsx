@@ -38,13 +38,13 @@ export function UsersManagement() {
     if (error) {
       toast({
         title: "Error",
-        description: "Failed to grant subscription",
+        description: "Foydalanuvchi abonemasi muvaffaqiyatli taqdim etilmadi",
         variant: "destructive",
       })
     } else {
       toast({
         title: "Success",
-        description: "Subscription granted for 1 month",
+        description: "Foydalanuvchi abonemasi muvaffaqiyatli taqdim etildi",
       })
       fetchUsers()
     }
@@ -56,13 +56,13 @@ export function UsersManagement() {
     if (error) {
       toast({
         title: "Error",
-        description: "Failed to revoke subscription",
+        description: "Foydalanuvchi abonemasi muvaffaqiyatli bekor qilindi",
         variant: "destructive",
       })
     } else {
       toast({
         title: "Success",
-        description: "Subscription revoked",
+        description: "Foydalanuvchi abonemasi muvaffaqiyatli bekor qilindi",
       })
       fetchUsers()
     }
@@ -74,14 +74,14 @@ export function UsersManagement() {
   }
 
   if (loading) {
-    return <div>Loading...</div>
+    return <div>Yuklanmoqda...</div>
   }
 
   return (
     <Card>
       <CardHeader>
-        <CardTitle>User Management</CardTitle>
-        <CardDescription>Manage user subscriptions and access</CardDescription>
+        <CardTitle>Foydalanuvchi boshqarish</CardTitle>
+        <CardDescription>Foydalanuvchi abonemalarini va kirishlarini boshqarish</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
@@ -93,9 +93,9 @@ export function UsersManagement() {
                   {user.role === "admin" && <Badge variant="secondary">Admin</Badge>}
                 </div>
                 <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                  <span>Trial: {new Date(user.trial_end).toLocaleDateString()}</span>
+                    <span>Bepul foydalanish: {new Date(user.trial_end).toLocaleDateString()}</span>
                   {user.subscription_end && (
-                    <span>Subscription: {new Date(user.subscription_end).toLocaleDateString()}</span>
+                    <span>Abonemasi: {new Date(user.subscription_end).toLocaleDateString()}</span>
                   )}
                 </div>
               </div>
@@ -104,20 +104,20 @@ export function UsersManagement() {
                   <>
                     <Badge variant="default" className="bg-success text-success-foreground">
                       <CheckCircle2 className="mr-1 h-3 w-3" />
-                      Active
+                      Aktiv
                     </Badge>
                     <Button variant="outline" size="sm" onClick={() => revokeSubscription(user.id)}>
-                      Revoke
+                      Bekor qilish
                     </Button>
                   </>
                 ) : (
                   <>
                     <Badge variant="destructive">
                       <XCircle className="mr-1 h-3 w-3" />
-                      No Subscription
+                      Abonemasi yo'q
                     </Badge>
                     <Button variant="default" size="sm" onClick={() => grantSubscription(user.id)}>
-                      Grant (1 Month)
+                      Abonemani taqdim etish (1 oy)
                     </Button>
                   </>
                 )}

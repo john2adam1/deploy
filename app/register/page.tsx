@@ -1,8 +1,7 @@
 "use client"
 
-import type React from "react"
-
 import { useState } from "react"
+import type { FormEvent } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -22,7 +21,7 @@ export default function RegisterPage() {
   const { toast } = useToast()
   const supabase = getSupabaseBrowserClient()
 
-  const handleRegister = async (e: React.FormEvent) => {
+  const handleRegister = async (e: FormEvent) => {
     e.preventDefault()
 
     if (password !== confirmPassword) {
