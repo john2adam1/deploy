@@ -93,7 +93,6 @@ export function UsersManagement() {
                   {user.role === "admin" && <Badge variant="secondary">Admin</Badge>}
                 </div>
                 <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                    <span>Bepul foydalanish: {new Date(user.trial_end).toLocaleDateString()}</span>
                   {user.subscription_end && (
                     <span>Abonemasi: {new Date(user.subscription_end).toLocaleDateString()}</span>
                   )}

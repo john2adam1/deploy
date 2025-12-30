@@ -16,7 +16,7 @@ export default async function TestPage({ params }: { params: Promise<{ categoryI
   const { data: userData } = await supabase.from("users").select("*").eq("id", user.id).single()
 
   if (!userData || !hasActiveAccess(userData)) {
-    redirect("/dashboard")
+    redirect("/dashboard?premium=required")
   }
 
   const { data: category } = await supabase.from("categories").select("*").eq("id", categoryId).single()

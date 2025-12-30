@@ -13,9 +13,10 @@ import { getSupabaseBrowserClient } from "@/lib/supabase/client"
 import { BookOpen } from "lucide-react"
 
 export default function RegisterPage() {
+  const [firstName, setFirstName] = useState("")
+  const [lastName, setLastName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [confirmPassword, setConfirmPassword] = useState("")
   const [loading, setLoading] = useState(false)
   const router = useRouter()
   const { toast } = useToast()
@@ -23,15 +24,6 @@ export default function RegisterPage() {
 
   const handleRegister = async (e: FormEvent) => {
     e.preventDefault()
-
-    if (password !== confirmPassword) {
-      toast({
-        title: "Error",
-        description: "Passwords do not match",
-        variant: "destructive",
-      })
-      return
-    }
 
     if (password.length < 6) {
       toast({
@@ -48,28 +40,35 @@ export default function RegisterPage() {
       const { data, error } = await supabase.auth.signUp({
         email,
         password,
-        options: {
-          emailRedirectTo: process.env.NEXT_PUBLIC_DEV_SUPABASE_REDIRECT_URL || `${window.location.origin}/dashboard`,
-        },
       })
 
       if (error) throw error
 
       if (data.user) {
-        // Create user record with trial period
-        const trialEnd = new Date()
-        trialEnd.setHours(trialEnd.getHours() + 24)
+        // trial_end is required in schema but no longer used for access control
+        const now = new Date().toISOString()
 
         await supabase.from("users").insert({
           id: data.user.id,
           email: data.user.email,
           role: "user",
-          trial_end: trialEnd.toISOString(),
+          trial_end: now,
+          subscription_end: null,
+          first_name: firstName.trim() || null,
+          last_name: lastName.trim() || null,
         })
 
+        // Immediately sign in the user
+        const { error: signInError } = await supabase.auth.signInWithPassword({
+          email,
+          password,
+        })
+
+        if (signInError) throw signInError
+
         toast({
-          title: "Success!",
-          description: "Account created. Check your email to verify.",
+          title: "Muvaffaqiyatli!",
+          description: "Hisob muvaffaqiyatli yaratildi.",
         })
 
         router.push("/dashboard")
@@ -97,11 +96,33 @@ export default function RegisterPage() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Create your account</CardTitle>
-            <CardDescription>Start your 24-hour free trial today</CardDescription>
+            <CardTitle>Ro'yxatdan o'tish</CardTitle>
+            <CardDescription>Yangi hisob yarating va darhol foydalanishni boshlang</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleRegister} className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="first-name">Ism</Label>
+                <Input
+                  id="first-name"
+                  placeholder="Ismingiz"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  required
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="last-name">Familiya</Label>
+                <Input
+                  id="last-name"
+                  placeholder="Familiyangiz"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  required
+                />
+              </div>
+
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
                 <Input
@@ -115,38 +136,26 @@ export default function RegisterPage() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="password">Password</Label>
+                <Label htmlFor="password">Parol</Label>
                 <Input
                   id="password"
                   type="password"
-                  placeholder="At least 6 characters"
+                  placeholder="Kamida 6 ta belgi"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
                 />
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="confirm-password">Confirm Password</Label>
-                <Input
-                  id="confirm-password"
-                  type="password"
-                  placeholder="Confirm your password"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  required
-                />
-              </div>
-
               <Button type="submit" className="w-full" disabled={loading}>
-                {loading ? "Creating account..." : "Create Account"}
+                {loading ? "Hisob yaratilmoqda..." : "Hisob yaratish"}
               </Button>
             </form>
 
             <div className="mt-4 text-center text-sm">
-              Already have an account?{" "}
+              Allaqachon hisobingiz bormi?{" "}
               <Link href="/login" className="text-primary hover:underline">
-                Sign in
+                Kirish
               </Link>
             </div>
           </CardContent>

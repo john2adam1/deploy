@@ -880,7 +880,7 @@ function TestInterface({ categoryTitle, tests, userId }) {
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardHeader"], {
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardTitle"], {
                             className: "text-center text-2xl",
-                            children: "Test Complete!"
+                            children: "Test yakunlandi!"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
                             lineNumber: 99,
@@ -910,7 +910,7 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "text-muted-foreground",
-                                        children: "Final Score"
+                                        children: "Final ball"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
                                         lineNumber: 104,
@@ -938,7 +938,7 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "text-sm text-muted-foreground",
-                                                children: "Total Questions"
+                                                children: "Jami savollar"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
                                                 lineNumber: 110,
@@ -972,7 +972,7 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "text-sm text-muted-foreground",
-                                                children: "Correct"
+                                                children: "To'g'ri javoblar"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
                                                 lineNumber: 117,
@@ -1006,7 +1006,7 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "text-sm text-muted-foreground",
-                                                children: "Wrong"
+                                                children: "Noto'g'ri javoblar"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
                                                 lineNumber: 124,
@@ -1027,7 +1027,7 @@ function TestInterface({ categoryTitle, tests, userId }) {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                 onClick: ()=>router.push("/dashboard"),
                                 className: "w-full",
-                                children: "Back to Dashboard"
+                                children: "Dashboardga qaytish"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
                                 lineNumber: 128,
@@ -1073,7 +1073,7 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-muted-foreground",
                                     children: [
-                                        "Question ",
+                                        "Savol ",
                                         currentIndex + 1,
                                         " of ",
                                         tests.length
@@ -1158,7 +1158,7 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         className: "text-sm font-medium mb-2",
-                                                        children: "Audio Question"
+                                                        children: "Audio savol"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
                                                         lineNumber: 170,
@@ -1168,7 +1168,7 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                                         controls: true,
                                                         className: "w-full",
                                                         src: currentTest.audio_url,
-                                                        children: "Your browser does not support the audio element."
+                                                        children: "Sizning brauzeringiz audio elementini qo'llab-quvvatlamaydi."
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
                                                         lineNumber: 171,
@@ -1260,7 +1260,7 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                             variant: "outline",
                                             onClick: ()=>setCurrentIndex(currentIndex - 1),
                                             className: "flex-1",
-                                            children: "Previous"
+                                            children: "Oldingi"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
                                             lineNumber: 201,
@@ -1270,7 +1270,7 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                             onClick: ()=>setCurrentIndex(currentIndex + 1),
                                             className: "flex-1",
                                             disabled: selectedAnswers[currentIndex] === undefined,
-                                            children: "Next"
+                                            children: "Keyingi"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
                                             lineNumber: 206,
@@ -1279,7 +1279,7 @@ function TestInterface({ categoryTitle, tests, userId }) {
                                             onClick: handleFinish,
                                             className: "flex-1",
                                             disabled: selectedAnswers[currentIndex] === undefined,
-                                            children: "Finish Test"
+                                            children: "Testni yakunlash"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/avtotest/components/test-interface.tsx",
                                             lineNumber: 214,

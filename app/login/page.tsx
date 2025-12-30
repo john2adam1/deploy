@@ -11,8 +11,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { useToast } from "@/hooks/use-toast"
 import { getSupabaseBrowserClient } from "@/lib/supabase/client"
 import { BookOpen } from "lucide-react"
+import { Alert, AlertDescription } from "@/components/ui/alert"
 
-export default function LoginPage() {
+export default function LoginPage({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined }
+}) {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [loading, setLoading] = useState(false)
@@ -25,12 +30,28 @@ export default function LoginPage() {
     setLoading(true)
 
     try {
-      const { error } = await supabase.auth.signInWithPassword({
+      const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
       })
 
       if (error) throw error
+
+      // Single-device login: generate deviceId and save to DB (non-admins enforced elsewhere)
+      const deviceId = crypto.randomUUID()
+      if (typeof window !== "undefined") {
+        window.localStorage.setItem("deviceId", deviceId)
+      }
+
+      if (data.user) {
+        await supabase
+          .from("users")
+          .update({
+            active_device_id: deviceId,
+            last_login_at: new Date().toISOString(),
+          })
+          .eq("id", data.user.id)
+      }
 
       router.push("/dashboard")
     } catch (error: any) {
@@ -56,10 +77,15 @@ export default function LoginPage() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Welcome back</CardTitle>
-            <CardDescription>Sign in to continue your learning</CardDescription>
+            <CardTitle>Qaytib kelganingizdan xursandmiz</CardTitle>
+            <CardDescription>Email va parol bilan tizimga kiring</CardDescription>
           </CardHeader>
           <CardContent>
+            {searchParams?.session === "conflict" && (
+              <Alert className="mb-4" variant="destructive">
+                <AlertDescription>Hisobingiz boshqa qurilmada ochildi</AlertDescription>
+              </Alert>
+            )}
             <form onSubmit={handleLogin} className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
@@ -74,11 +100,11 @@ export default function LoginPage() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="password">Password</Label>
+                <Label htmlFor="password">Parol</Label>
                 <Input
                   id="password"
                   type="password"
-                  placeholder="Enter your password"
+                  placeholder="Parolingizni kiriting"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
@@ -86,14 +112,14 @@ export default function LoginPage() {
               </div>
 
               <Button type="submit" className="w-full" disabled={loading}>
-                {loading ? "Signing in..." : "Sign In"}
+                {loading ? "Kirilmoqda..." : "Kirish"}
               </Button>
             </form>
 
             <div className="mt-4 text-center text-sm">
-              Don't have an account?{" "}
+              Hisobingiz yo'qmi?{" "}
               <Link href="/register" className="text-primary hover:underline">
-                Sign up
+                Ro'yxatdan o'tish
               </Link>
             </div>
           </CardContent>

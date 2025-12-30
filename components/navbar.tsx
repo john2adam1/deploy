@@ -29,8 +29,47 @@ export function Navbar({ userEmail, isAdmin }: NavbarProps) {
     setMounted(true)
   }, [])
 
+  // Single-device session enforcement (non-admin users only)
+  useEffect(() => {
+    const verifyDevice = async () => {
+      try {
+        const {
+          data: { user },
+        } = await supabase.auth.getUser()
+
+        if (!user) return
+
+        const { data: dbUser } = await supabase
+          .from("users")
+          .select("id, role, active_device_id")
+          .eq("id", user.id)
+          .single()
+
+        if (!dbUser || dbUser.role === "admin") return
+
+        if (typeof window === "undefined") return
+
+        const localDeviceId = window.localStorage.getItem("deviceId")
+
+        // If there is a mismatch, force logout
+        if (dbUser.active_device_id && dbUser.active_device_id !== localDeviceId) {
+          await supabase.auth.signOut()
+          window.localStorage.removeItem("deviceId")
+          router.push("/login?session=conflict")
+        }
+      } catch {
+        // Fail-safe: do nothing on error
+      }
+    }
+
+    verifyDevice()
+  }, [router, supabase])
+
   const handleLogout = async () => {
     await supabase.auth.signOut()
+    if (typeof window !== "undefined") {
+      window.localStorage.removeItem("deviceId")
+    }
     router.push("/login")
   }
 
@@ -71,6 +110,12 @@ export function Navbar({ userEmail, isAdmin }: NavbarProps) {
                   <Link href="/dashboard">
                     <LayoutDashboard className="mr-2 h-4 w-4" />
                     Dashboard
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/settings">
+                    <Settings className="mr-2 h-4 w-4" />
+                    Settings
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
