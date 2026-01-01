@@ -2,7 +2,7 @@ var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/admin/page.
 R.c("server/chunks/ssr/90da8_next_993d44cf._.js")
 R.c("server/chunks/ssr/90da8_@supabase_auth-js_dist_module_a7cdc2bd._.js")
 R.c("server/chunks/ssr/90da8_3c03ad75._.js")
-R.c("server/chunks/ssr/[root-of-the-server]__2dfdf39e._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__40a1f065._.js")
 R.c("server/chunks/ssr/90da8_next_dist_02a058c0._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__7f148858._.js")
 R.c("server/chunks/ssr/90da8_next_dist_client_components_builtin_global-error_8c9b55df.js")

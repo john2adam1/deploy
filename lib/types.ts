@@ -15,24 +15,16 @@ export interface User {
     last_login_at?: string | null
   }
   
-  export interface Category {
-    id: string
-    title: string
-    created_at: string
-  }
-
   export interface Topic {
     id: string
-    category_id: string
     title: string
-    created_at: string
     is_public: boolean
+    created_at: string
   }
   
   export interface Test {
     id: string
-    category_id: string
-    topic_id: string | null
+    topic_id: string
     image_url: string
     audio_url: string | null
     question: string

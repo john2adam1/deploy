@@ -17,17 +17,7 @@ export default async function TopicTestPage({ params }: { params: Promise<{ topi
 
   if (!userData) redirect("/dashboard")
 
-  const { data: topic } = await supabase
-    .from("topics")
-    .select(`
-      *,
-      categories (
-        id,
-        title
-      )
-    `)
-    .eq("id", topicId)
-    .single()
+  const { data: topic } = await supabase.from("topics").select("*").eq("id", topicId).single()
 
   const { data: tests } = await supabase
     .from("tests")
@@ -47,20 +37,18 @@ export default async function TopicTestPage({ params }: { params: Promise<{ topi
   }
 
   // Public / premium access control
-  const isPremiumRequired = !(topic as any).is_public
+  const isPremiumRequired = !topic.is_public
   const hasPremium = hasActiveAccess(userData)
 
   if (isPremiumRequired && !hasPremium) {
     redirect("/dashboard?premium=required")
   }
 
-  const title = `${topic.categories?.title || ""} - ${topic.title}`
-
   return (
     <div className="min-h-screen bg-background">
       <Navbar userEmail={user.email} isAdmin={userData.role === "admin"} />
       <EnhancedTestInterface
-        title={title}
+        title={topic.title}
         tests={tests}
         userId={user.id}
         testType="topic"
@@ -70,4 +58,3 @@ export default async function TopicTestPage({ params }: { params: Promise<{ topi
     </div>
   )
 }
-

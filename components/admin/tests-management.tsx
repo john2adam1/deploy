@@ -11,17 +11,17 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { useToast } from "@/hooks/use-toast"
-import { Trash2, Edit2, X, Check } from "lucide-react"
-import type { Category, Test } from "@/lib/types"
+import { Trash2, Edit2 } from "lucide-react"
+import type { Topic, Test } from "@/lib/types"
 
-interface TestWithCategory extends Test {
-  category_title?: string
+interface TestWithTopic extends Test {
+  topic_title?: string
 }
 
 export function TestsManagement() {
-  const [categories, setCategories] = useState<Category[]>([])
-  const [tests, setTests] = useState<TestWithCategory[]>([])
-  const [selectedCategory, setSelectedCategory] = useState("")
+  const [topics, setTopics] = useState<Topic[]>([])
+  const [tests, setTests] = useState<TestWithTopic[]>([])
+  const [selectedTopic, setSelectedTopic] = useState("")
   const [imageFile, setImageFile] = useState<File | null>(null)
   const [audioFile, setAudioFile] = useState<File | null>(null)
   const [imageUrl, setImageUrl] = useState("")
@@ -34,19 +34,21 @@ export function TestsManagement() {
   const [answers, setAnswers] = useState(["", "", "", ""])
   const [correctAnswer, setCorrectAnswer] = useState("0")
   const [timeLimit, setTimeLimit] = useState("300")
+  const [explanationTitle, setExplanationTitle] = useState("")
+  const [explanationText, setExplanationText] = useState("")
   const [editingTest, setEditingTest] = useState<Test | null>(null)
   const [loading, setLoading] = useState(true)
   const { toast } = useToast()
   const supabase = getSupabaseBrowserClient()
 
   useEffect(() => {
-    fetchCategories()
+    fetchTopics()
     fetchTests()
   }, [])
 
-  const fetchCategories = async () => {
-    const { data } = await supabase.from("categories").select("*").order("title")
-    if (data) setCategories(data)
+  const fetchTopics = async () => {
+    const { data } = await supabase.from("topics").select("*").order("title")
+    if (data) setTopics(data)
   }
 
   const fetchTests = async () => {
@@ -55,24 +57,24 @@ export function TestsManagement() {
       .from("tests")
       .select(`
         *,
-        categories (
+        topics (
           title
         )
       `)
       .order("created_at", { ascending: false })
 
     if (data) {
-      const testsWithCategory = data.map((test: any) => ({
+      const testsWithTopic = data.map((test: any) => ({
         ...test,
-        category_title: test.categories?.title || "Unknown",
+        topic_title: test.topics?.title || "Unknown",
       }))
-      setTests(testsWithCategory)
+      setTests(testsWithTopic)
     }
     setLoading(false)
   }
 
   const resetForm = () => {
-    setSelectedCategory("")
+    setSelectedTopic("")
     setImageFile(null)
     setAudioFile(null)
     setImageUrl("")
@@ -83,13 +85,14 @@ export function TestsManagement() {
     setAnswers(["", "", "", ""])
     setCorrectAnswer("0")
     setTimeLimit("300")
+    setExplanationTitle("")
+    setExplanationText("")
     setEditingTest(null)
   }
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
     if (file) {
-      // Validate image file
       if (!file.type.startsWith("image/")) {
         toast({
           title: "Error",
@@ -99,7 +102,6 @@ export function TestsManagement() {
         return
       }
       setImageFile(file)
-      // Create preview
       const reader = new FileReader()
       reader.onloadend = () => {
         setImagePreview(reader.result as string)
@@ -111,7 +113,6 @@ export function TestsManagement() {
   const handleAudioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
     if (file) {
-      // Validate audio file
       if (!file.type.startsWith("audio/")) {
         toast({
           title: "Error",
@@ -121,7 +122,6 @@ export function TestsManagement() {
         return
       }
       setAudioFile(file)
-      // Create preview URL for audio
       setAudioPreview(URL.createObjectURL(file))
     }
   }
@@ -199,7 +199,7 @@ export function TestsManagement() {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
 
-    if (!selectedCategory || (!imageUrl && !imageFile) || !question) {
+    if (!selectedTopic || (!imageUrl && !imageFile) || !question) {
       toast({
         title: "Error",
         description: "Barcha majburiy maydonlarni to'ldiring va rasm faylini yuklang",
@@ -217,20 +217,18 @@ export function TestsManagement() {
       return
     }
 
-    // Upload files if new files are selected
     let finalImageUrl = imageUrl
     let finalAudioUrl = audioUrl
 
     if (imageFile) {
       const uploadedImageUrl = await uploadImage()
-      if (!uploadedImageUrl) return // Error already shown in uploadImage
+      if (!uploadedImageUrl) return
       finalImageUrl = uploadedImageUrl
     }
 
     if (audioFile) {
       const uploadedAudioUrl = await uploadAudio()
       if (!uploadedAudioUrl) {
-        // Audio is optional, so we continue even if upload fails
         finalAudioUrl = null
       } else {
         finalAudioUrl = uploadedAudioUrl
@@ -238,17 +236,18 @@ export function TestsManagement() {
     }
 
     if (editingTest) {
-      // Update existing test
       const { error } = await supabase
         .from("tests")
         .update({
-          category_id: selectedCategory,
+          topic_id: selectedTopic,
           image_url: finalImageUrl,
           audio_url: finalAudioUrl || null,
           question,
           answers,
           correct_answer: Number.parseInt(correctAnswer),
           time_limit: Number.parseInt(timeLimit),
+          explanation_title: explanationTitle.trim() || null,
+          explanation_text: explanationText.trim() || null,
         })
         .eq("id", editingTest.id)
 
@@ -267,15 +266,16 @@ export function TestsManagement() {
         fetchTests()
       }
     } else {
-      // Create new test
       const { error } = await supabase.from("tests").insert({
-        category_id: selectedCategory,
+        topic_id: selectedTopic,
         image_url: finalImageUrl,
         audio_url: finalAudioUrl || null,
         question,
         answers,
         correct_answer: Number.parseInt(correctAnswer),
         time_limit: Number.parseInt(timeLimit),
+        explanation_title: explanationTitle.trim() || null,
+        explanation_text: explanationText.trim() || null,
       })
 
       if (error) {
@@ -295,9 +295,9 @@ export function TestsManagement() {
     }
   }
 
-  const handleEdit = (test: TestWithCategory) => {
+  const handleEdit = (test: TestWithTopic) => {
     setEditingTest(test)
-    setSelectedCategory(test.category_id)
+    setSelectedTopic(test.topic_id)
     setImageUrl(test.image_url)
     setImagePreview(test.image_url)
     setAudioUrl(test.audio_url || "")
@@ -308,6 +308,8 @@ export function TestsManagement() {
     setAnswers(test.answers)
     setCorrectAnswer(test.correct_answer.toString())
     setTimeLimit(test.time_limit.toString())
+    setExplanationTitle(test.explanation_title || "")
+    setExplanationText(test.explanation_text || "")
   }
 
   const handleDelete = async (id: string) => {
@@ -332,14 +334,14 @@ export function TestsManagement() {
     }
   }
 
-  const testsByCategory = tests.reduce((acc, test) => {
-    const categoryTitle = test.category_title || "Unknown"
-    if (!acc[categoryTitle]) {
-      acc[categoryTitle] = []
+  const testsByTopic = tests.reduce((acc, test) => {
+    const topicTitle = test.topic_title || "Unknown"
+    if (!acc[topicTitle]) {
+      acc[topicTitle] = []
     }
-    acc[categoryTitle].push(test)
+    acc[topicTitle].push(test)
     return acc
-  }, {} as Record<string, TestWithCategory[]>)
+  }, {} as Record<string, TestWithTopic[]>)
 
   return (
     <Tabs defaultValue="create" className="space-y-6">
@@ -353,21 +355,21 @@ export function TestsManagement() {
           <CardHeader>
             <CardTitle>{editingTest ? "Testni tahrirlash" : "Test yaratish"}</CardTitle>
             <CardDescription>
-              {editingTest ? "Test haqida ma'lumotlarni yangilash" : "Yangi testni kategoriyaga qo'shish"}
+              {editingTest ? "Test haqida ma'lumotlarni yangilash" : "Yangi testni mavzuga qo'shish"}
             </CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="category">Category</Label>
-                <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+                <Label htmlFor="topic">Mavzu</Label>
+                <Select value={selectedTopic} onValueChange={setSelectedTopic}>
                   <SelectTrigger>
-                    <SelectValue placeholder="Kategoriyani tanlang" />
+                    <SelectValue placeholder="Mavzuni tanlang" />
                   </SelectTrigger>
                   <SelectContent>
-                    {categories.map((category) => (
-                      <SelectItem key={category.id} value={category.id}>
-                        {category.title}
+                    {topics.map((topic) => (
+                      <SelectItem key={topic.id} value={topic.id}>
+                        {topic.title}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -410,7 +412,7 @@ export function TestsManagement() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="question">Question</Label>
+                <Label htmlFor="question">Savol</Label>
                 <Textarea
                   id="question"
                   placeholder="Savolni kiriting..."
@@ -454,7 +456,7 @@ export function TestsManagement() {
                 </div>
 
                 <div className="space-y-2">
-                    <Label htmlFor="time">Vaqt chegarasi (sekundlar)</Label>
+                  <Label htmlFor="time">Vaqt chegarasi (sekundlar)</Label>
                   <Input
                     id="time"
                     type="number"
@@ -464,6 +466,26 @@ export function TestsManagement() {
                     required
                   />
                 </div>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="explanation-title">Tushuntirish sarlavhasi (Optional)</Label>
+                <Input
+                  id="explanation-title"
+                  placeholder="Tushuntirish sarlavhasi..."
+                  value={explanationTitle}
+                  onChange={(e) => setExplanationTitle(e.target.value)}
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="explanation-text">Tushuntirish matni (Optional)</Label>
+                <Textarea
+                  id="explanation-text"
+                  placeholder="Tushuntirish matni..."
+                  value={explanationText}
+                  onChange={(e) => setExplanationText(e.target.value)}
+                />
               </div>
 
               <div className="flex gap-2">
@@ -488,7 +510,7 @@ export function TestsManagement() {
       <TabsContent value="view">
         {loading ? (
           <div className="text-center py-8">Testlar yuklanmoqda...</div>
-        ) : Object.keys(testsByCategory).length === 0 ? (
+        ) : Object.keys(testsByTopic).length === 0 ? (
           <Card>
             <CardContent className="py-8">
               <p className="text-center text-muted-foreground">Hozircha testlar mavjud emas. Birinchi testni yarating!</p>
@@ -496,15 +518,15 @@ export function TestsManagement() {
           </Card>
         ) : (
           <div className="space-y-6">
-            {Object.entries(testsByCategory).map(([categoryTitle, categoryTests]) => (
-              <Card key={categoryTitle}>
+            {Object.entries(testsByTopic).map(([topicTitle, topicTests]) => (
+              <Card key={topicTitle}>
                 <CardHeader>
-                  <CardTitle>{categoryTitle}</CardTitle>
-                  <CardDescription>{categoryTests.length} test(lar) bu kategoriyada</CardDescription>
+                  <CardTitle>{topicTitle}</CardTitle>
+                  <CardDescription>{topicTests.length} test(lar) bu mavzuda</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    {categoryTests.map((test) => (
+                    {topicTests.map((test) => (
                       <div key={test.id} className="rounded-lg border p-4 space-y-3">
                         <div className="flex items-start justify-between">
                           <div className="flex-1 space-y-2">
@@ -512,6 +534,8 @@ export function TestsManagement() {
                             <div className="text-sm text-muted-foreground space-y-1">
                               <p>Rasm: {test.image_url}</p>
                               {test.audio_url && <p>Audio: {test.audio_url}</p>}
+                              {test.explanation_title && <p>Tushuntirish sarlavhasi: {test.explanation_title}</p>}
+                              {test.explanation_text && <p>Tushuntirish: {test.explanation_text}</p>}
                               <p>Vaqt chegarasi: {test.time_limit}s</p>
                               <p>To'g'ri javob: Javob {test.correct_answer + 1}</p>
                             </div>

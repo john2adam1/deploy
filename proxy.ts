@@ -17,40 +17,55 @@ export async function proxy(request: NextRequest) {
           return request.cookies.getAll()
         },
         setAll(cookiesToSet) {
-          cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value))
+          cookiesToSet.forEach(({ name, value }) =>
+            request.cookies.set(name, value)
+          )
+
           response = NextResponse.next({
             request,
           })
-          cookiesToSet.forEach(({ name, value, options }) => response.cookies.set(name, value, options))
+
+          cookiesToSet.forEach(({ name, value, options }) =>
+            response.cookies.set(name, value, options)
+          )
         },
       },
-    },
+    }
   )
 
   const {
     data: { user },
   } = await supabase.auth.getUser()
 
-  // Protect admin routes
+  // 🔒 Admin route protection
   if (request.nextUrl.pathname.startsWith("/admin") && user) {
-    const { data: userData } = await supabase.from("users").select("role").eq("id", user.id).single()
+    const { data: userData } = await supabase
+      .from("users")
+      .select("role")
+      .eq("id", user.id)
+      .single()
 
     if (userData?.role !== "admin") {
       return NextResponse.redirect(new URL("/dashboard", request.url))
     }
   }
 
-  // Redirect authenticated users away from auth pages
-  if (user && (request.nextUrl.pathname === "/login" || request.nextUrl.pathname === "/register")) {
+  // 🚫 Auth userlarni login/registerdan chiqarish
+  if (
+    user &&
+    (request.nextUrl.pathname === "/login" ||
+      request.nextUrl.pathname === "/register")
+  ) {
     return NextResponse.redirect(new URL("/dashboard", request.url))
   }
 
-  // Redirect unauthenticated users to login
+  // 🚫 Login qilmaganlarni himoyalangan sahifalardan chiqarish
   if (
     !user &&
     (request.nextUrl.pathname.startsWith("/dashboard") ||
       request.nextUrl.pathname.startsWith("/admin") ||
-      request.nextUrl.pathname.startsWith("/test"))
+      request.nextUrl.pathname.startsWith("/test") ||
+      request.nextUrl.pathname.startsWith("/settings"))
   ) {
     return NextResponse.redirect(new URL("/login", request.url))
   }
@@ -59,5 +74,12 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/dashboard/:path*", "/admin/:path*", "/test/:path*", "/login", "/register"],
+  matcher: [
+    "/dashboard/:path*",
+    "/admin/:path*",
+    "/test/:path*",
+    "/settings/:path*",
+    "/login",
+    "/register",
+  ],
 }

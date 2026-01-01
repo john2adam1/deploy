@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { getSupabaseServerClient } from "@/lib/supabase/server"
+import { Phone, MapPin, Send } from "lucide-react"
 
 export async function ContactSection() {
   const supabase = await getSupabaseServerClient()
@@ -15,9 +16,10 @@ export async function ContactSection() {
   }
 
   const contact = data?.content ?? {
+    phone: "",
     telegram: "",
     telegram_link: "",
-    email: ""
+    address: ""
   }
 
   return (
@@ -28,39 +30,52 @@ export async function ContactSection() {
           Savollaringiz yoki abonemani sotib olishni xohlaysizmi? Biz bilan bog'laning.
         </p>
 
-        <div className="mt-8 flex flex-col items-center gap-4">
-          {contact.telegram && (
-            <p className="text-sm text-muted-foreground">
-              Telegram: <span className="font-medium">{contact.telegram}</span>
-            </p>
+        <div className="mt-8 grid gap-6 sm:grid-cols-3">
+          {contact.phone && (
+            <div className="flex flex-col items-center gap-2">
+              <Phone className="h-8 w-8 text-primary" />
+              <p className="text-sm font-medium">Telefon</p>
+              <a href={`tel:${contact.phone}`} className="text-sm text-muted-foreground hover:text-primary">
+                {contact.phone}
+              </a>
+            </div>
           )}
 
           {contact.telegram_link && (
-            <Button asChild size="lg">
-              <a
-                href={contact.telegram_link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Telegram orqali bog'lanish
-              </a>
-            </Button>
+            <div className="flex flex-col items-center gap-2">
+              <Send className="h-8 w-8 text-primary" />
+              <p className="text-sm font-medium">Telegram</p>
+              <Button asChild variant="link" size="sm">
+                <a
+                  href={contact.telegram_link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {contact.telegram || "Telegram"}
+                </a>
+              </Button>
+            </div>
           )}
 
-          {contact.email && (
-            <p className="text-sm text-muted-foreground mt-2">
-              Email: <span className="font-medium">{contact.email}</span>
-            </p>
+          {contact.address && (
+            <div className="flex flex-col items-center gap-2">
+              <MapPin className="h-8 w-8 text-primary" />
+              <p className="text-sm font-medium">Manzil</p>
+              <p className="text-sm text-muted-foreground text-center">
+                {contact.address}
+              </p>
+            </div>
           )}
 
-          {!contact.telegram && !contact.telegram_link && !contact.email && (
-            <p className="text-sm text-muted-foreground">
-              Bog'lanish ma'lumotlari hozirda mavjud emas.
-            </p>
+          {!contact.phone && !contact.telegram_link && !contact.address && (
+            <div className="col-span-3">
+              <p className="text-sm text-muted-foreground">
+                Bog'lanish ma'lumotlari hozirda mavjud emas.
+              </p>
+            </div>
           )}
         </div>
       </div>
     </section>
   )
 }
-

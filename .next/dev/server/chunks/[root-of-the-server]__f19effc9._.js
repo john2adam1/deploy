@@ -76,19 +76,19 @@ async function proxy(request) {
         }
     });
     const { data: { user } } = await supabase.auth.getUser();
-    // Protect admin routes
+    // 🔒 Admin route protection
     if (request.nextUrl.pathname.startsWith("/admin") && user) {
         const { data: userData } = await supabase.from("users").select("role").eq("id", user.id).single();
         if (userData?.role !== "admin") {
             return __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL("/dashboard", request.url));
         }
     }
-    // Redirect authenticated users away from auth pages
+    // 🚫 Auth userlarni login/registerdan chiqarish
     if (user && (request.nextUrl.pathname === "/login" || request.nextUrl.pathname === "/register")) {
         return __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL("/dashboard", request.url));
     }
-    // Redirect unauthenticated users to login
-    if (!user && (request.nextUrl.pathname.startsWith("/dashboard") || request.nextUrl.pathname.startsWith("/admin") || request.nextUrl.pathname.startsWith("/test"))) {
+    // 🚫 Login qilmaganlarni himoyalangan sahifalardan chiqarish
+    if (!user && (request.nextUrl.pathname.startsWith("/dashboard") || request.nextUrl.pathname.startsWith("/admin") || request.nextUrl.pathname.startsWith("/test") || request.nextUrl.pathname.startsWith("/settings"))) {
         return __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL("/login", request.url));
     }
     return response;
@@ -98,6 +98,7 @@ const config = {
         "/dashboard/:path*",
         "/admin/:path*",
         "/test/:path*",
+        "/settings/:path*",
         "/login",
         "/register"
     ]

@@ -16,8 +16,8 @@ interface EnhancedTestInterfaceProps {
   title: string
   tests: Test[]
   userId: string
-  testType?: "category" | "topic" | "ticket" | "exam" | "random"
-  testTypeId?: string // topic_id, ticket_id, or exam_type (20/50/100)
+  testType?: "topic" | "ticket" | "exam" | "random"
+  testTypeId?: string
   userSettings?: UserSettings | null
 }
 
@@ -25,7 +25,7 @@ export function EnhancedTestInterface({
   title,
   tests,
   userId,
-  testType = "category",
+  testType = "topic",
   testTypeId,
   userSettings,
 }: EnhancedTestInterfaceProps) {
@@ -44,7 +44,6 @@ export function EnhancedTestInterface({
   const questionFontSize = userSettings?.question_font_size || 16
   const answerFontSize = userSettings?.answer_font_size || 14
 
-  // Keyboard navigation
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (isFinished) return
@@ -89,7 +88,6 @@ export function EnhancedTestInterface({
     const score = total > 0 ? Math.round((correct / total) * 100) : 0
     setResults({ correct, wrong, unanswered, score })
 
-    // Save statistics based on test type
     if (testType === "topic" && testTypeId) {
       await saveTopicStatistics(testTypeId, correct, wrong, unanswered, score)
     } else if (testType === "ticket" && testTypeId) {
@@ -287,7 +285,7 @@ export function EnhancedTestInterface({
 
   return (
     <main className="container mx-auto px-4 py-8">
-      <div className="max-w-3xl mx-auto space-y-6">
+      <div className="max-w-6xl mx-auto space-y-6">
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-bold">{title}</h1>
@@ -301,122 +299,139 @@ export function EnhancedTestInterface({
         </div>
 
         <Card>
-          <CardHeader className="space-y-4">
-            <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-muted flex items-center justify-center">
-              {currentTest.image_url ? (
-                <Image
-                  src={currentTest.image_url}
-                  alt="Question image"
-                  fill
-                  className="object-cover"
-                />
-              ) : (
-                <BookOpen className="h-24 w-24 text-muted-foreground" />
-              )}
-            </div>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            <div>
-              <h2 className="font-semibold mb-4" style={{ fontSize: `${questionFontSize}px` }}>
-                {currentTest.question}
-              </h2>
-              <RadioGroup
-                value={selectedAnswer?.toString()}
-                onValueChange={(value) => handleAnswerSelect(Number.parseInt(value))}
-              >
-                {currentTest.answers.map((answer, index) => {
-                  const isSelected = selectedAnswer === index
-                  const isCorrect = index === currentTest.correct_answer
-                  const showFeedback = isAnswered && isSelected
+          <CardContent className="p-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* Left side: Question */}
+              <div className="space-y-4">
+                <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-muted flex items-center justify-center">
+                  {currentTest.image_url ? (
+                    <Image
+                      src={currentTest.image_url}
+                      alt="Question image"
+                      fill
+                      className="object-cover"
+                    />
+                  ) : (
+                    <BookOpen className="h-24 w-24 text-muted-foreground" />
+                  )}
+                </div>
+                <div>
+                  <h2 className="font-semibold" style={{ fontSize: `${questionFontSize}px` }}>
+                    {currentTest.question}
+                  </h2>
+                </div>
+              </div>
 
-                  let borderColor = "border"
-                  if (showFeedback) {
-                    borderColor = isCorrect ? "border-green-500 bg-green-50 dark:bg-green-950" : "border-red-500 bg-red-50 dark:bg-red-950"
-                  }
+              {/* Right side: Answers, Audio, Explanation */}
+              <div className="space-y-4">
+                <RadioGroup
+                  value={selectedAnswer?.toString()}
+                  onValueChange={(value) => handleAnswerSelect(Number.parseInt(value))}
+                >
+                  {currentTest.answers.map((answer, index) => {
+                    const isSelected = selectedAnswer === index
+                    const isCorrect = index === currentTest.correct_answer
+                    const showFeedback = isAnswered
 
-                  return (
-                    <div
-                      key={index}
-                      className={`flex items-center space-x-2 rounded-lg ${borderColor} p-4 hover:bg-accent transition-colors`}
-                    >
-                      <RadioGroupItem
-                        value={index.toString()}
-                        id={`answer-${index}`}
-                        disabled={isAnswered}
-                      />
-                      <Label
-                        htmlFor={`answer-${index}`}
-                        className="flex-1 cursor-pointer"
-                        style={{ fontSize: `${answerFontSize}px` }}
+                    let borderColor = "border"
+                    let bgColor = ""
+                    
+                    if (showFeedback) {
+                      if (isSelected && !isCorrect) {
+                        borderColor = "border-red-500"
+                        bgColor = "bg-red-50 dark:bg-red-950"
+                      } else if (isCorrect) {
+                        borderColor = "border-green-500"
+                        bgColor = "bg-green-50 dark:bg-green-950"
+                      }
+                    }
+
+                    return (
+                      <div
+                        key={index}
+                        className={`flex items-center space-x-2 rounded-lg ${borderColor} ${bgColor} p-4 hover:bg-accent transition-colors`}
                       >
-                        {answer}
-                      </Label>
-                      {showFeedback && (
-                        <div className="ml-2">
-                          {isCorrect ? (
-                            <CheckCircle2 className="h-5 w-5 text-green-500" />
-                          ) : (
-                            <XCircle className="h-5 w-5 text-red-500" />
-                          )}
-                        </div>
-                      )}
-                    </div>
-                  )
-                })}
-              </RadioGroup>
-            </div>
+                        <RadioGroupItem
+                          value={index.toString()}
+                          id={`answer-${index}`}
+                          disabled={isAnswered}
+                        />
+                        <Label
+                          htmlFor={`answer-${index}`}
+                          className="flex-1 cursor-pointer"
+                          style={{ fontSize: `${answerFontSize}px` }}
+                        >
+                          {answer}
+                        </Label>
+                        {showFeedback && (
+                          <div className="ml-2">
+                            {isSelected && !isCorrect ? (
+                              <XCircle className="h-5 w-5 text-red-500" />
+                            ) : isCorrect ? (
+                              <CheckCircle2 className="h-5 w-5 text-green-500" />
+                            ) : null}
+                          </div>
+                        )}
+                      </div>
+                    )
+                  })}
+                </RadioGroup>
 
-            {showExplanation[currentIndex] && currentTest.explanation_text && (
-              <div className="rounded-lg border bg-muted/50 p-4 space-y-2">
-                {currentTest.explanation_title && (
-                  <h3 className="font-semibold">{currentTest.explanation_title}</h3>
-                )}
-                <p className="text-sm text-muted-foreground">{currentTest.explanation_text}</p>
-              </div>
-            )}
+                {/* Audio and Explanation buttons */}
+                <div className="flex gap-2 justify-end">
+                  {currentTest.audio_url && (
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="rounded-full"
+                      onClick={() => toggleAudio(currentIndex)}
+                    >
+                      <Volume2 className={`h-4 w-4 ${playingAudio[currentIndex] ? "text-primary" : ""}`} />
+                    </Button>
+                  )}
+                  {currentTest.explanation_text && (
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="rounded-full"
+                      onClick={() => toggleExplanation(currentIndex)}
+                    >
+                      <Lightbulb className={`h-4 w-4 ${showExplanation[currentIndex] ? "text-primary" : ""}`} />
+                    </Button>
+                  )}
+                </div>
 
-            <div className="flex items-center justify-between gap-4">
-              <div className="flex gap-2">
-                {currentTest.audio_url && (
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="rounded-full"
-                    onClick={() => toggleAudio(currentIndex)}
-                  >
-                    <Volume2 className={`h-4 w-4 ${playingAudio[currentIndex] ? "text-primary" : ""}`} />
-                  </Button>
+                {/* Explanation display */}
+                {showExplanation[currentIndex] && currentTest.explanation_text && (
+                  <div className="rounded-lg border bg-muted/50 p-4 space-y-2">
+                    {currentTest.explanation_title && (
+                      <h3 className="font-semibold">{currentTest.explanation_title}</h3>
+                    )}
+                    <p className="text-sm text-muted-foreground">{currentTest.explanation_text}</p>
+                  </div>
                 )}
-                {currentTest.explanation_text && (
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="rounded-full"
-                    onClick={() => toggleExplanation(currentIndex)}
-                  >
-                    <Lightbulb className={`h-4 w-4 ${showExplanation[currentIndex] ? "text-primary" : ""}`} />
-                  </Button>
-                )}
-              </div>
 
-              <div className="flex gap-2">
-                {currentIndex > 0 && (
-                  <Button variant="outline" onClick={() => setCurrentIndex(currentIndex - 1)}>
-                    {t("test.previous", language)}
-                  </Button>
-                )}
-                {currentIndex < tests.length - 1 ? (
-                  <Button
-                    onClick={() => setCurrentIndex(currentIndex + 1)}
-                    disabled={selectedAnswer === undefined}
-                  >
-                    {t("test.next", language)}
-                  </Button>
-                ) : (
-                  <Button onClick={handleFinish} disabled={selectedAnswer === undefined}>
-                    {t("test.finish", language)}
-                  </Button>
-                )}
+                {/* Navigation */}
+                <div className="flex gap-2 pt-4">
+                  {currentIndex > 0 && (
+                    <Button variant="outline" onClick={() => setCurrentIndex(currentIndex - 1)} className="flex-1">
+                      {t("test.previous", language)}
+                    </Button>
+                  )}
+                  {currentIndex < tests.length - 1 ? (
+                    <Button
+                      onClick={() => setCurrentIndex(currentIndex + 1)}
+                      disabled={selectedAnswer === undefined}
+                      className="flex-1"
+                    >
+                      {t("test.next", language)}
+                    </Button>
+                  ) : (
+                    <Button onClick={handleFinish} disabled={selectedAnswer === undefined} className="flex-1">
+                      {t("test.finish", language)}
+                    </Button>
+                  )}
+                </div>
               </div>
             </div>
           </CardContent>
@@ -425,4 +440,3 @@ export function EnhancedTestInterface({
     </main>
   )
 }
-

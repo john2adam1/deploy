@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import type { FormEvent } from "react"
-import { useRouter } from "next/navigation"
+import { useRouter, useSearchParams } from "next/navigation"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -13,17 +13,16 @@ import { getSupabaseBrowserClient } from "@/lib/supabase/client"
 import { BookOpen } from "lucide-react"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 
-export default function LoginPage({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined }
-}) {
+export default function LoginPage() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [loading, setLoading] = useState(false)
   const router = useRouter()
+  const searchParams = useSearchParams()
   const { toast } = useToast()
   const supabase = getSupabaseBrowserClient()
+
+  const sessionConflict = searchParams.get("session") === "conflict"
 
   const handleLogin = async (e: FormEvent) => {
     e.preventDefault()
@@ -71,7 +70,7 @@ export default function LoginPage({
         <div className="mb-8 text-center">
           <div className="inline-flex items-center gap-2">
             <BookOpen className="h-8 w-8 text-primary" />
-            <span className="text-2xl font-bold">TestMaster</span>
+            <span className="text-2xl font-bold">Tezkor Avtotest</span>
           </div>
         </div>
 
@@ -81,7 +80,7 @@ export default function LoginPage({
             <CardDescription>Email va parol bilan tizimga kiring</CardDescription>
           </CardHeader>
           <CardContent>
-            {searchParams?.session === "conflict" && (
+            {sessionConflict && (
               <Alert className="mb-4" variant="destructive">
                 <AlertDescription>Hisobingiz boshqa qurilmada ochildi</AlertDescription>
               </Alert>

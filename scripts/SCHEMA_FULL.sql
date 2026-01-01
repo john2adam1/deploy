@@ -5,9 +5,8 @@
 -- Run it once in a new Supabase project, or after dropping existing
 -- custom tables if you are resetting the database.
 --
--- Auth:
--- - Email + password handled by Supabase auth.users
--- - This file only defines the app's own tables and relations.
+-- Structure: Topics → Tests, Tickets → Tests
+-- No categories - topics are standalone
 -- ============================================
 
 -- ============================================
@@ -38,27 +37,18 @@ CREATE TABLE IF NOT EXISTS users (
   last_login_at TIMESTAMP WITH TIME ZONE
 );
 
--- Categories table
-CREATE TABLE IF NOT EXISTS categories (
+-- Topics table (standalone, no categories)
+CREATE TABLE IF NOT EXISTS topics (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
   title TEXT NOT NULL,
+  is_public BOOLEAN NOT NULL DEFAULT TRUE,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
--- Topics table (Category → Topic → Test)
-CREATE TABLE IF NOT EXISTS topics (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  category_id UUID REFERENCES categories(id) ON DELETE CASCADE,
-  title TEXT NOT NULL,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-  is_public BOOLEAN NOT NULL DEFAULT TRUE
-);
-
--- Tests table
+-- Tests table (belongs to topics)
 CREATE TABLE IF NOT EXISTS tests (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  category_id UUID REFERENCES categories(id) ON DELETE CASCADE,
-  topic_id UUID REFERENCES topics(id) ON DELETE SET NULL,
+  topic_id UUID REFERENCES topics(id) ON DELETE CASCADE,
   image_url TEXT NOT NULL,
   audio_url TEXT,
   question TEXT NOT NULL,
@@ -102,13 +92,21 @@ CREATE TABLE IF NOT EXISTS test_results (
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
--- Site content table (for dynamic content like contact info)
+-- Site content table (for dynamic content like contact info, carousel, prices)
 CREATE TABLE IF NOT EXISTS site_content (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
   type TEXT NOT NULL UNIQUE,
   content JSONB NOT NULL DEFAULT '{}',
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Carousel images table
+CREATE TABLE IF NOT EXISTS carousel_images (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  image_url TEXT NOT NULL,
+  order_index INTEGER NOT NULL DEFAULT 0,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
 -- ============================================
@@ -177,7 +175,6 @@ CREATE TABLE IF NOT EXISTS user_settings (
 
 CREATE INDEX IF NOT EXISTS idx_users_email ON users(email);
 CREATE INDEX IF NOT EXISTS idx_users_phone ON users(phone);
-CREATE INDEX IF NOT EXISTS idx_tests_category_id ON tests(category_id);
 CREATE INDEX IF NOT EXISTS idx_tests_topic_id ON tests(topic_id);
 CREATE INDEX IF NOT EXISTS idx_ticket_tests_ticket_id ON ticket_tests(ticket_id);
 CREATE INDEX IF NOT EXISTS idx_ticket_tests_test_id ON ticket_tests(test_id);
@@ -190,6 +187,7 @@ CREATE INDEX IF NOT EXISTS idx_ticket_statistics_user_id ON ticket_statistics(us
 CREATE INDEX IF NOT EXISTS idx_ticket_statistics_ticket_id ON ticket_statistics(ticket_id);
 CREATE INDEX IF NOT EXISTS idx_exam_statistics_user_id ON exam_statistics(user_id);
 CREATE INDEX IF NOT EXISTS idx_user_settings_user_id ON user_settings(user_id);
+CREATE INDEX IF NOT EXISTS idx_carousel_images_order ON carousel_images(order_index);
 
 -- ============================================
 -- STEP 5: Triggers
@@ -303,16 +301,6 @@ ON storage.objects FOR DELETE
 USING (bucket_id = 'test-audio' AND auth.role() = 'authenticated');
 
 -- ============================================
--- STEP 7: Sample Data (Optional)
--- ============================================
-
-INSERT INTO categories (title) VALUES 
-  ('Mathematics'),
-  ('Science'),
-  ('History')
-ON CONFLICT DO NOTHING;
-
--- ============================================
 -- SCHEMA FULLY INITIALIZED
 -- ============================================
 -- After running this:
@@ -320,6 +308,7 @@ ON CONFLICT DO NOTHING;
 -- - Role is in users.role (default 'user', set 'admin' manually for admins)
 -- - Access control & single-device logic rely on users.subscription_end,
 --   users.active_device_id, and users.role.
+-- - Topics are standalone (no categories)
+-- - Tests belong to topics
+-- - Tickets contain tests via ticket_tests junction table
 -- ============================================
-
-

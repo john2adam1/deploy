@@ -9,9 +9,10 @@ import { getSupabaseBrowserClient } from "@/lib/supabase/client"
 import { useToast } from "@/hooks/use-toast"
 
 export default function ContactManager() {
+  const [phone, setPhone] = useState("")
   const [telegram, setTelegram] = useState("")
   const [telegramLink, setTelegramLink] = useState("")
-  const [email, setEmail] = useState("")
+  const [address, setAddress] = useState("")
   const [loading, setLoading] = useState(true)
   const { toast } = useToast()
   const supabase = getSupabaseBrowserClient()
@@ -29,21 +30,22 @@ export default function ContactManager() {
       .maybeSingle()
 
     if (!error && data?.content) {
+      setPhone(data.content.phone || "")
       setTelegram(data.content.telegram || "")
       setTelegramLink(data.content.telegram_link || "")
-      setEmail(data.content.email || "")
+      setAddress(data.content.address || "")
     }
     setLoading(false)
   }
 
   const handleSave = async () => {
     const newContent = {
+      phone,
       telegram,
       telegram_link: telegramLink,
-      email
+      address,
     }
 
-    // Check if record exists
     const { data: existing } = await supabase
       .from("site_content")
       .select("id")
@@ -52,14 +54,12 @@ export default function ContactManager() {
 
     let error
     if (existing) {
-      // Update existing record
       const { error: updateError } = await supabase
         .from("site_content")
         .update({ content: newContent })
         .eq("type", "contact")
       error = updateError
     } else {
-      // Insert new record
       const { error: insertError } = await supabase
         .from("site_content")
         .insert({ type: "contact", content: newContent })
@@ -92,6 +92,16 @@ export default function ContactManager() {
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="space-y-2">
+          <Label htmlFor="phone">Telefon raqami</Label>
+          <Input
+            id="phone"
+            placeholder="+998901234567"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
+        </div>
+
+        <div className="space-y-2">
           <Label htmlFor="telegram">Telegram foydalanuvchi nomi</Label>
           <Input
             id="telegram"
@@ -112,13 +122,12 @@ export default function ContactManager() {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="email">Email manzil</Label>
+          <Label htmlFor="address">Manzil</Label>
           <Input
-            id="email"
-            type="email"
-            placeholder="support@example.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            id="address"
+            placeholder="Manzilni kiriting"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
           />
         </div>
 
@@ -129,4 +138,3 @@ export default function ContactManager() {
     </Card>
   )
 }
-
