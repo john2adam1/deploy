@@ -26,11 +26,45 @@ export default async function DashboardPage({
 
   const hasAccess = hasActiveAccess(userData)
 
-  const { data: topics } = await supabase.from("topics").select("*").order("title")
-  const { data: tickets } = await supabase.from("tickets").select("*").order("title")
-  const { count: totalTestsCount } = await supabase
-    .from("tests")
-    .select("*", { count: "exact", head: true })
+  // Fetch data with error handling
+  let topics = null
+  let tickets = null
+  let totalTestsCount = 0
+
+  try {
+    const { data: topicsData, error: topicsError } = await supabase
+      .from("topics")
+      .select("*")
+      .order("title")
+    if (!topicsError) {
+      topics = topicsData
+    }
+  } catch (error) {
+    console.error("Error fetching topics:", error)
+  }
+
+  try {
+    const { data: ticketsData, error: ticketsError } = await supabase
+      .from("tickets")
+      .select("*")
+      .order("title")
+    if (!ticketsError) {
+      tickets = ticketsData
+    }
+  } catch (error) {
+    console.error("Error fetching tickets:", error)
+  }
+
+  try {
+    const { count, error: testsError } = await supabase
+      .from("tests")
+      .select("*", { count: "exact", head: true })
+    if (!testsError && count !== null) {
+      totalTestsCount = count
+    }
+  } catch (error) {
+    console.error("Error fetching tests count:", error)
+  }
 
   return (
     <div className="min-h-screen bg-background">

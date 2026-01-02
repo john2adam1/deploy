@@ -56,42 +56,79 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_
 ;
 ;
 async function proxy(request) {
-    let response = __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].next({
-        request: {
-            headers: request.headers
+    try {
+        let response = __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].next({
+            request: {
+                headers: request.headers
+            }
+        });
+        // Check if environment variables are set
+        if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+        ;
+        const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f40$supabase$2f$ssr$2f$dist$2f$module$2f$createServerClient$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["createServerClient"])(("TURBOPACK compile-time value", "https://lgacbbewpuzeyxijzfii.supabase.co"), ("TURBOPACK compile-time value", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxnYWNiYmV3cHV6ZXl4aWp6ZmlpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY2NDE4MzcsImV4cCI6MjA4MjIxNzgzN30.P-CO-3mUHX0Pcrf1jgNcGqEXPiQEILnyGq9-340FLKc"), {
+            cookies: {
+                getAll () {
+                    return request.cookies.getAll();
+                },
+                setAll (cookiesToSet) {
+                    cookiesToSet.forEach(({ name, value })=>request.cookies.set(name, value));
+                    response = __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].next({
+                        request
+                    });
+                    cookiesToSet.forEach(({ name, value, options })=>response.cookies.set(name, value, options));
+                }
+            }
+        });
+        let user = null;
+        try {
+            const { data: { user: authUser }, error: authError } = await supabase.auth.getUser();
+            if (authError) {
+                console.error("Auth error in proxy:", authError.message);
+            // Continue without user if auth fails
+            } else {
+                user = authUser;
+            }
+        } catch (error) {
+            console.error("Error getting user in proxy:", error);
+        // Continue without user if there's an error
         }
-    });
-    const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f40$supabase$2f$ssr$2f$dist$2f$module$2f$createServerClient$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["createServerClient"])(("TURBOPACK compile-time value", "https://lgacbbewpuzeyxijzfii.supabase.co"), ("TURBOPACK compile-time value", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxnYWNiYmV3cHV6ZXl4aWp6ZmlpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY2NDE4MzcsImV4cCI6MjA4MjIxNzgzN30.P-CO-3mUHX0Pcrf1jgNcGqEXPiQEILnyGq9-340FLKc"), {
-        cookies: {
-            getAll () {
-                return request.cookies.getAll();
-            },
-            setAll (cookiesToSet) {
-                cookiesToSet.forEach(({ name, value })=>request.cookies.set(name, value));
-                response = __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].next({
-                    request
-                });
-                cookiesToSet.forEach(({ name, value, options })=>response.cookies.set(name, value, options));
+        // 🔒 Admin route protection
+        if (request.nextUrl.pathname.startsWith("/admin") && user) {
+            try {
+                const { data: userData, error: userError } = await supabase.from("users").select("role").eq("id", user.id).single();
+                if (userError) {
+                    console.error("Error fetching user data:", userError.message);
+                    // If we can't verify admin status, redirect to dashboard for safety
+                    return __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL("/dashboard", request.url));
+                }
+                if (userData?.role !== "admin") {
+                    return __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL("/dashboard", request.url));
+                }
+            } catch (error) {
+                console.error("Error in admin check:", error);
+                // On error, redirect to dashboard for safety
+                return __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL("/dashboard", request.url));
             }
         }
-    });
-    const { data: { user } } = await supabase.auth.getUser();
-    // 🔒 Admin route protection
-    if (request.nextUrl.pathname.startsWith("/admin") && user) {
-        const { data: userData } = await supabase.from("users").select("role").eq("id", user.id).single();
-        if (userData?.role !== "admin") {
+        // 🚫 Auth userlarni login/registerdan chiqarish
+        if (user && (request.nextUrl.pathname === "/login" || request.nextUrl.pathname === "/register")) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL("/dashboard", request.url));
         }
+        // 🚫 Login qilmaganlarni himoyalangan sahifalardan chiqarish
+        if (!user && (request.nextUrl.pathname.startsWith("/dashboard") || request.nextUrl.pathname.startsWith("/admin") || request.nextUrl.pathname.startsWith("/test") || request.nextUrl.pathname.startsWith("/settings") || request.nextUrl.pathname.startsWith("/tickets"))) {
+            return __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL("/login", request.url));
+        }
+        return response;
+    } catch (error) {
+        // If anything goes wrong, allow the request to proceed
+        // This prevents the proxy from blocking all requests on error
+        console.error("Proxy error:", error);
+        return __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].next({
+            request: {
+                headers: request.headers
+            }
+        });
     }
-    // 🚫 Auth userlarni login/registerdan chiqarish
-    if (user && (request.nextUrl.pathname === "/login" || request.nextUrl.pathname === "/register")) {
-        return __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL("/dashboard", request.url));
-    }
-    // 🚫 Login qilmaganlarni himoyalangan sahifalardan chiqarish
-    if (!user && (request.nextUrl.pathname.startsWith("/dashboard") || request.nextUrl.pathname.startsWith("/admin") || request.nextUrl.pathname.startsWith("/test") || request.nextUrl.pathname.startsWith("/settings") || request.nextUrl.pathname.startsWith("/tickets"))) {
-        return __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL("/login", request.url));
-    }
-    return response;
 }
 const config = {
     matcher: [

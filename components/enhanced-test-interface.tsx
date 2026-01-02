@@ -93,7 +93,8 @@ export function EnhancedTestInterface({
     } else if (testType === "ticket" && testTypeId) {
       await saveTicketStatistics(testTypeId, correct, wrong, unanswered, score)
     } else if (testType === "exam" && testTypeId) {
-      await saveExamStatistics(Number.parseInt(testTypeId), correct, wrong, unanswered, score)
+      const examType = Number.parseInt(testTypeId) as 20 | 50 | 100
+      await saveExamStatistics(examType, correct, wrong, unanswered, score)
     }
   }
 
