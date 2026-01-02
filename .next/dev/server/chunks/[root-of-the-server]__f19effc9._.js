@@ -88,7 +88,7 @@ async function proxy(request) {
         return __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL("/dashboard", request.url));
     }
     // 🚫 Login qilmaganlarni himoyalangan sahifalardan chiqarish
-    if (!user && (request.nextUrl.pathname.startsWith("/dashboard") || request.nextUrl.pathname.startsWith("/admin") || request.nextUrl.pathname.startsWith("/test") || request.nextUrl.pathname.startsWith("/settings"))) {
+    if (!user && (request.nextUrl.pathname.startsWith("/dashboard") || request.nextUrl.pathname.startsWith("/admin") || request.nextUrl.pathname.startsWith("/test") || request.nextUrl.pathname.startsWith("/settings") || request.nextUrl.pathname.startsWith("/tickets"))) {
         return __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL("/login", request.url));
     }
     return response;
@@ -99,6 +99,7 @@ const config = {
         "/admin/:path*",
         "/test/:path*",
         "/settings/:path*",
+        "/tickets/:path*",
         "/login",
         "/register"
     ]

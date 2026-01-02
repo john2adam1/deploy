@@ -65,7 +65,8 @@ export async function proxy(request: NextRequest) {
     (request.nextUrl.pathname.startsWith("/dashboard") ||
       request.nextUrl.pathname.startsWith("/admin") ||
       request.nextUrl.pathname.startsWith("/test") ||
-      request.nextUrl.pathname.startsWith("/settings"))
+      request.nextUrl.pathname.startsWith("/settings") ||
+      request.nextUrl.pathname.startsWith("/tickets"))
   ) {
     return NextResponse.redirect(new URL("/login", request.url))
   }
@@ -79,7 +80,9 @@ export const config = {
     "/admin/:path*",
     "/test/:path*",
     "/settings/:path*",
+    "/tickets/:path*",
     "/login",
     "/register",
   ],
 }
+

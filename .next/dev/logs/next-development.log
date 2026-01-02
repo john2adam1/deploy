@@ -1,94 +1,14 @@
-[00:00:04.349] Server  LOG      ✓ Ready in 3.3s
-[00:00:07.421] Server  LOG      ○ Compiling / ...
-[00:00:24.598] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:25.053] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
-[00:00:25.678] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:25.678] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:25.678] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767280369203}
-[00:00:45.640] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767280389847}
-[00:03:28.491] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:28.508] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
-[00:03:28.781] Browser WARN    Image with src "/about.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:28.781] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:03:28.781] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:03:28.781] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767280553000}
-[00:03:35.542] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767280559760}
-[00:03:41.975] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_@supabase_auth-js_dist_module_a7cdc2bd._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:03:41.997] Server  ERROR   AuthApiError: Invalid Refresh Token: Refresh Token Not Found
-[00:03:42.001] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_@supabase_auth-js_dist_module_a7cdc2bd._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:03:42.004] Server  ERROR   AuthApiError: Invalid Refresh Token: Refresh Token Not Found
-[00:03:42.647] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_@supabase_auth-js_dist_module_a7cdc2bd._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:03:42.649] Server  ERROR   AuthApiError: Invalid Refresh Token: Refresh Token Not Found
-[00:03:42.652] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_@supabase_auth-js_dist_module_a7cdc2bd._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:03:42.653] Server  ERROR   AuthApiError: Invalid Refresh Token: Refresh Token Not Found
-[00:03:43.774] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:43.794] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
-[00:03:44.141] Browser WARN    Image with src "/about.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:44.706] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:03:44.706] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:03:44.706] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767280568924}
-[00:03:45.597] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\90da8_@supabase_auth-js_dist_module_b4fd3e53._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:03:45.600] Server  ERROR   AuthApiError: Invalid Refresh Token: Refresh Token Not Found
-[00:03:45.602] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\90da8_@supabase_auth-js_dist_module_b4fd3e53._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:03:45.604] Server  ERROR   AuthApiError: Invalid Refresh Token: Refresh Token Not Found
-[00:03:46.482] Browser ERROR   {"__isAuthError":true,"code":"refresh_token_not_found","name":"AuthApiError","status":400}
-[00:03:47.683] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:47.683] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:47.683] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767280571802}
-[00:03:47.683] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:47.683] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:47.683] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:47.683] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:51.131] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:51.131] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:51.895] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:51.896] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:52.084] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:52.084] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:52.311] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:52.311] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:52.475] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:52.475] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:53.972] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:53.972] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:54.729] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:54.729] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:56.120] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:56.120] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:03:57.988] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767280582193}
-[00:04:09.579] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\90da8_@supabase_auth-js_dist_module_b4fd3e53._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:04:09.584] Server  ERROR   TypeError: fetch failed
-[00:05:34.003] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\90da8_@supabase_auth-js_dist_module_b4fd3e53._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:05:34.006] Server  ERROR   TypeError: fetch failed
-[00:06:10.512] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\90da8_@supabase_auth-js_dist_module_b4fd3e53._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:06:10.514] Server  ERROR   TypeError: fetch failed
-[00:06:11.087] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\90da8_@supabase_auth-js_dist_module_b4fd3e53._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:06:11.091] Server  ERROR   TypeError: fetch failed
-[00:06:21.130] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\90da8_@supabase_auth-js_dist_module_b4fd3e53._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:06:21.132] Server  ERROR   TypeError: fetch failed
-[00:06:21.692] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:06:21.692] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:06:21.692] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767280725601}
-[00:06:21.692] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:06:21.692] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:06:21.692] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:06:21.692] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:06:27.760] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\90da8_@supabase_auth-js_dist_module_b4fd3e53._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:06:27.762] Server  ERROR   TypeError: fetch failed
-[00:06:38.316] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\90da8_@supabase_auth-js_dist_module_b4fd3e53._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:06:38.320] Server  ERROR   TypeError: fetch failed
-[00:06:38.593] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:06:38.593] Browser ERROR   A searchParam property was accessed directly with `searchParams.session`. `searchParams` is a Promise and must be unwrapped with `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:06:38.593] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767280742813}
-[00:08:24.453] Server  LOG      ✓ Compiled in 357ms
-[00:09:05.912] Server  LOG      ✓ Compiled in 198ms
-[00:09:29.486] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
-[00:09:30.112] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
-[00:09:30.533] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:09:31.043] Browser WARN    Image with src "/about.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:09:31.044] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:09:31.044] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:09:31.044] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767280915262}
-[00:09:39.539] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767280923751}
-[00:10:00.607] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\90da8_@supabase_auth-js_dist_module_b4fd3e53._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:10:00.610] Server  ERROR   TypeError: fetch failed
+[00:00:04.183] Server  LOG      ✓ Ready in 3.3s
+[00:00:28.785] Server  LOG      ○ Compiling /dashboard ...
+[00:07:42.073] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:42.304] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:07:42.304] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:07:42.304] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767330364139}
+[00:07:43.049] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
+[00:07:50.858] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
+[00:07:51.086] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:51.289] Browser WARN    Image with src "/about.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:07:51.289] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:07:51.289] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:07:51.289] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767330373123}
+[00:08:14.430] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767330396268}
