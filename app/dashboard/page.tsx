@@ -1,3 +1,4 @@
+// app/dashboard/page.tsx - OPTIMIZED VERSION
 import { redirect } from "next/navigation"
 import { getSupabaseServerClient } from "@/lib/supabase/server"
 import { Navbar } from "@/components/navbar"
@@ -8,63 +9,35 @@ import { BookOpen, Shuffle, Ticket, GraduationCap } from "lucide-react"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 
-export default async function DashboardPage({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined }
-}) {
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
+export default async function DashboardPage() {
   const supabase = await getSupabaseServerClient()
 
+  // Get user first
   const {
     data: { user },
   } = await supabase.auth.getUser()
+
   if (!user) redirect("/login")
 
-  const { data: userData } = await supabase.from("users").select("*").eq("id", user.id).single()
+  // Fetch all data in parallel for better performance
+  const [
+    { data: userData },
+    { data: topics },
+    { data: tickets },
+    { count: totalTestsCount }
+  ] = await Promise.all([
+    supabase.from("users").select("*").eq("id", user.id).single(),
+    supabase.from("topics").select("*").order("title"),
+    supabase.from("tickets").select("*").order("title"),
+    supabase.from("tests").select("*", { count: "exact", head: true })
+  ])
 
   if (!userData) redirect("/login")
 
   const hasAccess = hasActiveAccess(userData)
-
-  // Fetch data with error handling
-  let topics = null
-  let tickets = null
-  let totalTestsCount = 0
-
-  try {
-    const { data: topicsData, error: topicsError } = await supabase
-      .from("topics")
-      .select("*")
-      .order("title")
-    if (!topicsError) {
-      topics = topicsData
-    }
-  } catch (error) {
-    console.error("Error fetching topics:", error)
-  }
-
-  try {
-    const { data: ticketsData, error: ticketsError } = await supabase
-      .from("tickets")
-      .select("*")
-      .order("title")
-    if (!ticketsError) {
-      tickets = ticketsData
-    }
-  } catch (error) {
-    console.error("Error fetching tickets:", error)
-  }
-
-  try {
-    const { count, error: testsError } = await supabase
-      .from("tests")
-      .select("*", { count: "exact", head: true })
-    if (!testsError && count !== null) {
-      totalTestsCount = count
-    }
-  } catch (error) {
-    console.error("Error fetching tests count:", error)
-  }
 
   return (
     <div className="min-h-screen bg-background">

@@ -1,3 +1,4 @@
+// app/admin/page.tsx - OPTIMIZED VERSION
 import { redirect } from "next/navigation"
 import { getSupabaseServerClient } from "@/lib/supabase/server"
 import { Navbar } from "@/components/navbar"
@@ -10,16 +11,26 @@ import { TicketsManagement } from "@/components/admin/tickets-management"
 import { CarouselManagement } from "@/components/admin/carousel-management"
 import { PricesManagement } from "@/components/admin/prices-management"
 
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 export default async function AdminPage() {
   const supabase = await getSupabaseServerClient()
 
+  // Get user and check admin role in one query chain
   const {
     data: { user },
   } = await supabase.auth.getUser()
+
   if (!user) redirect("/login")
 
-  const { data: userData } = await supabase.from("users").select("*").eq("id", user.id).single()
+  const { data: userData } = await supabase
+    .from("users")
+    .select("role")
+    .eq("id", user.id)
+    .single()
 
+  // Redirect non-admin users immediately
   if (!userData || userData.role !== "admin") {
     redirect("/dashboard")
   }
