@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const path = require('path')
+
 const nextConfig = {
   images: {
     remotePatterns: [
@@ -23,6 +25,10 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
+  },
+  turbopack: {
+    // Pin root to this project to avoid parent lockfile inference
+    root: path.resolve(__dirname),
   },
 }
 

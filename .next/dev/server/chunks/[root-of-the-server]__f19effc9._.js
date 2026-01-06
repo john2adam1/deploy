@@ -55,6 +55,26 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/avtotest/node_modules/next/server.js [middleware] (ecmascript)");
 ;
 ;
+// #region agent log
+fetch('http://127.0.0.1:7242/ingest/deddb419-d5fa-4d5c-b0af-a92b16ae4dd2', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        location: 'proxy.ts:4',
+        message: 'File proxy.ts exports proxy function - correct match',
+        data: {
+            fileName: 'proxy.ts',
+            exportName: 'proxy',
+            match: 'correct'
+        },
+        timestamp: Date.now(),
+        sessionId: 'debug-session',
+        runId: 'post-fix',
+        hypothesisId: 'A'
+    })
+}).catch(()=>{});
 async function proxy(request) {
     try {
         let response = __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].next({

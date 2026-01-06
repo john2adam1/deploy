@@ -1,6 +1,10 @@
 import { createServerClient } from "@supabase/ssr"
 import { NextResponse, type NextRequest } from "next/server"
 
+// #region agent log
+fetch('http://127.0.0.1:7242/ingest/deddb419-d5fa-4d5c-b0af-a92b16ae4dd2',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'proxy.ts:4',message:'File proxy.ts exports proxy function - correct match',data:{fileName:'proxy.ts',exportName:'proxy',match:'correct'},timestamp:Date.now(),sessionId:'debug-session',runId:'post-fix',hypothesisId:'A'})}).catch(()=>{});
+// #endregion
+
 export async function proxy(request: NextRequest) {
   try {
     let response = NextResponse.next({
