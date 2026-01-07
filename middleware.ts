@@ -2,6 +2,7 @@ import { createServerClient } from "@supabase/ssr"
 import { NextResponse, type NextRequest } from "next/server"
 
 export async function middleware(request: NextRequest) {
+  console.log("Middleware hitting path:", request.nextUrl.pathname)
   // Create response early
   let response = NextResponse.next({
     request: {

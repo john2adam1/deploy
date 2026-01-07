@@ -1,120 +1,1438 @@
-[00:00:02.654] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:02.954] Server  LOG      ✓ Ready in 2.2s
-[00:00:06.188] Server  LOG      ○ Compiling / ...
-[00:00:19.384] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:20.214] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
-[00:00:20.536] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:20.536] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:20.536] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767781592253}
-[00:02:02.414] Browser WARN    Image with src "https://lgacbbewpuzeyxijzfii.supabase.co/storage/v1/object/public/test-images/carousel/carousel-1767685717793-reeaj5.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:02:02.862] Browser WARN    Image with src "https://lgacbbewpuzeyxijzfii.supabase.co/storage/v1/object/public/test-images/carousel/carousel-1767685724639-la0dhe.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:02:39.144] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767781731577}
-[00:03:00.199] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767781752597}
-[00:03:21.188] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
-[00:03:21.489] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:21.735] Browser WARN    Image with src "/about.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:21.736] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:03:21.736] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:03:21.736] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767781774169}
-[00:03:22.714] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767781775131}
-[00:03:34.800] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:34.962] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:03:34.962] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
-[00:03:34.962] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767781787382}
-[00:03:44.444] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_@supabase_auth-js_dist_module_a7cdc2bd._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:03:44.454] Server  ERROR   TypeError: fetch failed
-[00:03:46.189] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:46.535] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:03:46.535] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
-[00:03:46.535] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767781798792}
-[00:03:54.187] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_@supabase_auth-js_dist_module_a7cdc2bd._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:03:54.192] Server  ERROR   TypeError: fetch failed
-[00:03:55.145] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:55.280] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:03:55.280] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
-[00:03:55.280] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767781807717}
-[00:04:04.023] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_@supabase_auth-js_dist_module_a7cdc2bd._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:04:04.026] Server  ERROR   TypeError: fetch failed
-[00:04:05.205] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:05.543] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:04:05.543] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
-[00:04:05.543] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767781817801}
-[00:04:15.404] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_@supabase_auth-js_dist_module_a7cdc2bd._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:04:15.406] Server  ERROR   TypeError: fetch failed
-[00:04:16.049] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:16.528] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:04:16.528] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
-[00:04:16.528] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767781828712}
-[00:04:25.071] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
-[00:04:25.522] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:26.149] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_@supabase_auth-js_dist_module_a7cdc2bd._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:04:26.152] Server  ERROR   TypeError: fetch failed
-[00:04:26.539] Browser WARN    Image with src "/about.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:04:26.539] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:04:26.539] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:04:26.539] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767781838574}
-[00:04:27.368] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:28.541] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:04:28.541] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
-[00:04:28.541] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767781839969}
-[00:04:30.533] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/register color: rgb(120, 120, 120) color: inherit {"dp":"/register","o":"http://localhost:3000/register","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767781842818}
-[00:04:37.637] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_@supabase_auth-js_dist_module_a7cdc2bd._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:04:37.640] Server  ERROR   TypeError: fetch failed
-[00:04:46.292] Server  ERROR   Bog'lanish ma'lumotlarini yuklashda xatolik yuz berdi: {}
-[00:04:46.709] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:46.845] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
-[00:04:47.050] Browser WARN    Image with src "/about.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:04:47.050] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:04:47.050] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:04:47.050] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767781859480}
-[00:05:18.176] Browser ERROR   Error fetching carousel images: {"code":"","details":"TypeError: Failed to fetch\n    at http://localhost:3000/_next/static/chunks/90da8_4663b10e._.js:19981:23\n    at http://localhost:3000/_next/static/chunks/90da8_4663b10e._.js:19995:16\n    at async fetchImages (http://localhost:3000/_next/static/chunks/Desktop_avtotest_3c1297eb._.js:145:49)","hint":"","message":"TypeError: Failed to fetch"}
-[00:05:27.540] Browser ERROR   Error fetching carousel images: {"code":"","details":"TypeError: Failed to fetch\n    at http://localhost:3000/_next/static/chunks/90da8_4663b10e._.js:19981:23\n    at http://localhost:3000/_next/static/chunks/90da8_4663b10e._.js:19995:16\n    at async fetchImages (http://localhost:3000/_next/static/chunks/Desktop_avtotest_3c1297eb._.js:145:49)","hint":"","message":"TypeError: Failed to fetch"}
-[00:27:31.440] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:27:31.474] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
-[00:27:31.684] Browser WARN    Image with src "/about.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:27:31.684] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:27:31.685] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:27:31.685] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/?code=7f9695d6-4d04-4378-880a-553349d160b6 color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/?code=7f9695d6-4d04-4378-880a-553349d160b6","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767783224086}
-[00:27:43.552] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767783235953}
-[00:27:52.204] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767783244608}
-[00:29:37.269] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/test/topic/4d315dc9-3022-40ef-ac50-b1ea95e899bb color: rgb(120, 120, 120) color: inherit {"dp":"/test/topic/[topicId]","o":"http://localhost:3000/test/topic/4d315dc9-3022-40ef-ac50-b1ea95e899bb","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767783349562}
-[00:29:37.269] Browser WARN    Image with src "https://lgacbbewpuzeyxijzfii.supabase.co/storage/v1/object/public/test-images/test-images/1767685928802-st7nda.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:30:01.172] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767783373570}
-[00:30:12.030] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/tickets color: rgb(120, 120, 120) color: inherit {"dp":"/tickets","o":"http://localhost:3000/tickets","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767783384422}
-[00:30:18.544] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/test/ticket/7023a3fc-30c1-4d0a-9a19-2d4b59d378ec color: rgb(120, 120, 120) color: inherit {"dp":"/test/ticket/[ticketId]","o":"http://localhost:3000/test/ticket/7023a3fc-30c1-4d0a-9a19-2d4b59d378ec","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767783390923}
-[00:30:18.799] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767783391194}
-[00:30:26.927] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/test/topic/071433dc-3fda-473e-b874-e1cee2840855 color: rgb(120, 120, 120) color: inherit {"dp":"/test/topic/[topicId]","o":"http://localhost:3000/test/topic/071433dc-3fda-473e-b874-e1cee2840855","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767783399300}
-[00:30:27.204] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard?premium=required color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard?premium=required","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767783399597}
-[00:30:50.862] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:30:51.041] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:30:51.041] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
-[00:30:51.041] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard?premium=required color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard?premium=required","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767783423444}
-[00:31:00.014] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/test/topic/071433dc-3fda-473e-b874-e1cee2840855 color: rgb(120, 120, 120) color: inherit {"dp":"/test/topic/[topicId]","o":"http://localhost:3000/test/topic/071433dc-3fda-473e-b874-e1cee2840855","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767783432399}
-[00:31:00.284] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard?premium=required color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard?premium=required","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767783432681}
-[00:31:14.115] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/test/exam/20 color: rgb(120, 120, 120) color: inherit {"dp":"/test/exam/[examType]","o":"http://localhost:3000/test/exam/20","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767783446500}
-[00:31:14.383] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard?premium=required color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard?premium=required","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767783446777}
-[00:31:22.879] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/test/random color: rgb(120, 120, 120) color: inherit {"dp":"/test/random","o":"http://localhost:3000/test/random","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767783455231}
-[00:31:23.168] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767783455560}
-[00:31:36.672] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:31:36.820] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:31:36.820] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
-[00:31:36.820] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767783469223}
-[00:31:46.281] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/test/topic/071433dc-3fda-473e-b874-e1cee2840855 color: rgb(120, 120, 120) color: inherit {"dp":"/test/topic/[topicId]","o":"http://localhost:3000/test/topic/071433dc-3fda-473e-b874-e1cee2840855","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767783478659}
-[00:31:50.525] Browser WARN    Image with src "https://lgacbbewpuzeyxijzfii.supabase.co/storage/v1/object/public/test-images/test-images/1767686053901-cwkkwh.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:31:52.551] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767783484947}
-[00:33:03.455] Browser WARN    Image with src "https://lgacbbewpuzeyxijzfii.supabase.co/storage/v1/object/public/test-images/carousel/carousel-1767685717793-reeaj5.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:33:03.455] Browser WARN    Image with src "https://lgacbbewpuzeyxijzfii.supabase.co/storage/v1/object/public/test-images/carousel/carousel-1767685705108-j1qtqf.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:33:03.455] Browser WARN    Image with src "https://lgacbbewpuzeyxijzfii.supabase.co/storage/v1/object/public/test-images/carousel/carousel-1767685724639-la0dhe.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:34:14.697] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767783627046}
-[00:34:28.731] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767783641121}
-[00:34:40.004] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/test/topic/4d315dc9-3022-40ef-ac50-b1ea95e899bb color: rgb(120, 120, 120) color: inherit {"dp":"/test/topic/[topicId]","o":"http://localhost:3000/test/topic/4d315dc9-3022-40ef-ac50-b1ea95e899bb","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767783652320}
-[00:34:40.004] Browser WARN    Image with src "https://lgacbbewpuzeyxijzfii.supabase.co/storage/v1/object/public/test-images/test-images/1767685928802-st7nda.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:34:50.914] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767783663302}
-[00:44:41.518] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:44:41.755] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:44:41.756] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
-[00:44:41.756] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767784254143}
-[00:44:58.980] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767784271324}
-[00:45:11.466] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767784283845}
+[00:00:04.664] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:05.617] Server  LOG      ✓ Ready in 4.1s
+[00:00:05.899] Server  LOG     Middleware hitting path: /admin
+[00:00:05.951] Server  LOG     Middleware hitting path: /dashboard
+[00:00:08.975] Server  LOG      ○ Compiling /admin ...
+[00:00:12.272] Server  LOG     Middleware hitting path: /test/exam/20
+[00:00:49.966] Server  LOG     Middleware hitting path: /.well-known/appspecific/com.chrome.devtools.json
+[00:00:50.191] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:50.767] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:50.768] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[00:00:50.768] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767793767178}
+[00:00:52.355] Server  LOG     Exam page hit with Type: "20"
+[00:00:56.246] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:58.596] Server  LOG     Exam Debug: allTests count: 6, required: 20
+[00:00:58.613] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:58.613] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/admin","route":"/admin"}
+[00:00:58.613] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767793773471}
+[00:00:59.039] Server  LOG     Exam Debug: Redirecting to dashboard - Not enough tests
+[00:09:53.395] Server  LOG     Middleware hitting path: /dashboard
+[00:09:53.805] Server  LOG     Middleware hitting path: /.well-known/appspecific/com.chrome.devtools.json
+[00:09:54.143] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:54.515] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:09:54.515] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[00:09:54.515] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767794310948}
+[00:10:01.961] Server  LOG     Middleware hitting path: /test/exam/20
+[00:10:02.047] Server  LOG     Exam page hit with Type: "20"
+[00:10:04.380] Server  LOG     Exam Debug: allTests count: 20, required: 20
+[00:10:06.971] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/test/exam/20 color: rgb(120, 120, 120) color: inherit {"dp":"/test/exam/[examType]","o":"http://localhost:3000/test/exam/20","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767794323369}
+[00:10:22.425] Server  ERROR   TimeoutError: The operation was aborted due to timeout
+[00:10:28.120] Server  ERROR   TimeoutError: The operation was aborted due to timeout
+[00:10:35.811] Server  ERROR   TimeoutError: The operation was aborted due to timeout
+[00:10:38.160] Server  ERROR   TimeoutError: The operation was aborted due to timeout
+[00:10:43.130] Server  ERROR    ⨯ "upstream image response timed out for" "https://lgacbbewpuzeyxijzfii.supabase.co/storage/v1/object/public/test-images/test-images/1767794132027-0i70ar.jpg"
+[00:10:45.386] Server  ERROR    ⨯ "upstream image response timed out for" "https://lgacbbewpuzeyxijzfii.supabase.co/storage/v1/object/public/test-images/test-images/1767793918367-3w29i8.jpg"
+[00:11:44.900] Server  LOG     Middleware hitting path: /dashboard
+[00:11:45.187] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767794421624}
+[00:17:39.235] Server  LOG     Middleware hitting path: /tickets
+[00:17:44.454] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/tickets color: rgb(120, 120, 120) color: inherit {"dp":"/tickets","o":"http://localhost:3000/tickets","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767794780857}
+[00:20:20.009] Server  LOG     Middleware hitting path: /dashboard
+[00:20:20.328] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767794936755}
+[00:23:10.670] Server  LOG      ✓ Compiled in 335ms
+[00:23:13.384] Server  LOG      ✓ Compiled in 103ms
+[00:23:15.475] Server  LOG      ✓ Compiled in 116ms
+[00:27:39.741] Server  LOG      ✓ Compiled in 311ms
+[00:28:10.009] Server  LOG     Middleware hitting path: /dashboard
+[00:28:10.029] Server  LOG     Middleware hitting path: /admin
+[00:28:10.041] Server  LOG      ✓ Compiled in 194ms
+[00:30:52.777] Server  LOG     Middleware hitting path: /admin
+[00:30:52.799] Server  LOG     Middleware hitting path: /dashboard
+[00:30:52.811] Server  LOG      ✓ Compiled in 118ms
+[00:30:54.725] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\[root-of-the-server]__647ad809._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:30:54.736] Server  ERROR    ⨯ ReferenceError: examStats is not defined
+[00:30:55.857] Browser ERROR   uncaughtError: ReferenceError: examStats is not defined
+[00:32:28.570] Server  LOG     Middleware hitting path: /admin
+[00:32:28.586] Server  LOG      ✓ Compiled in 90ms
+[00:32:28.717] Server  LOG     Middleware hitting path: /dashboard
+[00:32:29.754] Server  LOG     Middleware hitting path: /.well-known/appspecific/com.chrome.devtools.json
+[00:32:30.009] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:32:30.846] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:32:30.846] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[00:32:30.846] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767795666862}
+[00:32:52.564] Server  LOG     Middleware hitting path: /admin
+[00:32:52.577] Server  LOG      ✓ Compiled in 99ms
+[00:32:52.592] Server  LOG     Middleware hitting path: /dashboard
+[00:35:57.363] Server  LOG      ✓ Compiled in 364ms
+[00:36:20.446] Server  LOG     Middleware hitting path: /admin
+[00:36:20.470] Server  LOG     Middleware hitting path: /dashboard
+[00:36:21.708] Server  LOG      ✓ Compiled in 2.2s
+[00:36:21.803] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\[root-of-the-server]__373082c9._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:36:21.814] Server  ERROR    ⨯ ReferenceError: user is not defined
+[00:36:22.854] Browser ERROR   uncaughtError: ReferenceError: user is not defined
+[00:38:43.233] Server  LOG     Middleware hitting path: /admin
+[00:38:43.345] Server  LOG     Middleware hitting path: /dashboard
+[00:38:43.363] Server  LOG      ✓ Compiled in 295ms
+[00:38:44.030] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:38:44.531] Server  LOG     Middleware hitting path: /.well-known/appspecific/com.chrome.devtools.json
+[00:38:44.619] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:38:45.845] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:38:45.845] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[00:38:45.846] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767796041490}
+[00:44:25.572] Server  LOG     Middleware hitting path: /dashboard
+[00:44:36.737] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:44:36.762] Server  ERROR   TypeError: fetch failed
+[00:44:59.527] Browser ERROR   {}
+[01:32:10.976] Server  LOG      ✓ Compiled in 2.5s
+[01:32:11.179] Server  LOG     Middleware hitting path: /dashboard
+[01:32:11.241] Server  LOG     Middleware hitting path: /admin
+[01:32:22.550] Server  ERROR   Error: fetch failed
+    at context.fetch (C:\Users\user\Desktop\avtotest\node_modules\next\dist\server\web\sandbox\context.js:322:60)
+    at C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:577:23
+    at _handleRequest (C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:931:24)
+    at _request (C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:918:24)
+    at C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:4800:248
+    at C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:647:42
+    at C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:659:11
+    at new Promise (<anonymous>)
+    at retryable (C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:641:21)
+    at SupabaseAuthClient._refreshAccessToken (C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:4795:247)
+    at SupabaseAuthClient._callRefreshToken (C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:4951:48)
+    at SupabaseAuthClient.__loadSession (C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:4091:57)
+    at async SupabaseAuthClient._useSession (C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:4021:28)
+    at async SupabaseAuthClient._emitInitialSession (C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:4575:16) {
+  
+}
+[01:32:22.568] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:32:22.578] Server  ERROR   TypeError: fetch failed
+[01:32:23.756] Server  LOG     Middleware hitting path: /login
+[01:32:23.779] Server  LOG     Middleware hitting path: /login
+[01:32:23.796] Server  LOG     Middleware hitting path: /dashboard
+[01:32:23.852] Server  LOG     Middleware hitting path: /dashboard
+[01:32:24.017] Server  LOG     Middleware hitting path: /login
+[01:32:24.045] Server  LOG     Middleware hitting path: /login
+[01:32:24.076] Server  LOG     Middleware hitting path: /dashboard
+[01:32:24.174] Server  LOG     Middleware hitting path: /dashboard
+[01:32:24.311] Server  LOG     Middleware hitting path: /login
+[01:32:24.331] Server  LOG     Middleware hitting path: /login
+[01:32:24.343] Server  LOG     Middleware hitting path: /dashboard
+[01:32:24.414] Server  LOG     Middleware hitting path: /dashboard
+[01:32:35.063] Server  LOG     Middleware hitting path: /login
+[01:32:35.084] Server  LOG     Middleware hitting path: /login
+[01:32:35.120] Server  LOG     Middleware hitting path: /dashboard
+[01:32:39.092] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_@supabase_auth-js_dist_module_a7cdc2bd._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:32:39.095] Server  ERROR   TypeError: fetch failed
+[01:32:39.394] Server  LOG     Middleware hitting path: /login
+[01:32:39.409] Server  LOG     Middleware hitting path: /login
+[01:32:39.419] Server  LOG     Middleware hitting path: /dashboard
+[01:32:39.485] Server  LOG     Middleware hitting path: /dashboard
+[01:32:39.849] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767799276184}
+[01:32:43.957] Server  LOG     Middleware hitting path: /dashboard
+[01:32:45.982] Server  LOG     Middleware hitting path: /login
+[01:32:46.001] Server  LOG     Middleware hitting path: /login
+[01:32:46.048] Server  LOG     Middleware hitting path: /dashboard
+[01:32:46.110] Server  LOG     Middleware hitting path: /dashboard
+[01:32:47.694] Server  LOG     Middleware hitting path: /login
+[01:32:47.707] Server  LOG     Middleware hitting path: /login
+[01:32:47.739] Server  LOG     Middleware hitting path: /dashboard
+[01:32:49.732] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:32:49.735] Server  ERROR   TypeError: fetch failed
+[01:32:49.740] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:32:49.743] Server  ERROR   TypeError: fetch failed
+[01:32:50.050] Server  LOG     Middleware hitting path: /login
+[01:32:50.074] Server  LOG     Middleware hitting path: /login
+[01:32:50.086] Server  LOG     Middleware hitting path: /dashboard
+[01:32:50.145] Server  LOG     Middleware hitting path: /dashboard
+[01:32:50.223] Server  LOG     Middleware hitting path: /login
+[01:32:50.238] Server  LOG     Middleware hitting path: /login
+[01:32:50.250] Server  LOG     Middleware hitting path: /dashboard
+[01:32:50.310] Server  LOG     Middleware hitting path: /dashboard
+[01:32:50.417] Server  LOG     Middleware hitting path: /login
+[01:32:50.444] Server  LOG     Middleware hitting path: /login
+[01:32:50.455] Server  LOG     Middleware hitting path: /dashboard
+[01:32:50.576] Server  LOG     Middleware hitting path: /dashboard
+[01:32:54.299] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:32:54.300] Server  ERROR   TypeError: fetch failed
+[01:32:54.319] Server  LOG     Middleware hitting path: /dashboard
+[01:32:56.313] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:32:56.315] Server  ERROR   TypeError: fetch failed
+[01:32:56.320] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:32:56.321] Server  ERROR   TypeError: fetch failed
+[01:32:56.347] Server  LOG     Middleware hitting path: /login
+[01:32:56.374] Server  LOG     Middleware hitting path: /login
+[01:32:56.394] Server  LOG     Middleware hitting path: /dashboard
+[01:32:56.452] Server  LOG     Middleware hitting path: /dashboard
+[01:32:58.359] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:32:58.361] Server  ERROR   TypeError: fetch failed
+[01:32:58.379] Server  LOG     Middleware hitting path: /login
+[01:32:58.415] Server  LOG     Middleware hitting path: /login
+[01:32:58.429] Server  LOG     Middleware hitting path: /dashboard
+[01:32:58.753] Server  LOG     Middleware hitting path: /dashboard
+[01:32:59.037] Server  LOG     Middleware hitting path: /login
+[01:32:59.066] Server  LOG     Middleware hitting path: /login
+[01:32:59.081] Server  LOG     Middleware hitting path: /dashboard
+[01:33:00.392] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:00.393] Server  ERROR   TypeError: fetch failed
+[01:33:00.395] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:00.396] Server  ERROR   TypeError: fetch failed
+[01:33:00.408] Server  LOG     Middleware hitting path: /login
+[01:33:00.417] Server  LOG     Middleware hitting path: /login
+[01:33:00.423] Server  LOG     Middleware hitting path: /dashboard
+[01:33:00.456] Server  LOG     Middleware hitting path: /dashboard
+[01:33:00.907] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:00.909] Server  ERROR   TypeError: fetch failed
+[01:33:00.915] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:00.917] Server  ERROR   TypeError: fetch failed
+[01:33:00.924] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:00.926] Server  ERROR   TypeError: fetch failed
+[01:33:00.931] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:00.933] Server  ERROR   TypeError: fetch failed
+[01:33:00.964] Server  LOG     Middleware hitting path: /login
+[01:33:00.980] Server  LOG     Middleware hitting path: /login
+[01:33:00.988] Server  LOG     Middleware hitting path: /dashboard
+[01:33:01.041] Server  LOG     Middleware hitting path: /dashboard
+[01:33:01.116] Server  LOG     Middleware hitting path: /login
+[01:33:01.134] Server  LOG     Middleware hitting path: /login
+[01:33:01.145] Server  LOG     Middleware hitting path: /dashboard
+[01:33:01.198] Server  LOG     Middleware hitting path: /dashboard
+[01:33:04.975] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:04.977] Server  ERROR   TypeError: fetch failed
+[01:33:04.997] Server  LOG     Middleware hitting path: /dashboard
+[01:33:07.005] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:07.008] Server  ERROR   TypeError: fetch failed
+[01:33:07.014] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:07.018] Server  ERROR   TypeError: fetch failed
+[01:33:07.047] Server  LOG     Middleware hitting path: /login
+[01:33:07.076] Server  LOG     Middleware hitting path: /login
+[01:33:07.097] Server  LOG     Middleware hitting path: /dashboard
+[01:33:07.153] Server  LOG     Middleware hitting path: /dashboard
+[01:33:09.046] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:09.048] Server  ERROR   TypeError: fetch failed
+[01:33:09.053] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:09.055] Server  ERROR   TypeError: fetch failed
+[01:33:09.079] Server  LOG     Middleware hitting path: /login
+[01:33:09.110] Server  LOG     Middleware hitting path: /login
+[01:33:09.118] Server  LOG     Middleware hitting path: /dashboard
+[01:33:09.190] Server  LOG     Middleware hitting path: /dashboard
+[01:33:11.093] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:11.096] Server  ERROR   TypeError: fetch failed
+[01:33:11.104] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:11.108] Server  ERROR   TypeError: fetch failed
+[01:33:11.162] Server  LOG     Middleware hitting path: /login
+[01:33:11.204] Server  LOG     Middleware hitting path: /login
+[01:33:11.227] Server  LOG     Middleware hitting path: /dashboard
+[01:33:11.350] Server  LOG     Middleware hitting path: /dashboard
+[01:33:11.610] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:11.613] Server  ERROR   TypeError: fetch failed
+[01:33:11.628] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:11.633] Server  ERROR   TypeError: fetch failed
+[01:33:11.647] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:11.652] Server  ERROR   TypeError: fetch failed
+[01:33:11.664] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:11.670] Server  ERROR   TypeError: fetch failed
+[01:33:11.748] Server  LOG     Middleware hitting path: /login
+[01:33:11.791] Server  LOG     Middleware hitting path: /login
+[01:33:11.810] Server  LOG     Middleware hitting path: /dashboard
+[01:33:11.924] Server  LOG     Middleware hitting path: /dashboard
+[01:33:12.130] Server  LOG     Middleware hitting path: /login
+[01:33:12.174] Server  LOG     Middleware hitting path: /login
+[01:33:12.197] Server  LOG     Middleware hitting path: /dashboard
+[01:33:12.331] Server  LOG     Middleware hitting path: /dashboard
+[01:33:15.651] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:15.654] Server  ERROR   TypeError: fetch failed
+[01:33:15.689] Server  LOG     Middleware hitting path: /login
+[01:33:15.733] Server  LOG     Middleware hitting path: /login
+[01:33:15.769] Server  LOG     Middleware hitting path: /dashboard
+[01:33:17.678] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:17.681] Server  ERROR   TypeError: fetch failed
+[01:33:17.692] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:17.695] Server  ERROR   TypeError: fetch failed
+[01:33:17.755] Server  LOG     Middleware hitting path: /dashboard
+[01:33:17.948] Server  LOG     Middleware hitting path: /login
+[01:33:17.973] Server  LOG     Middleware hitting path: /login
+[01:33:18.007] Server  LOG     Middleware hitting path: /dashboard
+[01:33:19.706] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:19.708] Server  ERROR   TypeError: fetch failed
+[01:33:19.717] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:19.720] Server  ERROR   TypeError: fetch failed
+[01:33:19.781] Server  LOG     Middleware hitting path: /dashboard
+[01:33:19.991] Server  LOG     Middleware hitting path: /login
+[01:33:20.022] Server  LOG     Middleware hitting path: /login
+[01:33:20.048] Server  LOG     Middleware hitting path: /dashboard
+[01:33:21.719] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:21.721] Server  ERROR   TypeError: fetch failed
+[01:33:21.728] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:21.731] Server  ERROR   TypeError: fetch failed
+[01:33:21.780] Server  LOG     Middleware hitting path: /login
+[01:33:21.820] Server  LOG     Middleware hitting path: /login
+[01:33:21.838] Server  LOG     Middleware hitting path: /dashboard
+[01:33:21.959] Server  LOG     Middleware hitting path: /dashboard
+[01:33:22.225] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:22.228] Server  ERROR   TypeError: fetch failed
+[01:33:22.241] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:22.245] Server  ERROR   TypeError: fetch failed
+[01:33:22.291] Server  LOG     Middleware hitting path: /login
+[01:33:22.328] Server  LOG     Middleware hitting path: /login
+[01:33:22.346] Server  LOG     Middleware hitting path: /dashboard
+[01:33:22.481] Server  LOG     Middleware hitting path: /dashboard
+[01:33:22.722] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:22.724] Server  ERROR   TypeError: fetch failed
+[01:33:22.735] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:22.738] Server  ERROR   TypeError: fetch failed
+[01:33:22.796] Server  LOG     Middleware hitting path: /login
+[01:33:22.833] Server  LOG     Middleware hitting path: /login
+[01:33:22.850] Server  LOG     Middleware hitting path: /dashboard
+[01:33:22.965] Server  LOG     Middleware hitting path: /dashboard
+[01:33:23.547] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:23.550] Server  ERROR   TypeError: fetch failed
+[01:33:23.581] Server  LOG     Middleware hitting path: /dashboard
+[01:33:23.741] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:23.743] Server  ERROR   TypeError: fetch failed
+[01:33:23.754] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:23.757] Server  ERROR   TypeError: fetch failed
+[01:33:23.946] Server  LOG     Middleware hitting path: /login
+[01:33:23.975] Server  LOG     Middleware hitting path: /login
+[01:33:23.994] Server  LOG     Middleware hitting path: /dashboard
+[01:33:24.155] Server  LOG     Middleware hitting path: /dashboard
+[01:33:24.345] Server  LOG     Middleware hitting path: /login
+[01:33:24.387] Server  LOG     Middleware hitting path: /login
+[01:33:24.410] Server  LOG     Middleware hitting path: /dashboard
+[01:33:34.425] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:34.427] Server  ERROR   TypeError: fetch failed
+[01:33:34.438] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:34.440] Server  ERROR   TypeError: fetch failed
+[01:33:34.466] Server  LOG     Middleware hitting path: /dashboard
+[01:33:34.597] Server  LOG     Middleware hitting path: /login
+[01:33:34.620] Server  LOG     Middleware hitting path: /login
+[01:33:34.641] Server  LOG     Middleware hitting path: /dashboard
+[01:33:34.938] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:34.940] Server  ERROR   TypeError: fetch failed
+[01:33:34.961] Server  LOG     Middleware hitting path: /dashboard
+[01:33:38.006] Server  LOG     Middleware hitting path: /login
+[01:33:38.023] Server  LOG     Middleware hitting path: /login
+[01:33:38.035] Server  LOG     Middleware hitting path: /dashboard
+[01:33:39.012] Server  LOG     Middleware hitting path: /login
+[01:33:39.029] Server  LOG     Middleware hitting path: /login
+[01:33:39.047] Server  LOG     Middleware hitting path: /dashboard
+[01:33:43.584] Server  LOG     Middleware hitting path: /dashboard
+[01:33:43.672] Server  LOG     Middleware hitting path: /login
+[01:33:43.686] Server  LOG     Middleware hitting path: /login
+[01:33:43.699] Server  LOG     Middleware hitting path: /dashboard
+[01:33:45.073] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:45.074] Server  ERROR   TypeError: fetch failed
+[01:33:45.080] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:45.081] Server  ERROR   TypeError: fetch failed
+[01:33:45.102] Server  LOG     Middleware hitting path: /dashboard
+[01:33:45.231] Server  LOG     Middleware hitting path: /login
+[01:33:45.246] Server  LOG     Middleware hitting path: /login
+[01:33:45.262] Server  LOG     Middleware hitting path: /dashboard
+[01:33:45.582] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:45.584] Server  ERROR   TypeError: fetch failed
+[01:33:45.602] Server  LOG     Middleware hitting path: /dashboard
+[01:33:47.376] Server  LOG     Middleware hitting path: /login
+[01:33:47.398] Server  LOG     Middleware hitting path: /login
+[01:33:47.422] Server  LOG     Middleware hitting path: /dashboard
+[01:33:47.714] Server  LOG     Middleware hitting path: /dashboard
+[01:33:48.585] Server  LOG     Middleware hitting path: /dashboard
+[01:33:48.641] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:48.643] Server  ERROR   TypeError: fetch failed
+[01:33:48.733] Server  LOG     Middleware hitting path: /login
+[01:33:48.756] Server  LOG     Middleware hitting path: /login
+[01:33:48.775] Server  LOG     Middleware hitting path: /dashboard
+[01:33:49.644] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:49.645] Server  ERROR   TypeError: fetch failed
+[01:33:49.661] Server  LOG     Middleware hitting path: /login
+[01:33:49.683] Server  LOG     Middleware hitting path: /login
+[01:33:49.697] Server  LOG     Middleware hitting path: /dashboard
+[01:33:51.371] Server  LOG     Middleware hitting path: /dashboard
+[01:33:51.482] Server  LOG     Middleware hitting path: /login
+[01:33:51.498] Server  LOG     Middleware hitting path: /login
+[01:33:51.512] Server  LOG     Middleware hitting path: /dashboard
+[01:33:51.811] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:51.812] Server  ERROR   TypeError: fetch failed
+[01:33:51.816] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:51.817] Server  ERROR   TypeError: fetch failed
+[01:33:51.821] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:51.823] Server  ERROR   TypeError: fetch failed
+[01:33:51.828] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:51.829] Server  ERROR   TypeError: fetch failed
+[01:33:51.833] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:33:51.834] Server  ERROR   TypeError: fetch failed
+[01:33:52.006] Server  LOG     Middleware hitting path: /dashboard
+[01:33:52.031] Server  LOG     Middleware hitting path: /dashboard
+[01:33:52.188] Server  LOG     Middleware hitting path: /login
+[01:33:52.210] Server  LOG     Middleware hitting path: /login
+[01:33:52.221] Server  LOG     Middleware hitting path: /login
+[01:33:52.247] Server  LOG     Middleware hitting path: /login
+[01:33:52.259] Server  LOG     Middleware hitting path: /dashboard
+[01:33:52.271] Server  LOG     Middleware hitting path: /dashboard
+[01:33:52.362] Server  LOG     Middleware hitting path: /dashboard
+[01:34:02.320] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:34:02.322] Server  ERROR   TypeError: fetch failed
+[01:34:02.325] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:34:02.326] Server  ERROR   TypeError: fetch failed
+[01:34:02.450] Server  LOG     Middleware hitting path: /login
+[01:34:02.461] Server  LOG     Middleware hitting path: /dashboard
+[01:34:02.477] Server  LOG     Middleware hitting path: /login
+[01:34:02.520] Server  LOG     Middleware hitting path: /dashboard
+[01:34:02.595] Server  LOG     Middleware hitting path: /dashboard
+[01:34:02.756] Server  LOG     Middleware hitting path: /login
+[01:34:02.787] Server  LOG     Middleware hitting path: /login
+[01:34:02.808] Server  LOG     Middleware hitting path: /dashboard
+[01:34:02.828] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:34:02.830] Server  ERROR   TypeError: fetch failed
+[01:34:02.842] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:34:02.850] Server  ERROR   TypeError: fetch failed
+[01:34:02.864] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:34:02.868] Server  ERROR   TypeError: fetch failed
+[01:34:03.072] Server  LOG     Middleware hitting path: /dashboard
+[01:34:03.244] Server  LOG     Middleware hitting path: /login
+[01:34:03.278] Server  LOG     Middleware hitting path: /login
+[01:34:03.299] Server  LOG     Middleware hitting path: /dashboard
+[01:34:03.332] Server  LOG     Middleware hitting path: /login
+[01:34:03.449] Server  LOG     Middleware hitting path: /login
+[01:34:03.468] Server  LOG     Middleware hitting path: /dashboard
+[01:34:03.483] Server  LOG     Middleware hitting path: /dashboard
+[01:34:03.681] Server  LOG     Middleware hitting path: /dashboard
+[01:34:03.826] Server  LOG     Middleware hitting path: /login
+[01:34:03.850] Server  LOG     Middleware hitting path: /login
+[01:34:03.873] Server  LOG     Middleware hitting path: /dashboard
+[01:34:12.990] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:34:12.996] Server  ERROR   TypeError: fetch failed
+[01:34:13.073] Server  LOG     Middleware hitting path: /dashboard
+[01:34:13.244] Server  LOG     Middleware hitting path: /login
+[01:34:13.270] Server  LOG     Middleware hitting path: /login
+[01:34:13.299] Server  LOG     Middleware hitting path: /dashboard
+[01:34:13.491] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:34:13.493] Server  ERROR   TypeError: fetch failed
+[01:34:13.512] Server  LOG     Middleware hitting path: /dashboard
+[01:34:13.992] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:34:13.994] Server  ERROR   TypeError: fetch failed
+[01:34:14.055] Server  LOG     Middleware hitting path: /login
+[01:34:14.084] Server  LOG     Middleware hitting path: /login
+[01:34:14.112] Server  LOG     Middleware hitting path: /dashboard
+[01:34:14.509] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:34:14.511] Server  ERROR   TypeError: fetch failed
+[01:34:14.536] Server  LOG     Middleware hitting path: /
+[01:34:15.776] Server  LOG     Middleware hitting path: /dashboard
+[01:34:17.564] Server  LOG      ○ Compiling / ...
+[01:34:26.809] Server  LOG     Middleware hitting path: /login
+[01:34:26.847] Server  LOG     Middleware hitting path: /login
+[01:34:26.889] Server  LOG     Middleware hitting path: /login
+[01:34:26.907] Server  LOG     Middleware hitting path: /dashboard
+[01:34:26.926] Server  LOG     Middleware hitting path: /login
+[01:34:26.961] Server  LOG     Middleware hitting path: /dashboard
+[01:34:27.088] Server  LOG     Middleware hitting path: /dashboard
+[01:34:27.208] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:34:27.210] Server  ERROR   TypeError: fetch failed
+[01:34:27.383] Server  LOG     Middleware hitting path: /dashboard
+[01:34:27.436] Server  LOG     Middleware hitting path: /login
+[01:34:27.549] Server  LOG     Middleware hitting path: /login
+[01:34:27.574] Server  LOG     Middleware hitting path: /dashboard
+[01:34:30.621] Server  LOG     Middleware hitting path: /dashboard
+[01:34:30.782] Server  LOG     Middleware hitting path: /login
+[01:34:30.830] Server  LOG     Middleware hitting path: /login
+[01:34:30.866] Server  LOG     Middleware hitting path: /dashboard
+[01:34:30.986] Server  LOG     Middleware hitting path: /login
+[01:34:31.028] Server  LOG     Middleware hitting path: /login
+[01:34:31.066] Server  LOG     Middleware hitting path: /dashboard
+[01:34:31.288] Server  ERROR   Bog'lanish ma'lumotlarini yuklashda xatolik yuz berdi: {}
+[01:34:31.788] Server  LOG     Middleware hitting path: /dashboard
+[01:34:32.508] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:34:32.804] Server  LOG     Middleware hitting path: /.well-known/appspecific/com.chrome.devtools.json
+[01:34:33.878] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:34:33.878] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[01:34:33.878] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767799389865}
+[01:34:34.097] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
+[01:34:37.403] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:34:37.405] Server  ERROR   TypeError: fetch failed
+[01:34:37.427] Server  LOG     Middleware hitting path: /dashboard
+[01:34:37.903] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:34:37.905] Server  ERROR   TypeError: fetch failed
+[01:34:37.913] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:34:37.915] Server  ERROR   TypeError: fetch failed
+[01:34:37.963] Server  LOG     Middleware hitting path: /login
+[01:34:37.987] Server  LOG     Middleware hitting path: /login
+[01:34:37.997] Server  LOG     Middleware hitting path: /dashboard
+[01:34:38.075] Server  LOG     Middleware hitting path: /dashboard
+[01:34:41.506] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:34:41.509] Server  ERROR   TypeError: fetch failed
+[01:34:41.536] Server  LOG     Middleware hitting path: /login
+[01:34:41.573] Server  LOG     Middleware hitting path: /login
+[01:34:41.602] Server  LOG     Middleware hitting path: /dashboard
+[01:34:42.224] Server  LOG     Middleware hitting path: /dashboard
+[01:34:48.129] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:34:48.131] Server  ERROR   TypeError: fetch failed
+[01:34:48.162] Server  LOG     Middleware hitting path: /login
+[01:34:48.206] Server  LOG     Middleware hitting path: /login
+[01:34:48.246] Server  LOG     Middleware hitting path: /dashboard
+[01:34:48.413] Server  LOG     Middleware hitting path: /login
+[01:34:48.445] Server  LOG     Middleware hitting path: /dashboard
+[01:34:48.635] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:34:48.638] Server  ERROR   TypeError: fetch failed
+[01:34:48.649] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:34:48.654] Server  ERROR   TypeError: fetch failed
+[01:34:48.712] Server  LOG     Middleware hitting path: /dashboard
+[01:34:48.848] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767799405223}
+[01:34:48.936] Server  LOG     Middleware hitting path: /login
+[01:34:48.973] Server  LOG     Middleware hitting path: /login
+[01:34:49.006] Server  LOG     Middleware hitting path: /dashboard
+[01:34:50.727] Server  LOG     Middleware hitting path: /dashboard
+[01:34:52.192] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:34:52.195] Server  ERROR   TypeError: fetch failed
+[01:34:52.227] Server  LOG     Middleware hitting path: /login
+[01:34:52.265] Server  LOG     Middleware hitting path: /login
+[01:34:52.302] Server  LOG     Middleware hitting path: /dashboard
+[01:34:58.785] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:34:58.788] Server  ERROR   TypeError: fetch failed
+[01:34:58.797] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:34:58.800] Server  ERROR   TypeError: fetch failed
+[01:34:58.959] Server  LOG     Middleware hitting path: /dashboard
+[01:34:59.558] Server  LOG     Middleware hitting path: /login
+[01:34:59.669] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:34:59.671] Server  ERROR   TypeError: fetch failed
+[01:34:59.681] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:34:59.683] Server  ERROR   TypeError: fetch failed
+[01:34:59.744] Server  LOG     Middleware hitting path: /login
+[01:34:59.776] Server  LOG     Middleware hitting path: /dashboard
+[01:35:00.076] Server  LOG     Middleware hitting path: /login
+[01:35:00.122] Server  LOG     Middleware hitting path: /login
+[01:35:00.142] Server  LOG     Middleware hitting path: /dashboard
+[01:35:00.279] Server  LOG     Middleware hitting path: /dashboard
+[01:35:00.456] Server  LOG     Middleware hitting path: /dashboard
+[01:35:00.949] Server  LOG     Middleware hitting path: /login
+[01:35:01.024] Server  LOG     Middleware hitting path: /login
+[01:35:01.080] Server  LOG     Middleware hitting path: /dashboard
+[01:35:01.347] Server  LOG     Middleware hitting path: /dashboard
+[01:35:01.578] Server  LOG     Middleware hitting path: /login
+[01:35:01.644] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:35:01.646] Server  ERROR   TypeError: fetch failed
+[01:35:01.667] Server  LOG     Middleware hitting path: /login
+[01:35:01.700] Server  LOG     Middleware hitting path: /dashboard
+[01:35:01.725] Server  LOG     Middleware hitting path: /login
+[01:35:01.814] Server  LOG     Middleware hitting path: /login
+[01:35:01.885] Server  LOG     Middleware hitting path: /dashboard
+[01:35:02.071] Server  LOG     Middleware hitting path: /dashboard
+[01:35:03.184] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:35:03.186] Server  ERROR   TypeError: fetch failed
+[01:35:03.218] Server  LOG     Middleware hitting path: /dashboard
+[01:35:09.438] Server  LOG     Middleware hitting path: /login
+[01:35:09.460] Server  LOG     Middleware hitting path: /login
+[01:35:09.487] Server  LOG     Middleware hitting path: /dashboard
+[01:35:10.317] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:35:10.320] Server  ERROR   TypeError: fetch failed
+[01:35:10.331] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:35:10.337] Server  ERROR   TypeError: fetch failed
+[01:35:10.409] Server  LOG     Middleware hitting path: /dashboard
+[01:35:10.429] Server  LOG     Middleware hitting path: /login
+[01:35:10.707] Server  LOG     Middleware hitting path: /login
+[01:35:10.730] Server  LOG     Middleware hitting path: /dashboard
+[01:35:10.842] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:35:10.845] Server  ERROR   TypeError: fetch failed
+[01:35:10.856] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:35:10.859] Server  ERROR   TypeError: fetch failed
+[01:35:10.871] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:35:10.875] Server  ERROR   TypeError: fetch failed
+[01:35:10.938] Server  LOG     Middleware hitting path: /dashboard
+[01:35:10.964] Server  LOG     Middleware hitting path: /login
+[01:35:11.087] Server  LOG     Middleware hitting path: /login
+[01:35:11.100] Server  LOG     Middleware hitting path: /dashboard
+[01:35:11.227] Server  LOG     Middleware hitting path: /dashboard
+[01:35:11.856] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:35:11.859] Server  ERROR   TypeError: fetch failed
+[01:35:11.871] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:35:11.874] Server  ERROR   TypeError: fetch failed
+[01:35:11.966] Server  LOG     Middleware hitting path: /login
+[01:35:12.140] Server  LOG     Middleware hitting path: /login
+[01:35:12.163] Server  LOG     Middleware hitting path: /dashboard
+[01:35:12.354] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:35:12.356] Server  ERROR   TypeError: fetch failed
+[01:35:12.365] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:35:12.368] Server  ERROR   TypeError: fetch failed
+[01:35:12.380] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:35:12.382] Server  ERROR   TypeError: fetch failed
+[01:35:12.469] Server  LOG     Middleware hitting path: /dashboard
+[01:35:12.486] Server  LOG     Middleware hitting path: /login
+[01:35:12.514] Server  LOG     Middleware hitting path: /login
+[01:35:12.642] Server  LOG     Middleware hitting path: /dashboard
+[01:35:12.785] Server  LOG     Middleware hitting path: /login
+[01:35:12.906] Server  LOG     Middleware hitting path: /login
+[01:35:12.928] Server  LOG     Middleware hitting path: /dashboard
+[01:35:13.069] Server  LOG     Middleware hitting path: /dashboard
+[01:35:13.859] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:35:13.861] Server  ERROR   TypeError: fetch failed
+[01:35:13.893] Server  LOG     Middleware hitting path: /dashboard
+[01:35:20.801] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:35:20.803] Server  ERROR   TypeError: fetch failed
+[01:35:20.838] Server  LOG     Middleware hitting path: /login
+[01:35:20.874] Server  LOG     Middleware hitting path: /login
+[01:35:20.919] Server  LOG     Middleware hitting path: /dashboard
+[01:35:21.023] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:35:21.027] Server  ERROR   TypeError: fetch failed
+[01:35:21.288] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:35:21.291] Server  ERROR   TypeError: fetch failed
+[01:35:21.307] Server  LOG     Middleware hitting path: /dashboard
+[01:35:21.340] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:35:21.342] Server  ERROR   TypeError: fetch failed
+[01:35:22.769] Server  LOG     Middleware hitting path: /login
+[01:35:22.797] Server  LOG     Middleware hitting path: /login
+[01:35:22.822] Server  LOG     Middleware hitting path: /login
+[01:35:22.873] Server  LOG     Middleware hitting path: /login
+[01:35:22.944] Server  LOG     Middleware hitting path: /dashboard
+[01:35:22.967] Server  LOG     Middleware hitting path: /dashboard
+[01:35:23.166] Server  LOG     Middleware hitting path: /dashboard
+[01:35:24.625] Server  LOG     Middleware hitting path: /dashboard
+[01:35:24.973] Server  LOG     Middleware hitting path: /login
+[01:35:24.996] Server  LOG     Middleware hitting path: /login
+[01:35:25.013] Server  LOG     Middleware hitting path: /dashboard
+[01:35:30.100] Server  LOG     Middleware hitting path: /login
+[01:35:30.139] Server  LOG     Middleware hitting path: /login
+[01:35:30.170] Server  LOG     Middleware hitting path: /dashboard
+[01:35:35.553] Server  LOG     Middleware hitting path: /dashboard
+[01:35:35.577] Server  LOG     Middleware hitting path: /dashboard
+[01:35:35.972] Server  LOG     Middleware hitting path: /login
+[01:35:36.008] Server  LOG     Middleware hitting path: /login
+[01:35:36.028] Server  LOG     Middleware hitting path: /dashboard
+[01:35:36.181] Server  LOG     Middleware hitting path: /dashboard
+[01:35:36.295] Server  LOG     Middleware hitting path: /login
+[01:35:36.372] Server  LOG     Middleware hitting path: /login
+[01:35:36.381] Server  LOG     Middleware hitting path: /dashboard
+[01:35:36.453] Server  LOG     Middleware hitting path: /login
+[01:35:36.469] Server  LOG     Middleware hitting path: /login
+[01:35:36.481] Server  LOG     Middleware hitting path: /dashboard
+[01:35:36.557] Server  LOG     Middleware hitting path: /dashboard
+[01:35:36.565] Server  LOG     Middleware hitting path: /dashboard
+[01:35:36.793] Server  LOG     Middleware hitting path: /login
+[01:35:36.881] Server  LOG     Middleware hitting path: /login
+[01:35:36.899] Server  LOG     Middleware hitting path: /dashboard
+[01:35:39.883] Server  LOG     Middleware hitting path: /dashboard
+[01:35:46.695] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:35:46.697] Server  ERROR   TypeError: fetch failed
+[01:35:46.722] Server  LOG     Middleware hitting path: /login
+[01:35:46.742] Server  LOG     Middleware hitting path: /login
+[01:35:46.755] Server  LOG     Middleware hitting path: /dashboard
+[01:35:47.204] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:35:47.205] Server  ERROR   TypeError: fetch failed
+[01:35:47.225] Server  LOG     Middleware hitting path: /login
+[01:35:47.247] Server  LOG     Middleware hitting path: /login
+[01:35:47.263] Server  LOG     Middleware hitting path: /dashboard
+[01:35:57.367] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:35:57.369] Server  ERROR   TypeError: fetch failed
+[01:35:57.387] Server  LOG     Middleware hitting path: /dashboard
+[01:35:57.874] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:35:57.875] Server  ERROR   TypeError: fetch failed
+[01:35:57.893] Server  LOG     Middleware hitting path: /dashboard
+[01:35:59.268] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:35:59.269] Server  ERROR   TypeError: fetch failed
+[01:35:59.283] Server  LOG     Middleware hitting path: /login
+[01:35:59.307] Server  LOG     Middleware hitting path: /login
+[01:35:59.324] Server  LOG     Middleware hitting path: /dashboard
+[01:36:00.680] Server  LOG     Middleware hitting path: /dashboard
+[01:36:05.115] Server  LOG     Middleware hitting path: /login
+[01:36:05.129] Server  LOG     Middleware hitting path: /login
+[01:36:05.143] Server  LOG     Middleware hitting path: /dashboard
+[01:36:05.490] Server  LOG     Middleware hitting path: /dashboard
+[01:36:05.813] Server  LOG     Middleware hitting path: /login
+[01:36:05.842] Server  LOG     Middleware hitting path: /login
+[01:36:05.873] Server  LOG     Middleware hitting path: /dashboard
+[01:36:08.210] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:36:08.215] Server  ERROR   TypeError: fetch failed
+[01:36:08.405] Server  LOG     Middleware hitting path: /login
+[01:36:08.457] Server  LOG     Middleware hitting path: /login
+[01:36:08.491] Server  LOG     Middleware hitting path: /dashboard
+[01:36:08.795] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:36:08.797] Server  ERROR   TypeError: fetch failed
+[01:36:08.822] Server  LOG     Middleware hitting path: /dashboard
+[01:36:09.803] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:36:09.804] Server  ERROR   TypeError: fetch failed
+[01:36:09.825] Server  LOG     Middleware hitting path: /login
+[01:36:09.845] Server  LOG     Middleware hitting path: /login
+[01:36:09.872] Server  LOG     Middleware hitting path: /dashboard
+[01:36:10.058] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:36:10.059] Server  ERROR   TypeError: fetch failed
+[01:36:10.106] Server  LOG     Middleware hitting path: /dashboard
+[01:36:14.413] Server  LOG     Middleware hitting path: /dashboard
+[01:36:20.428] Server  LOG     Middleware hitting path: /login
+[01:36:20.445] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:36:20.447] Server  ERROR   TypeError: fetch failed
+[01:36:20.455] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:36:20.457] Server  ERROR   TypeError: fetch failed
+[01:36:20.488] Server  LOG     Middleware hitting path: /login
+[01:36:20.515] Server  LOG     Middleware hitting path: /login
+[01:36:20.528] Server  LOG     Middleware hitting path: /login
+[01:36:20.554] Server  LOG     Middleware hitting path: /dashboard
+[01:36:20.562] Server  LOG     Middleware hitting path: /dashboard
+[01:36:20.677] Server  LOG     Middleware hitting path: /dashboard
+[01:36:21.601] Server  LOG     Middleware hitting path: /dashboard
+[01:36:21.616] Server  LOG     Middleware hitting path: /login
+[01:36:21.670] Server  LOG     Middleware hitting path: /login
+[01:36:21.687] Server  LOG     Middleware hitting path: /dashboard
+[01:36:25.013] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:36:25.015] Server  ERROR   TypeError: fetch failed
+[01:36:25.035] Server  LOG     Middleware hitting path: /login
+[01:36:25.094] Server  LOG     Middleware hitting path: /login
+[01:36:25.108] Server  LOG     Middleware hitting path: /dashboard
+[01:36:31.137] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:36:31.139] Server  ERROR   TypeError: fetch failed
+[01:36:31.144] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:36:31.146] Server  ERROR   TypeError: fetch failed
+[01:36:31.180] Server  LOG     Middleware hitting path: /dashboard
+[01:36:31.192] Server  LOG     Middleware hitting path: /dashboard
+[01:36:32.164] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:36:32.166] Server  ERROR   TypeError: fetch failed
+[01:36:32.197] Server  LOG     Middleware hitting path: /login
+[01:36:32.237] Server  LOG     Middleware hitting path: /login
+[01:36:32.255] Server  LOG     Middleware hitting path: /dashboard
+[01:36:34.775] Server  LOG     Middleware hitting path: /login
+[01:36:34.804] Server  LOG     Middleware hitting path: /login
+[01:36:34.818] Server  LOG     Middleware hitting path: /dashboard
+[01:36:35.727] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:36:35.729] Server  ERROR   TypeError: fetch failed
+[01:36:35.748] Server  LOG     Middleware hitting path: /dashboard
+[01:36:41.844] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:36:41.848] Server  ERROR   TypeError: fetch failed
+[01:36:41.865] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:36:41.868] Server  ERROR   TypeError: fetch failed
+[01:36:41.978] Server  LOG     Middleware hitting path: /dashboard
+[01:36:42.008] Server  LOG     Middleware hitting path: /login
+[01:36:42.042] Server  LOG     Middleware hitting path: /login
+[01:36:42.153] Server  LOG     Middleware hitting path: /dashboard
+[01:36:42.856] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:36:42.859] Server  ERROR   TypeError: fetch failed
+[01:36:42.912] Server  LOG     Middleware hitting path: /dashboard
+[01:36:45.406] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:36:45.408] Server  ERROR   TypeError: fetch failed
+[01:36:45.440] Server  LOG     Middleware hitting path: /login
+[01:36:45.481] Server  LOG     Middleware hitting path: /login
+[01:36:45.505] Server  LOG     Middleware hitting path: /dashboard
+[01:36:46.419] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:36:46.421] Server  ERROR   TypeError: fetch failed
+[01:36:46.462] Server  LOG     Middleware hitting path: /login
+[01:36:46.500] Server  LOG     Middleware hitting path: /login
+[01:36:46.540] Server  LOG     Middleware hitting path: /dashboard
+[01:36:46.817] Server  LOG     Middleware hitting path: /dashboard
+[01:36:48.728] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:36:48.732] Server  ERROR   TypeError: fetch failed
+[01:36:48.772] Server  LOG     Middleware hitting path: /dashboard
+[01:36:49.306] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:36:49.309] Server  ERROR   TypeError: fetch failed
+[01:36:49.341] Server  LOG     Middleware hitting path: /login
+[01:36:49.383] Server  LOG     Middleware hitting path: /login
+[01:36:49.411] Server  LOG     Middleware hitting path: /dashboard
+[01:36:51.125] Server  LOG     Middleware hitting path: /login
+[01:36:51.141] Server  LOG     Middleware hitting path: /login
+[01:36:51.155] Server  LOG     Middleware hitting path: /dashboard
+[01:36:51.228] Server  LOG     Middleware hitting path: /dashboard
+[01:36:52.579] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:36:52.581] Server  ERROR   TypeError: fetch failed
+[01:36:52.587] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:36:52.589] Server  ERROR   TypeError: fetch failed
+[01:36:52.615] Server  LOG     Middleware hitting path: /login
+[01:36:52.624] Server  LOG     Middleware hitting path: /dashboard
+[01:36:52.682] Server  LOG     Middleware hitting path: /login
+[01:36:52.696] Server  LOG     Middleware hitting path: /dashboard
+[01:36:53.591] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:36:53.593] Server  ERROR   TypeError: fetch failed
+[01:36:53.611] Server  LOG     Middleware hitting path: /login
+[01:36:53.631] Server  LOG     Middleware hitting path: /login
+[01:36:53.651] Server  LOG     Middleware hitting path: /dashboard
+[01:36:55.231] Server  LOG     Middleware hitting path: /dashboard
+[01:36:56.146] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:36:56.148] Server  ERROR   TypeError: fetch failed
+[01:36:56.162] Server  LOG     Middleware hitting path: /login
+[01:36:56.186] Server  LOG     Middleware hitting path: /login
+[01:36:56.202] Server  LOG     Middleware hitting path: /dashboard
+[01:36:57.174] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:36:57.175] Server  ERROR   TypeError: fetch failed
+[01:36:57.181] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:36:57.183] Server  ERROR   TypeError: fetch failed
+[01:36:57.224] Server  LOG     Middleware hitting path: /dashboard
+[01:36:57.311] Server  LOG     Middleware hitting path: /login
+[01:36:57.326] Server  LOG     Middleware hitting path: /login
+[01:36:57.339] Server  LOG     Middleware hitting path: /dashboard
+[01:36:59.216] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:36:59.218] Server  ERROR   TypeError: fetch failed
+[01:36:59.246] Server  LOG     Middleware hitting path: /dashboard
+[01:36:59.727] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:36:59.728] Server  ERROR   TypeError: fetch failed
+[01:36:59.761] Server  LOG     Middleware hitting path: /login
+[01:36:59.812] Server  LOG     Middleware hitting path: /login
+[01:36:59.845] Server  LOG     Middleware hitting path: /dashboard
+[01:37:01.740] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:01.742] Server  ERROR   TypeError: fetch failed
+[01:37:01.749] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:01.754] Server  ERROR   TypeError: fetch failed
+[01:37:01.816] Server  LOG     Middleware hitting path: /dashboard
+[01:37:01.840] Server  LOG     Middleware hitting path: /dashboard
+[01:37:03.269] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:03.274] Server  ERROR   TypeError: fetch failed
+[01:37:03.288] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:03.294] Server  ERROR   TypeError: fetch failed
+[01:37:03.370] Server  LOG     Middleware hitting path: /login
+[01:37:03.389] Server  LOG     Middleware hitting path: /login
+[01:37:03.415] Server  LOG     Middleware hitting path: /login
+[01:37:03.443] Server  LOG     Middleware hitting path: /dashboard
+[01:37:03.581] Server  LOG     Middleware hitting path: /login
+[01:37:03.603] Server  LOG     Middleware hitting path: /dashboard
+[01:37:04.319] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:04.321] Server  ERROR   TypeError: fetch failed
+[01:37:04.347] Server  LOG     Middleware hitting path: /dashboard
+[01:37:07.861] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:07.864] Server  ERROR   TypeError: fetch failed
+[01:37:07.875] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:07.877] Server  ERROR   TypeError: fetch failed
+[01:37:07.928] Server  LOG     Middleware hitting path: /login
+[01:37:07.956] Server  LOG     Middleware hitting path: /login
+[01:37:07.977] Server  LOG     Middleware hitting path: /dashboard
+[01:37:08.069] Server  LOG     Middleware hitting path: /dashboard
+[01:37:09.884] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:09.886] Server  ERROR   TypeError: fetch failed
+[01:37:09.906] Server  LOG     Middleware hitting path: /dashboard
+[01:37:10.395] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:10.396] Server  ERROR   TypeError: fetch failed
+[01:37:10.412] Server  LOG     Middleware hitting path: /login
+[01:37:10.448] Server  LOG     Middleware hitting path: /login
+[01:37:10.473] Server  LOG     Middleware hitting path: /dashboard
+[01:37:12.435] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:12.436] Server  ERROR   TypeError: fetch failed
+[01:37:12.443] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:12.445] Server  ERROR   TypeError: fetch failed
+[01:37:12.473] Server  LOG     Middleware hitting path: /login
+[01:37:12.482] Server  LOG     Middleware hitting path: /dashboard
+[01:37:12.495] Server  LOG     Middleware hitting path: /login
+[01:37:12.548] Server  LOG     Middleware hitting path: /dashboard
+[01:37:13.970] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:13.972] Server  ERROR   TypeError: fetch failed
+[01:37:13.977] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:13.979] Server  ERROR   TypeError: fetch failed
+[01:37:14.010] Server  LOG     Middleware hitting path: /login
+[01:37:14.023] Server  LOG     Middleware hitting path: /dashboard
+[01:37:14.118] Server  LOG     Middleware hitting path: /login
+[01:37:14.145] Server  LOG     Middleware hitting path: /dashboard
+[01:37:14.982] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:14.984] Server  ERROR   TypeError: fetch failed
+[01:37:14.999] Server  LOG     Middleware hitting path: /login
+[01:37:15.012] Server  LOG     Middleware hitting path: /login
+[01:37:15.026] Server  LOG     Middleware hitting path: /dashboard
+[01:37:18.543] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:18.545] Server  ERROR   TypeError: fetch failed
+[01:37:18.552] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:18.553] Server  ERROR   TypeError: fetch failed
+[01:37:18.609] Server  LOG     Middleware hitting path: /dashboard
+[01:37:18.703] Server  LOG     Middleware hitting path: /login
+[01:37:18.718] Server  LOG     Middleware hitting path: /login
+[01:37:18.728] Server  LOG     Middleware hitting path: /dashboard
+[01:37:20.574] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:20.576] Server  ERROR   TypeError: fetch failed
+[01:37:20.607] Server  LOG     Middleware hitting path: /dashboard
+[01:37:20.783] Server  LOG     Middleware hitting path: /dashboard
+[01:37:21.073] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:21.075] Server  ERROR   TypeError: fetch failed
+[01:37:21.092] Server  LOG     Middleware hitting path: /login
+[01:37:21.146] Server  LOG     Middleware hitting path: /login
+[01:37:21.162] Server  LOG     Middleware hitting path: /dashboard
+[01:37:23.100] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:23.102] Server  ERROR   TypeError: fetch failed
+[01:37:23.108] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:23.110] Server  ERROR   TypeError: fetch failed
+[01:37:23.143] Server  LOG     Middleware hitting path: /dashboard
+[01:37:23.163] Server  LOG     Middleware hitting path: /login
+[01:37:23.273] Server  LOG     Middleware hitting path: /login
+[01:37:23.299] Server  LOG     Middleware hitting path: /dashboard
+[01:37:24.622] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:24.624] Server  ERROR   TypeError: fetch failed
+[01:37:24.630] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:24.633] Server  ERROR   TypeError: fetch failed
+[01:37:24.670] Server  LOG     Middleware hitting path: /login
+[01:37:24.683] Server  LOG     Middleware hitting path: /dashboard
+[01:37:24.755] Server  LOG     Middleware hitting path: /login
+[01:37:24.777] Server  LOG     Middleware hitting path: /dashboard
+[01:37:25.633] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:25.634] Server  ERROR   TypeError: fetch failed
+[01:37:25.653] Server  LOG     Middleware hitting path: /login
+[01:37:25.672] Server  LOG     Middleware hitting path: /login
+[01:37:25.686] Server  LOG     Middleware hitting path: /dashboard
+[01:37:27.012] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:27.013] Server  ERROR   TypeError: fetch failed
+[01:37:27.025] Server  LOG     Middleware hitting path: /dashboard
+[01:37:27.078] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:27.079] Server  ERROR   TypeError: fetch failed
+[01:37:27.092] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:27.093] Server  ERROR   TypeError: fetch failed
+[01:37:27.098] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:27.100] Server  ERROR   TypeError: fetch failed
+[01:37:27.136] Server  LOG     Middleware hitting path: /dashboard
+[01:37:27.195] Server  LOG     Middleware hitting path: /login
+[01:37:27.211] Server  LOG     Middleware hitting path: /login
+[01:37:27.253] Server  LOG     Middleware hitting path: /dashboard
+[01:37:27.337] Server  LOG     Middleware hitting path: /login
+[01:37:27.356] Server  LOG     Middleware hitting path: /login
+[01:37:27.369] Server  LOG     Middleware hitting path: /dashboard
+[01:37:28.044] Server  LOG     Middleware hitting path: /dashboard
+[01:37:28.254] Server  LOG     Middleware hitting path: /login
+[01:37:28.275] Server  LOG     Middleware hitting path: /login
+[01:37:28.289] Server  LOG     Middleware hitting path: /dashboard
+[01:37:29.240] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:29.241] Server  ERROR   TypeError: fetch failed
+[01:37:29.257] Server  LOG     Middleware hitting path: /dashboard
+[01:37:34.632] Server  LOG     Middleware hitting path: /login
+[01:37:34.650] Server  LOG     Middleware hitting path: /login
+[01:37:34.661] Server  LOG     Middleware hitting path: /dashboard
+[01:37:36.422] Server  LOG     Middleware hitting path: /dashboard
+[01:37:36.442] Server  LOG     Middleware hitting path: /dashboard
+[01:37:36.745] Server  LOG     Middleware hitting path: /login
+[01:37:36.774] Server  LOG     Middleware hitting path: /login
+[01:37:36.792] Server  LOG     Middleware hitting path: /dashboard
+[01:37:36.855] Server  LOG     Middleware hitting path: /dashboard
+[01:37:36.937] Server  LOG     Middleware hitting path: /login
+[01:37:36.960] Server  LOG     Middleware hitting path: /login
+[01:37:36.979] Server  LOG     Middleware hitting path: /dashboard
+[01:37:37.027] Server  LOG     Middleware hitting path: /dashboard
+[01:37:37.162] Server  LOG     Middleware hitting path: /login
+[01:37:37.179] Server  LOG     Middleware hitting path: /login
+[01:37:37.202] Server  LOG     Middleware hitting path: /dashboard
+[01:37:46.501] Server  LOG     Middleware hitting path: /login
+[01:37:46.520] Server  LOG     Middleware hitting path: /login
+[01:37:46.532] Server  LOG     Middleware hitting path: /dashboard
+[01:37:46.593] Server  LOG     Middleware hitting path: /dashboard
+[01:37:56.202] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:56.204] Server  ERROR   TypeError: fetch failed
+[01:37:56.209] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:37:56.211] Server  ERROR   TypeError: fetch failed
+[01:37:56.510] Server  LOG     Middleware hitting path: /login
+[01:37:56.525] Server  LOG     Middleware hitting path: /dashboard
+[01:37:56.541] Server  LOG     Middleware hitting path: /login
+[01:37:56.607] Server  LOG     Middleware hitting path: /dashboard
+[01:37:56.717] Server  LOG     Middleware hitting path: /dashboard
+[01:38:06.430] Server  LOG     Middleware hitting path: /login
+[01:38:06.446] Server  LOG     Middleware hitting path: /login
+[01:38:06.465] Server  LOG     Middleware hitting path: /login
+[01:38:06.475] Server  LOG     Middleware hitting path: /dashboard
+[01:38:06.484] Server  LOG     Middleware hitting path: /login
+[01:38:06.493] Server  LOG     Middleware hitting path: /dashboard
+[01:38:06.599] Server  LOG     Middleware hitting path: /dashboard
+[01:38:06.607] Server  LOG     Middleware hitting path: /dashboard
+[01:38:06.774] Server  LOG     Middleware hitting path: /login
+[01:38:06.796] Server  LOG     Middleware hitting path: /login
+[01:38:06.812] Server  LOG     Middleware hitting path: /dashboard
+[01:38:06.910] Server  LOG     Middleware hitting path: /login
+[01:38:06.925] Server  LOG     Middleware hitting path: /login
+[01:38:06.938] Server  LOG     Middleware hitting path: /dashboard
+[01:38:07.002] Server  LOG     Middleware hitting path: /dashboard
+[01:38:09.527] Server  LOG     Middleware hitting path: /dashboard
+[01:38:10.932] Server  LOG     Middleware hitting path: /login
+[01:38:10.965] Server  LOG     Middleware hitting path: /login
+[01:38:10.992] Server  LOG     Middleware hitting path: /dashboard
+[01:38:11.946] Server  LOG     Middleware hitting path: /login
+[01:38:11.978] Server  LOG     Middleware hitting path: /login
+[01:38:12.005] Server  LOG     Middleware hitting path: /dashboard
+[01:38:14.060] Server  LOG     Middleware hitting path: /dashboard
+[01:38:15.177] Server  LOG     Middleware hitting path: /dashboard
+[01:38:15.293] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:38:15.295] Server  ERROR   TypeError: fetch failed
+[01:38:15.305] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:38:15.306] Server  ERROR   TypeError: fetch failed
+[01:38:15.313] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:38:15.317] Server  ERROR   TypeError: fetch failed
+[01:38:15.327] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:38:15.331] Server  ERROR   TypeError: fetch failed
+[01:38:15.338] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:38:15.340] Server  ERROR   TypeError: fetch failed
+[01:38:15.350] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:38:15.351] Server  ERROR   TypeError: fetch failed
+[01:38:15.594] Server  LOG     Middleware hitting path: /login
+[01:38:15.606] Server  LOG     Middleware hitting path: /login
+[01:38:15.629] Server  LOG     Middleware hitting path: /login
+[01:38:15.641] Server  LOG     Middleware hitting path: /dashboard
+[01:38:15.654] Server  LOG     Middleware hitting path: /login
+[01:38:15.662] Server  LOG     Middleware hitting path: /dashboard
+[01:38:15.789] Server  LOG     Middleware hitting path: /dashboard
+[01:38:15.797] Server  LOG     Middleware hitting path: /dashboard
+[01:38:15.922] Server  LOG     Middleware hitting path: /login
+[01:38:15.938] Server  LOG     Middleware hitting path: /login
+[01:38:15.960] Server  LOG     Middleware hitting path: /login
+[01:38:15.969] Server  LOG     Middleware hitting path: /dashboard
+[01:38:15.982] Server  LOG     Middleware hitting path: /login
+[01:38:16.044] Server  LOG     Middleware hitting path: /dashboard
+[01:38:17.066] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:38:17.068] Server  ERROR   TypeError: fetch failed
+[01:38:17.080] Server  LOG     Middleware hitting path: /dashboard
+[01:38:25.873] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:38:25.876] Server  ERROR   TypeError: fetch failed
+[01:38:25.917] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:38:25.918] Server  ERROR   TypeError: fetch failed
+[01:38:26.192] Server  LOG     Middleware hitting path: /login
+[01:38:26.466] Server  LOG     Middleware hitting path: /login
+[01:38:26.474] Server  LOG     Middleware hitting path: /dashboard
+[01:38:26.584] Server  LOG     Middleware hitting path: /dashboard
+[01:38:26.662] Server  LOG     Middleware hitting path: /dashboard
+[01:38:26.770] Server  LOG     Middleware hitting path: /login
+[01:38:26.783] Server  LOG     Middleware hitting path: /login
+[01:38:26.800] Server  LOG     Middleware hitting path: /login
+[01:38:26.810] Server  LOG     Middleware hitting path: /dashboard
+[01:38:26.824] Server  LOG     Middleware hitting path: /login
+[01:38:26.840] Server  LOG     Middleware hitting path: /dashboard
+[01:38:27.133] Server  LOG     Middleware hitting path: /dashboard
+[01:38:27.536] Server  LOG     Middleware hitting path: /dashboard
+[01:38:27.657] Server  LOG     Middleware hitting path: /login
+[01:38:27.675] Server  LOG     Middleware hitting path: /login
+[01:38:27.685] Server  LOG     Middleware hitting path: /dashboard
+[01:38:27.732] Server  LOG     Middleware hitting path: /dashboard
+[01:38:29.389] Server  LOG     Middleware hitting path: /login
+[01:38:29.408] Server  LOG     Middleware hitting path: /login
+[01:38:29.425] Server  LOG     Middleware hitting path: /dashboard
+[01:38:30.085] Server  LOG     Middleware hitting path: /login
+[01:38:30.109] Server  LOG     Middleware hitting path: /login
+[01:38:30.227] Server  LOG     Middleware hitting path: /dashboard
+[01:38:30.333] Server  LOG     Middleware hitting path: /dashboard
+[01:38:37.798] Server  LOG     Middleware hitting path: /login
+[01:38:37.812] Server  LOG     Middleware hitting path: /dashboard
+[01:38:37.821] Server  LOG     Middleware hitting path: /login
+[01:38:37.872] Server  LOG     Middleware hitting path: /dashboard
+[01:38:37.957] Server  LOG     Middleware hitting path: /dashboard
+[01:38:38.016] Server  LOG     Middleware hitting path: /login
+[01:38:38.028] Server  LOG     Middleware hitting path: /login
+[01:38:38.042] Server  LOG     Middleware hitting path: /dashboard
+[01:38:46.076] Server  LOG     Middleware hitting path: /login
+[01:38:46.091] Server  LOG     Middleware hitting path: /login
+[01:38:46.119] Server  LOG     Middleware hitting path: /dashboard
+[01:38:48.370] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:38:48.372] Server  ERROR   TypeError: fetch failed
+[01:38:48.378] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:38:48.381] Server  ERROR   TypeError: fetch failed
+[01:38:48.388] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:38:48.390] Server  ERROR   TypeError: fetch failed
+[01:38:48.399] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:38:48.406] Server  ERROR   TypeError: fetch failed
+[01:38:48.447] Server  LOG     Middleware hitting path: /dashboard
+[01:38:48.457] Server  LOG     Middleware hitting path: /dashboard
+[01:38:48.581] Server  LOG     Middleware hitting path: /login
+[01:38:48.596] Server  LOG     Middleware hitting path: /login
+[01:38:48.615] Server  LOG     Middleware hitting path: /login
+[01:38:48.623] Server  LOG     Middleware hitting path: /dashboard
+[01:38:48.636] Server  LOG     Middleware hitting path: /login
+[01:38:48.701] Server  LOG     Middleware hitting path: /dashboard
+[01:38:49.674] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:38:49.676] Server  ERROR   TypeError: fetch failed
+[01:38:49.692] Server  LOG     Middleware hitting path: /dashboard
+[01:38:50.694] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:38:50.695] Server  ERROR   TypeError: fetch failed
+[01:38:50.712] Server  LOG     Middleware hitting path: /login
+[01:38:50.739] Server  LOG     Middleware hitting path: /login
+[01:38:50.754] Server  LOG     Middleware hitting path: /dashboard
+[01:38:56.496] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:38:56.498] Server  ERROR   TypeError: fetch failed
+[01:38:56.520] Server  LOG     Middleware hitting path: /dashboard
+[01:38:58.712] Server  LOG     Middleware hitting path: /login
+[01:38:58.734] Server  LOG     Middleware hitting path: /dashboard
+[01:38:58.741] Server  LOG     Middleware hitting path: /login
+[01:38:58.755] Server  LOG     Middleware hitting path: /dashboard
+[01:38:59.057] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:38:59.059] Server  ERROR   TypeError: fetch failed
+[01:38:59.066] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:38:59.069] Server  ERROR   TypeError: fetch failed
+[01:38:59.080] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:38:59.084] Server  ERROR   TypeError: fetch failed
+[01:38:59.120] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:38:59.125] Server  ERROR   TypeError: fetch failed
+[01:38:59.191] Server  LOG     Middleware hitting path: /login
+[01:38:59.203] Server  LOG     Middleware hitting path: /dashboard
+[01:38:59.218] Server  LOG     Middleware hitting path: /login
+[01:38:59.226] Server  LOG     Middleware hitting path: /dashboard
+[01:38:59.320] Server  LOG     Middleware hitting path: /dashboard
+[01:38:59.431] Server  LOG     Middleware hitting path: /login
+[01:38:59.447] Server  LOG     Middleware hitting path: /login
+[01:38:59.462] Server  LOG     Middleware hitting path: /dashboard
+[01:38:59.524] Server  LOG     Middleware hitting path: /login
+[01:38:59.550] Server  LOG     Middleware hitting path: /login
+[01:38:59.562] Server  LOG     Middleware hitting path: /dashboard
+[01:39:00.067] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:39:00.069] Server  ERROR   TypeError: fetch failed
+[01:39:00.085] Server  LOG     Middleware hitting path: /dashboard
+[01:39:00.646] Server  LOG     Middleware hitting path: /dashboard
+[01:39:01.068] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:39:01.070] Server  ERROR   TypeError: fetch failed
+[01:39:01.088] Server  LOG     Middleware hitting path: /login
+[01:39:01.108] Server  LOG     Middleware hitting path: /login
+[01:39:01.125] Server  LOG     Middleware hitting path: /dashboard
+[01:39:04.120] Server  LOG     Middleware hitting path: /login
+[01:39:04.136] Server  LOG     Middleware hitting path: /login
+[01:39:04.153] Server  LOG     Middleware hitting path: /dashboard
+[01:39:07.160] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:39:07.162] Server  ERROR   TypeError: fetch failed
+[01:39:07.178] Server  LOG     Middleware hitting path: /dashboard
+[01:39:09.187] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:39:09.188] Server  ERROR   TypeError: fetch failed
+[01:39:09.205] Server  LOG     Middleware hitting path: /login
+[01:39:09.221] Server  LOG     Middleware hitting path: /login
+[01:39:09.243] Server  LOG     Middleware hitting path: /dashboard
+[01:39:09.701] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:39:09.703] Server  ERROR   TypeError: fetch failed
+[01:39:09.718] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:39:09.719] Server  ERROR   TypeError: fetch failed
+[01:39:09.724] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:39:09.726] Server  ERROR   TypeError: fetch failed
+[01:39:09.731] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:39:09.733] Server  ERROR   TypeError: fetch failed
+[01:39:09.771] Server  LOG     Middleware hitting path: /dashboard
+[01:39:09.779] Server  LOG     Middleware hitting path: /dashboard
+[01:39:09.927] Server  LOG     Middleware hitting path: /login
+[01:39:09.956] Server  LOG     Middleware hitting path: /login
+[01:39:09.970] Server  LOG     Middleware hitting path: /login
+[01:39:09.989] Server  LOG     Middleware hitting path: /dashboard
+[01:39:09.997] Server  LOG     Middleware hitting path: /login
+[01:39:10.060] Server  LOG     Middleware hitting path: /dashboard
+[01:39:10.211] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:39:10.212] Server  ERROR   TypeError: fetch failed
+[01:39:10.236] Server  LOG     Middleware hitting path: /dashboard
+[01:39:10.726] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:39:10.728] Server  ERROR   TypeError: fetch failed
+[01:39:10.759] Server  LOG     Middleware hitting path: /dashboard
+[01:39:11.237] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:39:11.238] Server  ERROR   TypeError: fetch failed
+[01:39:11.254] Server  LOG     Middleware hitting path: /login
+[01:39:11.270] Server  LOG     Middleware hitting path: /login
+[01:39:11.284] Server  LOG     Middleware hitting path: /dashboard
+[01:39:11.736] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:39:11.737] Server  ERROR   TypeError: fetch failed
+[01:39:11.762] Server  LOG     Middleware hitting path: /login
+[01:39:11.779] Server  LOG     Middleware hitting path: /login
+[01:39:11.798] Server  LOG     Middleware hitting path: /dashboard
+[01:39:14.801] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:39:14.802] Server  ERROR   TypeError: fetch failed
+[01:39:14.821] Server  LOG     Middleware hitting path: /dashboard
+[01:39:16.590] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:39:16.592] Server  ERROR   TypeError: fetch failed
+[01:39:16.601] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:39:16.604] Server  ERROR   TypeError: fetch failed
+[01:39:16.610] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:39:16.612] Server  ERROR   TypeError: fetch failed
+[01:39:16.622] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:39:16.623] Server  ERROR   TypeError: fetch failed
+[01:39:16.633] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:39:16.635] Server  ERROR   TypeError: fetch failed
+[01:39:16.640] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:39:16.641] Server  ERROR   TypeError: fetch failed
+[01:39:16.646] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:39:16.649] Server  ERROR   TypeError: fetch failed
+[01:39:16.655] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:39:16.657] Server  ERROR   TypeError: fetch failed
+[01:39:16.738] Server  LOG     Middleware hitting path: /dashboard
+[01:39:16.757] Server  LOG     Middleware hitting path: /login
+[01:39:16.808] Server  LOG     Middleware hitting path: /login
+[01:39:16.887] Server  LOG     Middleware hitting path: /dashboard
+[01:39:17.024] Server  LOG     Middleware hitting path: /dashboard
+[01:39:17.035] Server  LOG     Middleware hitting path: /login
+[01:39:17.056] Server  LOG     Middleware hitting path: /login
+[01:39:17.140] Server  LOG     Middleware hitting path: /dashboard
+[01:39:17.247] Server  LOG     Middleware hitting path: /dashboard
+[01:39:17.344] Server  LOG     Middleware hitting path: /login
+[01:39:17.359] Server  LOG     Middleware hitting path: /login
+[01:39:17.376] Server  LOG     Middleware hitting path: /dashboard
+[01:39:17.454] Server  LOG     Middleware hitting path: /login
+[01:39:17.467] Server  LOG     Middleware hitting path: /login
+[01:39:17.485] Server  LOG     Middleware hitting path: /dashboard
+[01:39:17.550] Server  LOG     Middleware hitting path: /dashboard
+[01:39:23.430] Server  LOG     Middleware hitting path: /dashboard
+[01:39:28.082] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:39:28.084] Server  ERROR   TypeError: fetch failed
+[01:39:28.105] Server  LOG     Middleware hitting path: /login
+[01:39:28.130] Server  LOG     Middleware hitting path: /login
+[01:39:28.146] Server  LOG     Middleware hitting path: /dashboard
+[01:39:31.156] Server  LOG     Middleware hitting path: /dashboard
+[01:39:31.227] Server  LOG     Middleware hitting path: /login
+[01:39:31.317] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_742f5a47._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:39:31.319] Server  ERROR   TypeError: fetch failed
+[01:39:31.765] Server  LOG     Middleware hitting path: /login
+[01:39:31.830] Server  LOG     Middleware hitting path: /dashboard
+[01:39:31.952] Server  LOG     Middleware hitting path: /login
+[01:39:31.983] Server  LOG     Middleware hitting path: /login
+[01:39:31.995] Server  LOG     Middleware hitting path: /dashboard
+[01:39:32.004] Server  LOG     Middleware hitting path: /dashboard
+[01:39:32.116] Server  LOG     Middleware hitting path: /dashboard
+[01:39:40.171] Server  LOG     Middleware hitting path: /login
+[01:39:40.184] Server  LOG     Middleware hitting path: /login
+[01:39:40.210] Server  LOG     Middleware hitting path: /dashboard
+[01:39:40.497] Server  LOG     Middleware hitting path: /dashboard
+[01:39:41.133] Server  LOG     Middleware hitting path: /login
+[01:39:41.148] Server  LOG     Middleware hitting path: /login
+[01:39:41.169] Server  LOG     Middleware hitting path: /dashboard
+[01:39:44.223] Server  LOG     Middleware hitting path: /login
+[01:39:44.245] Server  LOG     Middleware hitting path: /login
+[01:39:44.255] Server  LOG     Middleware hitting path: /dashboard
+[01:39:44.310] Server  LOG     Middleware hitting path: /dashboard
+[01:39:44.449] Server  LOG     Middleware hitting path: /dashboard
+[01:39:44.589] Server  LOG     Middleware hitting path: /login
+[01:39:44.634] Server  LOG     Middleware hitting path: /login
+[01:39:44.687] Server  LOG     Middleware hitting path: /dashboard
+[01:39:44.800] Server  LOG     Middleware hitting path: /dashboard
+[01:39:44.992] Server  LOG     Middleware hitting path: /login
+[01:39:45.009] Server  LOG     Middleware hitting path: /login
+[01:39:45.023] Server  LOG     Middleware hitting path: /dashboard
+[01:39:45.077] Server  LOG     Middleware hitting path: /login
+[01:39:45.090] Server  LOG     Middleware hitting path: /login
+[01:39:45.099] Server  LOG     Middleware hitting path: /dashboard
+[01:39:45.147] Server  LOG     Middleware hitting path: /dashboard
+[01:39:47.550] Server  LOG     Middleware hitting path: /dashboard
+[01:39:47.845] Server  LOG     Middleware hitting path: /login
+[01:39:47.867] Server  LOG     Middleware hitting path: /login
+[01:39:47.894] Server  LOG     Middleware hitting path: /dashboard
+[01:39:48.604] Server  LOG     Middleware hitting path: /login
+[01:39:48.622] Server  LOG     Middleware hitting path: /dashboard
+[01:39:48.631] Server  LOG     Middleware hitting path: /login
+[01:39:48.692] Server  LOG     Middleware hitting path: /dashboard
+[01:39:56.140] Server  LOG     Middleware hitting path: /dashboard
+[01:39:57.091] Server  LOG     Middleware hitting path: /login
+[01:39:57.119] Server  LOG     Middleware hitting path: /login
+[01:39:57.127] Server  LOG     Middleware hitting path: /login
+[01:39:57.143] Server  LOG     Middleware hitting path: /login
+[01:39:57.167] Server  LOG     Middleware hitting path: /dashboard
+[01:39:57.252] Server  LOG     Middleware hitting path: /dashboard
+[01:39:57.312] Server  LOG     Middleware hitting path: /dashboard
+[01:39:57.360] Server  LOG     Middleware hitting path: /dashboard
+[01:39:57.369] Server  LOG     Middleware hitting path: /login
+[01:39:57.383] Server  LOG     Middleware hitting path: /login
+[01:39:57.448] Server  LOG     Middleware hitting path: /dashboard
+[01:39:57.515] Server  LOG     Middleware hitting path: /login
+[01:39:57.529] Server  LOG     Middleware hitting path: /login
+[01:39:57.539] Server  LOG     Middleware hitting path: /dashboard
+[01:39:57.598] Server  LOG     Middleware hitting path: /dashboard
+[01:39:59.856] Server  LOG     Middleware hitting path: /login
+[01:39:59.868] Server  LOG     Middleware hitting path: /login
+[01:39:59.887] Server  LOG     Middleware hitting path: /dashboard
+[01:40:00.990] Server  LOG     Middleware hitting path: /dashboard
+[01:40:01.004] Server  LOG     Middleware hitting path: /dashboard
+[01:40:04.799] Server  LOG     Middleware hitting path: /login
+[01:40:04.815] Server  LOG     Middleware hitting path: /login
+[01:40:04.829] Server  LOG     Middleware hitting path: /dashboard
+[01:40:05.895] Server  LOG     Middleware hitting path: /dashboard
+[01:40:06.015] Server  LOG     Middleware hitting path: /login
+[01:40:06.184] Server  LOG     Middleware hitting path: /login
+[01:40:06.519] Server  LOG     Middleware hitting path: /dashboard
+[01:40:06.954] Server  LOG     Middleware hitting path: /dashboard
+[01:40:06.970] Server  LOG     Middleware hitting path: /login
+[01:40:07.037] Server  LOG     Middleware hitting path: /login
+[01:40:07.148] Server  LOG     Middleware hitting path: /login
+[01:40:07.168] Server  LOG     Middleware hitting path: /login
+[01:40:07.186] Server  LOG     Middleware hitting path: /dashboard
+[01:40:07.201] Server  LOG     Middleware hitting path: /dashboard
+[01:40:07.299] Server  LOG     Middleware hitting path: /dashboard
+[01:40:07.434] Server  LOG     Middleware hitting path: /dashboard
+[01:40:07.506] Server  LOG     Middleware hitting path: /login
+[01:40:07.611] Server  LOG     Middleware hitting path: /login
+[01:40:07.628] Server  LOG     Middleware hitting path: /dashboard
+[01:40:07.798] Server  LOG     Middleware hitting path: /dashboard
+[01:40:08.403] Server  LOG     Middleware hitting path: /login
+[01:40:08.423] Server  LOG     Middleware hitting path: /login
+[01:40:08.622] Server  LOG     Middleware hitting path: /dashboard
+[01:40:08.634] Server  LOG     Middleware hitting path: /login
+[01:40:08.739] Server  LOG     Middleware hitting path: /login
+[01:40:08.754] Server  LOG     Middleware hitting path: /dashboard
+[01:40:08.880] Server  LOG     Middleware hitting path: /dashboard
+[01:40:08.916] Server  LOG     Middleware hitting path: /dashboard
+[01:40:09.359] Server  LOG     Middleware hitting path: /login
+[01:40:09.387] Server  LOG     Middleware hitting path: /login
+[01:40:09.397] Server  LOG     Middleware hitting path: /dashboard
+[01:40:09.427] Server  LOG     Middleware hitting path: /login
+[01:40:09.549] Server  LOG     Middleware hitting path: /login
+[01:40:09.556] Server  LOG     Middleware hitting path: /dashboard
+[01:40:09.577] Server  LOG     Middleware hitting path: /dashboard
+[01:40:09.660] Server  LOG     Middleware hitting path: /dashboard
+[01:40:09.856] Server  LOG     Middleware hitting path: /login
+[01:40:09.946] Server  LOG     Middleware hitting path: /login
+[01:40:09.954] Server  LOG     Middleware hitting path: /dashboard
+[01:40:09.967] Server  LOG     Middleware hitting path: /login
+[01:40:10.031] Server  LOG     Middleware hitting path: /login
+[01:40:10.162] Server  LOG     Middleware hitting path: /dashboard
+[01:40:10.175] Server  LOG     Middleware hitting path: /dashboard
+[01:40:10.470] Server  LOG     Middleware hitting path: /dashboard
+[01:40:10.829] Server  LOG     Middleware hitting path: /login
+[01:40:10.849] Server  LOG     Middleware hitting path: /login
+[01:40:10.863] Server  LOG     Middleware hitting path: /dashboard
+[01:40:10.921] Server  LOG     Middleware hitting path: /dashboard
+[01:40:10.984] Server  LOG     Middleware hitting path: /login
+[01:40:11.068] Server  LOG     Middleware hitting path: /login
+[01:40:11.075] Server  LOG     Middleware hitting path: /dashboard
+[01:40:11.261] Server  LOG     Middleware hitting path: /dashboard
+[01:40:11.345] Server  LOG     Middleware hitting path: /login
+[01:40:11.359] Server  LOG     Middleware hitting path: /login
+[01:40:11.375] Server  LOG     Middleware hitting path: /dashboard
+[01:40:11.440] Server  LOG     Middleware hitting path: /dashboard
+[01:40:11.447] Server  LOG     Middleware hitting path: /login
+[01:40:11.496] Server  LOG     Middleware hitting path: /login
+[01:40:11.510] Server  LOG     Middleware hitting path: /dashboard
+[01:40:14.640] Server  LOG     Middleware hitting path: /login
+[01:40:14.666] Server  LOG     Middleware hitting path: /login
+[01:40:14.689] Server  LOG     Middleware hitting path: /dashboard
+[01:40:14.802] Server  LOG     Middleware hitting path: /dashboard
+[01:40:15.535] Server  LOG     Middleware hitting path: /login
+[01:40:15.552] Server  LOG     Middleware hitting path: /login
+[01:40:15.569] Server  LOG     Middleware hitting path: /dashboard
+[01:40:19.259] Server  LOG     Middleware hitting path: /dashboard
+[01:40:23.125] Server  LOG     Middleware hitting path: /dashboard
+[01:40:23.221] Server  LOG     Middleware hitting path: /login
+[01:40:23.251] Server  LOG     Middleware hitting path: /login
+[01:40:23.278] Server  LOG     Middleware hitting path: /dashboard
+[01:40:23.761] Server  LOG     Middleware hitting path: /login
+[01:40:23.776] Server  LOG     Middleware hitting path: /login
+[01:40:23.802] Server  LOG     Middleware hitting path: /dashboard
+[01:40:24.296] Server  LOG     Middleware hitting path: /dashboard
+[01:40:24.732] Server  LOG     Middleware hitting path: /login
+[01:40:24.748] Server  LOG     Middleware hitting path: /dashboard
+[01:40:24.781] Server  LOG     Middleware hitting path: /login
+[01:40:24.792] Server  LOG     Middleware hitting path: /dashboard
+[01:40:25.056] Server  LOG     Middleware hitting path: /dashboard
+[01:40:25.206] Server  LOG     Middleware hitting path: /login
+[01:40:25.237] Server  LOG     Middleware hitting path: /login
+[01:40:25.258] Server  LOG     Middleware hitting path: /login
+[01:40:25.274] Server  LOG     Middleware hitting path: /login
+[01:40:25.291] Server  LOG     Middleware hitting path: /dashboard
+[01:40:25.326] Server  LOG     Middleware hitting path: /dashboard
+[01:40:25.583] Server  LOG     Middleware hitting path: /dashboard
+[01:40:25.724] Server  LOG     Middleware hitting path: /dashboard
+[01:40:26.149] Server  LOG     Middleware hitting path: /login
+[01:40:26.233] Server  LOG     Middleware hitting path: /login
+[01:40:26.242] Server  LOG     Middleware hitting path: /dashboard
+[01:40:26.389] Server  LOG     Middleware hitting path: /dashboard
+[01:40:26.555] Server  LOG     Middleware hitting path: /login
+[01:40:26.621] Server  LOG     Middleware hitting path: /login
+[01:40:26.691] Server  LOG     Middleware hitting path: /dashboard
+[01:40:26.891] Server  LOG     Middleware hitting path: /login
+[01:40:26.908] Server  LOG     Middleware hitting path: /login
+[01:40:26.953] Server  LOG     Middleware hitting path: /dashboard
+[01:40:27.006] Server  LOG     Middleware hitting path: /dashboard
+[01:40:27.084] Server  LOG     Middleware hitting path: /dashboard
+[01:40:27.262] Server  LOG     Middleware hitting path: /login
+[01:40:27.284] Server  LOG     Middleware hitting path: /login
+[01:40:27.299] Server  LOG     Middleware hitting path: /login
+[01:40:27.362] Server  LOG     Middleware hitting path: /dashboard
+[01:40:27.373] Server  LOG     Middleware hitting path: /login
+[01:40:27.387] Server  LOG     Middleware hitting path: /dashboard
+[01:40:27.574] Server  LOG     Middleware hitting path: /dashboard
+[01:40:27.974] Server  LOG     Middleware hitting path: /login
+[01:40:28.077] Server  LOG     Middleware hitting path: /login
+[01:40:28.151] Server  LOG     Middleware hitting path: /dashboard
+[01:40:28.475] Server  LOG     Middleware hitting path: /dashboard
+[01:40:28.597] Server  LOG     Middleware hitting path: /dashboard
+[01:40:28.770] Server  LOG     Middleware hitting path: /login
+[01:40:28.931] Server  LOG     Middleware hitting path: /login
+[01:40:28.940] Server  LOG     Middleware hitting path: /dashboard
+[01:40:29.185] Server  LOG     Middleware hitting path: /dashboard
+[01:40:29.376] Server  LOG     Middleware hitting path: /login
+[01:40:29.431] Server  LOG     Middleware hitting path: /login
+[01:40:29.440] Server  LOG     Middleware hitting path: /dashboard
+[01:40:29.505] Server  LOG     Middleware hitting path: /dashboard
+[01:40:29.568] Server  LOG     Middleware hitting path: /login
+[01:40:29.585] Server  LOG     Middleware hitting path: /login
+[01:40:29.592] Server  LOG     Middleware hitting path: /dashboard
+[01:40:29.709] Server  LOG     Middleware hitting path: /login
+[01:40:29.718] Server  LOG     Middleware hitting path: /dashboard
+[01:40:29.872] Server  LOG     Middleware hitting path: /login
+[01:40:29.939] Server  LOG     Middleware hitting path: /dashboard
+[01:40:30.311] Server  LOG     Middleware hitting path: /login
+[01:40:30.338] Server  LOG     Middleware hitting path: /login
+[01:40:30.408] Server  LOG     Middleware hitting path: /dashboard
+[01:40:30.589] Server  LOG     Middleware hitting path: /dashboard
+[01:40:30.608] Server  LOG     Middleware hitting path: /dashboard
+[01:40:30.860] Server  LOG     Middleware hitting path: /login
+[01:40:30.915] Server  LOG     Middleware hitting path: /login
+[01:40:30.947] Server  LOG     Middleware hitting path: /dashboard
+[01:40:31.099] Server  LOG     Middleware hitting path: /login
+[01:40:31.204] Server  LOG     Middleware hitting path: /login
+[01:40:31.211] Server  LOG     Middleware hitting path: /dashboard
+[01:40:31.225] Server  LOG     Middleware hitting path: /dashboard
+[01:40:31.334] Server  LOG     Middleware hitting path: /dashboard
+[01:40:31.829] Server  LOG     Middleware hitting path: /login
+[01:40:31.921] Server  LOG     Middleware hitting path: /login
+[01:40:31.935] Server  LOG     Middleware hitting path: /login
+[01:40:31.998] Server  LOG     Middleware hitting path: /login
+[01:40:32.011] Server  LOG     Middleware hitting path: /dashboard
+[01:40:32.017] Server  LOG     Middleware hitting path: /dashboard
+[01:40:32.106] Server  LOG     Middleware hitting path: /dashboard
+[01:40:32.205] Server  LOG     Middleware hitting path: /dashboard
+[01:40:32.400] Server  LOG     Middleware hitting path: /login
+[01:40:32.413] Server  LOG     Middleware hitting path: /login
+[01:40:32.470] Server  LOG     Middleware hitting path: /dashboard
+[01:40:32.551] Server  LOG     Middleware hitting path: /login
+[01:40:32.635] Server  LOG     Middleware hitting path: /dashboard
+[01:40:32.642] Server  LOG     Middleware hitting path: /login
+[01:40:32.702] Server  LOG     Middleware hitting path: /dashboard
+[01:40:32.807] Server  LOG     Middleware hitting path: /dashboard
+[01:40:33.397] Server  LOG     Middleware hitting path: /login
+[01:40:33.411] Server  LOG     Middleware hitting path: /login
+[01:40:33.457] Server  LOG     Middleware hitting path: /dashboard
+[01:40:33.506] Server  LOG     Middleware hitting path: /dashboard
+[01:40:34.079] Server  LOG     Middleware hitting path: /login
+[01:40:34.103] Server  LOG     Middleware hitting path: /login
+[01:40:34.114] Server  LOG     Middleware hitting path: /login
+[01:40:34.130] Server  LOG     Middleware hitting path: /login
+[01:40:34.304] Server  LOG     Middleware hitting path: /dashboard
+[01:40:34.311] Server  LOG     Middleware hitting path: /dashboard
+[01:40:34.504] Server  LOG     Middleware hitting path: /dashboard
+[01:40:34.518] Server  LOG     Middleware hitting path: /dashboard
+[01:40:34.718] Server  LOG     Middleware hitting path: /login
+[01:40:34.739] Server  LOG     Middleware hitting path: /login
+[01:40:34.748] Server  LOG     Middleware hitting path: /dashboard
+[01:40:34.860] Server  LOG     Middleware hitting path: /login
+[01:40:34.958] Server  LOG     Middleware hitting path: /dashboard
+[01:40:34.965] Server  LOG     Middleware hitting path: /login
+[01:40:35.003] Server  LOG     Middleware hitting path: /dashboard
+[01:40:35.120] Server  LOG     Middleware hitting path: /dashboard
+[01:40:35.221] Server  LOG     Middleware hitting path: /login
+[01:40:35.236] Server  LOG     Middleware hitting path: /login
+[01:40:35.248] Server  LOG     Middleware hitting path: /dashboard
+[01:40:35.354] Server  LOG     Middleware hitting path: /dashboard
+[01:40:35.412] Server  LOG     Middleware hitting path: /login
+[01:40:35.551] Server  LOG     Middleware hitting path: /login
+[01:40:35.598] Server  LOG     Middleware hitting path: /dashboard
+[01:40:35.940] Server  LOG     Middleware hitting path: /dashboard
+[01:40:36.510] Server  LOG     Middleware hitting path: /login
+[01:40:36.543] Server  LOG     Middleware hitting path: /login
+[01:40:36.619] Server  LOG     Middleware hitting path: /login
+[01:40:36.629] Server  LOG     Middleware hitting path: /login
+[01:40:36.660] Server  LOG     Middleware hitting path: /dashboard
+[01:40:36.668] Server  LOG     Middleware hitting path: /dashboard
+[01:40:36.829] Server  LOG     Middleware hitting path: /dashboard
+[01:40:37.040] Server  LOG     Middleware hitting path: /dashboard
+[01:40:37.211] Server  LOG     Middleware hitting path: /login
+[01:40:37.281] Server  LOG     Middleware hitting path: /login
+[01:40:37.289] Server  LOG     Middleware hitting path: /dashboard
+[01:40:37.357] Server  LOG     Middleware hitting path: /dashboard
+[01:40:37.591] Server  LOG     Middleware hitting path: /login
+[01:40:37.668] Server  LOG     Middleware hitting path: /login
+[01:40:37.681] Server  LOG     Middleware hitting path: /dashboard
+[01:40:37.890] Server  LOG     Middleware hitting path: /login
+[01:40:37.992] Server  LOG     Middleware hitting path: /login
+[01:40:38.026] Server  LOG     Middleware hitting path: /dashboard
+[01:40:38.528] Server  LOG     Middleware hitting path: /dashboard
+[01:40:38.696] Server  LOG     Middleware hitting path: /dashboard
+[01:40:38.768] Server  LOG     Middleware hitting path: /login
+[01:40:38.798] Server  LOG     Middleware hitting path: /login
+[01:40:38.823] Server  LOG     Middleware hitting path: /dashboard
+[01:40:39.518] Server  LOG     Middleware hitting path: /dashboard
+[01:40:42.111] Server  LOG     Middleware hitting path: /dashboard
+[01:40:42.184] Server  LOG     Middleware hitting path: /dashboard
+[01:40:42.288] Server  LOG     Middleware hitting path: /dashboard
+[01:40:42.424] Server  LOG     Middleware hitting path: /dashboard
+[01:40:42.553] Server  LOG     Middleware hitting path: /dashboard
+[02:48:07.795] Server  LOG     Middleware hitting path: /dashboard
+[02:48:14.293] Server  LOG     Middleware hitting path: /
+[02:48:21.168] Server  LOG     Middleware hitting path: /.well-known/appspecific/com.chrome.devtools.json
+[02:48:21.457] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:48:23.015] Server  LOG     Middleware hitting path: /login
+[02:48:23.838] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
+[02:48:24.002] Server  LOG     Middleware hitting path: /dashboard
+[02:48:26.780] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:48:27.664] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[02:48:27.664] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[02:48:27.664] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767803824025}
+[02:48:29.553] Server  LOG     Middleware hitting path: /.well-known/appspecific/com.chrome.devtools.json
+[02:48:35.016] Server  LOG     Middleware hitting path: /dashboard
+[02:50:50.397] Server  LOG     Middleware hitting path: /admin
+[02:50:53.685] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767803970097}
+[02:53:47.402] Server  LOG     Middleware hitting path: /settings
+[02:53:50.433] Server  LOG      ○ Compiling /settings ...
+[02:53:57.485] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767804153825}
+[02:54:01.993] Server  LOG     Middleware hitting path: /settings
+[02:54:08.070] Server  LOG     Middleware hitting path: /dashboard
+[02:54:08.473] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767804164901}
+[02:56:57.555] Server  LOG     Middleware hitting path: /

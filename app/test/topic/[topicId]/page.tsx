@@ -1,10 +1,13 @@
+// app/test/topic/[topicId]/page.tsx
 import { redirect } from "next/navigation"
 import { getSupabaseServerClient } from "@/lib/supabase/server"
 import { Navbar } from "@/components/navbar"
 import { hasActiveAccess } from "@/lib/access-control"
 import { EnhancedTestInterface } from "@/components/enhanced-test-interface"
+import { Suspense } from "react"
+import { PremiumAccessGuard } from "@/components/premium-access-guard"
 
-export default async function TopicTestPage({ params }: { params: Promise<{ topicId: string }> }) {
+async function TopicTestContent({ params }: { params: Promise<{ topicId: string }> }) {
   const { topicId } = await params
   const supabase = await getSupabaseServerClient()
 
@@ -13,30 +16,23 @@ export default async function TopicTestPage({ params }: { params: Promise<{ topi
   } = await supabase.auth.getUser()
   if (!user) redirect("/login")
 
-  const { data: userData } = await supabase.from("users").select("*").eq("id", user.id).single()
+  const [
+    { data: userData },
+    { data: topic },
+    { data: tests },
+    { data: userSettings },
+    { data: contactData }
+  ] = await Promise.all([
+    supabase.from("users").select("*").eq("id", user.id).single(),
+    supabase.from("topics").select("*").eq("id", topicId).single(),
+    supabase.from("tests").select("*").eq("topic_id", topicId).order("created_at"),
+    supabase.from("user_settings").select("*").eq("user_id", user.id).single(),
+    supabase.from("site_content").select("content").eq("type", "contact").maybeSingle()
+  ])
 
   if (!userData) redirect("/dashboard")
+  if (!topic || !tests?.length) redirect("/dashboard")
 
-  const { data: topic } = await supabase.from("topics").select("*").eq("id", topicId).single()
-
-  const { data: tests } = await supabase
-    .from("tests")
-    .select("*")
-    .eq("topic_id", topicId)
-    .order("created_at")
-
-  // Get user settings
-  const { data: userSettings } = await supabase
-    .from("user_settings")
-    .select("*")
-    .eq("user_id", user.id)
-    .single()
-
-  if (!topic || !tests?.length) {
-    redirect("/dashboard")
-  }
-
-  // Public / premium access control
   const isPremiumRequired = !topic.is_public
   const hasPremium = hasActiveAccess(userData)
 
@@ -44,17 +40,30 @@ export default async function TopicTestPage({ params }: { params: Promise<{ topi
     redirect("/dashboard?premium=required")
   }
 
+  const telegramLink = contactData?.content?.telegram_link || "https://t.me/yourusername"
+
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar userEmail={user.email} isAdmin={userData.role === "admin"} />
-      <EnhancedTestInterface
-        title={topic.title}
-        tests={tests}
-        userId={user.id}
-        testType="topic"
-        testTypeId={topicId}
-        userSettings={userSettings}
-      />
-    </div>
+    <>
+      <PremiumAccessGuard telegramLink={telegramLink} />
+      <div className="min-h-screen bg-background">
+        <Navbar userEmail={user.email} isAdmin={userData.role === "admin"} />
+        <EnhancedTestInterface
+          title={topic.title}
+          tests={tests}
+          userId={user.id}
+          testType="topic"
+          testTypeId={topicId}
+          userSettings={userSettings}
+        />
+      </div>
+    </>
+  )
+}
+
+export default async function TopicTestPage({ params }: { params: Promise<{ topicId: string }> }) {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <TopicTestContent params={params} />
+    </Suspense>
   )
 }

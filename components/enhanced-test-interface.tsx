@@ -44,6 +44,20 @@ export function EnhancedTestInterface({
   const questionFontSize = userSettings?.question_font_size || 16
   const answerFontSize = userSettings?.answer_font_size || 14
 
+  // Reset audio when question changes
+  useEffect(() => {
+    // Stop any playing audio
+    const currentAudio = Object.values(audioRefs.current).find(audio => !audio.paused);
+    if (currentAudio) {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+    }
+    setPlayingAudio({});
+
+    // Auto-scroll to top if needed
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentIndex]);
+
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (isFinished) return
@@ -51,15 +65,14 @@ export function EnhancedTestInterface({
       if (e.key === "ArrowLeft" && currentIndex > 0) {
         setCurrentIndex(currentIndex - 1)
       } else if (e.key === "ArrowRight" && currentIndex < tests.length - 1) {
-        if (selectedAnswers[currentIndex] !== undefined) {
-          setCurrentIndex(currentIndex + 1)
-        }
+        // Allow navigation regardless of answer status
+        setCurrentIndex(currentIndex + 1)
       }
     }
 
     window.addEventListener("keydown", handleKeyPress)
     return () => window.removeEventListener("keydown", handleKeyPress)
-  }, [currentIndex, tests.length, selectedAnswers, isFinished])
+  }, [currentIndex, tests.length, isFinished])
 
   const handleAnswerSelect = (answerIndex: number) => {
     setSelectedAnswers({ ...selectedAnswers, [currentIndex]: answerIndex })
@@ -336,14 +349,17 @@ export function EnhancedTestInterface({
 
                     let borderColor = "border"
                     let bgColor = ""
-                    
+
                     if (showFeedback) {
-                      if (isSelected && !isCorrect) {
-                        borderColor = "border-red-500"
-                        bgColor = "bg-red-50 dark:bg-red-950"
+                      if (isSelected) {
+                        if (!isCorrect) {
+                          borderColor = "border-red-500 bg-red-50 dark:bg-red-950"
+                        } else {
+                          borderColor = "border-green-500 bg-green-50 dark:bg-green-950"
+                        }
                       } else if (isCorrect) {
-                        borderColor = "border-green-500"
-                        bgColor = "bg-green-50 dark:bg-green-950"
+                        // Always show correct answer in green if user has answered this question
+                        borderColor = "border-green-500 bg-green-50 dark:bg-green-950"
                       }
                     }
 
@@ -422,7 +438,6 @@ export function EnhancedTestInterface({
                   {currentIndex < tests.length - 1 ? (
                     <Button
                       onClick={() => setCurrentIndex(currentIndex + 1)}
-                      disabled={selectedAnswer === undefined}
                       className="flex-1"
                     >
                       {t("test.next", language)}

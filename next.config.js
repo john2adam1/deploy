@@ -41,8 +41,7 @@ const nextConfig = {
   // Optimize production build
   productionBrowserSourceMaps: false,
 
-  // Enable SWC minification (faster than Terser)
-  swcMinify: true,
+
 
   // Compiler options
   compiler: {
@@ -56,8 +55,6 @@ const nextConfig = {
   experimental: {
     // Optimize package imports
     optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
-    // Enable incremental cache
-    incrementalCacheHandlerPath: undefined,
   },
 
   // Output standalone for better deployment

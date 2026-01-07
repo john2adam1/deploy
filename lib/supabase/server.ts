@@ -4,7 +4,18 @@ import { cookies } from "next/headers"
 export async function getSupabaseServerClient() {
   const cookieStore = await cookies()
 
-  return createServerClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!, {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+  if (!url || !key) {
+    console.error("Supabase Error: Missing env variables", {
+      hasUrl: !!url,
+      hasKey: !!key,
+      urlPrefix: url?.substring(0, 8)
+    })
+  }
+
+  return createServerClient(url!, key!, {
     cookies: {
       getAll() {
         return cookieStore.getAll()

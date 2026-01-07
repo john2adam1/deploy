@@ -1,3 +1,4 @@
+// components/admin/tests-management.tsx
 "use client"
 
 import { useEffect, useState } from "react"
@@ -12,16 +13,20 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { useToast } from "@/hooks/use-toast"
 import { Trash2, Edit2 } from "lucide-react"
-import type { Topic, Test } from "@/lib/types"
+import type { Topic, Test, Ticket } from "@/lib/types"
 
-interface TestWithTopic extends Test {
+interface TestWithRelation extends Test {
   topic_title?: string
+  ticket_title?: string
 }
 
 export function TestsManagement() {
   const [topics, setTopics] = useState<Topic[]>([])
-  const [tests, setTests] = useState<TestWithTopic[]>([])
+  const [tickets, setTickets] = useState<Ticket[]>([])
+  const [tests, setTests] = useState<TestWithRelation[]>([])
   const [selectedTopic, setSelectedTopic] = useState("")
+  const [selectedTicket, setSelectedTicket] = useState("")
+  const [testType, setTestType] = useState<"topic" | "ticket">("topic")
   const [imageFile, setImageFile] = useState<File | null>(null)
   const [audioFile, setAudioFile] = useState<File | null>(null)
   const [imageUrl, setImageUrl] = useState("")
@@ -43,12 +48,18 @@ export function TestsManagement() {
 
   useEffect(() => {
     fetchTopics()
+    fetchTickets()
     fetchTests()
   }, [])
 
   const fetchTopics = async () => {
     const { data } = await supabase.from("topics").select("*").order("title")
     if (data) setTopics(data)
+  }
+
+  const fetchTickets = async () => {
+    const { data } = await supabase.from("tickets").select("*").order("title")
+    if (data) setTickets(data)
   }
 
   const fetchTests = async () => {
@@ -64,17 +75,19 @@ export function TestsManagement() {
       .order("created_at", { ascending: false })
 
     if (data) {
-      const testsWithTopic = data.map((test: any) => ({
+      const testsWithRelation = data.map((test: any) => ({
         ...test,
         topic_title: test.topics?.title || "Unknown",
       }))
-      setTests(testsWithTopic)
+      setTests(testsWithRelation)
     }
     setLoading(false)
   }
 
   const resetForm = () => {
     setSelectedTopic("")
+    setSelectedTicket("")
+    setTestType("topic")
     setImageFile(null)
     setAudioFile(null)
     setImageUrl("")
@@ -140,9 +153,7 @@ export function TestsManagement() {
         upsert: false,
       })
 
-      if (uploadError) {
-        throw uploadError
-      }
+      if (uploadError) throw uploadError
 
       const {
         data: { publicUrl },
@@ -175,9 +186,7 @@ export function TestsManagement() {
         upsert: false,
       })
 
-      if (uploadError) {
-        throw uploadError
-      }
+      if (uploadError) throw uploadError
 
       const {
         data: { publicUrl },
@@ -199,10 +208,29 @@ export function TestsManagement() {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
 
-    if (!selectedTopic || (!imageUrl && !imageFile) || !question) {
+    // Validation
+    if (testType === "topic" && !selectedTopic) {
       toast({
         title: "Error",
-        description: "Barcha majburiy maydonlarni to'ldiring va rasm faylini yuklang",
+        description: "Mavzuni tanlang",
+        variant: "destructive",
+      })
+      return
+    }
+
+    if (testType === "ticket" && !selectedTicket) {
+      toast({
+        title: "Error",
+        description: "Biletni tanlang",
+        variant: "destructive",
+      })
+      return
+    }
+
+    if ((!imageUrl && !imageFile) || !question) {
+      toast({
+        title: "Error",
+        description: "Barcha majburiy maydonlarni to'ldiring",
         variant: "destructive",
       })
       return
@@ -228,27 +256,27 @@ export function TestsManagement() {
 
     if (audioFile) {
       const uploadedAudioUrl = await uploadAudio()
-      if (!uploadedAudioUrl) {
-        finalAudioUrl = null
-      } else {
+      if (uploadedAudioUrl) {
         finalAudioUrl = uploadedAudioUrl
       }
+    }
+
+    const testData = {
+      topic_id: testType === "topic" ? selectedTopic : null,
+      image_url: finalImageUrl,
+      audio_url: finalAudioUrl || null,
+      question,
+      answers,
+      correct_answer: parseInt(correctAnswer),
+      time_limit: parseInt(timeLimit),
+      explanation_title: explanationTitle.trim() || null,
+      explanation_text: explanationText.trim() || null,
     }
 
     if (editingTest) {
       const { error } = await supabase
         .from("tests")
-        .update({
-          topic_id: selectedTopic,
-          image_url: finalImageUrl,
-          audio_url: finalAudioUrl || null,
-          question,
-          answers,
-          correct_answer: Number.parseInt(correctAnswer),
-          time_limit: Number.parseInt(timeLimit),
-          explanation_title: explanationTitle.trim() || null,
-          explanation_text: explanationText.trim() || null,
-        })
+        .update(testData)
         .eq("id", editingTest.id)
 
       if (error) {
@@ -266,17 +294,7 @@ export function TestsManagement() {
         fetchTests()
       }
     } else {
-      const { error } = await supabase.from("tests").insert({
-        topic_id: selectedTopic,
-        image_url: finalImageUrl,
-        audio_url: finalAudioUrl || null,
-        question,
-        answers,
-        correct_answer: Number.parseInt(correctAnswer),
-        time_limit: Number.parseInt(timeLimit),
-        explanation_title: explanationTitle.trim() || null,
-        explanation_text: explanationText.trim() || null,
-      })
+      const { data: newTest, error } = await supabase.from("tests").insert(testData).select().single()
 
       if (error) {
         toast({
@@ -284,6 +302,29 @@ export function TestsManagement() {
           description: "Testni yaratishda xatolik yuz berdi",
           variant: "destructive",
         })
+      } else if (newTest && testType === "ticket" && selectedTicket) {
+        // Add test to ticket
+        const { data: ticketTests } = await supabase
+          .from("ticket_tests")
+          .select("order_index")
+          .eq("ticket_id", selectedTicket)
+          .order("order_index", { ascending: false })
+          .limit(1)
+
+        const nextOrder = ticketTests && ticketTests.length > 0 ? ticketTests[0].order_index + 1 : 0
+
+        await supabase.from("ticket_tests").insert({
+          ticket_id: selectedTicket,
+          test_id: newTest.id,
+          order_index: nextOrder,
+        })
+
+        toast({
+          title: "Success",
+          description: "Test muvaffaqiyatli yaratildi va biletga qo'shildi",
+        })
+        resetForm()
+        fetchTests()
       } else {
         toast({
           title: "Success",
@@ -295,9 +336,9 @@ export function TestsManagement() {
     }
   }
 
-  const handleEdit = (test: TestWithTopic) => {
+  const handleEdit = (test: TestWithRelation) => {
     setEditingTest(test)
-    setSelectedTopic(test.topic_id)
+    setSelectedTopic(test.topic_id || "")
     setImageUrl(test.image_url)
     setImagePreview(test.image_url)
     setAudioUrl(test.audio_url || "")
@@ -313,9 +354,7 @@ export function TestsManagement() {
   }
 
   const handleDelete = async (id: string) => {
-    if (!confirm("Bu testni o'chirishni xohlaysizmi?")) {
-      return
-    }
+    if (!confirm("Bu testni o'chirishni xohlaysizmi?")) return
 
     const { error } = await supabase.from("tests").delete().eq("id", id)
 
@@ -341,7 +380,7 @@ export function TestsManagement() {
     }
     acc[topicTitle].push(test)
     return acc
-  }, {} as Record<string, TestWithTopic[]>)
+  }, {} as Record<string, TestWithRelation[]>)
 
   return (
     <Tabs defaultValue="create" className="space-y-6">
@@ -355,46 +394,76 @@ export function TestsManagement() {
           <CardHeader>
             <CardTitle>{editingTest ? "Testni tahrirlash" : "Test yaratish"}</CardTitle>
             <CardDescription>
-              {editingTest ? "Test haqida ma'lumotlarni yangilash" : "Yangi testni mavzuga qo'shish"}
+              {editingTest ? "Test haqida ma'lumotlarni yangilash" : "Yangi test yaratish"}
             </CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="topic">Mavzu</Label>
-                <Select value={selectedTopic} onValueChange={setSelectedTopic}>
+                <Label>Test turi</Label>
+                <Select value={testType} onValueChange={(v) => setTestType(v as "topic" | "ticket")}>
                   <SelectTrigger>
-                    <SelectValue placeholder="Mavzuni tanlang" />
+                    <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    {topics.map((topic) => (
-                      <SelectItem key={topic.id} value={topic.id}>
-                        {topic.title}
-                      </SelectItem>
-                    ))}
+                    <SelectItem value="topic">Mavzu uchun</SelectItem>
+                    <SelectItem value="ticket">Bilet uchun</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
+              {testType === "topic" ? (
+                <div className="space-y-2">
+                  <Label htmlFor="topic">Mavzu</Label>
+                  <Select value={selectedTopic} onValueChange={setSelectedTopic}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Mavzuni tanlang" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {topics.map((topic) => (
+                        <SelectItem key={topic.id} value={topic.id}>
+                          {topic.title}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+              ) : (
+                <div className="space-y-2">
+                  <Label htmlFor="ticket">Bilet</Label>
+                  <Select value={selectedTicket} onValueChange={setSelectedTicket}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Biletni tanlang" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {tickets.map((ticket) => (
+                        <SelectItem key={ticket.id} value={ticket.id}>
+                          {ticket.title}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+              )}
+
               <div className="space-y-2">
-                <Label htmlFor="image">Rasm {editingTest && imageUrl ? "(Joriy rasm ko'rinsa, yangisini yuklang)" : ""}</Label>
+                <Label htmlFor="image">Rasm</Label>
                 <Input
                   id="image"
                   type="file"
                   accept="image/*"
                   onChange={handleImageChange}
-                  required={!editingTest || !imageUrl}
+                  required={!editingTest && !imageUrl}
                 />
                 {imagePreview && (
                   <div className="mt-2">
                     <img src={imagePreview} alt="Preview" className="max-w-xs rounded-lg border" />
                   </div>
                 )}
-                {uploadingImage && <p className="text-sm text-muted-foreground">Rasm yuklanmoqda...</p>}
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="audio">Audio (Optional) {editingTest && audioUrl ? "(Joriy audio ko'rinsa, yangisini yuklang)" : ""}</Label>
+                <Label htmlFor="audio">Audio (Optional)</Label>
                 <Input
                   id="audio"
                   type="file"
@@ -403,12 +472,9 @@ export function TestsManagement() {
                 />
                 {audioPreview && (
                   <div className="mt-2">
-                    <audio controls src={audioPreview} className="w-full">
-                      Sizning brauzeringiz audio elementini qo'llab-quvvatlamaydi.
-                    </audio>
+                    <audio controls src={audioPreview} className="w-full" />
                   </div>
                 )}
-                {uploadingAudio && <p className="text-sm text-muted-foreground">Audio yuklanmoqda...</p>}
               </div>
 
               <div className="space-y-2">
@@ -491,13 +557,13 @@ export function TestsManagement() {
               <div className="flex gap-2">
                 <Button type="submit" className="flex-1" disabled={uploadingImage || uploadingAudio}>
                   {uploadingImage || uploadingAudio
-                    ? "Rasm yuklanmoqda..."
+                    ? "Yuklanmoqda..."
                     : editingTest
                       ? "Testni tahrirlash"
                       : "Test yaratish"}
                 </Button>
                 {editingTest && (
-                  <Button type="button" variant="outline" onClick={resetForm} disabled={uploadingImage || uploadingAudio}>
+                  <Button type="button" variant="outline" onClick={resetForm}>
                     Bekor qilish
                   </Button>
                 )}
@@ -513,7 +579,7 @@ export function TestsManagement() {
         ) : Object.keys(testsByTopic).length === 0 ? (
           <Card>
             <CardContent className="py-8">
-              <p className="text-center text-muted-foreground">Hozircha testlar mavjud emas. Birinchi testni yarating!</p>
+              <p className="text-center text-muted-foreground">Hozircha testlar mavjud emas</p>
             </CardContent>
           </Card>
         ) : (
@@ -522,7 +588,7 @@ export function TestsManagement() {
               <Card key={topicTitle}>
                 <CardHeader>
                   <CardTitle>{topicTitle}</CardTitle>
-                  <CardDescription>{topicTests.length} test(lar) bu mavzuda</CardDescription>
+                  <CardDescription>{topicTests.length} test(lar)</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
@@ -532,11 +598,6 @@ export function TestsManagement() {
                           <div className="flex-1 space-y-2">
                             <p className="font-medium">{test.question}</p>
                             <div className="text-sm text-muted-foreground space-y-1">
-                              <p>Rasm: {test.image_url}</p>
-                              {test.audio_url && <p>Audio: {test.audio_url}</p>}
-                              {test.explanation_title && <p>Tushuntirish sarlavhasi: {test.explanation_title}</p>}
-                              {test.explanation_text && <p>Tushuntirish: {test.explanation_text}</p>}
-                              <p>Vaqt chegarasi: {test.time_limit}s</p>
                               <p>To'g'ri javob: Javob {test.correct_answer + 1}</p>
                             </div>
                             <div className="text-sm">

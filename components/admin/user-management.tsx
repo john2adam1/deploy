@@ -11,6 +11,7 @@ import type { User } from "@/lib/types"
 
 export function UsersManagement() {
   const [users, setUsers] = useState<User[]>([])
+  const [userStats, setUserStats] = useState<Record<string, { examAvg: number, ticketAvg: number, topicAvg: number }>>({})
   const [loading, setLoading] = useState(true)
   const { toast } = useToast()
   const supabase = getSupabaseBrowserClient()
@@ -22,8 +23,37 @@ export function UsersManagement() {
   const fetchUsers = async () => {
     const { data } = await supabase.from("users").select("*").order("created_at", { ascending: false })
 
-    if (data) setUsers(data)
+    if (data) {
+      setUsers(data)
+      fetchUserStats(data.map(u => u.id))
+    }
     setLoading(false)
+  }
+
+  const fetchUserStats = async (userIds: string[]) => {
+    const stats: Record<string, { examAvg: number, ticketAvg: number, topicAvg: number }> = {}
+
+    await Promise.all(userIds.map(async (uid) => {
+      const [exams, tickets, topics] = await Promise.all([
+        supabase.from("exam_statistics").select("percentage").eq("user_id", uid),
+        supabase.from("ticket_statistics").select("percentage").eq("user_id", uid),
+        supabase.from("topic_statistics").select("percentage").eq("user_id", uid)
+      ])
+
+      const calcAvg = (data: any[] | null) => {
+        if (!data || data.length === 0) return 0
+        const sum = data.reduce((acc, curr) => acc + (curr.percentage || 0), 0)
+        return Math.round(sum / data.length)
+      }
+
+      stats[uid] = {
+        examAvg: calcAvg(exams.data),
+        ticketAvg: calcAvg(tickets.data),
+        topicAvg: calcAvg(topics.data)
+      }
+    }))
+
+    setUserStats(stats)
   }
 
   const grantSubscription = async (userId: string) => {
@@ -45,6 +75,7 @@ export function UsersManagement() {
       toast({
         title: "Success",
         description: "Foydalanuvchi abonemasi muvaffaqiyatli taqdim etildi",
+        variant: "default",
       })
       fetchUsers()
     }
@@ -63,6 +94,7 @@ export function UsersManagement() {
       toast({
         title: "Success",
         description: "Foydalanuvchi abonemasi muvaffaqiyatli bekor qilindi",
+        variant: "default",
       })
       fetchUsers()
     }
@@ -86,8 +118,8 @@ export function UsersManagement() {
       <CardContent>
         <div className="space-y-4">
           {users.map((user) => (
-            <div key={user.id} className="flex items-center justify-between rounded-lg border p-4">
-              <div className="space-y-1">
+            <div key={user.id} className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:items-center sm:justify-between rounded-lg border p-4">
+              <div className="space-y-2 flex-1">
                 <div className="flex items-center gap-2">
                   <p className="font-medium">{user.email}</p>
                   {user.role === "admin" && <Badge variant="secondary">Admin</Badge>}
@@ -97,8 +129,19 @@ export function UsersManagement() {
                     <span>Abonemasi: {new Date(user.subscription_end).toLocaleDateString()}</span>
                   )}
                 </div>
+                <div className="flex gap-4 text-xs text-muted-foreground mt-2">
+                  <span className="bg-blue-100 text-blue-800 px-2 py-0.5 rounded dark:bg-blue-900 dark:text-blue-200">
+                    Imtihon: {userStats[user.id]?.examAvg || 0}%
+                  </span>
+                  <span className="bg-green-100 text-green-800 px-2 py-0.5 rounded dark:bg-green-900 dark:text-green-200">
+                    Bilet: {userStats[user.id]?.ticketAvg || 0}%
+                  </span>
+                  <span className="bg-purple-100 text-purple-800 px-2 py-0.5 rounded dark:bg-purple-900 dark:text-purple-200">
+                    Mavzu: {userStats[user.id]?.topicAvg || 0}%
+                  </span>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 sm:ml-4">
                 {hasActiveSubscription(user) ? (
                   <>
                     <Badge variant="default" className="bg-success text-success-foreground">

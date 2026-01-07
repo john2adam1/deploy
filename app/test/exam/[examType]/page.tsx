@@ -6,6 +6,7 @@ import { EnhancedTestInterface } from "@/components/enhanced-test-interface"
 
 export default async function ExamTestPage({ params }: { params: Promise<{ examType: string }> }) {
   const { examType } = await params
+  console.log("Exam page hit with Type:", examType)
   const supabase = await getSupabaseServerClient()
 
   const examTypeNum = Number.parseInt(examType)
@@ -26,6 +27,7 @@ export default async function ExamTestPage({ params }: { params: Promise<{ examT
 
   // Get all tests
   const { data: allTests } = await supabase.from("tests").select("*")
+  console.log(`Exam Debug: allTests count: ${allTests?.length}, required: ${examTypeNum}`)
 
   // Get user settings
   const { data: userSettings } = await supabase
@@ -35,6 +37,7 @@ export default async function ExamTestPage({ params }: { params: Promise<{ examT
     .single()
 
   if (!allTests || allTests.length < examTypeNum) {
+    console.log("Exam Debug: Redirecting to dashboard - Not enough tests")
     redirect("/dashboard")
   }
 
@@ -42,7 +45,7 @@ export default async function ExamTestPage({ params }: { params: Promise<{ examT
   const shuffledTests = [...allTests]
   for (let i = shuffledTests.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
-    ;[shuffledTests[i], shuffledTests[j]] = [shuffledTests[j], shuffledTests[i]]
+      ;[shuffledTests[i], shuffledTests[j]] = [shuffledTests[j], shuffledTests[i]]
   }
 
   const selectedTests = shuffledTests.slice(0, examTypeNum)
