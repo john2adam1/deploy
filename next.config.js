@@ -36,9 +36,7 @@ const nextConfig = {
   },
 
   // Optimize compilation
-  turbopack: {
-    root: path.resolve(__dirname),
-  },
+
 
   // Optimize production build
   productionBrowserSourceMaps: false,
