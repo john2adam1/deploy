@@ -140,7 +140,7 @@ export function Navbar({ userEmail, isAdmin }: NavbarProps) {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-card">
+    <header className="sticky top-0 z-50 border-b border-border/40 bg-background/60 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/dashboard" className="flex items-center gap-2">
           <BookOpen className="h-6 w-6 text-primary" />

@@ -301,157 +301,175 @@ export function EnhancedTestInterface({
   const isAnswered = answeredQuestions[currentIndex]
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <div className="max-w-6xl mx-auto space-y-6">
-        <div className="flex items-center justify-between">
+    <main className="container mx-auto px-4 py-6 md:py-10">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
           <div>
-            <h1 className="text-2xl font-bold">{title}</h1>
-            <p className="text-muted-foreground">
-              {t("test.question")} {currentIndex + 1} {t("test.of")} {tests.length}
-            </p>
+            <h1 className="text-3xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600 mb-2">
+              {title}
+            </h1>
+            <div className="flex items-center gap-3">
+              <div className="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
+                {t("test.question")} <span className="font-bold">{currentIndex + 1}</span> / {tests.length}
+              </div>
+              <div className="h-2 w-32 bg-secondary rounded-full overflow-hidden">
+                <div className="h-full bg-primary transition-all duration-300" style={{ width: `${((currentIndex + 1) / tests.length) * 100}%` }} />
+              </div>
+            </div>
           </div>
-          <Button variant="outline" onClick={handleFinish} className="ml-auto">
+          <Button variant="outline" onClick={handleFinish} className="border-destructive/50 text-destructive hover:bg-destructive/10 hover:text-destructive">
             {t("test.finish")}
           </Button>
         </div>
 
-        <Card>
+        <Card className="bg-background/60 backdrop-blur-xl border-white/10 shadow-2xl overflow-hidden rounded-3xl">
           <QuizProtection>
-            <CardContent className="p-6">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {/* Left side: Question */}
-                <div className="space-y-4">
-                  <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-muted flex items-center justify-center">
+            <CardContent className="p-0">
+              <div className="grid grid-cols-1 lg:grid-cols-2">
+                {/* Left side: Question Image & Text */}
+                <div className="p-6 md:p-8 bg-muted/20 border-b lg:border-b-0 lg:border-r border-white/5 space-y-6">
+                  <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-black/5 shadow-inner flex items-center justify-center group">
                     {currentTest.image_url ? (
                       <Image
                         src={currentTest.image_url}
                         alt="Question image"
                         fill
-                        className="object-cover"
+                        className="object-contain transition-transform duration-500 group-hover:scale-105"
                       />
                     ) : (
-                      <BookOpen className="h-24 w-24 text-muted-foreground" />
+                      <div className="flex flex-col items-center gap-4 text-muted-foreground/50">
+                        <BookOpen className="h-24 w-24" />
+                        <span className="text-sm">Rasm yo'q</span>
+                      </div>
                     )}
                   </div>
                   <div>
-                    <h2 className="font-semibold" style={{ fontSize: `${questionFontSize}px` }}>
+                    <h2 className="font-bold leading-relaxed text-foreground" style={{ fontSize: `${questionFontSize}px` }}>
                       {currentTest.question}
                     </h2>
                   </div>
                 </div>
 
-                {/* Right side: Answers, Audio, Explanation */}
-                <div className="space-y-4">
+                {/* Right side: Answers & Controls */}
+                <div className="p-6 md:p-8 flex flex-col h-full justify-between gap-6 bg-background/40">
                   <RadioGroup
                     key={currentIndex}
                     value={selectedAnswer?.toString()}
                     onValueChange={(value) => handleAnswerSelect(Number.parseInt(value))}
+                    className="space-y-3"
                   >
                     {currentTest.answers.map((answer, index) => {
                       const isSelected = selectedAnswer === index
                       const isCorrect = index === currentTest.correct_answer
                       const showFeedback = isAnswered
 
-                      let borderColor = "border"
-                      let bgColor = ""
+                      let containerClass = "border-transparent bg-card/60 hover:bg-card/80 shadow-sm"
+                      let icon = <div className="h-5 w-5 rounded-full border-2 border-muted-foreground/30" />
+
+                      if (isSelected) {
+                        containerClass = "border-primary bg-primary/5 shadow-md ring-1 ring-primary"
+                        icon = <div className="h-5 w-5 rounded-full border-[5px] border-primary bg-background" />
+                      }
 
                       if (showFeedback) {
                         if (isSelected) {
                           if (!isCorrect) {
-                            borderColor = "border-red-500 bg-red-50 dark:bg-red-950"
+                            containerClass = "border-red-500 bg-red-500/10 shadow-md"
+                            icon = <XCircle className="h-5 w-5 text-red-500" />
                           } else {
-                            borderColor = "border-green-500 bg-green-50 dark:bg-green-950"
+                            containerClass = "border-green-500 bg-green-500/10 shadow-md"
+                            icon = <CheckCircle2 className="h-5 w-5 text-green-500" />
                           }
                         } else if (isCorrect) {
-                          // Always show correct answer in green if user has answered this question
-                          borderColor = "border-green-500 bg-green-50 dark:bg-green-950"
+                          containerClass = "border-green-500 bg-green-500/10 shadow-md ring-1 ring-green-500"
+                          icon = <CheckCircle2 className="h-5 w-5 text-green-500" />
+                        } else {
+                          containerClass = "opacity-60 bg-muted/30"
                         }
                       }
 
                       return (
                         <div
                           key={index}
-                          className={`flex items-center space-x-2 rounded-lg ${borderColor} ${bgColor} p-4 hover:bg-accent transition-colors`}
+                          onClick={() => !isAnswered && handleAnswerSelect(index)}
+                          className={`relative flex items-center gap-4 rounded-xl border p-4 transition-all duration-200 cursor-pointer ${containerClass}`}
                         >
                           <RadioGroupItem
                             value={index.toString()}
                             id={`answer-${index}`}
                             disabled={isAnswered}
+                            className="absolute opacity-0"
                           />
+                          <div className="flex-shrink-0">
+                            {icon}
+                          </div>
                           <Label
                             htmlFor={`answer-${index}`}
-                            className="flex-1 cursor-pointer"
+                            className="flex-1 cursor-pointer font-medium leading-normal"
                             style={{ fontSize: `${answerFontSize}px` }}
                           >
                             {answer}
                           </Label>
-                          {showFeedback && (
-                            <div className="ml-2">
-                              {isSelected && !isCorrect ? (
-                                <XCircle className="h-5 w-5 text-red-500" />
-                              ) : isCorrect ? (
-                                <CheckCircle2 className="h-5 w-5 text-green-500" />
-                              ) : null}
-                            </div>
-                          )}
                         </div>
                       )
                     })}
                   </RadioGroup>
-
-                  {/* Audio and Explanation buttons */}
-                  <div className="flex gap-2 justify-end">
-                    {currentTest.audio_url && (
-                      <Button
-                        variant="outline"
-                        size="icon"
-                        className="rounded-full"
-                        onClick={() => toggleAudio(currentIndex)}
-                      >
-                        <Volume2 className={`h-4 w-4 ${playingAudio[currentIndex] ? "text-primary" : ""}`} />
-                      </Button>
-                    )}
-                    {currentTest.explanation_text && (
-                      <Button
-                        variant="outline"
-                        size="icon"
-                        className="rounded-full"
-                        onClick={() => toggleExplanation(currentIndex)}
-                      >
-                        <Lightbulb className={`h-4 w-4 ${showExplanation[currentIndex] ? "text-primary" : ""}`} />
-                      </Button>
-                    )}
-                  </div>
-
-                  {/* Explanation display */}
-                  {showExplanation[currentIndex] && currentTest.explanation_text && (
-                    <div className="rounded-lg border bg-muted/50 p-4 space-y-2">
-                      {currentTest.explanation_title && (
-                        <h3 className="font-semibold">{currentTest.explanation_title}</h3>
+                  <div className="space-y-4">
+                    {/* Audio and Explanation Tools */}
+                    <div className="flex gap-3 justify-end">
+                      {currentTest.audio_url && (
+                        <Button
+                          variant={playingAudio[currentIndex] ? "default" : "secondary"}
+                          size="icon"
+                          className="rounded-full h-10 w-10 shadow-sm"
+                          onClick={() => toggleAudio(currentIndex)}
+                        >
+                          <Volume2 className="h-5 w-5" />
+                        </Button>
                       )}
-                      <p className="text-sm text-muted-foreground">{currentTest.explanation_text}</p>
+                      {currentTest.explanation_text && (
+                        <Button
+                          variant={showExplanation[currentIndex] ? "default" : "secondary"}
+                          size="icon"
+                          className="rounded-full h-10 w-10 shadow-sm"
+                          onClick={() => toggleExplanation(currentIndex)}
+                        >
+                          <Lightbulb className="h-5 w-5" />
+                        </Button>
+                      )}
                     </div>
-                  )}
 
-                  {/* Navigation */}
-                  <div className="flex gap-2 pt-4">
-                    {currentIndex > 0 && (
-                      <Button variant="outline" onClick={() => setCurrentIndex(currentIndex - 1)} className="flex-1">
+                    {/* Explanation display */}
+                    {showExplanation[currentIndex] && currentTest.explanation_text && (
+                      <div className="rounded-xl border border-blue-200 bg-blue-50/50 dark:bg-blue-900/10 p-5 space-y-2 animate-in fade-in slide-in-from-top-2">
+                        {currentTest.explanation_title && (
+                          <h3 className="font-semibold text-blue-700 dark:text-blue-300 flex items-center gap-2">
+                            <Lightbulb className="h-4 w-4" />
+                            {currentTest.explanation_title}
+                          </h3>
+                        )}
+                        <p className="text-sm text-foreground/80 leading-relaxed">{currentTest.explanation_text}</p>
+                      </div>
+                    )}
+
+                    {/* Navigation */}
+                    <div className="flex gap-3 pt-2">
+                      <Button variant="outline" onClick={() => setCurrentIndex(currentIndex - 1)} disabled={currentIndex === 0} className="flex-1 h-12 text-base rounded-xl border-primary/20 hover:bg-primary/5 hover:border-primary/50">
                         {t("test.previous")}
                       </Button>
-                    )}
-                    {currentIndex < tests.length - 1 ? (
-                      <Button
-                        onClick={() => setCurrentIndex(currentIndex + 1)}
-                        className="flex-1"
-                      >
-                        {t("test.next")}
-                      </Button>
-                    ) : (
-                      <Button onClick={handleFinish} disabled={selectedAnswer === undefined} className="flex-1">
-                        {t("test.finish")}
-                      </Button>
-                    )}
+                      {currentIndex < tests.length - 1 ? (
+                        <Button
+                          onClick={() => setCurrentIndex(currentIndex + 1)}
+                          className="flex-1 h-12 text-base rounded-xl bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20"
+                        >
+                          {t("test.next")}
+                        </Button>
+                      ) : (
+                        <Button onClick={handleFinish} disabled={selectedAnswer === undefined} className="flex-1 h-12 text-base rounded-xl bg-green-600 hover:bg-green-700 shadow-lg shadow-green-600/20 text-white">
+                          {t("test.finish")}
+                        </Button>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
