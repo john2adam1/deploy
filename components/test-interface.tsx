@@ -180,6 +180,7 @@ export function TestInterface({ categoryTitle, tests, userId }: TestInterfacePro
             <div>
               <h2 className="text-xl font-semibold mb-4">{currentTest.question}</h2>
               <RadioGroup
+                key={currentIndex}
                 value={selectedAnswers[currentIndex]?.toString()}
                 onValueChange={(value) =>
                   setSelectedAnswers({ ...selectedAnswers, [currentIndex]: Number.parseInt(value) })

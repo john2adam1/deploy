@@ -1,36 +1,235 @@
-[00:00:02.475] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:02.785] Server  LOG      ✓ Ready in 2s
-[00:00:05.898] Server  LOG     Middleware hitting path: /
-[00:00:08.989] Server  LOG      ○ Compiling / ...
-[00:00:23.678] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:24.831] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:24.832] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:24.832] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767872969513}
-[00:00:25.108] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
-[00:00:26.555] Server  LOG     Middleware hitting path: /register
-[00:00:28.274] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/register color: rgb(120, 120, 120) color: inherit {"dp":"/register","o":"http://localhost:3000/register","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767872973565}
-[00:00:39.682] Server  LOG     Middleware hitting path: /register
-[00:00:50.445] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_@supabase_auth-js_dist_module_a7cdc2bd._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:50.453] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\Desktop_avtotest_70d1fbaa._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:50.663] Server  ERROR   C:\Users\user\Desktop\avtotest\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:50.665] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_next_dist_2e8757fb._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:50.680] Server  ERROR   C:\Users\user\Desktop\avtotest\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:50.707] Server  ERROR   C:\Users\user\Desktop\avtotest\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:50.714] Server  ERROR   C:\Users\user\Desktop\avtotest\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:50.720] Server  ERROR   C:\Users\user\Desktop\avtotest\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:50.730] Server  ERROR   C:\Users\user\Desktop\avtotest\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:50.736] Server  ERROR   C:\Users\user\Desktop\avtotest\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:50.756] Server  ERROR   TypeError: fetch failed
-[00:00:50.761] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_@supabase_auth-js_dist_module_a7cdc2bd._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:50.763] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\Desktop_avtotest_70d1fbaa._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:50.771] Server  ERROR   C:\Users\user\Desktop\avtotest\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:50.774] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_next_dist_2e8757fb._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:50.777] Server  ERROR   C:\Users\user\Desktop\avtotest\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:50.781] Server  ERROR   C:\Users\user\Desktop\avtotest\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:50.785] Server  ERROR   C:\Users\user\Desktop\avtotest\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:50.787] Server  ERROR   C:\Users\user\Desktop\avtotest\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:50.789] Server  ERROR   C:\Users\user\Desktop\avtotest\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:50.791] Server  ERROR   C:\Users\user\Desktop\avtotest\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:50.793] Server  ERROR   Auth create error: AuthRetryableFetchError: fetch failed
-[00:06:35.391] Server  LOG     Middleware hitting path: /login
-[00:06:38.468] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767873343757}
+[00:00:03.673] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:04.546] Server  LOG      ✓ Ready in 3.5s
+[00:00:04.934] Server  LOG     Middleware hitting path: /
+[00:00:08.018] Server  LOG      ○ Compiling / ...
+[00:00:12.250] Server  LOG     Middleware hitting path: /register
+[00:00:16.240] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:18.255] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:18.255] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/register","route":"/register"}
+[00:00:18.255] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/register color: rgb(120, 120, 120) color: inherit {"dp":"/register","o":"http://localhost:3000/register","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767886637730}
+[00:00:18.802] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:19.105] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:19.105] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:19.105] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767886640165}
+[00:00:20.527] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
+[00:00:22.053] Server  LOG     Middleware hitting path: /register
+[00:00:22.439] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/register color: rgb(120, 120, 120) color: inherit {"dp":"/register","o":"http://localhost:3000/register","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767886643495}
+[00:00:34.211] Server  LOG     Middleware hitting path: /register
+[00:00:35.407] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_@supabase_auth-js_dist_module_a7cdc2bd._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:35.432] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\Desktop_avtotest_70d1fbaa._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:35.613] Server  ERROR   C:\Users\user\Desktop\avtotest\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:35.616] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_next_dist_2e8757fb._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:35.648] Server  ERROR   C:\Users\user\Desktop\avtotest\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:35.660] Server  ERROR   C:\Users\user\Desktop\avtotest\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:35.667] Server  ERROR   C:\Users\user\Desktop\avtotest\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:35.674] Server  ERROR   C:\Users\user\Desktop\avtotest\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:35.682] Server  ERROR   C:\Users\user\Desktop\avtotest\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:35.689] Server  ERROR   C:\Users\user\Desktop\avtotest\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:35.696] Server  ERROR   Auth create error: AuthApiError: Phone number already registered by another user
+[00:00:39.523] Server  LOG     Middleware hitting path: /login
+[00:00:41.157] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767886662227}
+[00:00:51.697] Server  LOG     Middleware hitting path: /dashboard
+[00:00:54.643] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767886675697}
+[00:01:11.744] Server  LOG     Middleware hitting path: /tickets
+[00:01:16.918] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/tickets color: rgb(120, 120, 120) color: inherit {"dp":"/tickets","o":"http://localhost:3000/tickets","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767886697940}
+[00:01:20.777] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767886701817}
+[00:01:25.386] Server  LOG     Middleware hitting path: /settings
+[00:01:30.207] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767886711229}
+[00:01:34.708] Server  LOG     Middleware hitting path: /settings
+[00:01:37.638] Server  LOG     Middleware hitting path: /dashboard
+[00:01:37.938] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767886719008}
+[00:03:49.724] Server  LOG     Middleware hitting path: /dashboard
+[00:03:50.309] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:50.488] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:03:50.488] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[00:03:50.488] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767886851559}
+[00:03:54.562] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <SegmentViewNode type="page" pagePath="/Desktop/a...">
+      <SegmentTrieNode>
+      <DashboardPage>
+        <div className="min-h-scre...">
+          <Navbar>
+          <main className="container ...">
+            <DashboardClient user={{id:"b40958...", ...}} topics={[...]} tickets={[...]} totalTestsCount={0} ...>
+              <div className="max-w-2xl ...">
+                <SubscriptionBanner user={{id:"b40958...", ...}} telegramLink="https://t....">
+                  <_c className="bg-gradien...">
+                    <div ref={null} className="rounded-xl...">
+                      <_c8 className="p-6">
+                        <div ref={null} className="p-6">
+                          <div className="flex flex-...">
+                            <div className="flex items...">
+                              <div>
+                              <div>
+                                <h3 className="font-semibold text-lg">
++                                 Получите Premium подписку!
+-                                 {"Premium obunaga ega bo'ling!"}
+                                ...
+                            ...
+              ...
+    ...
+
+[00:04:02.473] Server  LOG     Middleware hitting path: /admin
+[00:04:05.626] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767886866670}
+[00:06:27.229] Server  LOG     Middleware hitting path: /register
+[00:06:29.614] Server  LOG     Middleware hitting path: /dashboard
+[00:06:29.930] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767887010994}
+[00:09:16.394] Server  LOG     Middleware hitting path: /test/topic/f7761f28-ff26-4d81-932d-800dd3c5ec7e
+[00:09:18.990] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/test/topic/f7761f28-ff26-4d81-932d-800dd3c5ec7e color: rgb(120, 120, 120) color: inherit {"dp":"/test/topic/[topicId]","o":"http://localhost:3000/test/topic/f7761f28-ff26-4d81-932d-800dd3c5ec7e","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767887180055}
+[00:09:24.429] Browser WARN    Image with src "https://lgacbbewpuzeyxijzfii.supabase.co/storage/v1/object/public/test-images/test-images/1767887067676-n1gcml.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:09:36.249] Server  LOG     Middleware hitting path: /dashboard
+[00:09:36.562] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767887197620}
+[00:11:17.973] Server  LOG     Middleware hitting path: /dashboard
+[00:11:18.627] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:18.825] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:11:18.825] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[00:11:18.825] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767887299894}
+[00:11:21.192] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <SegmentViewNode type="page" pagePath="/Desktop/a...">
+      <SegmentTrieNode>
+      <DashboardPage>
+        <div className="min-h-scre...">
+          <Navbar>
+          <main className="container ...">
+            <DashboardClient user={{id:"eab18e...", ...}} topics={[...]} tickets={[...]} totalTestsCount={8} ...>
+              <div className="max-w-2xl ...">
+                <SubscriptionBanner user={{id:"eab18e...", ...}} telegramLink="@medicus_a...">
+                  <_c className="bg-gradien...">
+                    <div ref={null} className="rounded-xl...">
+                      <_c8 className="p-6">
+                        <div ref={null} className="p-6">
+                          <div className="flex flex-...">
+                            <div className="flex items...">
+                              <div>
+                              <div>
+                                <h3 className="font-semibold text-lg">
++                                 Премиум обунага эга бўлинг!
+-                                 {"Premium obunaga ega bo'ling!"}
+                                ...
+                            ...
+              ...
+    ...
+
+[00:11:24.628] Server  LOG     Middleware hitting path: /test/topic/f7761f28-ff26-4d81-932d-800dd3c5ec7e
+[00:11:24.945] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/test/topic/f7761f28-ff26-4d81-932d-800dd3c5ec7e color: rgb(120, 120, 120) color: inherit {"dp":"/test/topic/[topicId]","o":"http://localhost:3000/test/topic/f7761f28-ff26-4d81-932d-800dd3c5ec7e","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767887306006}
+[00:11:27.090] Browser WARN    Image with src "https://lgacbbewpuzeyxijzfii.supabase.co/storage/v1/object/public/test-images/test-images/1767887067676-n1gcml.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:11:33.671] Browser WARN    Image with src "https://lgacbbewpuzeyxijzfii.supabase.co/storage/v1/object/public/test-images/test-images/1767887222892-39crx4.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:11:46.555] Server  LOG     Middleware hitting path: /dashboard
+[00:11:46.859] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767887327925}
+[00:11:59.296] Server  LOG     Middleware hitting path: /admin
+[00:12:01.417] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:01.650] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:12:01.651] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/admin","route":"/admin"}
+[00:12:01.651] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767887342722}
+[00:21:14.981] Server  LOG      ✓ Compiled in 375ms
+[00:21:15.271] Server  LOG      ✓ Compiled in 130ms
+[00:21:17.094] Server  LOG      ✓ Compiled in 194ms
+[00:22:08.004] Server  LOG     Middleware hitting path: /test/topic/f7761f28-ff26-4d81-932d-800dd3c5ec7e
+[00:22:09.112] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/test/topic/f7761f28-ff26-4d81-932d-800dd3c5ec7e color: rgb(120, 120, 120) color: inherit {"dp":"/test/topic/[topicId]","o":"http://localhost:3000/test/topic/f7761f28-ff26-4d81-932d-800dd3c5ec7e","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767887950172}
+[00:22:21.512] Server  LOG     Middleware hitting path: /dashboard
+[00:22:22.536] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767887963591}
+[00:22:41.382] Server  LOG     Middleware hitting path: /dashboard
+[00:22:42.339] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:42.553] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:22:42.553] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[00:22:42.553] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767887983625}
+[00:22:49.151] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+      <LoadingBoundary name="dashboard/" loading={[...]}>
+        <Suspense name="dashboard/" fallback={<Fragment>}>
+          <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+            <RedirectBoundary>
+              <RedirectErrorBoundary router={{...}}>
+                <InnerLayoutRouter url="/dashboard" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+                  <SegmentViewNode type="page" pagePath="/Desktop/a...">
+                    <SegmentTrieNode>
+                    <DashboardPage>
+                      <div className="min-h-scre...">
+                        <Navbar>
+                        <main className="container ...">
+                          <DashboardClient user={{id:"eab18e...", ...}} topics={[...]} tickets={[...]} ...>
+                            <div>
+                            <div className="mb-8 text-...">
+                              <h1 className="text-3xl font-bold mb-2">
++                               Хуш келибсиз!
+-                               Xush kelibsiz!
+                              ...
+                            ...
+                  ...
+                ...
+
+[00:22:54.526] Server  LOG     Middleware hitting path: /test/topic/19d18e7d-b7a4-43fe-9e08-c316ed3fd4f6
+[00:22:54.830] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/test/topic/19d18e7d-b7a4-43fe-9e08-c316ed3fd4f6 color: rgb(120, 120, 120) color: inherit {"dp":"/test/topic/[topicId]","o":"http://localhost:3000/test/topic/19d18e7d-b7a4-43fe-9e08-c316ed3fd4f6","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767887995900}
+[00:23:00.208] Browser WARN    Image with src "https://lgacbbewpuzeyxijzfii.supabase.co/storage/v1/object/public/test-images/test-images/1767887091150-2yqlp6.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:23:15.624] Browser WARN    Image with src "https://lgacbbewpuzeyxijzfii.supabase.co/storage/v1/object/public/test-images/test-images/1767887244090-u30o7g.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:23:32.815] Server  LOG     Middleware hitting path: /dashboard
+[00:23:33.171] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767888034235}
+[00:23:41.874] Server  LOG     Middleware hitting path: /dashboard
+[00:24:01.071] Server  LOG     Middleware hitting path: /
+[00:24:01.972] Server  ERROR   AuthApiError: Invalid Refresh Token: Refresh Token Not Found
+    at handleError (C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:888:11)
+    at async _handleRequest (C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:938:9)
+    at async _request (C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:918:18)
+    at async (C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:4800:24)
+    at async (C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:647:36) {
+  __isAuthError: true,
+  status: 400,
+  code: 'refresh_token_not_found'
+}
+[00:24:01.984] Server  ERROR   AuthApiError: Invalid Refresh Token: Refresh Token Not Found
+    at handleError (C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:888:11)
+    at async _handleRequest (C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:938:9)
+    at async _request (C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:918:18)
+    at async (C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:4800:24)
+    at async (C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:647:36) {
+  __isAuthError: true,
+  status: 400,
+  code: 'refresh_token_not_found'
+}
+[00:24:03.846] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:03.880] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
+[00:24:04.117] Browser WARN    Image with src "/about.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:24:04.117] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:24:04.117] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:24:04.117] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767888065183}
+[00:24:05.248] Server  LOG     Middleware hitting path: /register
+[00:24:05.573] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/register color: rgb(120, 120, 120) color: inherit {"dp":"/register","o":"http://localhost:3000/register","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767888066632}
+[00:24:23.457] Server  LOG     Middleware hitting path: /register
+[00:24:26.351] Server  LOG     Middleware hitting path: /dashboard
+[00:24:26.627] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767888087694}

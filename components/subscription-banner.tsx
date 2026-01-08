@@ -17,7 +17,12 @@ interface SubscriptionBannerProps {
 export function SubscriptionBanner({ user, telegramLink = "https://t.me/yourusername" }: SubscriptionBannerProps) {
   const { t } = useTranslation()
   const [timeLeft, setTimeLeft] = useState<string>("")
+  const [mounted, setMounted] = useState(false)
   const hasAccess = hasActiveAccess(user)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     if (!hasAccess || !user.subscription_end) return
@@ -50,6 +55,10 @@ export function SubscriptionBanner({ user, telegramLink = "https://t.me/youruser
 
     return () => clearInterval(interval)
   }, [hasAccess, user.subscription_end, t])
+
+  if (!mounted) {
+    return null // or a specific skeleton loader
+  }
 
   if (hasAccess) {
     return (

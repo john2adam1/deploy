@@ -341,6 +341,7 @@ export function EnhancedTestInterface({
               {/* Right side: Answers, Audio, Explanation */}
               <div className="space-y-4">
                 <RadioGroup
+                  key={currentIndex}
                   value={selectedAnswer?.toString()}
                   onValueChange={(value) => handleAnswerSelect(Number.parseInt(value))}
                 >
