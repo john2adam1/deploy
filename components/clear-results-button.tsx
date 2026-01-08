@@ -16,8 +16,10 @@ import {
 } from "@/components/ui/alert-dialog"
 import { clearUserResults } from "@/app/actions"
 import { useToast } from "@/hooks/use-toast"
+import { useTranslation } from "react-i18next"
 
 export function ClearResultsButton() {
+    const { t } = useTranslation()
     const [loading, setLoading] = useState(false)
     const { toast } = useToast()
 
@@ -27,20 +29,20 @@ export function ClearResultsButton() {
             const result = await clearUserResults()
             if (result.error) {
                 toast({
-                    title: "Xatolik",
-                    description: "Natijalarni o'chirishda xatolik yuz berdi",
+                    title: t("errors.error", "Xatolik"),
+                    description: t("errors.deleteFailed", "O'chirishda xatolik yuz berdi"),
                     variant: "destructive",
                 })
             } else {
                 toast({
-                    title: "Muvaffaqiyatli",
-                    description: "Barcha test natijalari tozalandi",
+                    title: t("common.success", "Muvaffaqiyatli"),
+                    description: t("dashboard.resultsCleared", "Barcha test natijalari tozalandi"),
                 })
             }
         } catch (error) {
             toast({
-                title: "Xatolik",
-                description: "Tizim xatoligi",
+                title: t("errors.error", "Xatolik"),
+                description: t("errors.general", "Tizim xatoligi"),
                 variant: "destructive",
             })
         } finally {
@@ -53,20 +55,20 @@ export function ClearResultsButton() {
             <AlertDialogTrigger asChild>
                 <Button variant="outline" className="text-destructive hover:bg-destructive/10">
                     <Trash2 className="mr-2 h-4 w-4" />
-                    Natijalarni tozalash
+                    {t("dashboard.clearResults", "Natijalarni tozalash")}
                 </Button>
             </AlertDialogTrigger>
             <AlertDialogContent>
                 <AlertDialogHeader>
-                    <AlertDialogTitle>Haqiqatan ham o'chirmoqchimisiz?</AlertDialogTitle>
+                    <AlertDialogTitle>{t("dashboard.clearResultsConfirm", "Haqiqatan ham o'chirmoqchimisiz?")}</AlertDialogTitle>
                     <AlertDialogDescription>
-                        Bu amal barcha test natijalaringizni (biletlar, mavzular va imtihonlar) o'chirib yuboradi. Bu amalni ortga qaytarib bo'lmaydi.
+                        {t("dashboard.clearResultsDescription", "Bu amal barcha test natijalaringizni (biletlar, mavzular va imtihonlar) o'chirib yuboradi. Bu amalni ortga qaytarib bo'lmaydi.")}
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
-                    <AlertDialogCancel>Bekor qilish</AlertDialogCancel>
+                    <AlertDialogCancel>{t("common.cancel", "Bekor qilish")}</AlertDialogCancel>
                     <AlertDialogAction onClick={handleClear} className="bg-destructive text-destructive-foreground hover:bg-destructive/90">
-                        {loading ? "O'chirilmoqda..." : "Ha, o'chirish"}
+                        {loading ? t("common.loading", "O'chirilmoqda...") : t("common.yes", "Ha, o'chirish")}
                     </AlertDialogAction>
                 </AlertDialogFooter>
             </AlertDialogContent>

@@ -10,7 +10,7 @@ import { getSupabaseBrowserClient } from "@/lib/supabase/client"
 import { CheckCircle2, XCircle, Volume2, Lightbulb, BookOpen } from "lucide-react"
 import Image from "next/image"
 import type { Test, UserSettings } from "@/lib/types"
-import { t } from "@/lib/translations"
+import { useTranslation } from "react-i18next"
 
 interface EnhancedTestInterfaceProps {
   title: string
@@ -29,6 +29,7 @@ export function EnhancedTestInterface({
   testTypeId,
   userSettings,
 }: EnhancedTestInterfaceProps) {
+  const { t } = useTranslation()
   const [currentIndex, setCurrentIndex] = useState(0)
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, number>>({})
   const [answeredQuestions, setAnsweredQuestions] = useState<Record<number, boolean>>({})
@@ -40,7 +41,8 @@ export function EnhancedTestInterface({
   const router = useRouter()
   const supabase = getSupabaseBrowserClient()
 
-  const language = (userSettings?.language || "uz-lat") as "uz-lat" | "uz-cyr" | "ru"
+  // We rely on i18next for language, but we can verify consistency if needed.
+  // The userSettings language should ideally ideally match i18n.language, but i18next is the source of truth for UI.
   const questionFontSize = userSettings?.question_font_size || 16
   const answerFontSize = userSettings?.answer_font_size || 14
 
@@ -251,41 +253,41 @@ export function EnhancedTestInterface({
       <main className="container mx-auto px-4 py-8">
         <Card className="max-w-2xl mx-auto">
           <CardHeader>
-            <CardTitle className="text-center text-2xl">{t("test.finished", language)}</CardTitle>
+            <CardTitle className="text-center text-2xl">{t("test.finished")}</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="text-center">
               <div className="text-6xl font-bold text-primary mb-2">{results.score}%</div>
-              <div className="text-muted-foreground">{t("test.final_score", language)}</div>
+              <div className="text-muted-foreground">{t("test.finalScore")}</div>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-4">
               <div className="rounded-lg border bg-card p-4 text-center">
                 <div className="text-2xl font-bold">{tests.length}</div>
-                <div className="text-sm text-muted-foreground">{t("test.total_questions", language)}</div>
+                <div className="text-sm text-muted-foreground">{t("test.totalQuestions")}</div>
               </div>
               <div className="rounded-lg border bg-success/10 p-4 text-center">
                 <div className="flex items-center justify-center gap-2 text-2xl font-bold text-success">
                   <CheckCircle2 className="h-6 w-6" />
                   {results.correct}
                 </div>
-                <div className="text-sm text-muted-foreground">{t("test.correct", language)}</div>
+                <div className="text-sm text-muted-foreground">{t("test.correct")}</div>
               </div>
               <div className="rounded-lg border bg-destructive/10 p-4 text-center">
                 <div className="flex items-center justify-center gap-2 text-2xl font-bold text-destructive">
                   <XCircle className="h-6 w-6" />
                   {results.wrong}
                 </div>
-                <div className="text-sm text-muted-foreground">{t("test.wrong", language)}</div>
+                <div className="text-sm text-muted-foreground">{t("test.wrong")}</div>
               </div>
               <div className="rounded-lg border bg-muted/10 p-4 text-center">
                 <div className="text-2xl font-bold">{results.unanswered}</div>
-                <div className="text-sm text-muted-foreground">{t("test.unanswered", language)}</div>
+                <div className="text-sm text-muted-foreground">{t("test.unanswered")}</div>
               </div>
             </div>
 
             <Button onClick={() => router.push("/dashboard")} className="w-full">
-              {t("test.back_to_dashboard", language)}
+              {t("test.backToDashboard")}
             </Button>
           </CardContent>
         </Card>
@@ -304,11 +306,11 @@ export function EnhancedTestInterface({
           <div>
             <h1 className="text-2xl font-bold">{title}</h1>
             <p className="text-muted-foreground">
-              {t("test.question", language)} {currentIndex + 1} {t("test.of", language)} {tests.length}
+              {t("test.question")} {currentIndex + 1} {t("test.of")} {tests.length}
             </p>
           </div>
           <Button variant="outline" onClick={handleFinish} className="ml-auto">
-            {t("test.finish", language)}
+            {t("test.finish")}
           </Button>
         </div>
 
@@ -432,7 +434,7 @@ export function EnhancedTestInterface({
                 <div className="flex gap-2 pt-4">
                   {currentIndex > 0 && (
                     <Button variant="outline" onClick={() => setCurrentIndex(currentIndex - 1)} className="flex-1">
-                      {t("test.previous", language)}
+                      {t("test.previous")}
                     </Button>
                   )}
                   {currentIndex < tests.length - 1 ? (
@@ -440,11 +442,11 @@ export function EnhancedTestInterface({
                       onClick={() => setCurrentIndex(currentIndex + 1)}
                       className="flex-1"
                     >
-                      {t("test.next", language)}
+                      {t("test.next")}
                     </Button>
                   ) : (
                     <Button onClick={handleFinish} disabled={selectedAnswer === undefined} className="flex-1">
-                      {t("test.finish", language)}
+                      {t("test.finish")}
                     </Button>
                   )}
                 </div>

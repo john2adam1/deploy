@@ -4,8 +4,9 @@ import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Toaster } from "@/components/ui/toaster"
 import "./global.css"
+import { I18nProvider } from "@/components/providers/i18n-provider"
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
@@ -42,9 +43,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} font-sans antialiased`}>
-        {children}
-        <Toaster />
-        <Analytics />
+        <I18nProvider>
+          {children}
+          <Toaster />
+          <Analytics />
+        </I18nProvider>
       </body>
     </html>
   )

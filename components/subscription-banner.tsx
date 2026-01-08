@@ -7,6 +7,7 @@ import { Crown, ExternalLink } from "lucide-react"
 import type { User } from "@/lib/types"
 import { hasActiveAccess } from "@/lib/access-control"
 import { useEffect, useState } from "react"
+import { useTranslation } from "react-i18next"
 
 interface SubscriptionBannerProps {
   user: User
@@ -14,6 +15,7 @@ interface SubscriptionBannerProps {
 }
 
 export function SubscriptionBanner({ user, telegramLink = "https://t.me/yourusername" }: SubscriptionBannerProps) {
+  const { t } = useTranslation()
   const [timeLeft, setTimeLeft] = useState<string>("")
   const hasAccess = hasActiveAccess(user)
 
@@ -26,7 +28,7 @@ export function SubscriptionBanner({ user, telegramLink = "https://t.me/youruser
       const diff = end.getTime() - now.getTime()
 
       if (diff <= 0) {
-        setTimeLeft("Muddati tugagan")
+        setTimeLeft(t("subscription.expired"))
         return
       }
 
@@ -35,11 +37,11 @@ export function SubscriptionBanner({ user, telegramLink = "https://t.me/youruser
       const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
 
       if (days > 0) {
-        setTimeLeft(`${days} kun ${hours} soat`)
+        setTimeLeft(`${days} ${t("subscription.days")} ${hours} ${t("subscription.hours")}`)
       } else if (hours > 0) {
-        setTimeLeft(`${hours} soat ${minutes} daqiqa`)
+        setTimeLeft(`${hours} ${t("subscription.hours")} ${minutes} ${t("subscription.minutes")}`)
       } else {
-        setTimeLeft(`${minutes} daqiqa`)
+        setTimeLeft(`${minutes} ${t("subscription.minutes")}`)
       }
     }
 
@@ -47,7 +49,7 @@ export function SubscriptionBanner({ user, telegramLink = "https://t.me/youruser
     const interval = setInterval(updateTimer, 60000) // Update every minute
 
     return () => clearInterval(interval)
-  }, [hasAccess, user.subscription_end])
+  }, [hasAccess, user.subscription_end, t])
 
   if (hasAccess) {
     return (
@@ -59,16 +61,16 @@ export function SubscriptionBanner({ user, telegramLink = "https://t.me/youruser
                 <Crown className="h-6 w-6 text-green-600" />
               </div>
               <div>
-                <h3 className="font-semibold text-lg">Premium obuna faol</h3>
+                <h3 className="font-semibold text-lg">{t("subscription.premiumActive")}</h3>
                 <p className="text-sm text-muted-foreground">
-                  Amal qilish muddati: {timeLeft}
+                  {t("subscription.validUntil")}: {timeLeft}
                 </p>
               </div>
             </div>
             <Button asChild variant="outline">
               <a href={telegramLink} target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="h-4 w-4 mr-2" />
-                Yordam
+                {t("subscription.contactSupport")}
               </a>
             </Button>
           </div>
@@ -86,16 +88,16 @@ export function SubscriptionBanner({ user, telegramLink = "https://t.me/youruser
               <Crown className="h-6 w-6 text-primary" />
             </div>
             <div>
-              <h3 className="font-semibold text-lg">Premium obunaga ega bo'ling!</h3>
+              <h3 className="font-semibold text-lg">{t("subscription.getPremium")}</h3>
               <p className="text-sm text-muted-foreground">
-                Barcha testlar va funksiyalarga cheksiz kirish
+                {t("subscription.premiumDescription")}
               </p>
             </div>
           </div>
           <Button asChild className="bg-primary hover:bg-primary/90">
             <a href={telegramLink} target="_blank" rel="noopener noreferrer">
               <Crown className="h-4 w-4 mr-2" />
-              Obuna sotib olish
+              {t("subscription.buySubscription")}
             </a>
           </Button>
         </div>
