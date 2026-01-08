@@ -14,7 +14,7 @@ import { BookOpen } from "lucide-react"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 
 function LoginForm() {
-  const [email, setEmail] = useState("")
+  const [phone, setPhone] = useState("+998")
   const [password, setPassword] = useState("")
   const [loading, setLoading] = useState(false)
   const router = useRouter()
@@ -30,7 +30,7 @@ function LoginForm() {
 
     try {
       const { data, error } = await supabase.auth.signInWithPassword({
-        email,
+        phone: phone.replace(/\s+/g, ""),
         password,
       })
 
@@ -55,8 +55,8 @@ function LoginForm() {
       router.push("/dashboard")
     } catch (error: any) {
       toast({
-        title: "Error",
-        description: error.message || "Failed to sign in",
+        title: "Xatolik",
+        description: error.message || "Kirishda xatolik yuz berdi",
         variant: "destructive",
       })
     } finally {
@@ -77,7 +77,7 @@ function LoginForm() {
         <Card>
           <CardHeader>
             <CardTitle>Qaytib kelganingizdan xursandmiz</CardTitle>
-            <CardDescription>Email va parol bilan tizimga kiring</CardDescription>
+            <CardDescription>Telefon raqam va parol bilan tizimga kiring</CardDescription>
           </CardHeader>
           <CardContent>
             {sessionConflict && (
@@ -87,13 +87,13 @@ function LoginForm() {
             )}
             <form onSubmit={handleLogin} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="phone">Telefon raqam</Label>
                 <Input
-                  id="email"
-                  type="email"
-                  placeholder="you@example.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  id="phone"
+                  type="tel"
+                  placeholder="+998 90 123 45 67"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
                   required
                 />
               </div>

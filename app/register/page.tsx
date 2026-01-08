@@ -11,11 +11,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { useToast } from "@/hooks/use-toast"
 import { getSupabaseBrowserClient } from "@/lib/supabase/client"
 import { BookOpen } from "lucide-react"
+import { registerUserWithPhone } from "@/app/auth/actions"
 
 export default function RegisterPage() {
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
-  const [email, setEmail] = useState("")
+  const [phone, setPhone] = useState("+998")
   const [password, setPassword] = useState("")
   const [loading, setLoading] = useState(false)
   const router = useRouter()
@@ -27,8 +28,8 @@ export default function RegisterPage() {
 
     if (password.length < 6) {
       toast({
-        title: "Error",
-        description: "Password must be at least 6 characters",
+        title: "Xatolik",
+        description: "Parol kamida 6 belgidan iborat bo'lishi kerak",
         variant: "destructive",
       })
       return
@@ -37,46 +38,37 @@ export default function RegisterPage() {
     setLoading(true)
 
     try {
-      const { data, error } = await supabase.auth.signUp({
-        email,
+      // Server-side registration (Admin creates verified user)
+      const formData = new FormData()
+      formData.append("phone", phone)
+      formData.append("password", password)
+      formData.append("firstName", firstName)
+      formData.append("lastName", lastName)
+
+      const result = await registerUserWithPhone(null, formData)
+
+      if (result.error) {
+        throw new Error(result.error)
+      }
+
+      // 2. Client-side login immediately after creation
+      const { error: signInError } = await supabase.auth.signInWithPassword({
+        phone: phone.replace(/\s+/g, ""),
         password,
       })
 
-      if (error) throw error
+      if (signInError) throw signInError
 
-      if (data.user) {
-        // trial_end is required in schema but no longer used for access control
-        const now = new Date().toISOString()
+      toast({
+        title: "Muvaffaqiyatli!",
+        description: "Hisob muvaffaqiyatli yaratildi.",
+      })
 
-        await supabase.from("users").insert({
-          id: data.user.id,
-          email: data.user.email,
-          role: "user",
-          trial_end: now,
-          subscription_end: null,
-          first_name: firstName.trim() || null,
-          last_name: lastName.trim() || null,
-        })
-
-        // Immediately sign in the user
-        const { error: signInError } = await supabase.auth.signInWithPassword({
-          email,
-          password,
-        })
-
-        if (signInError) throw signInError
-
-        toast({
-          title: "Muvaffaqiyatli!",
-          description: "Hisob muvaffaqiyatli yaratildi.",
-        })
-
-        router.push("/dashboard")
-      }
+      router.push("/dashboard")
     } catch (error: any) {
       toast({
-        title: "Error",
-        description: error.message || "Failed to create account",
+        title: "Xatolik",
+        description: error.message || "Hisob yaratishda xatolik yuz berdi",
         variant: "destructive",
       })
     } finally {
@@ -90,14 +82,14 @@ export default function RegisterPage() {
         <div className="mb-8 text-center">
           <div className="inline-flex items-center gap-2">
             <BookOpen className="h-8 w-8 text-primary" />
-            <span className="text-2xl font-bold">TestMaster</span>
+            <span className="text-2xl font-bold">Tezkor Avtotest</span>
           </div>
         </div>
 
         <Card>
           <CardHeader>
             <CardTitle>Ro'yxatdan o'tish</CardTitle>
-            <CardDescription>Yangi hisob yarating va darhol foydalanishni boshlang</CardDescription>
+            <CardDescription>Telefon raqamingiz orqali yangi hisob yarating</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleRegister} className="space-y-4">
@@ -124,13 +116,13 @@ export default function RegisterPage() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="phone">Telefon raqam</Label>
                 <Input
-                  id="email"
-                  type="email"
-                  placeholder="you@example.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  id="phone"
+                  type="tel"
+                  placeholder="+998 90 123 45 67"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
                   required
                 />
               </div>

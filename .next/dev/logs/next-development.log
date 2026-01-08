@@ -1,14 +1,59 @@
-[00:00:03.967] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:05.185] Server  LOG      ✓ Ready in 4.2s
-[00:00:05.587] Server  LOG     Middleware hitting path: /dashboard
-[00:00:10.551] Server  LOG      ○ Compiling /dashboard ...
-[00:00:18.226] Server  LOG     Middleware hitting path: /.well-known/appspecific/com.chrome.devtools.json
-[00:00:18.543] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:19.606] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:19.606] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
-[00:00:19.606] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767852355095}
-[00:13:58.844] Server  LOG     Middleware hitting path: /dashboard
-[00:14:01.940] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:14:02.608] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:14:02.608] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
-[00:14:02.608] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767853178548}
+[00:00:03.747] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:06.271] Server  LOG      ✓ Ready in 5.5s
+[00:00:06.854] Server  LOG     Middleware hitting path: /
+[00:00:06.938] Server  LOG     Middleware hitting path: /
+[00:00:09.655] Server  ERROR   AuthApiError: Invalid Refresh Token: Refresh Token Not Found
+    at handleError (C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:888:11)
+    at async _handleRequest (C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:938:9)
+    at async _request (C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:918:18)
+    at async (C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:4800:24)
+    at async (C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:647:36) {
+  __isAuthError: true,
+  status: 400,
+  code: 'refresh_token_not_found'
+}
+[00:00:09.657] Server  ERROR   AuthApiError: Invalid Refresh Token: Refresh Token Not Found
+    at handleError (C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:888:11)
+    at async _handleRequest (C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:938:9)
+    at async _request (C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:918:18)
+    at async (C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:4800:24)
+    at async (C:\Users\user\Desktop\avtotest\.next\dev\server\edge\chunks\90da8_@supabase_auth-js_dist_module_e7119dd1._.js:647:36) {
+  __isAuthError: true,
+  status: 400,
+  code: 'refresh_token_not_found'
+}
+[00:00:09.976] Server  LOG      ○ Compiling / ...
+[00:00:24.011] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:24.286] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:24.717] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:24.717] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:24.717] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767861415856}
+[00:00:24.736] Server  LOG     Middleware hitting path: /
+[00:00:25.489] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
+[00:00:25.491] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
+[00:00:26.588] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:26.605] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
+[00:00:26.738] Server  LOG     Middleware hitting path: /register
+[00:00:26.800] Browser WARN    Image with src "/about.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:26.993] Server  LOG     Middleware hitting path: /
+[00:00:29.128] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:29.211] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
+[00:00:29.415] Browser WARN    Image with src "/about.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:36.905] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:36.905] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:36.905] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767861428311}
+[00:00:47.917] Server  LOG     Middleware hitting path: /register
+[00:00:48.240] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/register color: rgb(120, 120, 120) color: inherit {"dp":"/register","o":"http://localhost:3000/register","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767861439645}
+[00:00:59.850] Server  LOG     Middleware hitting path: /register
+[00:00:59.923] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\Desktop_avtotest_70d1fbaa._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:01:00.031] Server  ERROR   C:\Users\user\Desktop\avtotest\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:01:00.034] Server  ERROR   C:\Users\user\Desktop\avtotest\.next\dev\server\chunks\ssr\90da8_next_dist_2e8757fb._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:01:00.042] Server  ERROR   C:\Users\user\Desktop\avtotest\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:01:00.063] Server  ERROR   C:\Users\user\Desktop\avtotest\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:01:00.080] Server  ERROR   C:\Users\user\Desktop\avtotest\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:01:00.082] Server  ERROR   C:\Users\user\Desktop\avtotest\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:01:00.100] Server  ERROR   C:\Users\user\Desktop\avtotest\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:01:00.115] Server  ERROR   C:\Users\user\Desktop\avtotest\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:01:00.127] Server  ERROR    ⨯ Error: Missing NEXT_PUBLIC_SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY environment variables
+[00:01:09.102] Server  LOG     Middleware hitting path: /login
+[00:01:10.072] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767861461491}

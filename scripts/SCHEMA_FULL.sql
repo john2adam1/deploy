@@ -7,6 +7,11 @@
 --
 -- Structure: Topics → Tests, Tickets → Tests
 -- No categories - topics are standalone
+--
+-- UPDATES:
+-- - Adjusted 'users' table for Phone-Auth-First approach:
+--   - 'email' is now NULLABLE (we might store a dummy email, but DB allows null).
+--   - 'phone' is now NOT NULL (primary identifier).
 -- ============================================
 
 -- ============================================
@@ -22,7 +27,8 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 -- Users table (metadata; credentials live in auth.users)
 CREATE TABLE IF NOT EXISTS users (
   id UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
-  email TEXT UNIQUE NOT NULL,
+  -- Email is nullable because we are using Phone Auth primarily
+  email TEXT UNIQUE, 
   role TEXT NOT NULL DEFAULT 'user' CHECK (role IN ('user', 'admin')),
   -- Kept for backward compatibility; not used for access control
   trial_end TIMESTAMP WITH TIME ZONE NOT NULL,
@@ -31,7 +37,8 @@ CREATE TABLE IF NOT EXISTS users (
   -- Profile fields
   first_name TEXT,
   last_name TEXT,
-  phone TEXT UNIQUE,
+  -- Phone is UNIQUE and NOT NULL as it is our primary ID
+  phone TEXT UNIQUE NOT NULL,
   -- Single-device session fields
   active_device_id UUID,
   last_login_at TIMESTAMP WITH TIME ZONE
@@ -302,13 +309,4 @@ USING (bucket_id = 'test-audio' AND auth.role() = 'authenticated');
 
 -- ============================================
 -- SCHEMA FULLY INITIALIZED
--- ============================================
--- After running this:
--- - Register/login uses Supabase email/password
--- - Role is in users.role (default 'user', set 'admin' manually for admins)
--- - Access control & single-device logic rely on users.subscription_end,
---   users.active_device_id, and users.role.
--- - Topics are standalone (no categories)
--- - Tests belong to topics
--- - Tickets contain tests via ticket_tests junction table
 -- ============================================
