@@ -11,6 +11,7 @@ import { CheckCircle2, XCircle, Volume2, Lightbulb, BookOpen } from "lucide-reac
 import Image from "next/image"
 import type { Test, UserSettings } from "@/lib/types"
 import { useTranslation } from "react-i18next"
+import { QuizProtection } from "@/components/quiz-protection"
 
 interface EnhancedTestInterfaceProps {
   title: string
@@ -315,145 +316,147 @@ export function EnhancedTestInterface({
         </div>
 
         <Card>
-          <CardContent className="p-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {/* Left side: Question */}
-              <div className="space-y-4">
-                <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-muted flex items-center justify-center">
-                  {currentTest.image_url ? (
-                    <Image
-                      src={currentTest.image_url}
-                      alt="Question image"
-                      fill
-                      className="object-cover"
-                    />
-                  ) : (
-                    <BookOpen className="h-24 w-24 text-muted-foreground" />
-                  )}
+          <QuizProtection>
+            <CardContent className="p-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {/* Left side: Question */}
+                <div className="space-y-4">
+                  <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-muted flex items-center justify-center">
+                    {currentTest.image_url ? (
+                      <Image
+                        src={currentTest.image_url}
+                        alt="Question image"
+                        fill
+                        className="object-cover"
+                      />
+                    ) : (
+                      <BookOpen className="h-24 w-24 text-muted-foreground" />
+                    )}
+                  </div>
+                  <div>
+                    <h2 className="font-semibold" style={{ fontSize: `${questionFontSize}px` }}>
+                      {currentTest.question}
+                    </h2>
+                  </div>
                 </div>
-                <div>
-                  <h2 className="font-semibold" style={{ fontSize: `${questionFontSize}px` }}>
-                    {currentTest.question}
-                  </h2>
-                </div>
-              </div>
 
-              {/* Right side: Answers, Audio, Explanation */}
-              <div className="space-y-4">
-                <RadioGroup
-                  key={currentIndex}
-                  value={selectedAnswer?.toString()}
-                  onValueChange={(value) => handleAnswerSelect(Number.parseInt(value))}
-                >
-                  {currentTest.answers.map((answer, index) => {
-                    const isSelected = selectedAnswer === index
-                    const isCorrect = index === currentTest.correct_answer
-                    const showFeedback = isAnswered
+                {/* Right side: Answers, Audio, Explanation */}
+                <div className="space-y-4">
+                  <RadioGroup
+                    key={currentIndex}
+                    value={selectedAnswer?.toString()}
+                    onValueChange={(value) => handleAnswerSelect(Number.parseInt(value))}
+                  >
+                    {currentTest.answers.map((answer, index) => {
+                      const isSelected = selectedAnswer === index
+                      const isCorrect = index === currentTest.correct_answer
+                      const showFeedback = isAnswered
 
-                    let borderColor = "border"
-                    let bgColor = ""
+                      let borderColor = "border"
+                      let bgColor = ""
 
-                    if (showFeedback) {
-                      if (isSelected) {
-                        if (!isCorrect) {
-                          borderColor = "border-red-500 bg-red-50 dark:bg-red-950"
-                        } else {
+                      if (showFeedback) {
+                        if (isSelected) {
+                          if (!isCorrect) {
+                            borderColor = "border-red-500 bg-red-50 dark:bg-red-950"
+                          } else {
+                            borderColor = "border-green-500 bg-green-50 dark:bg-green-950"
+                          }
+                        } else if (isCorrect) {
+                          // Always show correct answer in green if user has answered this question
                           borderColor = "border-green-500 bg-green-50 dark:bg-green-950"
                         }
-                      } else if (isCorrect) {
-                        // Always show correct answer in green if user has answered this question
-                        borderColor = "border-green-500 bg-green-50 dark:bg-green-950"
                       }
-                    }
 
-                    return (
-                      <div
-                        key={index}
-                        className={`flex items-center space-x-2 rounded-lg ${borderColor} ${bgColor} p-4 hover:bg-accent transition-colors`}
-                      >
-                        <RadioGroupItem
-                          value={index.toString()}
-                          id={`answer-${index}`}
-                          disabled={isAnswered}
-                        />
-                        <Label
-                          htmlFor={`answer-${index}`}
-                          className="flex-1 cursor-pointer"
-                          style={{ fontSize: `${answerFontSize}px` }}
+                      return (
+                        <div
+                          key={index}
+                          className={`flex items-center space-x-2 rounded-lg ${borderColor} ${bgColor} p-4 hover:bg-accent transition-colors`}
                         >
-                          {answer}
-                        </Label>
-                        {showFeedback && (
-                          <div className="ml-2">
-                            {isSelected && !isCorrect ? (
-                              <XCircle className="h-5 w-5 text-red-500" />
-                            ) : isCorrect ? (
-                              <CheckCircle2 className="h-5 w-5 text-green-500" />
-                            ) : null}
-                          </div>
-                        )}
-                      </div>
-                    )
-                  })}
-                </RadioGroup>
+                          <RadioGroupItem
+                            value={index.toString()}
+                            id={`answer-${index}`}
+                            disabled={isAnswered}
+                          />
+                          <Label
+                            htmlFor={`answer-${index}`}
+                            className="flex-1 cursor-pointer"
+                            style={{ fontSize: `${answerFontSize}px` }}
+                          >
+                            {answer}
+                          </Label>
+                          {showFeedback && (
+                            <div className="ml-2">
+                              {isSelected && !isCorrect ? (
+                                <XCircle className="h-5 w-5 text-red-500" />
+                              ) : isCorrect ? (
+                                <CheckCircle2 className="h-5 w-5 text-green-500" />
+                              ) : null}
+                            </div>
+                          )}
+                        </div>
+                      )
+                    })}
+                  </RadioGroup>
 
-                {/* Audio and Explanation buttons */}
-                <div className="flex gap-2 justify-end">
-                  {currentTest.audio_url && (
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="rounded-full"
-                      onClick={() => toggleAudio(currentIndex)}
-                    >
-                      <Volume2 className={`h-4 w-4 ${playingAudio[currentIndex] ? "text-primary" : ""}`} />
-                    </Button>
-                  )}
-                  {currentTest.explanation_text && (
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="rounded-full"
-                      onClick={() => toggleExplanation(currentIndex)}
-                    >
-                      <Lightbulb className={`h-4 w-4 ${showExplanation[currentIndex] ? "text-primary" : ""}`} />
-                    </Button>
-                  )}
-                </div>
-
-                {/* Explanation display */}
-                {showExplanation[currentIndex] && currentTest.explanation_text && (
-                  <div className="rounded-lg border bg-muted/50 p-4 space-y-2">
-                    {currentTest.explanation_title && (
-                      <h3 className="font-semibold">{currentTest.explanation_title}</h3>
+                  {/* Audio and Explanation buttons */}
+                  <div className="flex gap-2 justify-end">
+                    {currentTest.audio_url && (
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        className="rounded-full"
+                        onClick={() => toggleAudio(currentIndex)}
+                      >
+                        <Volume2 className={`h-4 w-4 ${playingAudio[currentIndex] ? "text-primary" : ""}`} />
+                      </Button>
                     )}
-                    <p className="text-sm text-muted-foreground">{currentTest.explanation_text}</p>
+                    {currentTest.explanation_text && (
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        className="rounded-full"
+                        onClick={() => toggleExplanation(currentIndex)}
+                      >
+                        <Lightbulb className={`h-4 w-4 ${showExplanation[currentIndex] ? "text-primary" : ""}`} />
+                      </Button>
+                    )}
                   </div>
-                )}
 
-                {/* Navigation */}
-                <div className="flex gap-2 pt-4">
-                  {currentIndex > 0 && (
-                    <Button variant="outline" onClick={() => setCurrentIndex(currentIndex - 1)} className="flex-1">
-                      {t("test.previous")}
-                    </Button>
+                  {/* Explanation display */}
+                  {showExplanation[currentIndex] && currentTest.explanation_text && (
+                    <div className="rounded-lg border bg-muted/50 p-4 space-y-2">
+                      {currentTest.explanation_title && (
+                        <h3 className="font-semibold">{currentTest.explanation_title}</h3>
+                      )}
+                      <p className="text-sm text-muted-foreground">{currentTest.explanation_text}</p>
+                    </div>
                   )}
-                  {currentIndex < tests.length - 1 ? (
-                    <Button
-                      onClick={() => setCurrentIndex(currentIndex + 1)}
-                      className="flex-1"
-                    >
-                      {t("test.next")}
-                    </Button>
-                  ) : (
-                    <Button onClick={handleFinish} disabled={selectedAnswer === undefined} className="flex-1">
-                      {t("test.finish")}
-                    </Button>
-                  )}
+
+                  {/* Navigation */}
+                  <div className="flex gap-2 pt-4">
+                    {currentIndex > 0 && (
+                      <Button variant="outline" onClick={() => setCurrentIndex(currentIndex - 1)} className="flex-1">
+                        {t("test.previous")}
+                      </Button>
+                    )}
+                    {currentIndex < tests.length - 1 ? (
+                      <Button
+                        onClick={() => setCurrentIndex(currentIndex + 1)}
+                        className="flex-1"
+                      >
+                        {t("test.next")}
+                      </Button>
+                    ) : (
+                      <Button onClick={handleFinish} disabled={selectedAnswer === undefined} className="flex-1">
+                        {t("test.finish")}
+                      </Button>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          </CardContent>
+            </CardContent>
+          </QuizProtection>
         </Card>
       </div>
     </main>

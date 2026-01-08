@@ -29,6 +29,7 @@ export function Navbar({ userEmail, isAdmin }: NavbarProps) {
   const supabase = getSupabaseBrowserClient()
   const [mounted, setMounted] = useState(false)
   const [currentLanguage, setCurrentLanguage] = useState<"uz-lat" | "uz-cyr" | "ru">("uz-lat")
+  const [userProfile, setUserProfile] = useState<{ firstName?: string, lastName?: string, phone?: string } | null>(null)
 
   useEffect(() => {
     setMounted(true)
@@ -60,11 +61,22 @@ export function Navbar({ userEmail, isAdmin }: NavbarProps) {
 
         if (!user) return
 
+        // Fetch user profile details
         const { data: dbUser } = await supabase
           .from("users")
-          .select("id, role, active_device_id")
+          .select("id, role, active_device_id, first_name, last_name, phone")
           .eq("id", user.id)
           .single()
+
+        if (dbUser) {
+          setUserProfile({
+            firstName: dbUser.first_name,
+            lastName: dbUser.last_name,
+            phone: dbUser.phone
+          })
+        }
+
+        if (!dbUser || dbUser.role === "admin") return
 
         if (!dbUser || dbUser.role === "admin") return
 
@@ -132,7 +144,7 @@ export function Navbar({ userEmail, isAdmin }: NavbarProps) {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/dashboard" className="flex items-center gap-2">
           <BookOpen className="h-6 w-6 text-primary" />
-          <span className="text-xl font-semibold">Tezkor Avtotest</span>
+          <span className="text-xl font-semibold">Sardor Avtotest</span>
         </Link>
 
         <div className="flex items-center gap-4">
@@ -158,8 +170,14 @@ export function Navbar({ userEmail, isAdmin }: NavbarProps) {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-56">
                   <div className="px-2 py-1.5 text-sm">
-                    <div className="font-medium">Account</div>
-                    <div className="text-xs text-muted-foreground">{userEmail}</div>
+                    <div className="font-medium">
+                      {(userProfile?.firstName || userProfile?.lastName)
+                        ? `${userProfile.firstName || ""} ${userProfile.lastName || ""}`.trim()
+                        : "Foydalanuvchi"}
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      {userProfile?.phone || userEmail}
+                    </div>
                   </div>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem asChild>
