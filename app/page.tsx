@@ -97,13 +97,13 @@ export default async function Home() {
         {/* About Section */}
         <AboutSection />
 
-        {/* Contact Section */}
-        <ContactSection />
-
         {/* Carousel */}
         <Suspense fallback={null}>
           <Carousel />
         </Suspense>
+
+        {/* Contact Section */}
+        <ContactSection />
       </main>
     </div>
   )
