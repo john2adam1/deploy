@@ -41,25 +41,25 @@ export function Carousel() {
   if (images.length === 0) return null
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background/80 to-background/40">
+    <section className="py-16 sm:py-20 bg-gradient-to-b from-background/80 to-background/40">
       <div className="mx-auto max-w-6xl px-4">
-        <h2 className="text-center text-4xl sm:text-5xl font-extrabold mb-12 text-foreground">
+        <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-extrabold mb-8 sm:mb-12 text-foreground">
           Natijalar
         </h2>
 
         <div className="relative overflow-hidden rounded-3xl border border-gray-200/20 shadow-2xl bg-background/50 backdrop-blur-lg">
           <div
-            className="flex transition-transform duration-700 ease-in-out h-[300px] sm:h-[400px] md:h-[500px]"
+            className="flex transition-transform duration-700 ease-in-out h-[250px] sm:h-[350px] md:h-[450px]"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
             {images.map((img, index) => (
-              <div key={img.id} className="relative w-full h-full flex-shrink-0 group">
-                <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-purple-200/5 to-transparent opacity-0 group-hover:opacity-60 transition-all rounded-3xl" />
+              <div key={img.id} className="relative w-full h-full flex-shrink-0 px-2 sm:px-4 py-2">
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-purple-200/5 to-transparent opacity-0 group-hover:opacity-40 transition-all rounded-2xl" />
                 <Image
                   src={img.image_url}
                   alt={`Carousel image ${index + 1}`}
                   fill
-                  className="object-contain p-6 rounded-3xl transition-transform duration-500 group-hover:scale-105"
+                  className="object-contain rounded-2xl transition-transform duration-500 hover:scale-105 shadow-lg"
                   priority={index === 0}
                 />
               </div>
@@ -72,8 +72,7 @@ export function Carousel() {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`h-2 rounded-full transition-all ${index === currentIndex ? "w-6 bg-primary" : "w-2 bg-primary/40"
-                  }`}
+                className={`h-2 rounded-full transition-all ${index === currentIndex ? "w-6 bg-primary" : "w-2 bg-primary/40"}`}
               />
             ))}
           </div>
