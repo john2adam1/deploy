@@ -1,23 +1,15 @@
-[00:00:04.855] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:05.730] Server  LOG      ✓ Ready in 4.2s
-[00:00:06.346] Server  LOG     Middleware hitting path: /
-[00:00:11.592] Server  LOG      ○ Compiling / ...
-[00:00:25.680] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:26.010] Browser WARN    Image with src "/images/certificate-1.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:26.011] Browser WARN    Image with src "/images/certificate-2.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:26.011] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:26.011] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:26.011] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1768030200981}
-[00:00:29.546] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
-[00:00:39.508] Server  LOG     Middleware hitting path: /.well-known/appspecific/com.chrome.devtools.json
-[00:03:05.213] Server  LOG     Middleware hitting path: /
-[00:03:07.323] Server  LOG     Middleware hitting path: /.well-known/appspecific/com.chrome.devtools.json
-[00:03:07.782] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about.png" "received" null
-[00:03:08.941] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:03:08.941] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:03:08.941] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1768030363892}
-[00:03:09.656] Browser WARN    Image with src "https://lgacbbewpuzeyxijzfii.supabase.co/storage/v1/object/public/test-images/carousel/carousel-1767890038198-8auv0s.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:09.656] Browser WARN    Image with src "https://lgacbbewpuzeyxijzfii.supabase.co/storage/v1/object/public/test-images/carousel/carousel-1767890044848-equfl.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:04:08.892] Server  LOG     Middleware hitting path: /
-[00:04:09.466] Server  LOG      ✓ Compiled in 553ms
-[00:05:39.804] Server  LOG      ✓ Compiled in 292ms
+[00:00:06.048] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:06.567] Server  LOG      ✓ Ready in 4.2s
+[00:00:07.315] Server  LOG     Middleware hitting path: /
+[00:00:13.459] Server  LOG      ○ Compiling / ...
+[00:00:30.232] Server  ERROR   Bog'lanish ma'lumotlarini yuklashda xatolik yuz berdi: {}
+[00:00:31.736] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:32.414] Browser WARN    Image with src "/images/certificate-1.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:32.414] Browser WARN    Image with src "/images/certificate-2.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:32.414] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:32.414] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:32.415] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1768138746764}
+[00:00:35.444] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/about-us.jpg" "received" null
+[00:03:47.691] Server  LOG     Middleware hitting path: /
+[00:03:47.713] Server  LOG      ✓ Compiled in 157ms
+[00:05:04.262] Server  LOG     Middleware hitting path: /.well-known/appspecific/com.chrome.devtools.json

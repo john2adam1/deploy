@@ -1300,10 +1300,6 @@
     gap: calc(var(--spacing) * 12);
   }
 
-  .gap-16 {
-    gap: calc(var(--spacing) * 16);
-  }
-
   :where(.space-y-1 > :not(:last-child)) {
     --tw-space-y-reverse: 0;
     margin-block-start: calc(calc(var(--spacing) * 1) * var(--tw-space-y-reverse));
@@ -2263,10 +2259,6 @@
 
   .py-16 {
     padding-block: calc(var(--spacing) * 16);
-  }
-
-  .py-20 {
-    padding-block: calc(var(--spacing) * 20);
   }
 
   .py-24 {
@@ -3687,12 +3679,6 @@
   }
 
   @media (min-width: 40rem) {
-    .sm\:h-\[400px\] {
-      height: 400px;
-    }
-  }
-
-  @media (min-width: 40rem) {
     .sm\:w-auto {
       width: auto;
     }
@@ -3798,13 +3784,6 @@
   }
 
   @media (min-width: 40rem) {
-    .sm\:text-5xl {
-      font-size: var(--text-5xl);
-      line-height: var(--tw-leading, var(--text-5xl--line-height));
-    }
-  }
-
-  @media (min-width: 40rem) {
     .sm\:text-6xl {
       font-size: var(--text-6xl);
       line-height: var(--tw-leading, var(--text-6xl--line-height));
@@ -3852,12 +3831,6 @@
   @media (min-width: 48rem) {
     .md\:h-\[450px\] {
       height: 450px;
-    }
-  }
-
-  @media (min-width: 48rem) {
-    .md\:h-\[500px\] {
-      height: 500px;
     }
   }
 

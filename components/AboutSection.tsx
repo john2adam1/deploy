@@ -42,7 +42,7 @@ export async function AboutSection() {
               group-hover:scale-[1.02]
             ">
               <Image
-                src="/about.png"
+                src="/images/about-us.jpg"
                 alt="Sarvar Avtotest platformasi"
                 width={600}
                 height={400}

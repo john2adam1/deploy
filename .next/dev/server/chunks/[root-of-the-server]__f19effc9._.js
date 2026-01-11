@@ -47,42 +47,29 @@ module.exports = mod;
 __turbopack_context__.s([
     "config",
     ()=>config,
-    "proxy",
-    ()=>proxy
+    "middleware",
+    ()=>middleware
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f40$supabase$2f$ssr$2f$dist$2f$module$2f$index$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/Desktop/avtotest/node_modules/@supabase/ssr/dist/module/index.js [middleware] (ecmascript) <locals>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f40$supabase$2f$ssr$2f$dist$2f$module$2f$createServerClient$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/avtotest/node_modules/@supabase/ssr/dist/module/createServerClient.js [middleware] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/avtotest/node_modules/next/server.js [middleware] (ecmascript)");
 ;
 ;
-// #region agent log
-fetch('http://127.0.0.1:7242/ingest/deddb419-d5fa-4d5c-b0af-a92b16ae4dd2', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-        location: 'proxy.ts:4',
-        message: 'File proxy.ts exports proxy function - correct match',
-        data: {
-            fileName: 'proxy.ts',
-            exportName: 'proxy',
-            match: 'correct'
-        },
-        timestamp: Date.now(),
-        sessionId: 'debug-session',
-        runId: 'post-fix',
-        hypothesisId: 'A'
-    })
-}).catch(()=>{});
-async function proxy(request) {
+async function middleware(request) {
+    console.log("Middleware hitting path:", request.nextUrl.pathname);
+    // Create response early
+    let response = __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].next({
+        request: {
+            headers: request.headers
+        }
+    });
+    // Skip middleware for static files and API routes
+    if (request.nextUrl.pathname.startsWith('/_next') || request.nextUrl.pathname.startsWith('/api') || request.nextUrl.pathname.includes('.') // Skip files with extensions
+    ) {
+        return response;
+    }
     try {
-        let response = __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].next({
-            request: {
-                headers: request.headers
-            }
-        });
-        // Check if environment variables are set
+        // Only create Supabase client if we have the required env vars
         if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
         ;
         const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f40$supabase$2f$ssr$2f$dist$2f$module$2f$createServerClient$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["createServerClient"])(("TURBOPACK compile-time value", "https://lgacbbewpuzeyxijzfii.supabase.co"), ("TURBOPACK compile-time value", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxnYWNiYmV3cHV6ZXl4aWp6ZmlpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY2NDE4MzcsImV4cCI6MjA4MjIxNzgzN30.P-CO-3mUHX0Pcrf1jgNcGqEXPiQEILnyGq9-340FLKc"), {
@@ -99,66 +86,59 @@ async function proxy(request) {
                 }
             }
         });
-        let user = null;
-        try {
-            const { data: { user: authUser }, error: authError } = await supabase.auth.getUser();
-            if (authError) {
-                console.error("Auth error in proxy:", authError.message);
-            // Continue without user if auth fails
-            } else {
-                user = authUser;
-            }
-        } catch (error) {
-            console.error("Error getting user in proxy:", error);
-        // Continue without user if there's an error
-        }
-        // 🔒 Admin route protection
-        if (request.nextUrl.pathname.startsWith("/admin") && user) {
-            try {
-                const { data: userData, error: userError } = await supabase.from("users").select("role").eq("id", user.id).single();
-                if (userError) {
-                    console.error("Error fetching user data:", userError.message);
-                    // If we can't verify admin status, redirect to dashboard for safety
-                    return __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL("/dashboard", request.url));
-                }
-                if (userData?.role !== "admin") {
-                    return __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL("/dashboard", request.url));
-                }
-            } catch (error) {
-                console.error("Error in admin check:", error);
-                // On error, redirect to dashboard for safety
+        // Get user session - this is the slow part, let's optimize it
+        const { data: { session } } = await supabase.auth.getSession();
+        const user = session?.user || null;
+        const pathname = request.nextUrl.pathname;
+        // Public routes - no auth needed
+        const publicRoutes = [
+            '/',
+            '/login',
+            '/register'
+        ];
+        if (publicRoutes.includes(pathname)) {
+            // Redirect authenticated users away from login/register
+            if (user && (pathname === '/login' || pathname === '/register')) {
                 return __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL("/dashboard", request.url));
             }
+            return response;
         }
-        // 🚫 Auth userlarni login/registerdan chiqarish
-        if (user && (request.nextUrl.pathname === "/login" || request.nextUrl.pathname === "/register")) {
-            return __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL("/dashboard", request.url));
-        }
-        // 🚫 Login qilmaganlarni himoyalangan sahifalardan chiqarish
-        if (!user && (request.nextUrl.pathname.startsWith("/dashboard") || request.nextUrl.pathname.startsWith("/admin") || request.nextUrl.pathname.startsWith("/test") || request.nextUrl.pathname.startsWith("/settings") || request.nextUrl.pathname.startsWith("/tickets"))) {
-            return __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL("/login", request.url));
+        // Protected routes - require authentication
+        const protectedRoutes = [
+            '/dashboard',
+            '/admin',
+            '/test',
+            '/settings',
+            '/tickets'
+        ];
+        const isProtectedRoute = protectedRoutes.some((route)=>pathname.startsWith(route));
+        if (isProtectedRoute) {
+            // Redirect to login if not authenticated
+            if (!user) {
+                return __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL("/login", request.url));
+            }
+            // Admin route protection - only check if accessing admin routes
+            if (pathname.startsWith("/admin")) {
+                // We'll check admin status in the page component instead
+                // This avoids an extra database query in middleware
+                response.headers.set('x-require-admin', 'true');
+            }
         }
         return response;
     } catch (error) {
-        // If anything goes wrong, allow the request to proceed
-        // This prevents the proxy from blocking all requests on error
-        console.error("Proxy error:", error);
-        return __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$avtotest$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].next({
-            request: {
-                headers: request.headers
-            }
-        });
+        console.error("Middleware error:", error);
+        return response;
     }
 }
 const config = {
     matcher: [
-        "/dashboard/:path*",
-        "/admin/:path*",
-        "/test/:path*",
-        "/settings/:path*",
-        "/tickets/:path*",
-        "/login",
-        "/register"
+        /*
+     * Match all request paths except:
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     * - public files (public folder)
+     */ '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)'
     ]
 };
 }),
