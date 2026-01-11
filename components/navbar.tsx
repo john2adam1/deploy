@@ -144,7 +144,7 @@ export function Navbar({ userEmail, isAdmin }: NavbarProps) {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/dashboard" className="flex items-center gap-2">
           <BookOpen className="h-6 w-6 text-primary" />
-          <span className="text-xl font-semibold">Sardor Avtotest</span>
+          <span className="text-xl font-semibold">Sarvar Avtotest</span>
         </Link>
 
         <div className="flex items-center gap-4">
