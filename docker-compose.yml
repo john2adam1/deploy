@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  web:
+    container_name: nextjs-web
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 3000:3000
+    env_file:
+      - .env.local
+    environment:
+      - NODE_ENV=production
+    # potential volumes for development, but for production usually not needed unless mapping static files
+    # volumes:
+    #   - ./public:/app/public
